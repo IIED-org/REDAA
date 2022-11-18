@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - redaa
+id: redaa_medium
+label: 'REDAA Medium'
+locked: false
+pattern: 'j  F,  Y'
