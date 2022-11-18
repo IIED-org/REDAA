@@ -5,7 +5,7 @@
  * Functions to support theming in the REDAA theme.
  */
 
-use Drupal\redaa\REDAAPreRender;
+use Drupal\redaa\RedaaPreRender;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
