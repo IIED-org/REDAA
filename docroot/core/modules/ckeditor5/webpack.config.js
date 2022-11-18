@@ -10,9 +10,7 @@ function getDirectories(srcpath) {
     .filter((item) => fs.statSync(path.join(srcpath, item)).isDirectory());
 }
 
-const prodPluginBuilds = [];
-const devPluginBuilds = [];
-
+module.exports = [];
 // Loop through every subdirectory in ckeditor5_plugins, which should be a different
 // plugin, and build them all in ./build.
 getDirectories(path.resolve(__dirname, './js/ckeditor5_plugins')).forEach((dir) => {
@@ -61,17 +59,5 @@ getDirectories(path.resolve(__dirname, './js/ckeditor5_plugins')).forEach((dir) 
     },
   };
 
-  const dev = {...bc, mode: 'development', optimization: {...bc.optimization, minimize: false}, devtool: false};
-
-  prodPluginBuilds.push(bc);
-  devPluginBuilds.push(dev);
+  module.exports.push(bc);
 });
-
-module.exports = (env, argv) => {
-  // Files aren't minified in build with the development flag.
-  if (argv.mode === 'development') {
-    return devPluginBuilds;
-  } else {
-    return prodPluginBuilds;
-  }
-}

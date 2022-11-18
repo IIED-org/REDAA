@@ -15,10 +15,6 @@
   background-color: #dedfe4;
 }
 
-.title {
-  margin-top: 0;
-}
-
 .site-name {
   margin-top: 1rem;
   word-wrap: break-word;
@@ -182,19 +178,6 @@
   }
   [dir="rtl"] .layout-sidebar-first {
     float: right;
-  }
-  /* Positioning sidebar & content */
-  main {
-    float: left; /* LTR */
-    clear: none;
-    box-sizing: border-box;
-    width: 65%;
-    padding-left: 3.85em; /* LTR */
-  }
-  [dir="rtl"] main {
-    float: right;
-    padding-right: 3.85em;
-    padding-left: 0;
   }
 }
 

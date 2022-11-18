@@ -22,6 +22,7 @@ class ForumNodeAccessTest extends BrowserTestBase {
     'comment',
     'forum',
     'taxonomy',
+    'tracker',
     'node_access_test',
     'block',
   ];

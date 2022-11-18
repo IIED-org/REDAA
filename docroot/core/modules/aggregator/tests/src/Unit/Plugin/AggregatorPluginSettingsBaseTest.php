@@ -11,7 +11,6 @@ use Drupal\Tests\UnitTestCase;
  * Tests settings configuration of individual aggregator plugins.
  *
  * @group aggregator
- * @group legacy
  */
 class AggregatorPluginSettingsBaseTest extends UnitTestCase {
 

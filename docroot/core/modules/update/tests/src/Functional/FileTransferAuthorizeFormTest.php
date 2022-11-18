@@ -7,7 +7,7 @@ namespace Drupal\Tests\update\Functional;
  *
  * @group update
  */
-class FileTransferAuthorizeFormTest extends UpdateUploaderTestBase {
+class FileTransferAuthorizeFormTest extends UpdateTestBase {
 
   /**
    * Modules to enable.

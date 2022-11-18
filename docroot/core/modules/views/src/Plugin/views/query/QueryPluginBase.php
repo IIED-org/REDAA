@@ -119,7 +119,7 @@ abstract class QueryPluginBase extends PluginBase implements CacheableDependency
   public function calculateDependencies() {
     $dependencies = [];
 
-    foreach ($this->getEntityTableInfo() as $info) {
+    foreach ($this->getEntityTableInfo() as $entity_type => $info) {
       if (!empty($info['provider'])) {
         $dependencies['module'][] = $info['provider'];
       }

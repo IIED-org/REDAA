@@ -379,9 +379,6 @@ class ConfigImporter {
       return;
     }
 
-    // Reset the module list in case a stale cache item has been set by another
-    // process during deployment.
-    $this->moduleExtensionList->reset();
     // Get a list of modules with dependency weights as values.
     $module_data = $this->moduleExtensionList->getList();
     // Set the actual module weights.
@@ -676,18 +673,13 @@ class ConfigImporter {
   /**
    * Gets the next extension operation to perform.
    *
-   * Uninstalls are processed first with themes coming before modules. Then
-   * installs are processed with modules coming before themes. This order is
-   * necessary because themes can depend on modules.
-   *
    * @return array|bool
    *   An array containing the next operation and extension name to perform it
    *   on. If there is nothing left to do returns FALSE;
    */
   protected function getNextExtensionOperation() {
-    foreach (['uninstall', 'install'] as $op) {
-      $types = $op === 'uninstall' ? ['theme', 'module'] : ['module', 'theme'];
-      foreach ($types as $type) {
+    foreach (['module', 'theme'] as $type) {
+      foreach (['install', 'uninstall'] as $op) {
         $unprocessed = $this->getUnprocessedExtensions($type);
         if (!empty($unprocessed[$op])) {
           return [
@@ -737,7 +729,6 @@ class ConfigImporter {
    */
   public function validate() {
     if (!$this->validated) {
-      $this->errors = [];
       // Create the list of installs and uninstalls.
       $this->createExtensionChangelist();
       // Validate renames.

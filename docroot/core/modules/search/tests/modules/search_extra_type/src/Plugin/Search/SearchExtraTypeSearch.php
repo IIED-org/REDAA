@@ -99,7 +99,7 @@ class SearchExtraTypeSearch extends ConfigurableSearchPluginBase {
       '#type' => 'select',
       '#title' => t('Boost method'),
       '#options' => [
-        'bi' => t('Bistro mathematics'),
+        'bi' => t('Bistromathic'),
         'ii' => t('Infinite Improbability'),
       ],
       '#default_value' => $this->configuration['boost'],

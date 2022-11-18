@@ -1056,12 +1056,11 @@ function install_display_output($output, $install_state) {
 
   $bare_html_page_renderer = \Drupal::service('bare_html_page_renderer');
   $response = $bare_html_page_renderer->renderBarePage($output, $output['#title'], 'install_page', $regions);
-  $request_time = \Drupal::time()->getRequestTime();
   $default_headers = [
     'Expires' => 'Sun, 19 Nov 1978 05:00:00 GMT',
-    'Last-Modified' => gmdate(DATE_RFC1123, $request_time),
+    'Last-Modified' => gmdate(DATE_RFC1123, REQUEST_TIME),
     'Cache-Control' => 'no-cache, must-revalidate',
-    'ETag' => '"' . $request_time . '"',
+    'ETag' => '"' . REQUEST_TIME . '"',
   ];
   $response->headers->add($default_headers);
   $response->send();
@@ -1174,7 +1173,7 @@ function install_verify_database_ready() {
   $table = key($system_schema);
 
   $existing_install = FALSE;
-  if (Database::getConnectionInfo()) {
+  if ($database = Database::getConnectionInfo()) {
     try {
       $existing_install = Database::getConnection()->schema()->tableExists($table);
     }
@@ -1724,8 +1723,7 @@ function install_download_additional_translations_operations(&$install_state) {
  *   The batch definition, if there are language files to import.
  */
 function install_import_translations(&$install_state) {
-  $module_handler = \Drupal::moduleHandler();
-  $module_handler->loadInclude('locale', 'inc', 'locale.translation');
+  \Drupal::moduleHandler()->loadInclude('locale', 'translation.inc');
 
   // If there is more than one language or the single one is not English, we
   // should import translations.
@@ -1743,7 +1741,7 @@ function install_import_translations(&$install_state) {
       $operations[] = ['locale_translation_batch_fetch_import', ['drupal', $language->getId(), []]];
     }
 
-    $module_handler->loadInclude('locale', 'inc', 'locale.fetch');
+    module_load_include('fetch.inc', 'locale');
     $batch = [
       'operations' => $operations,
       'title' => t('Updating translations.'),
@@ -1765,8 +1763,7 @@ function install_import_translations(&$install_state) {
  *   Server access pattern (to replace language code, version number, etc. in).
  */
 function _install_prepare_import($langcodes, $server_pattern) {
-  $module_handler = \Drupal::moduleHandler();
-  $module_handler->loadInclude('locale', 'inc', 'locale.bulk');
+  \Drupal::moduleHandler()->loadInclude('locale', 'bulk.inc');
   $matches = [];
 
   foreach ($langcodes as $langcode) {
@@ -1793,7 +1790,7 @@ function _install_prepare_import($langcodes, $server_pattern) {
             'status' => 1,
           ];
           \Drupal::service('locale.project')->set($data['name'], $data);
-          $module_handler->loadInclude('locale', 'inc', 'locale.compare');
+          module_load_include('compare.inc', 'locale');
           // Reset project information static cache so that it uses the data
           // set above.
           locale_translation_clear_cache_projects();
@@ -1884,7 +1881,7 @@ function install_finished(&$install_state) {
   \Drupal::messenger()->addStatus($success_message);
 
   // Record when this install ran.
-  \Drupal::state()->set('install_time', \Drupal::time()->getRequestTime());
+  \Drupal::state()->set('install_time', $_SERVER['REQUEST_TIME']);
 }
 
 /**
@@ -2434,6 +2431,7 @@ function install_config_revert_install_changes() {
       $config_importer->import();
     }
     catch (ConfigImporterException $e) {
+      global $install_state;
       $messenger = \Drupal::messenger();
       // There are validation errors.
       $messenger->addError(t('The configuration synchronization failed validation.'));

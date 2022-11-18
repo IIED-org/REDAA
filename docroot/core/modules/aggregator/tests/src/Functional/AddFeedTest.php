@@ -8,7 +8,6 @@ use Drupal\Core\Url;
  * Add feed test.
  *
  * @group aggregator
- * @group legacy
  */
 class AddFeedTest extends AggregatorTestBase {
 

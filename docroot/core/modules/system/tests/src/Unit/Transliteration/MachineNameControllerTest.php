@@ -10,8 +10,6 @@ use Prophecy\Argument;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
-// cspell:ignore aewesome
-
 /**
  * Tests that the machine name controller can transliterate strings as expected.
  *

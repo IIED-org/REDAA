@@ -24,7 +24,7 @@ class CommentNodeAccessTest extends CommentTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'classy';
 
   protected function setUp(): void {
     parent::setUp();

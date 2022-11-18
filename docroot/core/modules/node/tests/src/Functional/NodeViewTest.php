@@ -15,7 +15,7 @@ class NodeViewTest extends NodeTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'classy';
 
   /**
    * Tests the html head links.
@@ -60,7 +60,7 @@ class NodeViewTest extends NodeTestBase {
     $node = $this->drupalCreateNode(['title' => $title]);
     $this->drupalGet($node->toUrl());
     // Verify that the passed title was returned.
-    $this->assertSession()->elementTextEquals('xpath', '//h1/span', $title);
+    $this->assertSession()->elementTextEquals('xpath', '//span[contains(@class, "field--name-title")]', $title);
   }
 
 }

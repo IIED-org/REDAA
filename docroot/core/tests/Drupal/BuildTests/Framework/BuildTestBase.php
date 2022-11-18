@@ -143,13 +143,6 @@ abstract class BuildTestBase extends TestCase {
   private $commandProcess;
 
   /**
-   * The PHP executable finder.
-   *
-   * @var \Symfony\Component\Process\PhpExecutableFinder
-   */
-  private $phpFinder;
-
-  /**
    * {@inheritdoc}
    */
   public static function setUpBeforeClass() {
@@ -270,16 +263,6 @@ abstract class BuildTestBase extends TestCase {
    */
   public function assertErrorOutputContains($expected) {
     $this->assertStringContainsString($expected, $this->commandProcess->getErrorOutput());
-  }
-
-  /**
-   * Assert text is not present in the error output of the most recent command.
-   *
-   * @param string $expected
-   *   Text we expect not to find in the error output of the command.
-   */
-  public function assertErrorOutputNotContains($expected) {
-    $this->assertStringNotContainsString($expected, $this->commandProcess->getErrorOutput());
   }
 
   /**

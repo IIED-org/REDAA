@@ -9,7 +9,7 @@ use Drupal\Tests\migrate_drupal_ui\Functional\MultilingualReviewPageTestBase;
 /**
  * Tests migrate upgrade review page for Drupal 6.
  *
- * Tests with translation modules enabled.
+ * Tests with translation modules and migrate_drupal_multilingual enabled.
  *
  * @group migrate_drupal_6
  * @group migrate_drupal_ui
@@ -25,6 +25,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
     'content_translation',
     'config_translation',
     'telephone',
+    'aggregator',
     'book',
     'forum',
     'statistics',
@@ -58,13 +59,13 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
    */
   protected function getAvailablePaths() {
     return [
+      'Aggregator',
       'Block translation',
       'Blog',
       'Blog API',
       'Book',
       'CCK translation',
       'Calendar Signup',
-      // @todo Remove Color in https://www.drupal.org/project/drupal/issues/3270899
       'Color',
       'Comment',
       'Contact',
@@ -109,6 +110,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Nodeaccess',
       'Number',
       'OpenID',
+      'Option Widgets',
       'PHP filter',
       'Path',
       'Phone - CCK',
@@ -146,14 +148,11 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
    */
   protected function getMissingPaths() {
     return [
-      'Aggregator',
       // Block is set not_finished in migrate_state_not_finished_test.
       'Block',
       'Devel',
       'Devel generate',
       'Devel node access',
-      // Option Widgets is set not_finished in migrate_state_not_finished_test.
-      'Option Widgets',
       'Views',
       'Views translation',
       'migrate_status_active_test',

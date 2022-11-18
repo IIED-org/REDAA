@@ -207,7 +207,7 @@ class EntitySerializationTest extends NormalizerTestBase {
   }
 
   /**
-   * Tests entity serialization for core's formats by a registered Serializer.
+   * Tests registered Serializer's entity serialization for core's formats.
    */
   public function testSerialize() {
     // Test that Serializer responds using the ComplexDataNormalizer and

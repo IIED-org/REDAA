@@ -42,8 +42,8 @@ class ArgumentDefaultTest extends ViewTestBase {
    */
   protected static $modules = ['node', 'views_ui', 'block'];
 
-  protected function setUp($import_test_views = TRUE, $modules = ['views_test_config']): void {
-    parent::setUp($import_test_views, $modules);
+  protected function setUp($import_test_views = TRUE): void {
+    parent::setUp($import_test_views);
 
     $this->enableViewsTestModule();
   }
@@ -161,10 +161,11 @@ class ArgumentDefaultTest extends ViewTestBase {
     // the nodes we expect appear in the respective pages.
     $id = 'view-block-id';
     $this->drupalPlaceBlock("views_block:test_argument_default_node-block_1", ['id' => $id]);
+    $xpath = '//*[@id="block-' . $id . '"]';
     $this->drupalGet('node/' . $node1->id());
-    $this->assertSession()->elementTextContains('xpath', '//*[@id="block-' . $id . '"]', $node1->getTitle());
+    $this->assertStringContainsString($node1->getTitle(), $this->xpath($xpath)[0]->getText());
     $this->drupalGet('node/' . $node2->id());
-    $this->assertSession()->elementTextContains('xpath', '//*[@id="block-' . $id . '"]', $node2->getTitle());
+    $this->assertStringContainsString($node2->getTitle(), $this->xpath($xpath)[0]->getText());
   }
 
   /**

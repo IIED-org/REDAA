@@ -382,7 +382,8 @@ class ForumTest extends BrowserTestBase {
     $this->drupalGet('admin/structure/taxonomy/manage/tags/add');
     $this->assertSession()->fieldExists('parent[]');
     // Test relations widget exists.
-    $this->assertSession()->elementExists('xpath', "//details[@id='edit-relations']");
+    $relations_widget = $this->xpath("//details[@id='edit-relations']");
+    $this->assertTrue(isset($relations_widget[0]), 'Relations widget element found.');
   }
 
   /**

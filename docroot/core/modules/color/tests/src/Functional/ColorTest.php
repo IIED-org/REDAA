@@ -9,7 +9,6 @@ use Drupal\Tests\BrowserTestBase;
  * frontend.
  *
  * @group color
- * @group legacy
  */
 class ColorTest extends BrowserTestBase {
 

@@ -68,8 +68,10 @@ class PathTaxonomyTermTest extends PathTestBase {
     $this->assertSession()->pageTextContains($description);
 
     // Confirm the 'canonical' and 'shortlink' URLs.
-    $this->assertSession()->elementExists('xpath', "//link[contains(@rel, 'canonical') and contains(@href, '" . $edit['path[0][alias]'] . "')]");
-    $this->assertSession()->elementExists('xpath', "//link[contains(@rel, 'shortlink') and contains(@href, 'taxonomy/term/" . $tid . "')]");
+    $elements = $this->xpath("//link[contains(@rel, 'canonical') and contains(@href, '" . $edit['path[0][alias]'] . "')]");
+    $this->assertNotEmpty($elements, 'Term page contains canonical link URL.');
+    $elements = $this->xpath("//link[contains(@rel, 'shortlink') and contains(@href, 'taxonomy/term/" . $tid . "')]");
+    $this->assertNotEmpty($elements, 'Term page contains shortlink URL.');
 
     // Change the term's URL alias.
     $edit2 = [];

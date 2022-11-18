@@ -137,12 +137,10 @@ class RegistryTest extends UnitTestCase {
     // Include the module and theme files so that hook_theme can be called.
     include_once $this->root . '/core/modules/system/tests/modules/theme_test/theme_test.module';
     include_once $this->root . '/core/tests/fixtures/test_stable/test_stable.theme';
-    $this->moduleHandler->expects($this->atLeastOnce())
-      ->method('invokeAllWith')
+    $this->moduleHandler->expects($this->exactly(2))
+      ->method('getImplementations')
       ->with('theme')
-      ->willReturnCallback(function (string $hook, callable $callback) {
-        $callback(function () {}, 'theme_test');
-      });
+      ->will($this->returnValue(['theme_test']));
     $this->moduleHandler->expects($this->atLeastOnce())
       ->method('getModuleList')
       ->willReturn([]);
@@ -224,7 +222,7 @@ class RegistryTest extends UnitTestCase {
 
     // Test the discovery of suggestions via the presence of preprocess
     // functions that follow the "__" naming pattern.
-    $data['base_hook_with_auto-discovered_suggestions'] = [
+    $data['base_hook_with_autodiscovered_suggestions'] = [
       'defined_functions' => [
         'test_preprocess_test_hook__suggestion',
         'test_preprocess_test_hook__suggestion__another',

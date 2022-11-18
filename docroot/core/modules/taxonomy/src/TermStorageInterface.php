@@ -87,8 +87,7 @@ interface TermStorageInterface extends ContentEntityStorageInterface {
    *   numbers of terms. Defaults to FALSE.
    *
    * @return object[]|\Drupal\taxonomy\TermInterface[]
-   *   A numerically indexed array of term objects that are the children of the
-   *   vocabulary $vid.
+   *   An array of term objects that are the children of the vocabulary $vid.
    */
   public function loadTree($vid, $parent = 0, $max_depth = NULL, $load_entities = FALSE);
 

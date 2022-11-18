@@ -38,7 +38,9 @@ class StandardTest extends BrowserTestBase {
    */
   public function testStandard() {
     $this->drupalGet('');
-    $this->assertSession()->pageTextContains('Powered by Drupal');
+    $this->assertSession()->linkExists('Contact');
+    $this->clickLink('Contact');
+    $this->assertSession()->statusCodeEquals(200);
 
     // Test anonymous user can access 'Main navigation' block.
     $this->adminUser = $this->drupalCreateUser([
@@ -50,9 +52,9 @@ class StandardTest extends BrowserTestBase {
     ]);
     $this->drupalLogin($this->adminUser);
     // Configure the block.
-    $this->drupalGet('admin/structure/block/add/system_menu_block:main/olivero');
+    $this->drupalGet('admin/structure/block/add/system_menu_block:main/bartik');
     $this->submitForm([
-      'region' => 'sidebar',
+      'region' => 'sidebar_first',
       'id' => 'main_navigation',
     ], 'Save block');
     // Verify admin user can see the block.
@@ -61,7 +63,7 @@ class StandardTest extends BrowserTestBase {
 
     // Verify we have role = complementary on help_block blocks.
     $this->drupalGet('admin/structure/block');
-    $this->assertSession()->elementAttributeContains('xpath', "//div[@id='block-olivero-help']", 'role', 'complementary');
+    $this->assertSession()->elementAttributeContains('xpath', "//div[@id='block-bartik-help']", 'role', 'complementary');
 
     // Verify anonymous user can see the block.
     $this->drupalLogout();
@@ -170,6 +172,7 @@ class StandardTest extends BrowserTestBase {
 
     // Verify certain routes' responses are cacheable by Dynamic Page Cache, to
     // ensure these responses are very fast for authenticated users.
+    $this->dumpHeaders = TRUE;
     $this->drupalLogin($this->adminUser);
     $url = Url::fromRoute('contact.site_page');
     $this->drupalGet($url);
@@ -241,9 +244,8 @@ class StandardTest extends BrowserTestBase {
       // The name field should be hidden.
       $assert_session->fieldNotExists('Name', $form);
       // The source field should be shown before the vertical tabs.
-      $source_field_label = $media_type->getSource()->getSourceFieldDefinition($media_type)->getLabel();
-      $test_source_field = $assert_session->elementExists('xpath', "//*[contains(text(), '$source_field_label')]", $form)->getOuterHtml();
-      $vertical_tabs = $assert_session->elementExists('css', '.js-form-type-vertical-tabs', $form)->getOuterHtml();
+      $test_source_field = $assert_session->fieldExists($media_type->getSource()->getSourceFieldDefinition($media_type)->getLabel(), $form)->getOuterHtml();
+      $vertical_tabs = $assert_session->elementExists('css', '.form-type-vertical-tabs', $form)->getOuterHtml();
       $this->assertGreaterThan(strpos($form_html, $test_source_field), strpos($form_html, $vertical_tabs));
       // The "Published" checkbox should be the last element.
       $date_field = $assert_session->fieldExists('Date', $form)->getOuterHtml();

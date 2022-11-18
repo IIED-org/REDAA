@@ -3,7 +3,6 @@
 namespace Drupal\layout_builder;
 
 use Drupal\Core\Config\Entity\ThirdPartySettingsInterface;
-use Drupal\Core\Plugin\PreviewAwarePluginInterface;
 
 /**
  * Provides a domain object for layout sections.
@@ -89,12 +88,7 @@ class Section implements ThirdPartySettingsInterface {
       }
     }
 
-    $layout = $this->getLayout($contexts);
-    if ($layout instanceof PreviewAwarePluginInterface) {
-      $layout->setInPreview($in_preview);
-    }
-
-    return $layout->build($regions);
+    return $this->getLayout($contexts)->build($regions);
   }
 
   /**
@@ -167,7 +161,7 @@ class Section implements ThirdPartySettingsInterface {
    * Returns the components of the section.
    *
    * @return \Drupal\layout_builder\SectionComponent[]
-   *   An array of components, keyed by the component UUID.
+   *   The components.
    */
   public function getComponents() {
     return $this->components;

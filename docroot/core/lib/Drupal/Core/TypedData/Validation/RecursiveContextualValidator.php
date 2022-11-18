@@ -154,7 +154,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface {
     // entity, since we should determine whether the entity matches the
     // constraints and not whether the entity validates.
     if (($data instanceof ListInterface || $data instanceof ComplexDataInterface) && !$data->isEmpty() && !($data instanceof EntityAdapter && $constraints_given)) {
-      foreach ($data as $property) {
+      foreach ($data as $name => $property) {
         $this->validateNode($property);
       }
     }

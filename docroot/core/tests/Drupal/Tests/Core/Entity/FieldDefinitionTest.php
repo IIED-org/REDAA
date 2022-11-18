@@ -385,7 +385,6 @@ class FieldDefinitionTest extends UnitTestCase {
         $definition->setFieldStorageDefinition($this->storageDefinition);
         return $definition;
     }
-    throw new \InvalidArgumentException("Invalid factory name '$factory_name' passed to " . __METHOD__);
   }
 
 }

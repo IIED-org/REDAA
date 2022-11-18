@@ -369,8 +369,6 @@ class ViewsLocalTaskTest extends UnitTestCase {
  */
 class TestViewsLocalTask extends ViewsLocalTask {
 
-  protected $result;
-
   /**
    * Sets applicable views result.
    */

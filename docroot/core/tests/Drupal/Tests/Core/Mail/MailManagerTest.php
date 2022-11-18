@@ -129,7 +129,7 @@ class MailManagerTest extends UnitTestCase {
   public function testGetInstance() {
     $interface = [
       'default' => 'php_mail',
-      'example_testkey' => 'test_mail_collector',
+      'default' => 'test_mail_collector',
     ];
     $this->setUpMailManager($interface);
 

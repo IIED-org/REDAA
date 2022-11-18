@@ -3,7 +3,6 @@
 namespace Drupal\Tests\Core\Form;
 
 use Drupal\Core\Form\FormState;
-use Drupal\Core\Form\FormValidator;
 use Drupal\Tests\UnitTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -54,7 +53,10 @@ class FormValidatorTest extends UnitTestCase {
    * @covers ::finalizeValidation
    */
   public function testValidationComplete() {
-    $form_validator = new FormValidator(new RequestStack(), $this->getStringTranslationStub(), $this->csrfToken, $this->logger, $this->formErrorHandler);
+    $form_validator = $this->getMockBuilder('Drupal\Core\Form\FormValidator')
+      ->setConstructorArgs([new RequestStack(), $this->getStringTranslationStub(), $this->csrfToken, $this->logger, $this->formErrorHandler])
+      ->onlyMethods([])
+      ->getMock();
 
     $form = [];
     $form_state = new FormState();
@@ -168,7 +170,10 @@ class FormValidatorTest extends UnitTestCase {
    * @dataProvider providerTestHandleErrorsWithLimitedValidation
    */
   public function testHandleErrorsWithLimitedValidation($sections, $triggering_element, $values, $expected) {
-    $form_validator = new FormValidator(new RequestStack(), $this->getStringTranslationStub(), $this->csrfToken, $this->logger, $this->formErrorHandler);
+    $form_validator = $this->getMockBuilder('Drupal\Core\Form\FormValidator')
+      ->setConstructorArgs([new RequestStack(), $this->getStringTranslationStub(), $this->csrfToken, $this->logger, $this->formErrorHandler])
+      ->onlyMethods([])
+      ->getMock();
 
     $triggering_element['#limit_validation_errors'] = $sections;
     $form = [];
@@ -261,8 +266,10 @@ class FormValidatorTest extends UnitTestCase {
    * @covers ::executeValidateHandlers
    */
   public function testExecuteValidateHandlers() {
-    $form_validator = new FormValidator(new RequestStack(), $this->getStringTranslationStub(), $this->csrfToken, $this->logger, $this->formErrorHandler);
-
+    $form_validator = $this->getMockBuilder('Drupal\Core\Form\FormValidator')
+      ->setConstructorArgs([new RequestStack(), $this->getStringTranslationStub(), $this->csrfToken, $this->logger, $this->formErrorHandler])
+      ->onlyMethods([])
+      ->getMock();
     $mock = $this->getMockBuilder('stdClass')
       ->addMethods(['validate_handler', 'hash_validate'])
       ->getMock();

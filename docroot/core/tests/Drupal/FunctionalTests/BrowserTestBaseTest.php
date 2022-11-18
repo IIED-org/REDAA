@@ -760,9 +760,6 @@ class BrowserTestBaseTest extends BrowserTestBase {
   public function testInstall() {
     $htaccess_filename = $this->tempFilesDirectory . '/.htaccess';
     $this->assertFileExists($htaccess_filename);
-
-    // Ensure the update module is not installed.
-    $this->assertFalse(\Drupal::moduleHandler()->moduleExists('update'), 'The Update module is not installed.');
   }
 
   /**

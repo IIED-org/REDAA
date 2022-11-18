@@ -18,7 +18,8 @@ trait AssertBlockAppearsTrait {
    *   The block entity to find on the page.
    */
   protected function assertBlockAppears(Block $block) {
-    $this->assertSession()->elementExists('xpath', "//div[@id = 'block-{$block->id()}']");
+    $result = $this->findBlockInstance($block);
+    $this->assertNotEmpty($result, sprintf('The block %s should appear on the page.', $block->id()));
   }
 
   /**
@@ -28,7 +29,8 @@ trait AssertBlockAppearsTrait {
    *   The block entity to find on the page.
    */
   protected function assertNoBlockAppears(Block $block) {
-    $this->assertSession()->elementNotExists('xpath', "//div[@id = 'block-{$block->id()}']");
+    $result = $this->findBlockInstance($block);
+    $this->assertEmpty($result, sprintf('The block %s should not appear on the page.', $block->id()));
   }
 
   /**

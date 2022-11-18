@@ -50,9 +50,10 @@
   }
 
   function fieldsList(form) {
-    return [].map.call(form.querySelectorAll('[name][id]'), function (el) {
-      return el.id;
+    var $fieldList = $(form).find('[name]').map(function (index, element) {
+      return element.getAttribute('id');
     });
+    return $.makeArray($fieldList);
   }
 
   Drupal.behaviors.formUpdated = {
@@ -104,18 +105,10 @@
         userInfo.forEach(function (info) {
           var $element = $forms.find("[name=".concat(info, "]"));
           var browserData = localStorage.getItem("Drupal.visitor.".concat(info));
+          var emptyOrDefault = $element.val() === '' || $element.attr('data-drupal-default-value') === $element.val();
 
-          if (!$element.length) {
-            return;
-          }
-
-          var emptyValue = $element[0].value === '';
-          var defaultValue = $element.attr('data-drupal-default-value') === $element[0].value;
-
-          if (browserData && (emptyValue || defaultValue)) {
-            $element.each(function (index, item) {
-              item.value = browserData;
-            });
+          if ($element.length && emptyOrDefault && browserData) {
+            $element.val(browserData);
           }
         });
       }
@@ -125,7 +118,7 @@
           var $element = $forms.find("[name=".concat(info, "]"));
 
           if ($element.length) {
-            localStorage.setItem("Drupal.visitor.".concat(info), $element[0].value);
+            localStorage.setItem("Drupal.visitor.".concat(info), $element.val());
           }
         });
       });

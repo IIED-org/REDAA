@@ -45,11 +45,6 @@ abstract class FieldKernelTestBase extends KernelTestBase {
   protected $fieldTestData;
 
   /**
-   * @var string
-   */
-  protected $entityId;
-
-  /**
    * Set the default field storage backend for fields created during tests.
    */
   protected function setUp() {

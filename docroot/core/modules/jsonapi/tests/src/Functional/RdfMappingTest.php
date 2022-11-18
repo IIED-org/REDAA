@@ -11,7 +11,7 @@ use Drupal\rdf\Entity\RdfMapping;
  *
  * @group jsonapi
  */
-class RdfMappingTest extends ConfigEntityResourceTestBase {
+class RdfMappingTest extends ResourceTestBase {
 
   /**
    * {@inheritdoc}
@@ -148,7 +148,6 @@ class RdfMappingTest extends ConfigEntityResourceTestBase {
    */
   protected function getPostDocument() {
     // @todo Update in https://www.drupal.org/node/2300677.
-    return [];
   }
 
 }

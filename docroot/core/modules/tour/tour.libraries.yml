@@ -7,8 +7,7 @@ tour:
     - core/once
     - core/jquery.once.bc
     - core/drupal
-    # @todo Remove this in https://www.drupal.org/project/drupal/issues/3204011
-    - core/internal.backbone
+    - core/backbone
     - core/shepherd
     - tour/tour-styling
 

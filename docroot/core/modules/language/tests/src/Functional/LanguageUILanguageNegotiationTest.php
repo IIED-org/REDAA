@@ -69,7 +69,7 @@ class LanguageUILanguageNegotiationTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'classy';
 
   protected function setUp(): void {
     parent::setUp();
@@ -416,7 +416,7 @@ class LanguageUILanguageNegotiationTest extends BrowserTestBase {
     $this->container->get('language_manager')->reset();
     $this->drupalGet($test['path'], $test['path_options'], $test['http_header']);
     $this->assertSession()->pageTextContains($test['expect']);
-    $this->assertSession()->statusMessageContains('Language negotiation method: ' . $test['expected_method_id'], 'status');
+    $this->assertSession()->pageTextContains('Language negotiation method: ' . $test['expected_method_id']);
 
     // Get the private file and ensure it is a 200. It is important to
     // invalidate the router cache to ensure the routing system runs a full
@@ -461,10 +461,7 @@ class LanguageUILanguageNegotiationTest extends BrowserTestBase {
     $this->drupalLogout();
 
     // Place a site branding block in the header region.
-    $this->drupalPlaceBlock('system_branding_block', [
-      'region' => 'header',
-      'id' => 'site-branding',
-    ]);
+    $this->drupalPlaceBlock('system_branding_block', ['region' => 'header']);
 
     // Access the front page without specifying any valid URL language prefix
     // and having as browser language preference a non-default language.
@@ -478,7 +475,7 @@ class LanguageUILanguageNegotiationTest extends BrowserTestBase {
     $this->assertSession()->elementTextEquals('xpath', "//div[@id='block-test-language-block']//a[@class='language-link is-active' and starts-with(@href, '$href')]", $languages[$langcode_browser_fallback]->getName());
 
     // Check that URLs are rewritten using the given browser language.
-    $this->assertSession()->elementTextEquals('xpath', "//div[@id='block-site-branding']/a[@rel='home' and @href='$href'][2]", 'Drupal');
+    $this->assertSession()->elementTextEquals('xpath', "//div[@class='site-name']/a[@rel='home' and @href='$href']", 'Drupal');
   }
 
   /**
@@ -510,7 +507,7 @@ class LanguageUILanguageNegotiationTest extends BrowserTestBase {
     ];
     $this->drupalGet('admin/config/regional/language/detection/url');
     $this->submitForm($edit, 'Save configuration');
-    $this->assertSession()->statusMessageContains('The domain may not be left blank for English', 'error');
+    $this->assertSession()->pageTextContains('The domain may not be left blank for English');
     $this->rebuildContainer();
 
     // Change the domain for the Italian language.
@@ -521,7 +518,7 @@ class LanguageUILanguageNegotiationTest extends BrowserTestBase {
     ];
     $this->drupalGet('admin/config/regional/language/detection/url');
     $this->submitForm($edit, 'Save configuration');
-    $this->assertSession()->statusMessageContains('The configuration options have been saved', 'status');
+    $this->assertSession()->pageTextContains('The configuration options have been saved');
     $this->rebuildContainer();
 
     // Try to use an invalid domain.
@@ -532,7 +529,7 @@ class LanguageUILanguageNegotiationTest extends BrowserTestBase {
     ];
     $this->drupalGet('admin/config/regional/language/detection/url');
     $this->submitForm($edit, 'Save configuration');
-    $this->assertSession()->statusMessageContains("The domain for Italian may only contain the domain name, not a trailing slash, protocol and/or port.", 'error');
+    $this->assertSession()->pageTextContains("The domain for Italian may only contain the domain name, not a trailing slash, protocol and/or port.");
 
     // Build the link we're going to test.
     $link = 'it.example.com' . rtrim(base_path(), '/') . '/admin';

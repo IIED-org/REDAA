@@ -18,11 +18,12 @@
       var $filterLinks = $categories.find('.js-layout-builder-block-link');
 
       var filterBlockList = function filterBlockList(e) {
-        var query = e.target.value.toLowerCase();
+        var query = $(e.target).val().toLowerCase();
 
         var toggleBlockEntry = function toggleBlockEntry(index, link) {
-          var textMatch = link.textContent.toLowerCase().indexOf(query) !== -1;
-          $(link).toggle(textMatch);
+          var $link = $(link);
+          var textMatch = $link.text().toLowerCase().indexOf(query) !== -1;
+          $link.toggle(textMatch);
         };
 
         if (query.length >= 2) {

@@ -9,7 +9,7 @@ use Drupal\Tests\migrate_drupal_ui\Functional\MultilingualReviewPageTestBase;
 /**
  * Tests migrate upgrade review page for Drupal 7.
  *
- * Tests with translation modules enabled.
+ * Tests with translation modules and migrate_drupal_multilingual enabled.
  *
  * @group migrate_drupal_7
  * @group migrate_drupal_ui
@@ -24,6 +24,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
     'language',
     'content_translation',
     'telephone',
+    'aggregator',
     'book',
     'forum',
     'statistics',
@@ -41,9 +42,6 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
   protected function setUp(): void {
     parent::setUp();
     $this->loadFixture($this->getModulePath('migrate_drupal') . '/tests/fixtures/drupal7.php');
-
-    // @todo Remove this in https://www.drupal.org/node/3267515
-    \Drupal::service('module_installer')->uninstall(['rdf']);
   }
 
   /**
@@ -64,6 +62,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Bulk Export',
       'Chaos tools',
       'Chaos Tools (CTools) AJAX Example',
+      'Color',
       'Comment',
       'Contact',
       'Content translation',
@@ -108,6 +107,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Node Reference',
       'Number',
       'OpenID',
+      'Options',
       'Overlay',
       'PHP filter',
       'Page manager',
@@ -115,6 +115,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Phone',
       'Poll',
       'Profile',
+      'RDF',
       'Search',
       'Search embedded form',
       'Shortcut',
@@ -150,12 +151,11 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
   protected function getMissingPaths() {
     return [
       // Action is set not_finished in migrate_state_not_finished_test.
+      // Aggregator is set not_finished in migrate_state_not_finished_test.
       'Aggregator',
       // Block is set not_finished in migrate_state_not_finished_test.
       'Block',
       'Breakpoints',
-      // @todo Remove Color in https://www.drupal.org/project/drupal/issues/3270899
-      'Color',
       'Contact translation',
       'Entity Translation Menu',
       'Entity Translation Upgrade',
@@ -166,11 +166,8 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Multilingual content',
       'Multilingual forum',
       'Multilingual select',
-      // Options is set not_finished in migrate_state_not_finished_test.
-      'Options',
       'Path translation',
       'Picture',
-      'RDF',
       'References',
       'References UUID',
       'Translation redirect',

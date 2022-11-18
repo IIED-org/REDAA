@@ -26,6 +26,8 @@ class ResponsiveImageFieldDisplayTest extends ImageFieldTestBase {
    */
   protected $defaultTheme = 'stark';
 
+  protected $dumpHeaders = TRUE;
+
   /**
    * Responsive image style entity instance we test with.
    *
@@ -209,7 +211,6 @@ class ResponsiveImageFieldDisplayTest extends ImageFieldTestBase {
       '#width' => 360,
       '#height' => 240,
       '#alt' => $alt,
-      '#attributes' => ['loading' => 'lazy'],
     ];
     $default_output = str_replace("\n", '', $renderer->renderRoot($image));
     $this->assertSession()->responseContains($default_output);

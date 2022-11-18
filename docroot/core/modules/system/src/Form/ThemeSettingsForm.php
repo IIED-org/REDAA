@@ -17,8 +17,6 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Theme\ThemeManagerInterface;
 use Symfony\Component\Mime\MimeTypeGuesserInterface;
 
-// cspell:ignore apng
-
 /**
  * Displays theme configuration for entire site and individual themes.
  *

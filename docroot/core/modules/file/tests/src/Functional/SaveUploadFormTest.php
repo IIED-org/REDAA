@@ -29,7 +29,7 @@ class SaveUploadFormTest extends FileManagedTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'classy';
 
   /**
    * An image file path for uploading.
@@ -570,7 +570,7 @@ class SaveUploadFormTest extends FileManagedTestBase {
     $this->assertSession()->pageTextContains("Epic upload FAIL!");
 
     // Search for combined error message followed by a formatted list of messages.
-    $this->assertSession()->responseContains('One or more files could not be uploaded.<ul>');
+    $this->assertSession()->responseContains('One or more files could not be uploaded.<div class="item-list">');
   }
 
   /**

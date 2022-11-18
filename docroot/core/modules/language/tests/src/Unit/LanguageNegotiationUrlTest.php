@@ -18,7 +18,6 @@ class LanguageNegotiationUrlTest extends UnitTestCase {
 
   protected $languageManager;
   protected $user;
-  protected $languages;
 
   /**
    * {@inheritdoc}

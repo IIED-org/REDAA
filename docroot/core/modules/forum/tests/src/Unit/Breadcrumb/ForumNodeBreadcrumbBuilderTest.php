@@ -57,7 +57,17 @@ class ForumNodeBreadcrumbBuilderTest extends UnitTestCase {
     $translation_manager = $this->createMock('Drupal\Core\StringTranslation\TranslationInterface');
 
     // Make an object to test.
-    $builder = new ForumNodeBreadcrumbBuilder($entity_type_manager, $config_factory, $forum_manager, $translation_manager);
+    $builder = $this->getMockBuilder('Drupal\forum\Breadcrumb\ForumNodeBreadcrumbBuilder')
+      ->setConstructorArgs(
+        [
+          $entity_type_manager,
+          $config_factory,
+          $forum_manager,
+          $translation_manager,
+        ]
+      )
+      ->onlyMethods([])
+      ->getMock();
 
     $route_match = $this->createMock('Drupal\Core\Routing\RouteMatchInterface');
     $route_match->expects($this->once())

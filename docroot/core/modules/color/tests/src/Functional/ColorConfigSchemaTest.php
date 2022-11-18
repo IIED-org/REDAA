@@ -8,7 +8,6 @@ use Drupal\Tests\BrowserTestBase;
  * Ensures the color config schema is correct.
  *
  * @group color
- * @group legacy
  */
 class ColorConfigSchemaTest extends BrowserTestBase {
 

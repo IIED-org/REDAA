@@ -1,6 +1,6 @@
 {
   "extends": [
-    "airbnb-base",
+    "airbnb",
     "plugin:prettier/recommended",
     "plugin:yml/recommended"
   ],
@@ -27,6 +27,11 @@
     "CKEDITOR": true,
     "CKEditor5": true,
     "tabbable": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
   "rules": {
     "prettier/prettier": "error",

@@ -13,7 +13,7 @@ use Drupal\Tests\TestFileCreationTrait;
 use Drupal\user\RoleInterface;
 use Symfony\Component\Validator\ConstraintViolation;
 
-// cspell:ignore esque splitbutton upcasted sourceediting
+// cspell:ignore esque splitbutton upcasted
 
 /**
  * Tests for CKEditor5.
@@ -85,7 +85,7 @@ class CKEditor5Test extends CKEditor5TestBase {
       'editor' => 'ckeditor5',
       'settings' => [
         'toolbar' => [
-          'items' => ['drupalInsertImage'],
+          'items' => ['uploadImage'],
         ],
         'plugins' => ['ckeditor5_imageResize' => ['allow_resize' => FALSE]],
       ],
@@ -227,31 +227,6 @@ class CKEditor5Test extends CKEditor5TestBase {
     $this->triggerKeyUp('.ckeditor5-toolbar-item-textPartLanguage', 'ArrowDown');
     $assert_session->assertWaitOnAjaxRequest();
 
-    // The CKEditor 5 module should warn that `<span>` cannot be created.
-    $assert_session->waitForElement('css', '[role=alert][data-drupal-message-type="warning"]:contains("The Language plugin needs another plugin to create <span>, for it to be able to create the following attributes: <span lang dir>. Enable a plugin that supports creating this tag. If none exists, you can configure the Source Editing plugin to support it.")');
-
-    // Make `<span>` creatable.
-    $this->assertNotEmpty($assert_session->elementExists('css', '.ckeditor5-toolbar-item-sourceEditing'));
-    $this->triggerKeyUp('.ckeditor5-toolbar-item-sourceEditing', 'ArrowDown');
-    $assert_session->assertWaitOnAjaxRequest();
-    // The Source Editing plugin settings form should now be present and should
-    // have no allowed tags configured.
-    $page->clickLink('Source editing');
-    $this->assertNotNull($assert_session->waitForElementVisible('css', '[data-drupal-selector="edit-editor-settings-plugins-ckeditor5-sourceediting-allowed-tags"]'));
-    $javascript = <<<JS
-      const allowedTags = document.querySelector('[data-drupal-selector="edit-editor-settings-plugins-ckeditor5-sourceediting-allowed-tags"]');
-      allowedTags.value = '<span>';
-      allowedTags.dispatchEvent(new Event('input'));
-JS;
-    $this->getSession()->executeScript($javascript);
-    // Dispatching an `input` event does not work in WebDriver. Enabling another
-    // toolbar item which has no associated HTML elements forces it.
-    $this->triggerKeyUp('.ckeditor5-toolbar-item-undo', 'ArrowDown');
-    $assert_session->assertWaitOnAjaxRequest();
-
-    // Confirm there are no longer any warnings.
-    $assert_session->waitForElementRemoved('css', '[data-drupal-messages] [role="alert"]');
-
     // Test for "United Nations' official languages" option.
     $languages = LanguageManager::getUnitedNationsLanguageList();
     $this->languageOfPartsPluginTestHelper($page, $assert_session, $languages, "un");
@@ -323,24 +298,24 @@ JS;
     $assert_session->assertWaitOnAjaxRequest();
 
     // Enable upload image to add one plugin config form.
-    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-item-drupalInsertImage'));
-    $this->triggerKeyUp('.ckeditor5-toolbar-item-drupalInsertImage  ', 'ArrowDown');
+    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-item-uploadImage'));
+    $this->triggerKeyUp('.ckeditor5-toolbar-item-uploadImage', 'ArrowDown');
     // cSpell:disable-next-line
-    $this->assertNotEmpty($assert_session->waitForElement('css', 'a[href^="#edit-editor-settings-plugins-ckeditor5-image"]'));
-    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-active .ckeditor5-toolbar-item-drupalInsertImage'));
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'a[href^="#edit-editor-settings-plugins-ckeditor5-imageupload"]'));
+    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-active .ckeditor5-toolbar-item-uploadImage'));
     $assert_session->assertWaitOnAjaxRequest();
 
-    $page->clickLink('Image');
+    $page->clickLink('Image Upload');
     $assert_session->waitForText('Enable image uploads');
-    $this->assertTrue($page->hasUncheckedField('editor[settings][plugins][ckeditor5_image][status]'));
-    $page->checkField('editor[settings][plugins][ckeditor5_image][status]');
+    $this->assertTrue($page->hasUncheckedField('editor[settings][plugins][ckeditor5_imageUpload][status]'));
+    $page->checkField('editor[settings][plugins][ckeditor5_imageUpload][status]');
     $assert_session->assertWaitOnAjaxRequest();
 
-    // Enable Heading to add a second plugin config form.
-    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-button-heading'));
-    $this->triggerKeyUp('.ckeditor5-toolbar-button-heading', 'ArrowDown');
-    $this->assertNotEmpty($assert_session->waitForElement('css', 'a[href^="#edit-editor-settings-plugins-ckeditor5-heading"]'));
-    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-active .ckeditor5-toolbar-button-heading'));
+    // Enable language to add a second plugin config form.
+    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-item-textPartLanguage'));
+    $this->triggerKeyUp('.ckeditor5-toolbar-item-textPartLanguage', 'ArrowDown');
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'a[href^="#edit-editor-settings-plugins-ckeditor5-language"]'));
+    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-active .ckeditor5-toolbar-item-textPartLanguage'));
     $assert_session->assertWaitOnAjaxRequest();
 
     $page->pressButton('Save configuration');
@@ -393,11 +368,11 @@ JS;
     $assert_session = $this->assertSession();
 
     $this->createNewTextFormat($page, $assert_session);
-    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-item-drupalInsertImage'));
-    $this->triggerKeyUp('.ckeditor5-toolbar-item-drupalInsertImage', 'ArrowDown');
+    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-item-uploadImage'));
+    $this->triggerKeyUp('.ckeditor5-toolbar-item-uploadImage', 'ArrowDown');
     $assert_session->assertWaitOnAjaxRequest();
-    $page->clickLink('Image');
-    $page->checkField('editor[settings][plugins][ckeditor5_image][status]');
+    $page->clickLink('Image Upload');
+    $page->checkField('editor[settings][plugins][ckeditor5_imageUpload][status]');
     $assert_session->assertWaitOnAjaxRequest();
     $page->checkField('filters[editor_file_reference][status]');
     $assert_session->assertWaitOnAjaxRequest();

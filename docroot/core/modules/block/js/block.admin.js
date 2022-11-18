@@ -13,11 +13,12 @@
       var $filterRows;
 
       function filterBlockList(e) {
-        var query = e.target.value.toLowerCase();
+        var query = $(e.target).val().toLowerCase();
 
         function toggleBlockEntry(index, label) {
-          var $row = $(label).parent().parent();
-          var textMatch = label.textContent.toLowerCase().includes(query);
+          var $label = $(label);
+          var $row = $label.parent().parent();
+          var textMatch = $label.text().toLowerCase().includes(query);
           $row.toggle(textMatch);
         }
 

@@ -44,7 +44,7 @@
           toggleClick = !toggleClick;
         }).appendTo($summaryLabel);
 
-        if (summary.value === '') {
+        if ($widget.find('.js-text-summary').val() === '') {
           $link.trigger('click');
         }
       });

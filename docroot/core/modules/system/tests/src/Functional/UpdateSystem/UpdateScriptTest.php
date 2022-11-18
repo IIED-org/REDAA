@@ -38,6 +38,11 @@ class UpdateScriptTest extends BrowserTestBase {
   protected $defaultTheme = 'stark';
 
   /**
+   * {@inheritdoc}
+   */
+  protected $dumpHeaders = TRUE;
+
+  /**
    * The URL to the status report page.
    *
    * @var \Drupal\Core\Url
@@ -274,7 +279,7 @@ class UpdateScriptTest extends BrowserTestBase {
     return [
       'module: core_version_requirement key incompatible' => [
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'module',
         ],
         [
@@ -285,7 +290,7 @@ class UpdateScriptTest extends BrowserTestBase {
       ],
       'theme: core_version_requirement key incompatible' => [
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'theme',
         ],
         [
@@ -296,12 +301,12 @@ class UpdateScriptTest extends BrowserTestBase {
       ],
       'module: php requirement' => [
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'module',
           'php' => 1,
         ],
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'module',
           'php' => 1000000000,
         ],
@@ -309,12 +314,12 @@ class UpdateScriptTest extends BrowserTestBase {
       ],
       'theme: php requirement' => [
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'theme',
           'php' => 1,
         ],
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'theme',
           'php' => 1000000000,
         ],
@@ -322,7 +327,7 @@ class UpdateScriptTest extends BrowserTestBase {
       ],
       'module: core_version_requirement key missing' => [
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'module',
         ],
         [
@@ -333,7 +338,7 @@ class UpdateScriptTest extends BrowserTestBase {
       ],
       'theme: core_version_requirement key missing' => [
         [
-          'core_version_requirement' => '>= 8',
+          'core_version_requirement' => '^8 || ^9',
           'type' => 'theme',
         ],
         [
@@ -372,7 +377,7 @@ class UpdateScriptTest extends BrowserTestBase {
     $extension_info = [
       'name' => $extension_name,
       'type' => $extension_type,
-      'core_version_requirement' => '^8 || ^9 || ^10',
+      'core_version_requirement' => '^8 || ^9',
     ];
     if ($extension_type === 'theme') {
       $extension_info['base theme'] = FALSE;

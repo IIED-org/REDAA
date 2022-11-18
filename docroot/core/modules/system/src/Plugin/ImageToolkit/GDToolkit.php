@@ -15,8 +15,6 @@ use Drupal\Core\StreamWrapper\StreamWrapperManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-// cspell:ignore rrggbb
-
 /**
  * Defines the GD2 toolkit for image manipulation within Drupal.
  *

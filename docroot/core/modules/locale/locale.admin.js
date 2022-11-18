@@ -54,11 +54,13 @@
           e.preventDefault();
           var $tr = $(this).closest('tr');
           $tr.toggleClass('expanded');
-          var $localePrefix = $tr.find('.locale-translation-update__prefix');
+          $tr.find('.locale-translation-update__prefix').text(function () {
+            if ($tr.hasClass('expanded')) {
+              return Drupal.t('Hide description');
+            }
 
-          if ($localePrefix.length) {
-            $localePrefix[0].textContent = $tr.hasClass('expanded') ? Drupal.t('Hide description') : Drupal.t('Show description');
-          }
+            return Drupal.t('Show description');
+          });
         });
         $table.find('.requirements, .links').hide();
       }

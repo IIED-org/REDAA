@@ -127,7 +127,6 @@ class ContextualLinksTest extends WebDriverTestBase {
    * @internal
    */
   protected function assertCorrectContextualLinksInUi(): void {
-    $this->markTestSkipped("Skipped temporarily for random fails.");
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
     $this->assertNotEmpty($assert_session->waitForElementVisible('css', '.block-views-blocktest-block-view-block-2'));

@@ -12,7 +12,7 @@
       $context.find('#edit-workflow').drupalSetSummary(function (context) {
         var vals = [];
         $(context).find('input[name^="options"]:checked').parent().each(function () {
-          vals.push(Drupal.checkPlain($(this).find('label')[0].textContent));
+          vals.push(Drupal.checkPlain($(this).find('label').text()));
         });
 
         if (!$(context).find('#edit-options-status').is(':checked')) {
@@ -23,9 +23,9 @@
       });
       $(context).find('#edit-language').drupalSetSummary(function (context) {
         var vals = [];
-        vals.push($(context).find('.js-form-item-language-configuration-langcode select option:selected')[0].textContent);
+        vals.push($(context).find('.js-form-item-language-configuration-langcode select option:selected').text());
         $(context).find('input:checked').next('label').each(function () {
-          vals.push(Drupal.checkPlain(this.textContent));
+          vals.push(Drupal.checkPlain($(this).text()));
         });
         return vals.join(', ');
       });

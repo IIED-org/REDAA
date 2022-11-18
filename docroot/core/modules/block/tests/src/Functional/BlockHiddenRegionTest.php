@@ -27,7 +27,7 @@ class BlockHiddenRegionTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'classy';
 
   protected function setUp(): void {
     parent::setUp();

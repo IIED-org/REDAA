@@ -23,6 +23,7 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
     'block_content',
     'taxonomy',
     'node',
+    'aggregator',
     'book',
     'forum',
     'path_alias',
@@ -196,9 +197,9 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
 
     // Check aggregator block.
     $settings = [
-      'id' => 'broken',
+      'id' => 'aggregator_feed_block',
       'label' => '',
-      'provider' => 'core',
+      'provider' => 'aggregator',
       'label_display' => '0',
       'block_count' => 7,
       'feed' => '5',
@@ -305,11 +306,6 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
     // Custom block with php code is not migrated.
     $block = Block::load('block_3');
     $this->assertNotInstanceOf(Block::class, $block);
-
-    // Check migrate messages.
-    $messages = iterator_to_array($this->getMigration('d6_block')->getIdMap()->getMessages());
-    $this->assertCount(2, $messages);
-    $this->assertSame($messages[1]->message, 'Schema errors for block.block.aggregator with the following errors: block.block.aggregator:settings.block_count missing schema, block.block.aggregator:settings.feed missing schema');
   }
 
 }

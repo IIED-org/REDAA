@@ -87,7 +87,7 @@ class Module extends Updater implements UpdaterInterface {
     if (!self::canUpdate($this->name)) {
       return [];
     }
-    \Drupal::moduleHandler()->loadInclude($this->name, 'install');
+    module_load_include('install', $this->name);
 
     if (!\Drupal::service('update.update_hook_registry')->getAvailableUpdates($this->name)) {
       return [];

@@ -17,24 +17,18 @@
         var $existingStorageName = $form.find('select[name="existing_storage_name"]');
         var $existingStorageLabel = $form.find('input[name="existing_storage_label"]');
         $newFieldType.on('change', function () {
-          if (this.value !== '') {
-            if ($existingStorageName.length) {
-              $existingStorageName[0].value = '';
-              $existingStorageName.trigger('change');
-            }
+          if ($(this).val() !== '') {
+            $existingStorageName.val('').trigger('change');
           }
         });
         $existingStorageName.on('change', function () {
-          var value = this.value;
+          var value = $(this).val();
 
           if (value !== '') {
-            if ($newFieldType.length) {
-              $newFieldType[0].value = '';
-              $newFieldType.trigger('change');
-            }
+            $newFieldType.val('').trigger('change');
 
             if (typeof drupalSettings.existingFieldLabels[value] !== 'undefined') {
-              $existingStorageLabel[0].value = drupalSettings.existingFieldLabels[value];
+              $existingStorageLabel.val(drupalSettings.existingFieldLabels[value]);
             }
           }
         });
@@ -73,12 +67,7 @@
       var region = rowHandler.getRegion();
 
       if (region !== rowHandler.region) {
-        var $fieldParent = $row.find('select.js-field-parent');
-
-        if ($fieldParent.length) {
-          $fieldParent[0].value = '';
-        }
-
+        $row.find('select.js-field-parent').val('');
         $.extend(refreshRows, rowHandler.regionChange(region));
         rowHandler.region = region;
       }
@@ -130,12 +119,7 @@
 
       if (rowNames.length) {
         $(ajaxElements).after(Drupal.theme.ajaxProgressThrobber());
-        var $refreshRows = $('input[name=refresh_rows]');
-
-        if ($refreshRows.length) {
-          $refreshRows[0].value = rowNames.join(' ');
-        }
-
+        $('input[name=refresh_rows]').val(rowNames.join(' '));
         $('input[data-drupal-selector="edit-refresh"]').trigger('mousedown');
         $(ajaxElements).prop('disabled', true);
       }
@@ -158,24 +142,17 @@
 
   Drupal.fieldUIDisplayOverview.field.prototype = {
     getRegion: function getRegion() {
-      if (this.$regionSelect.length) {
-        return this.$regionSelect[0].value;
-      }
+      return this.$regionSelect.val();
     },
     regionChange: function regionChange(region) {
       region = region.replace(/-/g, '_');
-
-      if (this.$regionSelect.length) {
-        this.$regionSelect[0].value = region;
-      }
+      this.$regionSelect.val(region);
 
       if (this.region === 'hidden') {
-        var value = typeof this.defaultPlugin !== 'undefined' ? this.defaultPlugin : this.$pluginSelect.find('option')[0].value;
+        var value = typeof this.defaultPlugin !== 'undefined' ? this.defaultPlugin : this.$pluginSelect.find('option').val();
 
         if (typeof value !== 'undefined') {
-          if (this.$pluginSelect.length) {
-            this.$pluginSelect[0].value = value;
-          }
+          this.$pluginSelect.val(value);
         }
       }
 

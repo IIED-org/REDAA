@@ -2,7 +2,6 @@
 
 namespace Drupal\editor\Entity;
 
-use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\editor\EditorInterface;
 
@@ -91,15 +90,8 @@ class Editor extends ConfigEntityBase implements EditorInterface {
   public function __construct(array $values, $entity_type) {
     parent::__construct($values, $entity_type);
 
-    try {
-      $plugin = $this->editorPluginManager()->createInstance($this->editor);
-      $this->settings += $plugin->getDefaultSettings();
-    }
-    catch (PluginNotFoundException $e) {
-      // When a Text Editor plugin has gone missing, still allow the Editor
-      // config entity to be constructed. The only difference is that default
-      // settings are not added.
-    }
+    $plugin = $this->editorPluginManager()->createInstance($this->editor);
+    $this->settings += $plugin->getDefaultSettings();
   }
 
   /**

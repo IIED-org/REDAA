@@ -12,7 +12,7 @@
         var $context = $(context);
 
         if ($context.find('.js-form-item-menu-enabled input').is(':checked')) {
-          return Drupal.checkPlain($context.find('.js-form-item-menu-title input')[0].value);
+          return Drupal.checkPlain($context.find('.js-form-item-menu-title input').val());
         }
 
         return Drupal.t('Not in menu');
@@ -32,7 +32,7 @@
           return;
         }
 
-        if ($checkbox.is(':checked') && $linkTitle[0].value.length) {
+        if ($checkbox.is(':checked') && $linkTitle.val().length) {
           $linkTitle.data('menuLinkAutomaticTitleOverridden', true);
         }
 
@@ -42,10 +42,10 @@
         $checkbox.on('change', function () {
           if ($checkbox.is(':checked')) {
             if (!$linkTitle.data('menuLinkAutomaticTitleOverridden')) {
-              $linkTitle[0].value = $title[0].value;
+              $linkTitle.val($title.val());
             }
           } else {
-            $linkTitle[0].value = '';
+            $linkTitle.val('');
             $linkTitle.removeData('menuLinkAutomaticTitleOverridden');
           }
 
@@ -54,8 +54,8 @@
         });
         $title.on('keyup', function () {
           if (!$linkTitle.data('menuLinkAutomaticTitleOverridden') && $checkbox.is(':checked')) {
-            $linkTitle[0].value = $title[0].value;
-            $linkTitle.trigger('formUpdated');
+            $linkTitle.val($title.val());
+            $linkTitle.val($title.val()).trigger('formUpdated');
           }
         });
       });

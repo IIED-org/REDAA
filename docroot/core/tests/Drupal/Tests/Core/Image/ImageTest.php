@@ -116,8 +116,6 @@ class ImageTest extends UnitTestCase {
     }
 
     $this->image = new Image($this->toolkit, $this->source);
-
-    return $this->image;
   }
 
   /**
@@ -142,8 +140,6 @@ class ImageTest extends UnitTestCase {
       ->will($this->returnValue($this->toolkitOperation));
 
     $this->image = new Image($this->toolkit, $this->source);
-
-    return $this->image;
   }
 
   /**
@@ -214,7 +210,10 @@ class ImageTest extends UnitTestCase {
       ->method('save')
       ->will($this->returnValue(TRUE));
 
-    $image = new Image($toolkit, $this->image->getSource());
+    $image = $this->getMockBuilder('Drupal\Core\Image\Image')
+      ->onlyMethods([])
+      ->setConstructorArgs([$toolkit, $this->image->getSource()])
+      ->getMock();
 
     $file_system = $this->prophesize(FileSystemInterface::class);
     $file_system->chmod($this->image->getSource())
@@ -256,7 +255,10 @@ class ImageTest extends UnitTestCase {
       ->method('save')
       ->will($this->returnValue(TRUE));
 
-    $image = new Image($toolkit, $this->image->getSource());
+    $image = $this->getMockBuilder('Drupal\Core\Image\Image')
+      ->onlyMethods([])
+      ->setConstructorArgs([$toolkit, $this->image->getSource()])
+      ->getMock();
 
     $file_system = $this->prophesize(FileSystemInterface::class);
     $file_system->chmod($this->image->getSource())

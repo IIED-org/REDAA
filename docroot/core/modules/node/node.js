@@ -10,10 +10,9 @@
     attach: function attach(context) {
       var $context = $(context);
       $context.find('.node-form-author').drupalSetSummary(function (context) {
-        var nameElement = context.querySelector('.field--name-uid input');
-        var name = nameElement && nameElement.value;
-        var dateElement = context.querySelector('.field--name-created input');
-        var date = dateElement && dateElement.value;
+        var $authorContext = $(context);
+        var name = $authorContext.find('.field--name-uid input').val();
+        var date = $authorContext.find('.field--name-created input').val();
 
         if (name && date) {
           return Drupal.t('By @name on @date', {
@@ -40,7 +39,7 @@
 
         if ($optionsContext.find('input').is(':checked')) {
           $optionsContext.find('input:checked').next('label').each(function () {
-            vals.push(Drupal.checkPlain(this.textContent.trim()));
+            vals.push(Drupal.checkPlain($(this).text().trim()));
           });
           return vals.join(', ');
         }

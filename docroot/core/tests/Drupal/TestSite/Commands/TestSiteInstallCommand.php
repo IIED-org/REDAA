@@ -47,6 +47,13 @@ class TestSiteInstallCommand extends Command {
   protected $timeLimit = 500;
 
   /**
+   * The database prefix of this test run.
+   *
+   * @var string
+   */
+  protected $databasePrefix;
+
+  /**
    * The language to install the site in.
    *
    * @var string

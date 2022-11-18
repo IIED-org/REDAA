@@ -9,8 +9,7 @@
   Drupal.behaviors.pathDetailsSummaries = {
     attach: function attach(context) {
       $(context).find('.path-form').drupalSetSummary(function (context) {
-        var pathElement = document.querySelector('.js-form-item-path-0-alias input');
-        var path = pathElement && pathElement.value;
+        var path = $('.js-form-item-path-0-alias input').val();
         return path ? Drupal.t('Alias: @alias', {
           '@alias': path
         }) : Drupal.t('No alias');

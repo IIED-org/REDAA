@@ -515,14 +515,12 @@ class BasicForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return '';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, EntityInterface $entity_test = NULL) {
-    return [];
   }
 
   /**
@@ -542,14 +540,12 @@ class BasicFormNoUpcasting extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return '';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, $entity_test = NULL) {
-    return [];
   }
 
   /**
@@ -566,14 +562,12 @@ class BasicFormNoContainerInjectionInterface implements FormInterface {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return '';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, EntityInterface $entity_test = NULL) {
-    return [];
   }
 
   /**

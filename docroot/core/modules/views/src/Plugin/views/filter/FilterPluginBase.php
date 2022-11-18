@@ -185,7 +185,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
 
   /**
    * Determine if a filter can be converted into a group.
-   *
    * Only exposed filters with operators available can be converted into groups.
    */
   protected function canBuildGroup() {
@@ -201,7 +200,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
 
   /**
    * Provide the basic form which calls through to subforms.
-   *
    * If overridden, it is best to call through to the parent,
    * or to at least make sure all of the functions in this form
    * are called.
@@ -882,7 +880,7 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
         }
         unset($form[$value]['#default_value']);
         $user_input = $form_state->getUserInput();
-        if (empty($user_input[$value])) {
+        if (empty($user_input)) {
           $user_input[$value] = $this->group_info;
           $form_state->setUserInput($user_input);
         }
@@ -1437,7 +1435,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
 
   /**
    * If set to remember exposed input in the session, store it there.
-   *
    * This function is similar to storeExposedInput but modified to
    * work properly when the filter is a group.
    */

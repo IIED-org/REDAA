@@ -22,7 +22,7 @@
     var $menu = $('#edit-menu');
     var values = [];
     $menu.find('input:checked').each(function () {
-      values.push(Drupal.checkPlain(this.value));
+      values.push(Drupal.checkPlain($(this).val()));
     });
     $.ajax({
       url: "".concat(window.location.protocol, "//").concat(window.location.host).concat(Drupal.url('admin/structure/menu/parents')),
@@ -33,15 +33,11 @@
       dataType: 'json',
       success: function success(options) {
         var $select = $('#edit-menu-parent');
-        var selected = $select[0].value;
+        var selected = $select.val();
         $select.children().remove();
         var totalOptions = 0;
         Object.keys(options || {}).forEach(function (machineName) {
-          var selectContents = document.createElement('option');
-          selectContents.selected = machineName === selected;
-          selectContents.value = machineName;
-          selectContents.textContent = options[machineName];
-          $select.append(selectContents);
+          $select.append($("<option ".concat(machineName === selected ? ' selected="selected"' : '', "></option>")).val(machineName).text(options[machineName]));
           totalOptions++;
         });
         $select.closest('div').toggle(totalOptions > 0).attr('hidden', totalOptions === 0);

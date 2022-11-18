@@ -32,13 +32,6 @@ class CKEditor5QuickEditLibraryTest extends BrowserTestBase {
   protected $defaultTheme = 'stark';
 
   /**
-   * The admin user.
-   *
-   * @var \Drupal\user\Entity\User
-   */
-  protected $adminUser;
-
-  /**
    * {@inheritdoc}
    */
   protected function setUp(): void {

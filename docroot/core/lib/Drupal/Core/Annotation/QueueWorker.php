@@ -24,7 +24,7 @@ use Drupal\Component\Annotation\Plugin;
  * Plugin Namespace: Plugin\QueueWorker
  *
  * For a working example, see
- * \Drupal\locale\Plugin\QueueWorker\LocaleTranslation.
+ * \Drupal\aggregator\Plugin\QueueWorker\AggregatorRefresh.
  *
  * @see \Drupal\Core\Queue\QueueWorkerInterface
  * @see \Drupal\Core\Queue\QueueWorkerBase

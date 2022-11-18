@@ -32,7 +32,7 @@
       var column;
 
       function filterFieldsList(index, field) {
-        return field.value === column;
+        return $(field).val() === column;
       }
 
       Object.keys(dependentColumns || {}).forEach(function (index) {

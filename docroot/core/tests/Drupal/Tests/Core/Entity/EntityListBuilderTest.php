@@ -16,7 +16,7 @@ use Drupal\entity_test\EntityTestListBuilder;
 use Drupal\Tests\UnitTestCase;
 
 /**
- * @coversDefaultClass \Drupal\Core\Entity\EntityListBuilder
+ * @coversDefaultClass \Drupal\entity_test\EntityTestListBuilder
  * @group Entity
  */
 class EntityListBuilderTest extends UnitTestCase {

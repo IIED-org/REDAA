@@ -86,7 +86,7 @@ class EditorImageDialogTest extends EntityKernelTestBase {
   public function testEditorImageDialog() {
     $input = [
       'editor_object' => [
-        'src' => '/sites/default/files/inline-images/some-file.png',
+        'src' => '/sites/default/files/inline-images/somefile.png',
         'alt' => 'fda',
         'width' => '',
         'height' => '',

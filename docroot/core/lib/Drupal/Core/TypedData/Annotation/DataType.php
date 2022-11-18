@@ -60,7 +60,6 @@ class DataType extends Plugin {
 
   /**
    * The definition class to use for defining data of this type.
-   *
    * Must implement the \Drupal\Core\TypedData\DataDefinitionInterface.
    *
    * @var string
@@ -69,7 +68,6 @@ class DataType extends Plugin {
 
   /**
    * The typed data class used for wrapping multiple data items of the type.
-   *
    * Must implement the \Drupal\Core\TypedData\ListInterface.
    *
    * @var string
@@ -78,7 +76,6 @@ class DataType extends Plugin {
 
   /**
    * The definition class to use for defining a list of items of this type.
-   *
    * Must implement the \Drupal\Core\TypedData\ListDataDefinitionInterface.
    *
    * @var string

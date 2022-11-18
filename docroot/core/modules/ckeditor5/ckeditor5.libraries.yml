@@ -1,3 +1,5 @@
+# cspell:ignore imageupload
+
 ckeditor5.language:
   css:
     component:
@@ -18,7 +20,6 @@ drupal.ckeditor5:
   css:
     theme:
       css/quickedit.css: { }
-      css/editor.css: { }
   dependencies:
     - core/jquery
     - core/once
@@ -180,6 +181,11 @@ admin.alignment:
     theme:
       css/alignment.admin.css: { }
 
+admin.imageupload:
+  css:
+    theme:
+      css/imageupload.admin.css: { }
+
 admin.indent:
   css:
     theme:
@@ -200,17 +206,6 @@ admin.sourceEditing:
     theme:
       css/source-editing.admin.css: { }
 
-admin.style:
-  js:
-    js/ckeditor5.style.admin.js: { }
-  css:
-    theme:
-      css/style.admin.css: { }
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - core/drupal.vertical-tabs
-
 admin.table:
   css:
     theme:
@@ -220,8 +215,3 @@ admin.codeBlock:
   css:
     theme:
       css/code-block.admin.css: { }
-
-admin.image:
-  css:
-    theme:
-      css/image.admin.css: { }
