@@ -805,15 +805,13 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
-$settings['config_sync_directory'] = 'sites/default/files/config_BR2FbqI-l_Fil0ZM8e5Q-Gqky5_ZQBz9dV1HOGM69dld_Jn_Lz5R18dAiP69VYF2FQhzC8-Czg/sync';
+$settings['config_sync_directory'] = $app_root . '/../config/default/';
 
 // On Acquia Cloud, this include file configures Drupal to use the correct
 // database in each site environment (Dev, Stage, or Prod). To use this
 // settings.php for development on your local workstation, set $db_url
 // (Drupal 5 or 6) or $databases (Drupal 7 or 8) as described in comments above.
 if (file_exists('/var/www/site-php/gwi')) {
-  // Workaround for database error
-  $class_loader->addPsr4('Drupal\\mysql\\', 'core/modules/mysql/src/');
   require('/var/www/site-php/gwi/gwi-settings.inc');
 }
 
