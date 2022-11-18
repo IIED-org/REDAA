@@ -3,8 +3,9 @@
 #
 # We allow settings.php to be committed since Acquia's filesystem is read-only
 # @see https://www.drupal.org/project/drupal/issues/3257119
-/docroot/core
-/vendor/
+# /docroot/core
+# /vendor/
+
 /docroot/sites/*/settings.*.php
 /docroot/sites/*/services*.yml
 /docroot/sites/*/files
