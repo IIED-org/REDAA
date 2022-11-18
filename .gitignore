@@ -12,10 +12,10 @@
 /docroot/sites/simpletest
 
 # Directories specific to this template
-/docroot/libraries
-/docroot/modules/contrib
-/docroot/profiles/contrib
-/docroot/themes/contrib
+# /docroot/libraries
+# /docroot/modules/contrib
+# /docroot/profiles/contrib
+# /docroot/themes/contrib
 
 # Files and directories for common development environments, loosely inherited from BLT Project
 # @see https://github.com/acquia/blt-project/blob/11.x/.gitignore
