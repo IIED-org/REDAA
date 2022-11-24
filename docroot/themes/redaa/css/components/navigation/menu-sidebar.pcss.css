@@ -43,7 +43,7 @@
     font-weight: 600;
 
     &:hover {
-      color: var(--color--blue-50);
+      color: var(--color--blue-20);
     }
   }
 

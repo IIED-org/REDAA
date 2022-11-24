@@ -65,6 +65,7 @@
    */
 
   /* @todo should this be scoped to desktop nav? */
+  width: -webkit-max-content;
   width: max-content;
   max-width: 12.5rem
 }
@@ -161,7 +162,7 @@
           height: 3.375rem;
           content: "";
           transform: translate(-50%, -50%);
-          border: solid 2px #2494db;
+          border: solid 2px #005890;
           border-radius: 0.25rem;
         }
   }

@@ -1,0 +1,81 @@
+uuid: 3cd54c32-cf19-4ea5-9382-1f5a9bc59fe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_columns
+    - core.entity_view_mode.block_content.full
+    - field.field.block_content.two_columns.field_first
+    - field.field.block_content.two_columns.field_second
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          38fa8c5e-6e80-4da4-aa2b-2175208fbbb5:
+            uuid: 38fa8c5e-6e80-4da4-aa2b-2175208fbbb5
+            region: first
+            configuration:
+              id: 'field_block:block_content:two_columns:field_first'
+              label: First
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          e7cd34fb-390b-4bce-b7d4-8350e9244745:
+            uuid: e7cd34fb-390b-4bce-b7d4-8350e9244745
+            region: second
+            configuration:
+              id: 'field_block:block_content:two_columns:field_second'
+              label: Second
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: block_content.two_columns.full
+targetEntityType: block_content
+bundle: two_columns
+mode: full
+content:
+  field_first:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_second:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

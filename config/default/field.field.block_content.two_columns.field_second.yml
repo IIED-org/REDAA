@@ -1,0 +1,21 @@
+uuid: c95f4f9b-234e-407f-b1f8-aaf4b12b4b5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_columns
+    - field.storage.block_content.field_second
+  module:
+    - text
+id: block_content.two_columns.field_second
+field_name: field_second
+entity_type: block_content
+bundle: two_columns
+label: Second
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

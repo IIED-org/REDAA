@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_image
+    - field.field.node.page.field_main_image
+    - field.field.node.page.field_standfirst
     - node.type.page
   module:
     - field_layout
-    - image
     - layout_builder
     - layout_discovery
     - text
@@ -20,6 +20,7 @@ third_party_settings:
       label: ''
   layout_builder:
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -51,24 +52,37 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
-          d6e9baeb-18b7-4ca1-b484-c605d3ac88c6:
-            uuid: d6e9baeb-18b7-4ca1-b484-c605d3ac88c6
+          2ce81fa4-5079-4fd3-97ba-8097b96bf767:
+            uuid: 2ce81fa4-5079-4fd3-97ba-8097b96bf767
             region: content
             configuration:
-              id: 'field_block:node:page:field_image'
+              id: 'field_block:node:page:field_standfirst'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: image
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          c798c1be-b88b-4b3e-8480-7c76c6207ccf:
+            uuid: c798c1be-b88b-4b3e-8480-7c76c6207ccf
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_main_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
                 label: above
                 settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
+                  view_mode: default
+                  link: false
                 third_party_settings: {  }
-            weight: 2
+            weight: 4
             additional: {  }
         third_party_settings: {  }
 _core:
@@ -85,16 +99,21 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-  field_image:
-    type: image
+  field_main_image:
+    type: entity_reference_entity_view
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 102
+    weight: 104
+    region: content
+  field_standfirst:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

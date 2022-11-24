@@ -1,0 +1,21 @@
+uuid: db76e9ba-e161-47f2-8672-001774178464
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_columns
+    - field.storage.block_content.field_first
+  module:
+    - text
+id: block_content.two_columns.field_first
+field_name: field_first
+entity_type: block_content
+bundle: two_columns
+label: First
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

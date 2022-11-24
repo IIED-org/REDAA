@@ -1,0 +1,13 @@
+uuid: 4f204247-8b5b-430b-8b6a-edeb69afab10
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us
+label: 'Contact us'
+recipients:
+  - enquiries@redaa.org
+  - admin@cbrody.com
+reply: ''
+weight: 0
+message: 'Thank you for your message. We will be in touch shortly.'
+redirect: ''

@@ -222,8 +222,6 @@ $databases = [];
  */
 # $settings['config_sync_directory'] = '/directory/outside/webroot';
 
-$settings['config_sync_directory'] = $app_root . '/../config/default/';
-
 /**
  * Settings:
  *
@@ -787,3 +785,5 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/gwi/gwi-settings.inc');
 }
+
+$settings['config_sync_directory'] = $app_root . '/../config/default/';

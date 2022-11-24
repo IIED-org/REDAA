@@ -22,13 +22,13 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 5.625rem;
+    width: 5rem;
     height: 6.75rem;
     cursor: pointer;
     pointer-events: auto;
     color: #fff;
     border: 0;
-    background-color: #2494db
+    background-color: #005890
 }
 
     .wide-nav-expand:focus {

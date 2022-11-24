@@ -13,7 +13,8 @@
 .site-footer {
   position: relative; /* stack above left social bar */
   color: #9ea0a1;
-  background: linear-gradient(180deg, #0c0d0e 0%, #171e23 100%)
+  /* background: linear-gradient(180deg, var(--color--gray-95) 0%, var(--color--gray-90 100%)); */
+  background-color: #f1f4f7
 }
 
 [dir="ltr"] .site-footer .menu {
@@ -50,9 +51,9 @@
 
 @media (min-width: 75rem) {
   [dir="ltr"] body:not(.is-always-mobile-nav) .site-footer {
-    border-left: solid 90px #000
+    border-left: solid 80px #f1f4f7
   }
   [dir="rtl"] body:not(.is-always-mobile-nav) .site-footer {
-    border-right: solid 90px #000
+    border-right: solid 80px #f1f4f7
   }
 }
