@@ -8,7 +8,7 @@
 .text-content,
 .cke_editable {
   color: var(--color--gray-10);
-  font-family: var(--font-serif);
+  font-family: var(--font-lato);
   line-height: var(--sp1-5);
 
   /*

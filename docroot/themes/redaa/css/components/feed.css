@@ -18,7 +18,7 @@
 }
 
 .feed-icon:hover {
-    color: #2494db;
+    color: #32A4D5;
   }
 
 .feed-icon__label {
@@ -44,7 +44,7 @@
   width: 1.6875rem;
   height: 1.6875rem;
   color: #fff;
-  background-color: #2494db
+  background-color: #005890
 }
 
 .feed-icon__icon svg {

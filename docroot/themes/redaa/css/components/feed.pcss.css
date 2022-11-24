@@ -32,7 +32,7 @@
   height: var(--sp1-5);
   margin-inline-start: var(--sp0-5);
   color: var(--color--white);
-  background-color: var(--color--blue-50);
+  background-color: var(--color--blue-20);
 
   & svg {
     vertical-align: top;

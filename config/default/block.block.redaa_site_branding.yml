@@ -1,0 +1,25 @@
+uuid: 17566395-b944-424e-a83e-ab80ea229b83
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - redaa
+_core:
+  default_config_hash: Bdxe-Ipqa-71ZzDbCjizXdvTMrReq5e3qUAgu-fmbBw
+id: redaa_site_branding
+theme: redaa
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

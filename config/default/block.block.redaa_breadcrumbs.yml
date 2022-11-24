@@ -1,0 +1,22 @@
+uuid: 9246367b-6d92-4d65-badb-5dabe34d5826
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - redaa
+_core:
+  default_config_hash: I0m2wKiIkSPfqPPL2OgK90LbP-1qSg0im3UswwNPhkc
+id: redaa_breadcrumbs
+theme: redaa
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

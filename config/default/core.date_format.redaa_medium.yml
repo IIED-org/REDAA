@@ -1,0 +1,13 @@
+uuid: d8bbe54b-2f28-40a8-b567-9e3586dc3fea
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - redaa
+_core:
+  default_config_hash: bbFWSRfplDfvi1fDM8fCtoC2S8ro9HMKqmFvE_28T-g
+id: redaa_medium
+label: 'REDAA Medium'
+locked: false
+pattern: 'j  F,  Y'

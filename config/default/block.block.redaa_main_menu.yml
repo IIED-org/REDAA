@@ -1,0 +1,27 @@
+uuid: 327284f7-a7ec-4afa-869f-bb66a1ab6af1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - redaa
+_core:
+  default_config_hash: iZNM0M5flpsOVnl-pPK22J70gPwtzSbTotyFOXV88YE
+id: redaa_main_menu
+theme: redaa
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

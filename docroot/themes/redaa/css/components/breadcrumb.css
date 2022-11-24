@@ -132,6 +132,7 @@
 
 .breadcrumb__list {
   overflow-x: auto;
+  width: -webkit-max-content;
   width: max-content;
   margin-top: 0;
   margin-bottom: 0;
@@ -230,7 +231,7 @@
 
 .breadcrumb__link {
   text-decoration: none;
-  color: #0d77b5
+  color: #005890
 }
 
 .breadcrumb__link:hover,

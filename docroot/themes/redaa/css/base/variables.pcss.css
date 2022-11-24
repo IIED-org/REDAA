@@ -25,6 +25,7 @@
 :root {
   --font-sans: "Arial", sans-serif;
   --font-serif: "Lora", "georgia", serif;
+  --font-lato: "Lato", "Arial", sans-serif;
 
   /* Typography */
   --font-size-base: 16px;

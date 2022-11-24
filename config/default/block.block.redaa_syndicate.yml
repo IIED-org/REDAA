@@ -1,0 +1,23 @@
+uuid: b1ed3b72-02d4-4416-a0dc-e929eb10ee40
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - redaa
+_core:
+  default_config_hash: sUBYG88zFTIsP7iHve72hS0yp6D0Q6IHoyn5miB1xG0
+id: redaa_syndicate
+theme: redaa
+region: social
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

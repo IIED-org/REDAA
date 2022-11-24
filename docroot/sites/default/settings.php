@@ -222,6 +222,8 @@ $databases = [];
  */
 # $settings['config_sync_directory'] = '/directory/outside/webroot';
 
+$settings['config_sync_directory'] = $app_root . '/../config/default/';
+
 /**
  * Settings:
  *
@@ -704,6 +706,13 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
+
+$settings['trusted_host_patterns'] = [
+  '^redaa\.org$',
+  '^.+\.redaa\.org$',
+  '^redaa\.lndo\.site$',
+  '^.+\.ac\.iied\.org$',
+];
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.

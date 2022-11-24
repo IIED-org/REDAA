@@ -1,0 +1,22 @@
+uuid: 2f463772-4034-491a-94cc-9a0ddafaaa4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - redaa
+_core:
+  default_config_hash: c06S4w9KVsKLGJiN866QdMlSe99o88enBC-L4sp_lMY
+id: redaa_messages
+theme: redaa
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
