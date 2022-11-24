@@ -170,9 +170,9 @@ $databases = [];
  * information on these defaults and the potential issues.
  *
  * More details can be found in the constructor methods for each driver:
- * - \Drupal\mysql\Driver\Database\mysql\Connection::__construct()
- * - \Drupal\pgsql\Driver\Database\pgsql\Connection::__construct()
- * - \Drupal\sqlite\Driver\Database\sqlite\Connection::__construct()
+ * - \Drupal\Core\Database\Driver\mysql\Connection::__construct()
+ * - \Drupal\Core\Database\Driver\pgsql\Connection::__construct()
+ * - \Drupal\Core\Database\Driver\sqlite\Connection::__construct()
  *
  * Sample Database configuration format for PostgreSQL (pgsql):
  * @code
@@ -249,7 +249,7 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'qbL06LFenfo-PwRFFLFbTskESfmNkJnpt9YiBgn3JPUfloE3cFdhAamdpFv6CfJtKL5r7H_dZg';
+$settings['hash_salt'] = '';
 
 /**
  * Deployment identifier.
@@ -491,29 +491,6 @@ $settings['update_free_access'] = FALSE;
 # $settings['file_public_path'] = 'sites/default/files';
 
 /**
- * Additional public file schemes:
- *
- * Public schemes are URI schemes that allow download access to all users for
- * all files within that scheme.
- *
- * The "public" scheme is always public, and the "private" scheme is always
- * private, but other schemes, such as "https", "s3", "example", or others,
- * can be either public or private depending on the site. By default, they're
- * private, and access to individual files is controlled via
- * hook_file_download().
- *
- * Typically, if a scheme should be public, a module makes it public by
- * implementing hook_file_download(), and granting access to all users for all
- * files. This could be either the same module that provides the stream wrapper
- * for the scheme, or a different module that decides to make the scheme
- * public. However, in cases where a site needs to make a scheme public, but
- * is unable to add code in a module to do so, the scheme may be added to this
- * variable, the result of which is that system_file_download() grants public
- * access to all files within that scheme.
- */
-# $settings['file_additional_public_schemes'] = ['example'];
-
-/**
  * Private file path:
  *
  * A local file system path where private files will be stored. This directory
@@ -726,8 +703,6 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * @endcode
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
- *
- * @see https://www.drupal.org/docs/installing-drupal/trusted-host-settings
  */
 
 /**
@@ -795,16 +770,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 
-$settings['config_sync_directory'] = $app_root . '/../config/default/';
 
 // On Acquia Cloud, this include file configures Drupal to use the correct
 // database in each site environment (Dev, Stage, or Prod). To use this
 // settings.php for development on your local workstation, set $db_url
 // (Drupal 5 or 6) or $databases (Drupal 7 or 8) as described in comments above.
-if (file_exists('/var/www/site-php/')) {
+if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/gwi/gwi-settings.inc');
-}
-
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
 }
