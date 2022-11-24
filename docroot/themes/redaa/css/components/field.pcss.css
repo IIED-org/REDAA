@@ -39,3 +39,8 @@
 .field--label-inline .field__label::after {
   content: ":";
 }
+
+.text-content.field--name-field-image-caption {
+  margin-top: calc(var(--sp2) * -1);
+  color: var(--color--gray-30);
+}
