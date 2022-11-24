@@ -1,0 +1,22 @@
+uuid: c1da8582-1dd5-48db-9043-196c4519f24a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - redaa
+_core:
+  default_config_hash: QZAeazkpnZ7O5KyMaKOyzmvke7UzWY7gMNjn_foGfZs
+id: redaa_secondary_local_tasks
+theme: redaa
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

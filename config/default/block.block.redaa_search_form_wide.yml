@@ -1,0 +1,23 @@
+uuid: f960c328-63ea-4209-b3c4-76ffba5e019b
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - redaa
+_core:
+  default_config_hash: v7upp5PaTX_azpuXPG3UNxJuoUo9wq9ty_qO5aDxbIk
+id: redaa_search_form_wide
+theme: redaa
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

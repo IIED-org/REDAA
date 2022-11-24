@@ -1,0 +1,22 @@
+uuid: c913bfc8-8706-470b-b4f8-30a19283f6b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - redaa
+_core:
+  default_config_hash: Jy2B7zNGR2U_29HjQz8CyLu_aNfvQfSJb210Jr4NyFI
+id: redaa_help
+theme: redaa
+region: content_above
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

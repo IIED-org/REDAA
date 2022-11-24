@@ -1,0 +1,22 @@
+uuid: 2dff6e5e-99b9-4840-b46e-d160da81a786
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - redaa
+_core:
+  default_config_hash: uMHn5cKYspwLML63iBJFBlp69gWPx08pU3_aywmRDM4
+id: redaa_content
+theme: redaa
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

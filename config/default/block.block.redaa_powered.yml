@@ -1,0 +1,22 @@
+uuid: 342d07f7-5ef6-4c96-82bf-f0b8c27225b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - redaa
+_core:
+  default_config_hash: OU99tm00rd3YDtOSY6wUlnS4VaCHFqJWEjAFGeD8DLk
+id: redaa_powered
+theme: redaa
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }
