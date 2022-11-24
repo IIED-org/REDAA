@@ -15,8 +15,8 @@
 
 .social-bar {
     flex-shrink: 0;
-    width: 5.625rem;
-    background-color: #f7f9fa
+    width: 5rem;
+    background-color: #f1f4f7
 }
   }
 
@@ -62,7 +62,7 @@
 
 .social-bar__inner {
     position: relative;
-    width: 5.625rem;
+    width: 5rem;
     padding-top: 5.625rem;
     padding-bottom: 5.625rem
 }
@@ -148,9 +148,10 @@
     transform-origin: left /* LTR */
 }
 
-    @supports (width: max-content) {
+    @supports ((width: -webkit-max-content) or (width: max-content)) {
 
 .rotate {
+      width: -webkit-max-content;
       width: max-content
 }
     }

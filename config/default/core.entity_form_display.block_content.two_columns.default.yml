@@ -1,0 +1,47 @@
+uuid: 6d0416d2-30f3-4eb5-a83c-2950a481a5ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_columns
+    - field.field.block_content.two_columns.field_first
+    - field.field.block_content.two_columns.field_second
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.two_columns.default
+targetEntityType: block_content
+bundle: two_columns
+mode: default
+content:
+  field_first:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_second:
+    type: text_textarea
+    weight: 28
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

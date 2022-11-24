@@ -1,0 +1,8 @@
+uuid: f34cd1c4-6fa3-42d1-bd15-2b5803831d8a
+langcode: en
+status: true
+dependencies: {  }
+id: two_columns
+label: 'Two columns'
+revision: 0
+description: 'For footer block etc.'

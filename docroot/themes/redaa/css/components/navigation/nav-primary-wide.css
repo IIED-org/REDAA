@@ -46,7 +46,7 @@
           height: 3.375rem;
           content: "";
           transform: translate(-50%, -50%);
-          border: solid 2px #2494db;
+          border: solid 2px #005890;
           border-radius: 0.25rem;
         }
       [dir="ltr"] body:not(.is-always-mobile-nav) .primary-nav__menu-link--button.primary-nav__menu-link--has-children {
@@ -153,6 +153,7 @@
       position: relative; /* Anchor secondary menu */
       display: flex;
       align-items: center;
+      width: -webkit-max-content;
       width: max-content;
       max-width: 12.5rem;
       margin-top: 0;
@@ -176,19 +177,19 @@
     }
 
     [dir="ltr"] body:not(.is-always-mobile-nav) .primary-nav__menu--level-2 {
-      padding-left: 2.25rem;
+      padding-left: 1.125rem;
     }
 
     [dir="rtl"] body:not(.is-always-mobile-nav) .primary-nav__menu--level-2 {
-      padding-right: 2.25rem;
+      padding-right: 1.125rem;
     }
 
     [dir="ltr"] body:not(.is-always-mobile-nav) .primary-nav__menu--level-2 {
-      padding-right: 2.25rem;
+      padding-right: 1.125rem;
     }
 
     [dir="rtl"] body:not(.is-always-mobile-nav) .primary-nav__menu--level-2 {
-      padding-left: 2.25rem;
+      padding-left: 1.125rem;
     }
 
     body:not(.is-always-mobile-nav) .primary-nav__menu--level-2 {
@@ -211,7 +212,7 @@
       transform: translate(-50%, -1.25rem);
       opacity: 0;
       /* Intentionally not using CSS logical properties. */
-      border-top: solid #2494db 9px;
+      border-top: solid #005890 9px;
       border-right: solid 1px transparent; /* Transparent borders useful for Windows High Contrast mode. */
       border-bottom: solid 1px transparent;
       border-left: solid 1px transparent;
@@ -283,7 +284,7 @@ body:not(.is-always-mobile-nav) {
       opacity: 0;
       /* Intentionally not using CSS logical properties. */
       border-right: solid 10px transparent;
-      border-bottom: solid 10px #2494db;
+      border-bottom: solid 10px #005890;
       border-left: solid 10px transparent
     }
 

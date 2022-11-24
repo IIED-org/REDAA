@@ -1,0 +1,25 @@
+uuid: c14cd8be-c116-4b27-827b-5b2295a887f0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:two_columns:5f777a73-e4c3-4015-9886-902dd162a302'
+  module:
+    - block_content
+  theme:
+    - redaa
+id: footerlogos
+theme: redaa
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:5f777a73-e4c3-4015-9886-902dd162a302'
+settings:
+  id: 'block_content:5f777a73-e4c3-4015-9886-902dd162a302'
+  label: 'Footer logos'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

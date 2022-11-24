@@ -1,0 +1,80 @@
+uuid: 1cd53014-6a1e-42dd-8299-dd88813cf470
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_columns
+    - field.field.block_content.two_columns.field_first
+    - field.field.block_content.two_columns.field_second
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          be5f8e1a-f6f4-4175-806b-13472008965e:
+            uuid: be5f8e1a-f6f4-4175-806b-13472008965e
+            region: first
+            configuration:
+              id: 'field_block:block_content:two_columns:field_first'
+              label: First
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          c07ca70f-a2c3-41a4-baf8-d0dcab2d2ee7:
+            uuid: c07ca70f-a2c3-41a4-baf8-d0dcab2d2ee7
+            region: second
+            configuration:
+              id: 'field_block:block_content:two_columns:field_second'
+              label: Second
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: block_content.two_columns.default
+targetEntityType: block_content
+bundle: two_columns
+mode: default
+content:
+  field_first:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_second:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }
