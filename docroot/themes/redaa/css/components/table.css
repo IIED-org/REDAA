@@ -20,7 +20,7 @@
   color: #313637;
   border: 0;
   border-collapse: collapse;
-  font-family: "metropolis", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 1rem;
   line-height: 1.6875rem
 }
@@ -35,10 +35,9 @@
 
 .forum table caption, .text-content table caption, .views-table caption, .draggable-table caption {
     margin-bottom: 1.125rem;
-    color: #313637;
+    color: #0d1214;
     font-family: "Lora", "georgia", serif;
     font-size: 0.875rem;
-    font-style: italic;
     line-height: 1.125rem;
   }
 
@@ -132,8 +131,8 @@
     margin-bottom: 0;
     letter-spacing: 0.02em;
     color: #0d1214;
-    border-bottom: 2px solid #2494db;
-    font-family: "metropolis", sans-serif;
+    border-bottom: 2px solid #32A4D5;
+    font-family: "Arial", sans-serif;
     font-size: 0.875rem;
     line-height: 1.125rem
 
@@ -197,7 +196,7 @@
 .sticky-header {
   z-index: 0;
   margin: 0;
-  border-bottom: 4px solid #2494db;
+  border-bottom: 4px solid #32A4D5;
 }
 
 /* Properly align VBO checkboxes. */

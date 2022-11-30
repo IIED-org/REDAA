@@ -135,15 +135,15 @@
   --color--gray-90: #f1f4f7;
   --color--gray-95: #f7f9fa; /* Gray light 2 */
   --color--blue-10: #0f6292;
-  --color--blue-20: #005890; /* Blue dark */
+  --color--blue-20: #005890; /* REDAA Blue dark */
   --color--blue-30: #3d92c4; /* Blue dark 2 */
-  --color--blue-50: #32A4D5; /* Blue medium */
+  --color--blue-50: #32A4D5; /* REDAA Blue medium */
   --color--blue-70: #53b0eb; /* Blue bright */
   --color--blue-90: #ddeffb; /* Blue bright 5 */
   --color--white: #fff; /* White */
-  --color--red: #e33f1e; /* Red */
-  --color--gold: #fdca40; /* Gold */
-  --color--green: #A0C03B; /* Green */
+  --color--red: #AB351C; /* REDAA red */
+  --color--gold: #F4BB37; /* REDAA gold */
+  --color--green: #446629; /* REDAA green */
 
   /* Header */
   --header-height-wide-when-fixed: calc(12 * var(--sp));

@@ -59,10 +59,34 @@ audio {
   display: block;
   max-width: 100%;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+  color: #0d1214;
+  font-family: "Arial", sans-serif;
+  font-weight: bold
+}
+@media (min-width: 43.75rem) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem
+}
+  }
 h1 {
   letter-spacing: -0.01em;
   font-size: 1.75rem;
-  line-height: 2.25rem
+  line-height: 2.25rem;
+  color: #AB351C
 }
 @media (min-width: 43.75rem) {
 h1 {
@@ -103,29 +127,6 @@ h6 {
   font-size: 0.875rem;
   line-height: 1.125rem;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-  color: #0d1214;
-  font-family: "Arial", sans-serif;
-  font-weight: bold
-}
-@media (min-width: 43.75rem) {
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem
-}
-  }
 [dir="ltr"] ul{
   margin-left: 1.5em;
 }
