@@ -1,0 +1,15 @@
+uuid: 3f0f706b-2d9f-4599-89ba-c1a13b3a2f3f
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail_sq
+label: 'Thumbnail sq'
+effects:
+  e535bc77-d134-4de1-a806-1e617c49b937:
+    uuid: e535bc77-d134-4de1-a806-1e617c49b937
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 150
+      anchor: center-center

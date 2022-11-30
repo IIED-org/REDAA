@@ -1,0 +1,21 @@
+uuid: 68646089-4bfd-445e-a3aa-7dca5489918b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team
+    - node.type.person
+  module:
+    - options
+id: node.person.field_team
+field_name: field_team
+entity_type: node
+bundle: person
+label: Team
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

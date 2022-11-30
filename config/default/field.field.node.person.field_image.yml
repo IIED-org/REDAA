@@ -1,0 +1,38 @@
+uuid: a517d174-df85-4496-b31e-11910ec11e0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - node.type.person
+  module:
+    - image
+id: node.person.field_image
+field_name: field_image
+entity_type: node
+bundle: person
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'images/[date:custom:Y]/[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '10 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: be76b6e4-0843-4c3b-bbf8-982f546b5136
+    alt: Avatar
+    title: ''
+    width: 600
+    height: 600
+field_type: image

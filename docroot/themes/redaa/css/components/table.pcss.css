@@ -22,10 +22,9 @@
   & caption {
     margin-block-end: var(--sp1);
     text-align: start;
-    color: var(--color--gray-10);
+    color: var(--color--gray-0);
     font-family: var(--font-serif);
     font-size: 14px;
-    font-style: italic;
     line-height: var(--sp);
   }
 
