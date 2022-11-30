@@ -1,0 +1,27 @@
+uuid: 13027d27-c4c2-47df-838f-193d351f2bb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_team
+field_name: field_team
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: FCDO
+      label: 'FCDO Team'
+    -
+      value: IIED
+      label: 'IIED Team'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

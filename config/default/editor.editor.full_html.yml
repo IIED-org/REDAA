@@ -39,6 +39,7 @@ settings:
           items:
             - Blockquote
             - DrupalImage
+            - DrupalMediaLibrary
             - Table
             - HorizontalRule
         -
@@ -55,7 +56,7 @@ image_upload:
   status: true
   scheme: public
   directory: inline-images
-  max_size: ''
+  max_size: '20 MB'
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null
