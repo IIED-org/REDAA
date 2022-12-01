@@ -1,0 +1,25 @@
+uuid: 2d12c826-9227-4a01-8754-ff63572831d2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7bd69c4d-8a25-452b-bf06-f0d8393b4d37'
+  module:
+    - block_content
+  theme:
+    - redaa
+id: signupformoreinformation
+theme: redaa
+region: footer_top
+weight: 0
+provider: null
+plugin: 'block_content:7bd69c4d-8a25-452b-bf06-f0d8393b4d37'
+settings:
+  id: 'block_content:7bd69c4d-8a25-452b-bf06-f0d8393b4d37'
+  label: 'Sign up for more information'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
