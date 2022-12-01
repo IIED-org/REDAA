@@ -9,8 +9,74 @@ dependencies:
     - field.field.node.project.field_standfirst
     - node.type.project
   module:
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 25-75
+        components:
+          e24fd06c-a25f-4b7e-a768-a220168e3bf8:
+            uuid: e24fd06c-a25f-4b7e-a768-a220168e3bf8
+            region: first
+            configuration:
+              id: 'field_block:node:project:field_main_image'
+              label: 'Main image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: visually_hidden
+                settings:
+                  view_mode: thumbnail
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          8aa79a41-314a-448d-a0aa-d946f59ab1e3:
+            uuid: 8aa79a41-314a-448d-a0aa-d946f59ab1e3
+            region: second
+            configuration:
+              id: 'field_block:node:project:field_standfirst'
+              label: Standfirst
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          6df327e7-1812-469a-bbe9-712b5cec4797:
+            uuid: 6df327e7-1812-469a-bbe9-712b5cec4797
+            region: second
+            configuration:
+              id: 'extra_field_block:node:project:links'
+              label: Links
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.project.teaser
 targetEntityType: node
 bundle: project
@@ -22,7 +88,15 @@ content:
     settings:
       trim_length: 300
     third_party_settings: {  }
-    weight: 1
+    weight: 2
+    region: content
+  field_main_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_standfirst:
     type: text_trimmed
@@ -30,12 +104,11 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
-hidden:
-  field_main_image: true
+hidden: {  }
