@@ -63,3 +63,7 @@
   margin-top: -2.25rem;
   color: #7e96a7;
 }
+
+.text-content.field--name-field-standfirst {
+  font-size: 1.25rem;
+}
