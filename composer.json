@@ -20,6 +20,7 @@
         "drupal/admin_toolbar": "^3.2",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
+        "drupal/eu_cookie_compliance": "^1.24",
         "drupal/google_analytics": "^4.0",
         "drupal/pathauto": "^1.11",
         "drupal/seckit": "^2.0",
@@ -73,7 +74,9 @@
                     "mode": "replace",
                     "overwrite": false,
                     "path": "docroot/core/assets/scaffold/files/default.settings.php"
-                }
+                },
+                "[web-root]/.htaccess": false,
+                "[web-root]/sites/development.services.yml": false
             },
             "gitignore": true,
             "locations": {

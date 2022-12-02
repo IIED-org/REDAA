@@ -58,6 +58,7 @@ module:
   pathauto: 1
   views: 10
   standard: 1000
+  eu_cookie_compliance: 1001
 theme:
   olivero: 0
   claro: 0

@@ -11,7 +11,7 @@ dependencies:
 id: footerlogos
 theme: redaa
 region: footer_bottom
-weight: 0
+weight: -8
 provider: null
 plugin: 'block_content:5f777a73-e4c3-4015-9886-902dd162a302'
 settings:

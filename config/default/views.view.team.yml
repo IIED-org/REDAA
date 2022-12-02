@@ -500,8 +500,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: 'REDAA is is funded by UK Aid from the Foreign, Commonwealth and Development Office and managed by IIED.'
-            format: basic_html
+            value: '<div class="text-content field--name-field-standfirst">REDAA is is funded by UK Aid from the Foreign, Commonwealth and Development Office and managed by IIED.</div>'
+            format: full_html
           tokenize: false
       footer: {  }
       display_extenders: {  }
