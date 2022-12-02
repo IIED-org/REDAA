@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Misc css classes.
+ */
+
+ @import "../base/variables.pcss.css";
+
+ .image-list li {
+  list-style-image: url("/themes/redaa/images/leaf.png");
+  & > ul li {
+    list-style-image: url("/themes/redaa/images/waves.png");
+  }
+ }

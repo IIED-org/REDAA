@@ -7,10 +7,10 @@
 
 .site-footer {
   position: relative; /* stack above left social bar */
-  color: var(--color--gray-50);
+  color: var(--color--gray-20);
   /* background: linear-gradient(180deg, var(--color--gray-95) 0%, var(--color--gray-90 100%)); */
   background-color: var(--color--gray-90);
-
+  
   & .menu {
     margin-inline-start: 0;
     list-style: none;

@@ -21,9 +21,9 @@
     padding-block: var(--sp4) calc(13 * var(--sp));
   }
 }
-
 .region--footer_top__inner,
 .region--footer_bottom__inner {
+  
   & > * {
     margin-block-end: var(--sp2);
 
