@@ -106,6 +106,7 @@ AddEncoding gzip svgz
   # (http://example.com/foo will be redirected to http://www.example.com/foo)
   # uncomment the following:
 
+  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} prod [NC]
   RewriteCond %{HTTP_HOST} .
   RewriteCond %{HTTP_HOST} !^www\. [NC]
   RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
