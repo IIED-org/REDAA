@@ -100,12 +100,12 @@
     margin: 0;
     margin-block-end: var(--sp1);
     color: var(--color--gray-0);
-    font-size: 24px;
+    font-size: 22x;
     line-height: var(--line-height-base);
 
     @media (--lg) {
-      font-size: var(--sp2);
-      line-height: var(--sp3);
+      font-size: var(--sp1-5);
+      line-height: var(--sp2);
     }
   }
 

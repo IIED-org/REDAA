@@ -30,7 +30,7 @@
   }
 
 .node--view-mode-teaser .node__meta a {
-      color: #0d77b5;
+      color: #005890;
       font-weight: bold;
     }
 
@@ -82,6 +82,7 @@
 .node--view-mode-teaser .primary-image img {
       width: 3.9375rem;
       height: 3.9375rem;
+      -o-object-fit: cover;
       object-fit: cover;
       border-radius: 50%
     }
@@ -97,8 +98,8 @@
 @media (min-width: 75rem) {
 
 .node--view-mode-teaser .primary-image img {
-        width: calc(7.14286vw - 2.87946rem);
-        height: calc(7.14286vw - 2.87946rem)
+        width: calc(7.14286vw - 2.83482rem);
+        height: calc(7.14286vw - 2.83482rem)
     }
       }
 
@@ -130,11 +131,11 @@
 @media (min-width: 75rem) {
 
 [dir="ltr"] .node--view-mode-teaser .primary-image {
-      left: calc(-7.14286vw - -0.62946rem)
+      left: calc(-7.14286vw - -0.58482rem)
   }
 
 [dir="rtl"] .node--view-mode-teaser .primary-image {
-      right: calc(-7.14286vw - -0.62946rem)
+      right: calc(-7.14286vw - -0.58482rem)
   }
     }
 
@@ -153,15 +154,15 @@
     margin: 0;
     margin-bottom: 1.125rem;
     color: #0d1214;
-    font-size: 1.5rem;
+    font-size: 22x;
     line-height: 1.6875rem
   }
 
 @media (min-width: 62.5rem) {
 
 .node--view-mode-teaser .node__title {
-      font-size: 2.25rem;
-      line-height: 3.375rem
+      font-size: 1.6875rem;
+      line-height: 2.25rem
   }
     }
 
