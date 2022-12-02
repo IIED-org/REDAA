@@ -321,8 +321,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: 'These demonstrator projects show REDAA in action. Funding from the REDAA programme is making innovation and exploration possible. It has given organisations the opportunity to put great ideas for restoring nature and helping people to thrive into practice.'
-            format: basic_html
+            value: '<div class="text-content field--name-field-standfirst">These demonstrator projects show REDAA in action. Funding from the REDAA programme is making innovation and exploration possible. It has given organisations the opportunity to put great ideas for restoring nature and helping people to thrive into practice.</div>'
+            format: full_html
           tokenize: false
       footer: {  }
       display_extenders: {  }
