@@ -28,6 +28,7 @@
 .page-wrapper {
   max-width: 98.125rem;
   background: #fff;
+  margin: auto;
 }
 
 /**
@@ -62,7 +63,7 @@
   }
 
 .main-content {
-    width: calc(100% - 5.625rem)
+    width: calc(100% - 5rem)
 }
   }
 
