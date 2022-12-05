@@ -59,7 +59,7 @@
 }
 
 .site-branding__inner {
-  display: flex;
+  display: block;
   align-items: center;
 
   & a {
