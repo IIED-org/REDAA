@@ -38,8 +38,8 @@
 
 .site-branding {
   display: block;
-  flex-shrink: 1;
-  /* align-items: flex-end; */
+  /* flex-shrink: 1;
+  align-items: flex-end; */
   min-width: calc(33.33333vw + 0.75rem);
   min-height: 3.375rem;
   padding-top: 0;
