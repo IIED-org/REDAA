@@ -18,6 +18,7 @@
 .page-wrapper {
   max-width: var(--max-bg-color);
   background: var(--color--white);
+  margin: auto;
 }
 
 /**

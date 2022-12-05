@@ -6,9 +6,9 @@
 @import "../base/variables.pcss.css";
 
 .site-branding {
-  display: flex;
-  flex-shrink: 1;
-  align-items: flex-end;
+  display: block;
+  /* flex-shrink: 1;
+  align-items: flex-end; */
   min-width: calc((2 * var(--grid-col-width)) + (2 * var(--grid-gap)) + var(--container-padding));
   min-height: var(--sp3);
   margin-inline: calc(-1 * var(--container-padding)) var(--sp);
