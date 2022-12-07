@@ -37,8 +37,14 @@
       margin-right: 1.125rem
 }
 
+.site-footer .menu ul {
+      display: inline-block;
+    }
+
 .site-footer .menu li {
       margin-bottom: 0.5625rem;
+      float: left;
+      padding: 1.125rem;
     }
 
 .site-footer a {
@@ -57,3 +63,24 @@
     border-right: solid 80px #f1f4f7
   }
 }
+
+#block-footer {
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+#block-socialicons {
+  display: -ms-grid;
+  display: grid;
+  justify-items: right;
+  align-items: center;
+  -ms-grid-column-span: 13;
+  grid-column-end: 13;
+  -ms-grid-row: 3;
+  grid-row: 3
+ }
+
+#block-socialicons svg {
+    height: 4rem;
+    width: auto;
+  }

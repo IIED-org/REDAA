@@ -8,6 +8,10 @@ config:
 services:
   appserver:
     webroot: docroot
+    overrides:
+      environment:
+        DRUSH_OPTIONS_ROOT: '/app/docroot'
+        DRUSH_OPTIONS_URI: 'https://redaa.lndo.site'
   node:
     type: node:16
 tooling:
