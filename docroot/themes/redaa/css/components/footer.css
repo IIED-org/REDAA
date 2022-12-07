@@ -65,6 +65,8 @@
 }
 
 #block-footer {
+  display: -ms-grid;
+  display: grid;
   -ms-grid-row: 3;
   grid-row: 3;
 }

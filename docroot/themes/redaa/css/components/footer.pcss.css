@@ -43,6 +43,7 @@
 }
 
 #block-footer {
+  display: grid;
   grid-row: 3;
 }
 
