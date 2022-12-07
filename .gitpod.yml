@@ -13,11 +13,4 @@ tasks:
       cd docroot/themes/redaa
       lando npm i -g yarn
     command: lando yarn watch
-ports:
-  - port: 3306
-    onOpen: ignore
-  - port: 80
-    onOpen: ignore
-  - port: 443
-    onOpen: ignore
     

@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5b00c9d3707430c6bbc247af9adb08a5c027fb5f',
+        'reference' => '06aa571b83aadb34f8102274ec3267410d50bed7',
         'name' => 'acquia/drupal-recommended-project',
         'dev' => true,
     ),
@@ -43,7 +43,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5b00c9d3707430c6bbc247af9adb08a5c027fb5f',
+            'reference' => '06aa571b83aadb34f8102274ec3267410d50bed7',
             'dev_requirement' => false,
         ),
         'acquia/hmac-request' => array(
