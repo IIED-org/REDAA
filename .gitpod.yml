@@ -1,0 +1,13 @@
+image: devwithlando/gitpod:1
+
+tasks:
+  - name: Start Drupal
+    init: |
+      lando start
+      lando composer require drush/drush
+      lando composer install  
+  - name: Run yarn
+    init: |
+      cd docroot/themes/redaa
+      lando npm i -g yarn
+    command: lando yarn watch
