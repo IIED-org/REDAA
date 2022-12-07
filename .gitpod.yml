@@ -1,13 +1,23 @@
 image: devwithlando/gitpod:1
-
 tasks:
   - name: Start Drupal
     init: |
       lando start
       lando composer require drush/drush
-      lando composer install  
+      lando composer install
+    command: |
+      lando rebuild -y
+      gp preview $(gp url $(lando info --format=json | jq -r ".[0].urls[0]" | sed -e 's#http://localhost:\(\)#\1#')) 
   - name: Run yarn
     init: |
       cd docroot/themes/redaa
       lando npm i -g yarn
     command: lando yarn watch
+ports:
+  - port: 3306
+    onOpen: ignore
+  - port: 80
+    onOpen: ignore
+  - port: 443
+    onOpen: ignore
+    
