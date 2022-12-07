@@ -17,10 +17,13 @@
 
     & ul {
       margin-inline-start: var(--sp);
+      display: inline-block;
     }
 
     & li {
       margin-block-end: var(--sp0-5);
+      float: left;
+      padding: var(--sp);
     }
   }
 
@@ -38,3 +41,19 @@
     border-inline-start: solid var(--content-left) var(--color--gray-90);
   }
 }
+
+#block-footer {
+  grid-row: 3;
+}
+
+#block-socialicons {
+  display: grid;
+  justify-items: right;
+  align-items: center;
+  grid-column-end: 13;
+  grid-row: 3;
+  & svg {
+    height: 64px;
+    width: auto;
+  }
+ }
