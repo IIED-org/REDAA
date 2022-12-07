@@ -11,6 +11,7 @@ tasks:
   - name: Run yarn
     init: |
       cd docroot/themes/redaa
+      lando npm install
       lando npm i -g yarn
     command: lando yarn watch
     
