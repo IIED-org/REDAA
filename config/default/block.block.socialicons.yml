@@ -1,0 +1,25 @@
+uuid: 0e19c914-6e0a-4c57-bf59-15ba47ce8fd4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c504e844-ccc7-401d-a578-e1843c829350'
+  module:
+    - block_content
+  theme:
+    - redaa
+id: socialicons
+theme: redaa
+region: footer_bottom
+weight: -6
+provider: null
+plugin: 'block_content:c504e844-ccc7-401d-a578-e1843c829350'
+settings:
+  id: 'block_content:c504e844-ccc7-401d-a578-e1843c829350'
+  label: 'Social icons'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
