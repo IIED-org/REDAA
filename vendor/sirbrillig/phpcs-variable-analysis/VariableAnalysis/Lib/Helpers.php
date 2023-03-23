@@ -5,6 +5,7 @@ namespace VariableAnalysis\Lib;
 use PHP_CodeSniffer\Files\File;
 use VariableAnalysis\Lib\ScopeInfo;
 use VariableAnalysis\Lib\ForLoopInfo;
+use VariableAnalysis\Lib\EnumInfo;
 use VariableAnalysis\Lib\ScopeType;
 use VariableAnalysis\Lib\VariableInfo;
 use PHP_CodeSniffer\Util\Tokens;
@@ -69,6 +70,9 @@ class Helpers
 	{
 		$tokens = $phpcsFile->getTokens();
 		if (isset($tokens[$stackPtr]['nested_parenthesis'])) {
+			/**
+			 * @var array<int|string|null>
+			 */
 			$openPtrs = array_keys($tokens[$stackPtr]['nested_parenthesis']);
 			return (int)end($openPtrs);
 		}
@@ -76,14 +80,20 @@ class Helpers
 	}
 
 	/**
-	 * @param (int|string)[] $conditions
+	 * @param array{conditions: (int|string)[], content: string} $token
 	 *
 	 * @return bool
 	 */
-	public static function areAnyConditionsAClass(array $conditions)
+	public static function areAnyConditionsAClass(array $token)
 	{
+		$conditions = $token['conditions'];
+		$classlikeCodes = [T_CLASS, T_ANON_CLASS, T_TRAIT];
+		if (defined('T_ENUM')) {
+			$classlikeCodes[] = T_ENUM;
+		}
+		$classlikeCodes[] = 'PHPCS_T_ENUM';
 		foreach (array_reverse($conditions, true) as $scopeCode) {
-			if ($scopeCode === T_CLASS || $scopeCode === T_ANON_CLASS || $scopeCode === T_TRAIT) {
+			if (in_array($scopeCode, $classlikeCodes, true)) {
 				return true;
 			}
 		}
@@ -94,15 +104,20 @@ class Helpers
 	 * Return true if the token conditions are within a function before they are
 	 * within a class.
 	 *
-	 * @param (int|string)[] $conditions
+	 * @param array{conditions: (int|string)[], content: string} $token
 	 *
 	 * @return bool
 	 */
-	public static function areConditionsWithinFunctionBeforeClass(array $conditions)
+	public static function areConditionsWithinFunctionBeforeClass(array $token)
 	{
-		$classTypes = [T_CLASS, T_ANON_CLASS, T_TRAIT];
+		$conditions = $token['conditions'];
+		$classlikeCodes = [T_CLASS, T_ANON_CLASS, T_TRAIT];
+		if (defined('T_ENUM')) {
+			$classlikeCodes[] = T_ENUM;
+		}
+		$classlikeCodes[] = 'PHPCS_T_ENUM';
 		foreach (array_reverse($conditions, true) as $scopeCode) {
-			if (in_array($scopeCode, $classTypes)) {
+			if (in_array($scopeCode, $classlikeCodes)) {
 				return false;
 			}
 			if ($scopeCode === T_FUNCTION) {
@@ -755,7 +770,7 @@ class Helpers
 				$parentSquareBracket = self::findContainingOpeningSquareBracket($phpcsFile, $listOpenerIndex);
 				if (is_int($parentSquareBracket)) {
 					// Collect the opening index, but we don't actually need the closing paren index so just make that 0
-					$parents[$parentSquareBracket] = 0;
+					$parents = [$parentSquareBracket => 0];
 				}
 			}
 			// If we have no parents, this is not a nested assignment and therefore is not an assignment
@@ -1081,6 +1096,9 @@ class Helpers
 		if (empty($token['nested_parenthesis'])) {
 			return null;
 		}
+		/**
+		 * @var array<int|string|null>
+		 */
 		$startingParenthesis = array_keys($token['nested_parenthesis']);
 		$startOfArguments = end($startingParenthesis);
 		if (! is_int($startOfArguments)) {
@@ -1274,6 +1292,38 @@ class Helpers
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * @param File $phpcsFile
+	 * @param int  $stackPtr
+	 *
+	 * @return EnumInfo|null
+	 */
+	public static function makeEnumInfo(File $phpcsFile, $stackPtr)
+	{
+		$tokens = $phpcsFile->getTokens();
+		$token = $tokens[$stackPtr];
+
+		if (isset($token['scope_opener'])) {
+			$blockStart = $token['scope_opener'];
+			$blockEnd = $token['scope_closer'];
+		} else {
+			// Enums before phpcs could detect them do not have scopes so we have to
+			// find them ourselves.
+
+			$blockStart = $phpcsFile->findNext([T_OPEN_CURLY_BRACKET], $stackPtr + 1);
+			if (! is_int($blockStart)) {
+				return null;
+			}
+			$blockEnd = $tokens[$blockStart]['bracket_closer'];
+		}
+
+		return new EnumInfo(
+			$stackPtr,
+			$blockStart,
+			$blockEnd
+		);
 	}
 
 	/**
