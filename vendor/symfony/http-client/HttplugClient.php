@@ -40,6 +40,7 @@ use Symfony\Component\HttpClient\Response\HttplugPromise;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
+use Symfony\Contracts\Service\ResetInterface;
 
 if (!interface_exists(HttplugInterface::class)) {
     throw new \LogicException('You cannot use "Symfony\Component\HttpClient\HttplugClient" as the "php-http/httplug" package is not installed. Try running "composer require php-http/httplug".');
@@ -57,12 +58,17 @@ if (!interface_exists(RequestFactory::class)) {
  *
  * @author Nicolas Grekas <p@tchwork.com>
  */
-final class HttplugClient implements HttplugInterface, HttpAsyncClient, RequestFactory, StreamFactory, UriFactory
+final class HttplugClient implements HttplugInterface, HttpAsyncClient, RequestFactory, StreamFactory, UriFactory, ResetInterface
 {
     private $client;
     private $responseFactory;
     private $streamFactory;
+
+    /**
+     * @var \SplObjectStorage<ResponseInterface, array{RequestInterface, Promise}>|null
+     */
     private $promisePool;
+
     private $waitLoop;
 
     public function __construct(HttpClientInterface $client = null, ResponseFactoryInterface $responseFactory = null, StreamFactoryInterface $streamFactory = null)
@@ -185,7 +191,7 @@ final class HttplugClient implements HttplugInterface, HttpAsyncClient, RequestF
         } elseif (\is_resource($body)) {
             $stream = $this->streamFactory->createStreamFromResource($body);
         } else {
-            throw new \InvalidArgumentException(sprintf('"%s()" expects string, resource or StreamInterface, "%s" given.', __METHOD__, \gettype($body)));
+            throw new \InvalidArgumentException(sprintf('"%s()" expects string, resource or StreamInterface, "%s" given.', __METHOD__, get_debug_type($body)));
         }
 
         if ($stream->isSeekable()) {
@@ -219,10 +225,7 @@ final class HttplugClient implements HttplugInterface, HttpAsyncClient, RequestF
         throw new \LogicException(sprintf('You cannot use "%s()" as the "nyholm/psr7" package is not installed. Try running "composer require nyholm/psr7".', __METHOD__));
     }
 
-    /**
-     * @return array
-     */
-    public function __sleep()
+    public function __sleep(): array
     {
         throw new \BadMethodCallException('Cannot serialize '.__CLASS__);
     }
@@ -237,6 +240,13 @@ final class HttplugClient implements HttplugInterface, HttpAsyncClient, RequestF
         $this->wait();
     }
 
+    public function reset()
+    {
+        if ($this->client instanceof ResetInterface) {
+            $this->client->reset();
+        }
+    }
+
     private function sendPsr7Request(RequestInterface $request, bool $buffer = null): ResponseInterface
     {
         try {
@@ -246,12 +256,17 @@ final class HttplugClient implements HttplugInterface, HttpAsyncClient, RequestF
                 $body->seek(0);
             }
 
-            return $this->client->request($request->getMethod(), (string) $request->getUri(), [
+            $options = [
                 'headers' => $request->getHeaders(),
                 'body' => $body->getContents(),
-                'http_version' => '1.0' === $request->getProtocolVersion() ? '1.0' : null,
                 'buffer' => $buffer,
-            ]);
+            ];
+
+            if ('1.0' === $request->getProtocolVersion()) {
+                $options['http_version'] = '1.0';
+            }
+
+            return $this->client->request($request->getMethod(), (string) $request->getUri(), $options);
         } catch (\InvalidArgumentException $e) {
             throw new RequestException($e->getMessage(), $request, $e);
         } catch (TransportExceptionInterface $e) {

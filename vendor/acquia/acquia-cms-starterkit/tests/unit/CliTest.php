@@ -87,6 +87,7 @@ class CliTest extends TestCase {
               "acquia_cms_search",
               "acquia_cms_tour",
               "acquia_cms_toolbar",
+              "mnsami/composer-custom-directory-installer",
             ],
             "install" => [
               "acquia_cms_site_studio",
@@ -111,6 +112,7 @@ class CliTest extends TestCase {
               "acquia_cms_search",
               "acquia_cms_tour",
               "acquia_cms_toolbar",
+              "mnsami/composer-custom-directory-installer",
             ],
             "install" => [
               "acquia_cms_search",
@@ -134,6 +136,7 @@ class CliTest extends TestCase {
               "acquia_cms_tour",
               "acquia_cms_toolbar",
               "consumer_image_styles",
+              "mnsami/composer-custom-directory-installer",
             ],
             "install" => [
               "acquia_cms_headless_ui",
@@ -153,6 +156,7 @@ class CliTest extends TestCase {
       "questions" => array_merge (
         self::getContentModel(),
         self::getDemoContent(),
+        self::getDamIntegration(),
         self::getNextjsApp(),
         self::getNextjsAppSiteUrl(),
         self::getNextjsAppSiteName(),
@@ -181,8 +185,8 @@ class CliTest extends TestCase {
         'allowed_values' => [
           'options' => ['yes', 'no'],
         ],
-        'skip_on_value' => FALSE,
         'default_value' => 'no',
+        'skip_on_value' => FALSE,
       ],
     ];
   }
@@ -200,6 +204,28 @@ class CliTest extends TestCase {
           'starter_kits' => 'acquia_cms_enterprise_low_code || acquia_cms_headless || acquia_cms_community',
         ],
         'question' => "Do you want to enable demo content (yes/no) ?",
+        'allowed_values' => [
+          'options' => ['yes', 'no'],
+        ],
+        'default_value' => 'no',
+        'skip_on_value' => FALSE,
+      ],
+    ];
+  }
+
+  /**
+   * Returns the test data for dam_integration Question.
+   *
+   * @return array[]
+   *   Returns an array of question.
+   */
+  public static function getDamIntegration(): array {
+    return [
+      'dam_integration' => [
+        'dependencies' => [
+          'starter_kits' => 'acquia_cms_enterprise_low_code || acquia_cms_headless || acquia_cms_community',
+        ],
+        'question' => "Would you like to enable the Acquia DAM modules (configuration will need to be done manually later after site installation) ?",
         'allowed_values' => [
           'options' => ['yes', 'no'],
         ],
