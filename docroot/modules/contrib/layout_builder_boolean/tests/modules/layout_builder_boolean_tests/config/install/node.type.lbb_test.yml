@@ -1,0 +1,11 @@
+uuid: bd306321-4aa8-4977-8c86-46ffdd0002f8
+langcode: en
+status: true
+dependencies: {  }
+name: 'LBB Test'
+type: lbb_test
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

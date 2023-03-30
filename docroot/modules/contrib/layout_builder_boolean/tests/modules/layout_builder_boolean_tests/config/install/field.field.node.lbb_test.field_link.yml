@@ -1,0 +1,23 @@
+uuid: 5fd2f2e0-4b96-4943-92be-ab5d23b67b1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link
+    - node.type.lbb_test
+  module:
+    - link
+id: node.lbb_test.field_link
+field_name: field_link
+entity_type: node
+bundle: lbb_test
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

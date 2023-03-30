@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Layout Builder Boolean module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+/**
+ * Implements template_preprocess_hook().
+ */
+function template_preprocess_layout__layout_builder_boolean(&$variables) {
+  $variables['_true'] = $variables['content']['#true'];
+  $variables['_false'] = $variables['content']['#false'];
+  foreach ($variables['content'] as $key => $value) {
+    if (strpos($key, 'true:') > -1) {
+      $variables['_true'][substr($key, 5)] = $value;
+    }
+    elseif (strpos($key, 'false:') > -1) {
+      $variables['_false'][substr($key, 6)] = $value;
+    }
+  }
+  if (!isset($variables['attributes']['data-layout-update-url'])) {
+    $entity = $variables['content']['#entity'];
+    $field_name = $variables['settings']['switch_field'];
+    if ($entity->hasField($field_name) && !$entity->get($field_name)->isEmpty() && $entity->get($field_name)->{$entity->get($field_name)->getFieldDefinition()->getFieldStorageDefinition()->getMainPropertyName()}) {
+      $variables['render'] = $variables['_true'];
+    }
+    else {
+      $variables['render'] = $variables['_false'];
+    }
+  }
+  else {
+    $variables['help_text'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h2',
+      '#value' => 'Section conditioned on: ' . $variables['settings']['switch_field'],
+      '#attributes' => [
+        'class' => 'help-text',
+      ],
+    ];
+  }
+}

@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme implementation of layout builder boolean.
+ *
+ * Available variables:
+ * - _true: The regions that will be displayed if the condition is true.
+ * - _false: The regions that will be displayed if the condition is false.
+ * - render: The content we want people to see.
+ * - attributes: HTML attributes for the layout <div>.
+ * - help_text: A bit of help text.
+ * - content: It's there, but don't use it.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if render %}
+  {{ render }}
+{% else %}
+  <div{{ attributes.addClass('layout-builder-boolean') }}>
+    {{ help_text }}
+    <div class="layout-builder-boolean--true">
+      <h3 class="layout-builder-boolean--heading">{% trans %}True/Populated{% endtrans %}</h3>
+      {{ _true }}
+    </div>
+    <div class="layout-builder-boolean--false">
+      <h3 class="layout-builder-boolean--heading">{% trans %}False/Empty{% endtrans %}</h3>
+      {{ _false }}
+    </div>
+  </div>
+{% endif %}

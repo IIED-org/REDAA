@@ -112,6 +112,7 @@ class ComposerStaticInitd682587ac6a614f5339d169a43555a43
             'Symfony\\Cmf\\Component\\Routing\\' => 30,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
             'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 49,
+            'Spatie\\PdfToImage\\' => 18,
             'SlevomatCodingStandard\\' => 23,
             'SelfUpdate\\' => 11,
             'Seld\\PharUtils\\' => 15,
@@ -388,6 +389,10 @@ class ComposerStaticInitd682587ac6a614f5339d169a43555a43
         'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 
         array (
             0 => __DIR__ . '/..' . '/stecman/symfony-console-completion/src',
+        ),
+        'Spatie\\PdfToImage\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/pdf-to-image/src',
         ),
         'SlevomatCodingStandard\\' => 
         array (

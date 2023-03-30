@@ -1,0 +1,23 @@
+uuid: 981557bc-b7e9-4e6e-ae5a-b1faefb6ebb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boolean
+    - node.type.lbb_test
+id: node.lbb_test.field_boolean
+field_name: field_boolean
+entity_type: node
+bundle: lbb_test
+label: Boolean
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

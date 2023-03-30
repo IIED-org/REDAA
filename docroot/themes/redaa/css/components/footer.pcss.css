@@ -47,14 +47,7 @@
   grid-row: 3;
 }
 
-#block-socialicons {
-  display: grid;
-  justify-items: right;
-  align-items: center;
-  grid-row: 3;
-  grid-column: 7 / 13;
-  & svg {
-    height: 64px;
-    width: auto;
-  }
- }
+.region--footer-top {
+  background-color: var(--color--gold);
+  margin-bottom: 2rem;
+}
