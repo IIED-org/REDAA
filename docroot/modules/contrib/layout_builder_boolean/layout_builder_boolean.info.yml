@@ -1,0 +1,12 @@
+name: Layout Builder Boolean
+type: module
+description: Provides Layouts with conditional displays.
+package: Layout
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:layout_builder
+
+# Information added by Drupal.org packaging script on 2022-08-26
+version: '1.0.0-alpha5'
+project: 'layout_builder_boolean'
+datestamp: 1661546303

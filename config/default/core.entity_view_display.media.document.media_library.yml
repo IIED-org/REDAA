@@ -8,7 +8,7 @@ dependencies:
     - image.style.thumbnail
     - media.type.document
   module:
-    - svg_image
+    - media_pdf_thumbnail
 _core:
   default_config_hash: YcWqjhIlo-2RZUM5ogvRsrKB7M3voF2XB3lVLwgOlLU
 id: media.document.media_library
@@ -17,13 +17,63 @@ bundle: document
 mode: media_library
 content:
   thumbnail:
-    type: image
+    type: media_pdf_thumbnail_image_field_formatter
     label: hidden
     settings:
       image_style: thumbnail
       image_link: ''
+      image_link_attributes_target: ''
+      image_link_attributes_rel: ''
+      pdf_file_field: field_media_document
+      pdf_page: '1'
+      image_format: png
       image_loading:
         attribute: lazy
+      image_link_attributes_download: 0
+      use_cron: 0
+      audio_page: ''
+      audio_field: ''
+      audio_enable: ''
+      audio_link: ''
+      audio_attributes_download: ''
+      audio_attributes_target: ''
+      audio_attributes_rel: ''
+      audio_use_cron: ''
+      audio_format: ''
+      document_page: ''
+      document_field: ''
+      document_enable: ''
+      document_link: ''
+      document_attributes_download: ''
+      document_attributes_target: ''
+      document_attributes_rel: ''
+      document_use_cron: ''
+      document_format: ''
+      image_page: ''
+      image_field: ''
+      image_enable: ''
+      image_attributes_download: ''
+      image_attributes_target: ''
+      image_attributes_rel: ''
+      image_use_cron: ''
+      remote_video_page: ''
+      remote_video_field: ''
+      remote_video_enable: ''
+      remote_video_link: ''
+      remote_video_attributes_download: ''
+      remote_video_attributes_target: ''
+      remote_video_attributes_rel: ''
+      remote_video_use_cron: ''
+      remote_video_format: ''
+      video_page: ''
+      video_field: ''
+      video_enable: ''
+      video_link: ''
+      video_attributes_download: ''
+      video_attributes_target: ''
+      video_attributes_rel: ''
+      video_use_cron: ''
+      video_format: ''
     third_party_settings: {  }
     weight: 0
     region: content

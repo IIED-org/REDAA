@@ -10,4 +10,4 @@ _core:
 id: redaa_medium
 label: 'REDAA Medium'
 locked: false
-pattern: 'j  F,  Y'
+pattern: 'j F Y'

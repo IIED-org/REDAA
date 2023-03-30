@@ -1,0 +1,9 @@
+layout_plugin.settings.layout_builder_boolean:*:
+  type: layout_plugin.settings.[base_layout]
+  mapping:
+    switch_field:
+      type: string
+      label: 'Switch Field'
+    base_layout:
+      type: string
+      label: 'Base Layout'

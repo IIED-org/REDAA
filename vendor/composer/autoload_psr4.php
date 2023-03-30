@@ -49,6 +49,7 @@ return array(
     'Symfony\\Cmf\\Component\\Routing\\' => array($vendorDir . '/symfony-cmf/routing/src'),
     'Symfony\\Bridge\\PsrHttpMessage\\' => array($vendorDir . '/symfony/psr-http-message-bridge'),
     'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => array($vendorDir . '/stecman/symfony-console-completion/src'),
+    'Spatie\\PdfToImage\\' => array($vendorDir . '/spatie/pdf-to-image/src'),
     'SlevomatCodingStandard\\' => array($vendorDir . '/slevomat/coding-standard/SlevomatCodingStandard'),
     'SelfUpdate\\' => array($vendorDir . '/consolidation/self-update/src'),
     'Seld\\PharUtils\\' => array($vendorDir . '/seld/phar-utils/src'),

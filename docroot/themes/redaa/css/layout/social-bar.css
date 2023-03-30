@@ -147,7 +147,9 @@
     transform: rotate(-90deg) translateX(-100%); /* LTR */
     transform-origin: left /* LTR */
 }
-
+    .rotate #block-socialicons svg {
+      transform: rotate(90deg);
+    }
     @supports ((width: -webkit-max-content) or (width: max-content)) {
 
 .rotate {
@@ -167,4 +169,13 @@
         transform: rotate(-90deg);
         transform-origin: top right;
       }
+  }
+
+#block-socialicons {
+  margin-top: 4rem
+ }
+
+#block-socialicons svg {
+    width: 2rem;
+    height: auto;
   }

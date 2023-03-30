@@ -1,0 +1,96 @@
+uuid: 8464711d-2cb9-4636-8d30-57c39b1744ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.embedded
+    - field.field.media.document.field_media_document
+    - media.type.document
+  module:
+    - file
+    - layout_builder
+    - media_pdf_thumbnail
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: XxUyhaTuM0OUUZpr8G6jdrFBEh5eag7auWxBKhm6cvY
+id: media.document.embedded
+targetEntityType: media
+bundle: document
+mode: embedded
+content:
+  field_media_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  thumbnail:
+    type: media_pdf_thumbnail_image_field_formatter
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: pdf_file
+      image_link_attributes_target: ''
+      image_link_attributes_rel: ''
+      pdf_file_field: field_media_document
+      pdf_page: '1'
+      image_format: png
+      image_loading:
+        attribute: eager
+      image_link_attributes_download: 0
+      use_cron: 0
+      audio_page: ''
+      audio_field: ''
+      audio_enable: ''
+      audio_link: ''
+      audio_attributes_download: ''
+      audio_attributes_target: ''
+      audio_attributes_rel: ''
+      audio_use_cron: ''
+      audio_format: ''
+      document_page: ''
+      document_field: ''
+      document_enable: ''
+      document_link: ''
+      document_attributes_download: ''
+      document_attributes_target: ''
+      document_attributes_rel: ''
+      document_use_cron: ''
+      document_format: ''
+      image_page: ''
+      image_field: ''
+      image_enable: ''
+      image_attributes_download: ''
+      image_attributes_target: ''
+      image_attributes_rel: ''
+      image_use_cron: ''
+      remote_video_page: ''
+      remote_video_field: ''
+      remote_video_enable: ''
+      remote_video_link: ''
+      remote_video_attributes_download: ''
+      remote_video_attributes_target: ''
+      remote_video_attributes_rel: ''
+      remote_video_use_cron: ''
+      remote_video_format: ''
+      video_page: ''
+      video_field: ''
+      video_enable: ''
+      video_link: ''
+      video_attributes_download: ''
+      video_attributes_target: ''
+      video_attributes_rel: ''
+      video_use_cron: ''
+      video_format: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  uid: true

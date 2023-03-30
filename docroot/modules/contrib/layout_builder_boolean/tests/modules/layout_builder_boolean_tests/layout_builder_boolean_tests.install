@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Install hook for layout_builder_boolean_tests.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_install().
+ */
+function layout_builder_boolean_tests_install() {
+
+  // Make an image.
+  $image_path = 	\Drupal::service('extension.list.theme')->getPath('stable') . '/images/core/druplicon.png';
+  file_put_contents('public://first.png', file_get_contents($image_path));
+  $first_image = File::create([
+    'uri' => 'public://first.png',
+    'filename' => 'first.png',
+  ]);
+  $first_image->save();
+
+  // Create a few nodes.
+  // Node one is missing most fields.
+  $first = Node::create(['type' => 'lbb_test']);
+  $first->set('title', 'Mostly Blank Node');
+  $first->set('promote', FALSE);
+  $first->set('field_boolean', FALSE);
+  $first->save();
+
+  // Node two has a value for everything.
+  $second = Node::create(['type' => 'lbb_test']);
+  $second->set('title', 'Node With Values');
+  $second->set('promote', TRUE);
+  $second->set('body', 'This node has some text.');
+  $second->set('field_image', ['target_id' => $first_image->id(), 'alt' => 'Alt text']);
+  $second->set('field_link', ['uri' => 'https://nasa.gov', 'title' => 'Nasa']);
+  $second->set('field_boolean', TRUE);
+  $second->save();
+
+}

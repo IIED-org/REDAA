@@ -1,0 +1,19 @@
+name: Layout Builder Boolean Tests
+description: "Provides test functionality for Layout Builder Boolean module."
+package: Layout
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - layout_builder_boolean:layout_builder_boolean
+  - drupal:field_ui
+  - drupal:file
+  - drupal:image
+  - drupal:node
+  - drupal:text
+  - drupal:user
+  - drupal:link
+
+# Information added by Drupal.org packaging script on 2022-08-26
+version: '1.0.0-alpha5'
+project: 'layout_builder_boolean'
+datestamp: 1661546303

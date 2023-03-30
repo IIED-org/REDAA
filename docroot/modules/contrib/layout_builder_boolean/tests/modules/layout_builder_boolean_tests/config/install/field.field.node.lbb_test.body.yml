@@ -1,0 +1,23 @@
+uuid: b66d338a-d1a0-4e0c-8cd0-4a0f6034d8d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lbb_test
+  module:
+    - text
+id: node.lbb_test.body
+field_name: body
+entity_type: node
+bundle: lbb_test
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

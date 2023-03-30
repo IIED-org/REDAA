@@ -10,8 +10,8 @@ dependencies:
     - redaa
 id: socialicons
 theme: redaa
-region: footer_bottom
-weight: -6
+region: social
+weight: -8
 provider: null
 plugin: 'block_content:c504e844-ccc7-401d-a578-e1843c829350'
 settings:
