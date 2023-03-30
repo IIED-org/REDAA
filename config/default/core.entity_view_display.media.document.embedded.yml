@@ -1,34 +1,47 @@
-uuid: ee92490e-8492-4ebf-bebc-802eedd22274
+uuid: 8464711d-2cb9-4636-8d30-57c39b1744ee
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.media_library
+    - core.entity_view_mode.media.embedded
     - field.field.media.document.field_media_document
-    - image.style.thumbnail
     - media.type.document
   module:
+    - file
+    - layout_builder
     - media_pdf_thumbnail
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
-  default_config_hash: YcWqjhIlo-2RZUM5ogvRsrKB7M3voF2XB3lVLwgOlLU
-id: media.document.media_library
+  default_config_hash: XxUyhaTuM0OUUZpr8G6jdrFBEh5eag7auWxBKhm6cvY
+id: media.document.embedded
 targetEntityType: media
 bundle: document
-mode: media_library
+mode: embedded
 content:
+  field_media_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
   thumbnail:
     type: media_pdf_thumbnail_image_field_formatter
     label: hidden
     settings:
-      image_style: thumbnail
-      image_link: ''
+      image_style: ''
+      image_link: pdf_file
       image_link_attributes_target: ''
       image_link_attributes_rel: ''
       pdf_file_field: field_media_document
       pdf_page: '1'
       image_format: png
       image_loading:
-        attribute: lazy
+        attribute: eager
       image_link_attributes_download: 0
       use_cron: 0
       audio_page: ''
@@ -79,6 +92,5 @@ content:
     region: content
 hidden:
   created: true
-  field_media_document: true
   name: true
   uid: true

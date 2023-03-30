@@ -6,7 +6,6 @@ id: contact_us
 label: 'Contact us'
 recipients:
   - enquiries@redaa.org
-  - admin@cbrody.com
 reply: ''
 weight: 0
 message: 'Thank you for your message. We will be in touch shortly.'

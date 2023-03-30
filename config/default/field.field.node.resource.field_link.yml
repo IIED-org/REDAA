@@ -1,0 +1,23 @@
+uuid: eaf87e73-891e-4eb5-b579-08439f8921e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link
+    - node.type.resource
+  module:
+    - link
+id: node.resource.field_link
+field_name: field_link
+entity_type: node
+bundle: resource
+label: 'Link to resource'
+description: 'Link to remote resource'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
