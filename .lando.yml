@@ -23,3 +23,8 @@ tooling:
     service: node
   gulp:
     service: node
+  fix-imagick:
+    service: appserver
+    description: Update Imagick policy for PDF
+    cmd: sed -i 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<policy domain="coder" rights="read|write" pattern="PDF" \/>/g' /etc/ImageMagick-6/policy.xml
+    user: root
