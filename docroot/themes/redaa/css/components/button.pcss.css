@@ -128,3 +128,7 @@
 .shepherd-cancel-icon {
   font-size: 1.5em;
 }
+
+#mc-embedded-subscribe {
+  background-color: var(--color--blue-20) !important;
+}

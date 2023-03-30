@@ -38,14 +38,15 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: #0d77b5;
-  border: solid 2px #0d77b5;
+  color: #005890;
+  border: solid 2px #005890;
   border-radius: 0.1875rem;
   background-color: #fff;
-  font-family: "metropolis", sans-serif;
-  font-size: 1.125rem;
+  font-family: "Arial", sans-serif;
+  font-size: 1.25rem;
   font-weight: 700;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   -webkit-font-smoothing: antialiased
 }
@@ -65,8 +66,8 @@
   }
 
 .button:active {
-    color: #0d77b5;
-    border-color: #0d77b5;
+    color: #005890;
+    border-color: #005890;
   }
 
 .button:disabled,
@@ -134,7 +135,7 @@
 
 .button--primary {
   color: #fff;
-  background-color: #0d77b5
+  background-color: #005890
 }
 
 .button--primary:hover,
@@ -146,7 +147,7 @@
 
 .button--primary:active {
     color: #fff;
-    background-color: #0d77b5;
+    background-color: #005890;
   }
 
 .button--primary:disabled,
@@ -191,4 +192,8 @@
 
 .shepherd-cancel-icon {
   font-size: 1.5em;
+}
+
+#mc-embedded-subscribe {
+  background-color: #005890 !important;
 }
