@@ -8,7 +8,7 @@ dependencies:
   module:
     - media
     - media_library
-    - svg_image
+    - media_pdf_thumbnail
     - user
   enforced:
     module:
@@ -484,7 +484,21 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.document.cover'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.embedded'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.full'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
   page:
     id: page
     display_title: Page
@@ -781,7 +795,21 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.document.cover'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.embedded'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.full'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget:
     id: widget
     display_title: Widget
@@ -1101,7 +1129,21 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.document.cover'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.embedded'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.full'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'
@@ -1124,16 +1166,113 @@ display:
           table: media_field_data
           field: thumbnail__target_id
           relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: media
           entity_field: thumbnail
           plugin_id: field
           label: Thumbnail
-          type: image
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: media_pdf_thumbnail_image_field_formatter
           settings:
-            image_link: ''
             image_style: media_library
             image_loading:
               attribute: eager
+            audio_field: field_media_audio_file
+            audio_page: '1'
+            audio_link: pdf_file
+            audio_attributes_download: 0
+            audio_attributes_target: ''
+            audio_attributes_rel: ''
+            audio_format: jpg
+            audio_use_cron: 0
+            audio_enable: 0
+            document_field: field_media_document
+            document_page: '1'
+            document_link: pdf_file
+            document_attributes_download: 0
+            document_attributes_target: ''
+            document_attributes_rel: ''
+            document_format: jpg
+            document_use_cron: 0
+            document_enable: 1
+            image_field: ''
+            image_page: ''
+            image_link: ''
+            image_attributes_download: ''
+            image_attributes_target: ''
+            image_attributes_rel: ''
+            image_format: ''
+            image_use_cron: ''
+            image_enable: ''
+            remote_video_field: ''
+            remote_video_page: ''
+            remote_video_link: ''
+            remote_video_attributes_download: ''
+            remote_video_attributes_target: ''
+            remote_video_attributes_rel: ''
+            remote_video_format: ''
+            remote_video_use_cron: ''
+            remote_video_enable: ''
+            video_field: field_media_video_file
+            video_page: '1'
+            video_link: ''
+            video_attributes_download: 0
+            video_attributes_target: ''
+            video_attributes_rel: ''
+            video_format: png
+            video_use_cron: 0
+            video_enable: 1
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         name:
           id: name
           table: media_field_data
@@ -1383,6 +1522,33 @@ display:
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
       path: admin/content/media-widget-table
+      audio_field: field_media_audio_file
+      audio_page: '1'
+      audio_link: pdf_file
+      audio_attributes_download: 0
+      audio_attributes_target: ''
+      audio_attributes_rel: ''
+      audio_format: jpg
+      audio_use_cron: 0
+      audio_enable: 0
+      document_field: field_media_document
+      document_page: '1'
+      document_link: pdf_file
+      document_attributes_download: 0
+      document_attributes_target: ''
+      document_attributes_rel: ''
+      document_format: jpg
+      document_use_cron: 0
+      document_enable: 1
+      video_field: field_media_video_file
+      video_page: '1'
+      video_link: ''
+      video_attributes_download: 0
+      video_attributes_target: ''
+      video_attributes_rel: ''
+      video_format: png
+      video_use_cron: 0
+      video_enable: 1
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,8 @@
+uuid: f5508c9b-ce44-4ca5-a78e-d474acde7b93
+langcode: en
+status: true
+dependencies: {  }
+name: 'Document type'
+vid: document_type
+description: ''
+weight: 0
