@@ -33,24 +33,24 @@
   font-weight: bold;
 }
 
-[dir="ltr"] .field--label-inline .field__label,[dir="ltr"] 
+[dir="ltr"] .field--label-inline .field__label, [dir="ltr"] 
 .field--label-inline .field__items {
   float: left;
 }
 
-[dir="rtl"] .field--label-inline .field__label,[dir="rtl"] 
+[dir="rtl"] .field--label-inline .field__label, [dir="rtl"] 
 .field--label-inline .field__items {
   float: right;
 }
 
-[dir="ltr"] .field--label-inline .field__label,[dir="ltr"] 
-.field--label-inline > .field__item,[dir="ltr"] 
+[dir="ltr"] .field--label-inline .field__label, [dir="ltr"] 
+.field--label-inline > .field__item, [dir="ltr"] 
 .field--label-inline .field__items {
   padding-right: 0.5em;
 }
 
-[dir="rtl"] .field--label-inline .field__label,[dir="rtl"] 
-.field--label-inline > .field__item,[dir="rtl"] 
+[dir="rtl"] .field--label-inline .field__label, [dir="rtl"] 
+.field--label-inline > .field__item, [dir="rtl"] 
 .field--label-inline .field__items {
   padding-left: 0.5em;
 }
@@ -67,4 +67,8 @@
 
 .text-content.field--name-field-standfirst {
   font-size: 1.25rem;
+}
+
+.field--name-thumbnail {
+  border: solid 1px #e7edf1;
 }

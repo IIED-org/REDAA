@@ -7,6 +7,7 @@ const postcssImport = require('postcss-import');
 const postcssHeader = require('postcss-header');
 const postcssUrl = require('postcss-url');
 const postcssPresetEnv = require('postcss-preset-env');
+const postcssExtend = require('postcss-extend');
 // cspell:ignore pxtorem
 const postcssPixelsToRem = require('postcss-pxtorem');
 
@@ -74,7 +75,8 @@ module.exports = (filePath, callback) => {
         filter: '**/*.svg',
         url: 'inline',
         optimizeSvgEncode: true,
-      })
+      }),
+      postcssExtend()
     ])
     .process(css, { from: filePath })
     .then(result => {
