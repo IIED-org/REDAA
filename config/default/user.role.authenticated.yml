@@ -11,6 +11,7 @@ dependencies:
     - filter
     - google_analytics
     - media
+    - media_pdf_thumbnail
     - search
     - shortcut
     - system
@@ -32,3 +33,4 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'
+  - 'view published pdf image entity entities'

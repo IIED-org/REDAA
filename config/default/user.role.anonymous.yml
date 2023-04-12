@@ -10,6 +10,7 @@ dependencies:
     - eu_cookie_compliance
     - filter
     - media
+    - media_pdf_thumbnail
     - search
     - system
 _core:
@@ -26,3 +27,4 @@ permissions:
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'
+  - 'view published pdf image entity entities'
