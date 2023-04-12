@@ -17,7 +17,7 @@ type: file
 settings:
   target_type: file
   display_field: false
-  display_default: false
+  display_default: true
   uri_scheme: public
 module: file
 locked: false

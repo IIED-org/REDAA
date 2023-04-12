@@ -1,0 +1,15 @@
+uuid: d0aa497f-5cc0-4c54-bc57-55537d305830
+langcode: en
+status: true
+dependencies: {  }
+name: cover_embedded
+label: 'Cover embedded'
+effects:
+  c5295c8b-806f-440f-9f49-cb0fda308642:
+    uuid: c5295c8b-806f-440f-9f49-cb0fda308642
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: true

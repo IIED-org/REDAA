@@ -8,6 +8,7 @@ dependencies:
     - media.type.document
   module:
     - field_layout
+    - file
     - layout_discovery
 third_party_settings:
   field_layout:
@@ -20,10 +21,16 @@ id: media.document.media_library
 targetEntityType: media
 bundle: document
 mode: media_library
-content: {  }
+content:
+  field_media_document:
+    type: file_generic
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
 hidden:
   created: true
-  field_media_document: true
   name: true
   path: true
   status: true

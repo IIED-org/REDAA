@@ -8,6 +8,7 @@ dependencies:
     - image.style.thumbnail
     - media.type.document
   module:
+    - file
     - media_pdf_thumbnail
 _core:
   default_config_hash: YcWqjhIlo-2RZUM5ogvRsrKB7M3voF2XB3lVLwgOlLU
@@ -16,6 +17,14 @@ targetEntityType: media
 bundle: document
 mode: media_library
 content:
+  field_media_document:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
   thumbnail:
     type: media_pdf_thumbnail_image_field_formatter
     label: hidden
@@ -79,6 +88,5 @@ content:
     region: content
 hidden:
   created: true
-  field_media_document: true
   name: true
   uid: true
