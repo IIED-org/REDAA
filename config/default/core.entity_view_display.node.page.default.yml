@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_main_image
     - field.field.node.page.field_standfirst
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - field_layout
@@ -120,4 +121,5 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  layout_builder__layout: true
