@@ -27,14 +27,14 @@ content:
     settings:
       image_style: cover_embedded
       image_link: pdf_file
-      image_link_attributes_download: '1'
       image_link_attributes_target: ''
       image_link_attributes_rel: ''
       pdf_file_field: field_media_document
       pdf_page: '1'
-      image_format: png
+      image_format: jpg
       image_loading:
         attribute: eager
+      image_link_attributes_download: 0
       use_cron: 0
       audio_page: ''
       audio_field: ''
