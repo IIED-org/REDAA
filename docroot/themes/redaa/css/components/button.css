@@ -26,7 +26,7 @@
   margin-left: 1.125rem
 }
 
-.button {
+.button, .field--name-field-media-document .file--application-pdf a {
   display: inline-block;
   height: 3.375rem;
   margin-top: 1.125rem;
@@ -51,8 +51,7 @@
   -webkit-font-smoothing: antialiased
 }
 
-.button:hover,
-  .button:focus {
+.button:hover, .button:focus, .field--name-field-media-document .file--application-pdf a:hover, .field--name-field-media-document .file--application-pdf a:focus {
     text-decoration: none;
     color: #0f6292;
     border: solid 2px #0f6292;
@@ -60,24 +59,23 @@
     font-weight: 700;
   }
 
-.button:focus {
+.button:focus, .field--name-field-media-document .file--application-pdf a:focus {
     outline: 2px solid #53b0eb;
     outline-offset: 2px;
   }
 
-.button:active {
+.button:active, .field--name-field-media-document .file--application-pdf a:active {
     color: #005890;
     border-color: #005890;
   }
 
-.button:disabled,
-  .button.is-disabled {
+.button:disabled, .button.is-disabled, .field--name-field-media-document .file--application-pdf a:disabled, .field--name-field-media-document .file--application-pdf a.is-disabled {
     cursor: default;
     color: #d7e1e8;
     border-color: #d7e1e8;
   }
 
-.button {
+.button, .field--name-field-media-document .file--application-pdf a {
 
   /*
     IE11 doesn't work properly on button elements so we only do
@@ -87,7 +85,7 @@
 
 @supports (display: inline-flex) {
 
-.button {
+.button, .field--name-field-media-document .file--application-pdf a {
     display: inline-flex;
     align-items: center;
 
@@ -138,8 +136,7 @@
   background-color: #005890
 }
 
-.button--primary:hover,
-  .button--primary:focus {
+.button--primary:hover, .button--primary:focus {
     color: #fff;
     border-color: #0f6292;
     background-color: #0f6292;
@@ -150,8 +147,7 @@
     background-color: #005890;
   }
 
-.button--primary:disabled,
-  .button--primary.is-disabled {
+.button--primary:disabled, .button--primary.is-disabled {
     color: #fff;
     background-color: #d7e1e8;
   }

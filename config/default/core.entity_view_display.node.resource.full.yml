@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.resource.field_link
     - field.field.node.resource.field_main_image
     - field.field.node.resource.field_media
+    - field.field.node.resource.field_organisation
     - field.field.node.resource.field_publication_date
     - field.field.node.resource.field_publisher
     - field.field.node.resource.field_tags
@@ -93,7 +94,7 @@ third_party_settings:
                   timezone_override: ''
                   format_type: redaa_medium
                 third_party_settings: {  }
-            weight: 1
+            weight: 2
             additional: {  }
           484704b3-4619-41df-a041-7bcf7240f9be:
             uuid: 484704b3-4619-41df-a041-7bcf7240f9be
@@ -150,6 +151,44 @@ third_party_settings:
                 settings:
                   timezone_override: ''
                   format_type: redaa_medium
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          91ba8e95-4f6a-41c6-8ccf-bfabaf3d52e6:
+            uuid: 91ba8e95-4f6a-41c6-8ccf-bfabaf3d52e6
+            region: 'true:second'
+            configuration:
+              id: 'field_block:node:resource:field_organisation'
+              label: Organisation
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          31201806-df5b-4fe6-9009-2f3cfcf697a5:
+            uuid: 31201806-df5b-4fe6-9009-2f3cfcf697a5
+            region: 'false:second'
+            configuration:
+              id: 'field_block:node:resource:field_organisation'
+              label: Organisation
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
                 third_party_settings: {  }
             weight: 1
             additional: {  }
@@ -329,4 +368,5 @@ hidden:
   field_countries: true
   field_document_type: true
   field_link: true
+  field_organisation: true
   field_tags: true

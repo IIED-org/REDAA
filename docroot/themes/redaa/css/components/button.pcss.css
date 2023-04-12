@@ -132,3 +132,7 @@
 #mc-embedded-subscribe {
   background-color: var(--color--blue-20) !important;
 }
+
+.field--name-field-media-document .file--application-pdf a {
+  @extend .button;
+}

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.resource.field_link
     - field.field.node.resource.field_main_image
     - field.field.node.resource.field_media
+    - field.field.node.resource.field_organisation
     - field.field.node.resource.field_publication_date
     - field.field.node.resource.field_publisher
     - field.field.node.resource.field_tags
@@ -59,19 +60,19 @@ content:
     third_party_settings: {  }
   field_countries:
     type: address_country_default
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   field_document_type:
     type: options_buttons
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 14
+    weight: 15
     region: content
     settings:
       placeholder_url: ''
@@ -86,14 +87,22 @@ content:
     third_party_settings: {  }
   field_media:
     type: media_library_widget
-    weight: 13
+    weight: 14
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_organisation:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_publication_date:
     type: datetime_default
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -107,7 +116,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
-    weight: 16
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
