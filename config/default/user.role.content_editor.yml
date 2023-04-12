@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
-    - node.type.article
-    - node.type.page
     - taxonomy.vocabulary.tags
   module:
     - comment
@@ -14,6 +12,7 @@ dependencies:
     - file
     - filter
     - media
+    - media_pdf_thumbnail
     - node
     - path
     - system
@@ -27,34 +26,34 @@ label: 'Content editor'
 weight: 2
 is_admin: false
 permissions:
-  - 'access administration pages'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access files overview'
-  - 'access media overview'
-  - 'access toolbar'
-  - 'access tour'
-  - 'administer url aliases'
-  - 'create article content'
-  - 'create media'
-  - 'create page content'
-  - 'create terms in tags'
-  - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
-  - 'delete own page content'
-  - 'delete page revisions'
-  - 'display eu cookie compliance popup'
-  - 'edit own article content'
-  - 'edit own comments'
-  - 'edit own page content'
-  - 'edit terms in tags'
-  - 'revert all revisions'
-  - 'update any media'
-  - 'update media'
-  - 'use text format full_html'
-  - 'view all media revisions'
-  - 'view all revisions'
-  - 'view own unpublished content'
-  - 'view own unpublished media'
-  - 'view the administration theme'
+  0: 'access administration pages'
+  1: 'access content overview'
+  2: 'access contextual links'
+  3: 'access files overview'
+  4: 'access media overview'
+  5: 'access toolbar'
+  6: 'access tour'
+  7: 'administer url aliases'
+  9: 'create media'
+  11: 'create terms in tags'
+  12: 'create url aliases'
+  17: 'display eu cookie compliance popup'
+  19: 'edit own comments'
+  21: 'edit terms in tags'
+  22: 'revert all revisions'
+  23: 'update any media'
+  24: 'update media'
+  25: 'use text format full_html'
+  26: 'view all media revisions'
+  27: 'view all revisions'
+  28: 'view own unpublished content'
+  29: 'view own unpublished media'
+  30: 'view the administration theme'
+  31: 'administer media'
+  32: 'add pdf image entity entities'
+  33: 'delete pdf image entity entities'
+  34: 'edit pdf image entity entities'
+  35: 'view private pdf thumbnails'
+  36: 'view published pdf image entity entities'
+  37: 'view unpublished pdf image entity entities'
+  38: 'administer nodes'
