@@ -69,6 +69,6 @@
   font-size: 1.25rem;
 }
 
-.field--name-thumbnail, .media--view-mode-thumbnail .field--name-field-media-image {
+.field--name-thumbnail, .media--view-mode-thumbnail .field--name-field-media-image, .media--view-mode-embedded .field--name-field-media-image  {
   border: solid 1px #e7edf1;
 }
