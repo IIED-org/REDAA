@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.media.thumbnail
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_media_image
-    - image.style.media_library
+    - image.style.cover_embedded
     - media.type.image
   module:
     - layout_builder
@@ -27,7 +27,7 @@ content:
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: media_library
+      image_style: cover_embedded
       svg_attributes:
         width: null
         height: null

@@ -50,6 +50,6 @@
   font-size: var(--font-size-l);
 }
 
-.field--name-thumbnail {
+.field--name-thumbnail, .media--view-mode-thumbnail .field--name-field-media-image {
   border: solid 1px var(--color--gray-80);
 }
