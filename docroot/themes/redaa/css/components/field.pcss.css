@@ -50,8 +50,8 @@
   font-size: var(--font-size-l);
 }
 
-.field--name-thumbnail, 
-.media--view-mode-thumbnail .field--name-field-media-image,
-.media--view-mode-embedded .field--name-field-media-image  {
+.field--name-thumbnail img, 
+.media--view-mode-thumbnail .field--name-field-media-image img,
+.media--view-mode-embedded .field--name-field-media-image img {
   border: solid 1px var(--color--gray-80);
 }
