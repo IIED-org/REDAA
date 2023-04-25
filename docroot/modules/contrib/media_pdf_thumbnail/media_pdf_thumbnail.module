@@ -56,15 +56,6 @@ function media_pdf_thumbnail_form_views_ui_config_item_form_alter(&$form, FormSt
     $form = _media_pdf_thumbnail_buildForm($display, $form);
     array_unshift($form['actions']['submit']['#submit'], '_media_pdf_thumbnail_form_views_ui_edit_display_submit');
   }
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::PDF_FILE_FIELD_SETTING]);
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_TYPE_SETTING]);
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_ATTRIBUTE_DOWNLOAD_SETTING]);
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_ATTRIBUTE_TARGET_SETTING]);
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_ATTRIBUTE_REL_SETTING]);
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_FORMAT_SETTINGS]);
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::PDF_PAGE_SETTING]);
-  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_USE_CRON]);
-
 }
 
 /**
@@ -87,6 +78,7 @@ function _media_pdf_thumbnail_form_views_ui_edit_display_submit(&$form, FormStat
       $mediaBundleAttributesTarget = $bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_ATTRIBUTES_TARGET;
       $mediaBundleAttributesRel = $bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_ATTRIBUTES_REL;
       $mediaBundleImageFormat = $bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_IMAGE_FORMAT;
+      $mediaBundleImageStyle = $bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_IMAGE_STYLE;
       $mediaBundleUseCron = $bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_USE_CRON;
       $mediaBundleEnable = $bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_ENABLE;
 
@@ -100,10 +92,12 @@ function _media_pdf_thumbnail_form_views_ui_edit_display_submit(&$form, FormStat
           $display->display['display_options'][$mediaBundleAttributesTarget] = $values['options']['settings'][$bundleId][$mediaBundleAttributesTarget];
           $display->display['display_options'][$mediaBundleAttributesRel] = $values['options']['settings'][$bundleId][$mediaBundleAttributesRel];
           $display->display['display_options'][$mediaBundleImageFormat] = $values['options']['settings'][$bundleId][$mediaBundleImageFormat];
+          $display->display['display_options'][$mediaBundleImageStyle] = $values['options']['settings'][$bundleId][$mediaBundleImageStyle];
           $display->display['display_options'][$mediaBundleUseCron] = $values['options']['settings'][$bundleId][$mediaBundleUseCron];
           $display->display['display_options'][$mediaBundleEnable] = $values['options']['settings'][$bundleId][$mediaBundleEnable];
         }
       }
+
       // As those files are in fielsets, values are not saved in settings storage.
       // Needing to put theme in first level of settings array.
       $values['options']['settings'][$mediaBundleField] = $values['options']['settings'][$bundleId][$mediaBundleField] ?? '';
@@ -113,6 +107,7 @@ function _media_pdf_thumbnail_form_views_ui_edit_display_submit(&$form, FormStat
       $values['options']['settings'][$mediaBundleAttributesTarget] = $values['options']['settings'][$bundleId][$mediaBundleAttributesTarget] ?? '';
       $values['options']['settings'][$mediaBundleAttributesRel] = $values['options']['settings'][$bundleId][$mediaBundleAttributesRel] ?? '';
       $values['options']['settings'][$mediaBundleImageFormat] = $values['options']['settings'][$bundleId][$mediaBundleImageFormat] ?? '';
+      $values['options']['settings'][$mediaBundleImageStyle] = $values['options']['settings'][$bundleId][$mediaBundleImageStyle] ?? '';
       $values['options']['settings'][$mediaBundleUseCron] = $values['options']['settings'][$bundleId][$mediaBundleUseCron] ?? '';
       $values['options']['settings'][$mediaBundleEnable] = $values['options']['settings'][$bundleId][$mediaBundleEnable] ?? '';
 
@@ -130,10 +125,6 @@ function _media_pdf_thumbnail_form_views_ui_edit_display_submit(&$form, FormStat
  */
 function _media_pdf_thumbnail_buildForm($display, $form) {
 
-  // Unset image_link select from default field formatter.
-  // We will give the possibility to set that option per bundle.
-  unset($form['options']['settings']['image_link']);
-
   // Bundle options
   foreach (_media_pdf_thumbnail_getFieldsList() as $bundleId => $infos) {
     if (!empty($infos['fields'])) {
@@ -143,6 +134,9 @@ function _media_pdf_thumbnail_buildForm($display, $form) {
         '#collapsible' => FALSE,
         '#collapsed' => FALSE,
       ];
+
+      $form['options']['settings'][$bundleId][$bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_IMAGE_STYLE] = $form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_STYLE_SETTINGS];
+      $form['options']['settings'][$bundleId][$bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_IMAGE_STYLE]['#default_value'] =  $display->display['display_options'][$bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_IMAGE_STYLE] ?? '';
 
       $form['options']['settings'][$bundleId][$bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_FIELD] = [
         '#type' => 'select',
@@ -222,11 +216,22 @@ function _media_pdf_thumbnail_buildForm($display, $form) {
         '#title' => t('Enable'),
         '#default_value' => $display->display['display_options'][$bundleId . MediaPdfThumbnailImageFieldFormatter::MEDIA_BUNDLE_ENABLE] ?? '',
       ];
-
-      $form['#attached']['library'] = 'media_pdf_thumbnail/field_formatter_form';
-
     }
   }
+
+  // Unset image_link select from default field formatter.
+  // We will give the possibility to set that option per bundle.
+  unset($form['options']['settings']['image_link']);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_STYLE_SETTINGS]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::PDF_FILE_FIELD_SETTING]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_TYPE_SETTING]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_ATTRIBUTE_DOWNLOAD_SETTING]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_ATTRIBUTE_TARGET_SETTING]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_LINK_ATTRIBUTE_REL_SETTING]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_FORMAT_SETTINGS]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::PDF_PAGE_SETTING]);
+  unset($form['options']['settings'][MediaPdfThumbnailImageFieldFormatter::IMAGE_USE_CRON]);
+
   return $form;
 }
 

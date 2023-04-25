@@ -46,7 +46,7 @@ trait ImageFieldFormatterSettingsFormTrait {
       $element['image_link']['#attributes']['class'][] = 'thumbnail-pdf-link';
 
       $element[static::IMAGE_LINK_ATTRIBUTE_DOWNLOAD_SETTING] = [
-        '#prefix' => '<div id="thumbnail-pdf-link-attributes" class="fieldset"><div class="fieldset__legend"><span class="fieldset__label">' . $this->t('HTML attributes') . '</span><div class="fieldset__wrapper">',
+        '#prefix' => '<div id="thumbnail-pdf-link-attributes" class="fieldset"><div class="fieldset__legend"><span class="fieldset__label">' . $this->t('HTML extra attributes') . '</span><div class="fieldset__wrapper">',
         '#type' => 'checkbox',
         '#title' => 'download',
         '#weight' => 0,
@@ -81,9 +81,6 @@ trait ImageFieldFormatterSettingsFormTrait {
         You can wait for the cron run or you can execute the queue worker in config page <a href="/admin/media-pdf-thumbnail/settings/queue">queue</a>',
         '#default_value' => $this->getSetting(static::IMAGE_USE_CRON),
       ];
-
-      $element['#attached']['library'] = 'media_pdf_thumbnail/field_formatter_form';
-
     }
 
     return $element;
@@ -113,6 +110,7 @@ trait ImageFieldFormatterSettingsFormTrait {
       $settings[$bundleId . static::MEDIA_BUNDLE_ATTRIBUTES_REL] = '';
       $settings[$bundleId . static::MEDIA_BUNDLE_USE_CRON] = '';
       $settings[$bundleId . static::MEDIA_BUNDLE_IMAGE_FORMAT] = '';
+      $settings[$bundleId . static::MEDIA_BUNDLE_IMAGE_STYLE] = '';
     }
     return $settings + parent::defaultSettings();
   }

@@ -29,11 +29,12 @@ trait ImageFieldFormatterElementViewTrait {
         $settings[static::PDF_FILE_FIELD_SETTING] = $settings[$bundle . static::MEDIA_BUNDLE_FIELD];
         $settings[static::PDF_PAGE_SETTING] = $settings[$bundle . static::MEDIA_BUNDLE_PAGE];
         $settings[static::IMAGE_FORMAT_SETTINGS] = $settings[$bundle . static::MEDIA_BUNDLE_IMAGE_FORMAT];
-        $settings['image_link'] = $settings[$bundle . static::MEDIA_BUNDLE_LINK];
+        $settings[static::IMAGE_STYLE_SETTINGS] = $settings[$bundle . static::MEDIA_BUNDLE_IMAGE_STYLE];
         $settings[static::IMAGE_LINK_ATTRIBUTE_DOWNLOAD_SETTING] = $settings[$bundle . static::MEDIA_BUNDLE_ATTRIBUTES_DOWNLOAD];
         $settings[static::IMAGE_LINK_ATTRIBUTE_TARGET_SETTING] = $settings[$bundle . static::MEDIA_BUNDLE_ATTRIBUTES_TARGET];
         $settings[static::IMAGE_LINK_ATTRIBUTE_REL_SETTING] = $settings[$bundle . static::MEDIA_BUNDLE_ATTRIBUTES_REL];
         $settings[static::IMAGE_USE_CRON] = $settings[$bundle . static::MEDIA_BUNDLE_USE_CRON];
+        $settings[static::IMAGE_LINK_SETTINGS] = $settings[$bundle . static::MEDIA_BUNDLE_LINK];
       }
       else {
         $this->mediaPdfThumbnailImageManager->getGenericThumbnail();
