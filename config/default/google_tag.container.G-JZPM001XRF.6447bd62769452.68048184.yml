@@ -1,0 +1,67 @@
+uuid: 249cafe4-e775-44ad-a5e4-02d6795169b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+    - taxonomy
+    - user
+id: G-JZPM001XRF.6447bd62769452.68048184
+label: G-JZPM001XRF
+weight: 0
+tag_container_ids:
+  - GTM-NB8NL3J
+advanced_settings:
+  gtm:
+    data_layer: dataLayer
+    include_classes: false
+    allowlist_classes: ''
+    blocklist_classes: ''
+    include_environment: false
+    environment_id: ''
+    environment_token: ''
+dimensions_metrics: {  }
+conditions:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
+  response_code:
+    id: response_code
+    negate: false
+    response_codes: ''
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles: {  }
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles: {  }
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles: {  }
+events:
+  generate_lead:
+    value: ''
+    currency: ''
+  search: {  }
+  custom: {  }
+  login:
+    method: CMS
+  sign_up:
+    method: CMS

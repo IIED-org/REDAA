@@ -46,6 +46,10 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
 
   const IMAGE_FORMAT_SETTINGS = 'image_format';
 
+  const IMAGE_LINK_SETTINGS = 'image_link';
+
+  const IMAGE_STYLE_SETTINGS = 'image_style';
+
   const DEFAULT_IMAGE_FORMAT_SETTING = 'jpg';
 
   const IMAGE_LINK_TYPE_SETTING = 'pdf_file';
@@ -65,6 +69,8 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
   const MEDIA_BUNDLE_ENABLE = '_enable';
 
   const MEDIA_BUNDLE_LINK = '_link';
+
+  const MEDIA_BUNDLE_IMAGE_STYLE = '_image_style';
 
   const MEDIA_BUNDLE_ATTRIBUTES_DOWNLOAD = '_attributes_download';
 
@@ -197,17 +203,30 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
 
     // Rendering image.
     if (!empty($fieldInfos['image_id'])) {
+      $element[0]['#image_style'] = $settings['image_style'];
       $element = $this->renderImage($element, $fieldInfos['image_id'], $entity);
     }
 
-    // Linking image to pdf to file.
-    if ($settings['image_link'] == 'pdf_file' && !empty($fieldInfos['pdf_uri'])) {
-      $stream = $this->streamWrapperManager->getViaUri($fieldInfos['pdf_uri'])->getExternalUrl();
+    // Get html attributes.
+    $options = $this->htmlAttributes($settings);
 
-      // Set html attributes.
-      $options = $this->htmlAttributes($settings);
-
-      $element[0]['#url'] = Url::fromUri($stream, $options);
+    // Linking image.
+    switch ($settings['image_link']) {
+      case 'pdf_file':
+        if (!empty($fieldInfos['pdf_uri'])) {
+          $stream = $this->streamWrapperManager->getViaUri($fieldInfos['pdf_uri'])->getExternalUrl();
+          $element[0]['#url'] = Url::fromUri($stream, $options);
+        }
+        break;
+      case 'content':
+        $element[0]['#url'] = $entity->toUrl('canonical', $options);
+        break;
+      case 'file':
+        if (!empty($fieldInfos['pdf_uri'])) {
+          $stream = $this->streamWrapperManager->getViaUri($fieldInfos['image_uri'])->getExternalUrl();
+          $element[0]['#url'] = Url::fromUri($stream, $options);
+        }
+        break;
     }
 
     // Invokes preprocessing hook
