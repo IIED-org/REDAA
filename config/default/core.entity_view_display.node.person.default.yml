@@ -6,11 +6,12 @@ dependencies:
     - field.field.node.person.body
     - field.field.node.person.field_image
     - field.field.node.person.field_job_title
+    - field.field.node.person.field_org
+    - field.field.node.person.field_roles
     - field.field.node.person.field_team
     - image.style.thumbnail
     - node.type.person
   module:
-    - options
     - svg_image
     - text
     - user
@@ -39,7 +40,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_job_title:
     type: text_default
@@ -48,16 +49,26 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_team:
-    type: list_default
-    label: hidden
-    settings: {  }
+  field_org:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 5
+    region: content
+  field_roles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_team: true

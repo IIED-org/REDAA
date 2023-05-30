@@ -30,8 +30,8 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: be76b6e4-0843-4c3b-bbf8-982f546b5136
-    alt: Avatar
+    uuid: ''
+    alt: ''
     title: ''
     width: 600
     height: 600

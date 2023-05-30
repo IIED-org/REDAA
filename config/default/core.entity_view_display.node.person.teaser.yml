@@ -7,11 +7,82 @@ dependencies:
     - field.field.node.person.body
     - field.field.node.person.field_image
     - field.field.node.person.field_job_title
+    - field.field.node.person.field_org
+    - field.field.node.person.field_roles
     - field.field.node.person.field_team
     - node.type.person
   module:
+    - layout_builder
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          28944f7b-24d3-4881-9331-a2e61fe057b3:
+            uuid: 28944f7b-24d3-4881-9331-a2e61fe057b3
+            region: content
+            configuration:
+              id: 'field_block:node:person:body'
+              label: 'REDAA job title'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          68135119-9df8-4985-b8eb-c9f4c94dd82b:
+            uuid: 68135119-9df8-4985-b8eb-c9f4c94dd82b
+            region: content
+            configuration:
+              id: 'field_block:node:person:field_job_title'
+              label: Position
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          09d80628-97ca-4d2d-b320-18a3da4b7dfb:
+            uuid: 09d80628-97ca-4d2d-b320-18a3da4b7dfb
+            region: content
+            configuration:
+              id: 'field_block:node:person:field_org'
+              label: Organisation
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.person.teaser
 targetEntityType: node
 bundle: person
@@ -33,4 +104,6 @@ content:
 hidden:
   field_image: true
   field_job_title: true
+  field_org: true
+  field_roles: true
   field_team: true

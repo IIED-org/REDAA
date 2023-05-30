@@ -1,0 +1,8 @@
+uuid: 45af5f21-7e5d-4c1e-94cd-d992f8763eb3
+langcode: en
+status: true
+dependencies: {  }
+name: Organisation
+vid: organisation
+description: 'IIED, FCDO, ESRC etc.'
+weight: 0
