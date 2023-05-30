@@ -11,8 +11,8 @@ id: node.person.field_job_title
 field_name: field_job_title
 entity_type: node
 bundle: person
-label: 'Job title'
-description: ''
+label: Position
+description: 'Job title at organisation'
 required: false
 translatable: false
 default_value: {  }
