@@ -34,6 +34,7 @@
         "drupal/seckit": "^2.0",
         "drupal/svg_image": "^1.16",
         "drupal/upgrade_status": "^3.13",
+        "drupal/views_field_view": "^1.0",
         "drush/drush": "^11.3",
         "oomphinc/composer-installers-extender": "^1.1 || ^2"
     },
