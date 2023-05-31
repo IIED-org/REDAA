@@ -38,10 +38,10 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: #005890;
+  color: #fff;
   border: solid 2px #005890;
   border-radius: 0.1875rem;
-  background-color: #fff;
+  background-color: #005890;
   font-family: "Arial", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;

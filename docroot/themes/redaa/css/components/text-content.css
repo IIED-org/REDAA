@@ -10,8 +10,7 @@
  * Text Content.
  */
 
-.text-content,
-.cke_editable {
+.text-content, .cke_editable {
   color: #313637;
   font-family: "Open Sans", "Arial", sans-serif;
   line-height: 1.6875rem
@@ -28,26 +27,23 @@
 
 .text-content a:not(.button), .cke_editable a:not(.button) {
     color: #005890;
-    -webkit-text-decoration-color: #005890;
-    text-decoration-color: #005890;
-    text-decoration-thickness: 2px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    text-decoration: none
   }
 
 @supports (box-shadow: none) {
 
 .text-content a:not(.button), .cke_editable a:not(.button) {
       transition: box-shadow 0.3s cubic-bezier(0.55, 0.085, 0, 0.99);
-      text-decoration: none;
-      box-shadow: inset 0 -2px 0 0 #32A4D5
+      text-decoration: none
+      /* box-shadow: inset 0 -2px 0 0 var(--color--blue-50); */
   }
 
       .text-content a:not(.button):hover, .cke_editable a:not(.button):hover {
         text-decoration: underline;
         color: #000;
-
+        box-shadow: inset 0 -2px 0 0 #32A4D5;
         /* @todo - #d9ecfa isn't currently a variable. */
-        box-shadow: inset 0 -2em 0 0 #d9ecfa;
         -webkit-text-decoration-color: #d9ecfa;
         text-decoration-color: #d9ecfa;
       }
@@ -78,19 +74,19 @@
     background-color: #f7f9fa;
   }
 
-[dir="ltr"] .text-content pre code,[dir="ltr"]  .cke_editable pre code {
+[dir="ltr"] .text-content pre code, [dir="ltr"]  .cke_editable pre code {
     padding-left: 1.125rem
 }
 
-[dir="rtl"] .text-content pre code,[dir="rtl"]  .cke_editable pre code {
+[dir="rtl"] .text-content pre code, [dir="rtl"]  .cke_editable pre code {
     padding-right: 1.125rem
 }
 
-[dir="ltr"] .text-content pre code,[dir="ltr"]  .cke_editable pre code {
+[dir="ltr"] .text-content pre code, [dir="ltr"]  .cke_editable pre code {
     padding-right: 1.125rem
 }
 
-[dir="rtl"] .text-content pre code,[dir="rtl"]  .cke_editable pre code {
+[dir="rtl"] .text-content pre code, [dir="rtl"]  .cke_editable pre code {
     padding-left: 1.125rem
 }
 
@@ -102,27 +98,27 @@
     color: #6e7172;
   }
 
-[dir="ltr"] .text-content blockquote,[dir="ltr"]  .cke_editable blockquote {
+[dir="ltr"] .text-content blockquote, [dir="ltr"]  .cke_editable blockquote {
     margin-left: 0
 }
 
-[dir="rtl"] .text-content blockquote,[dir="rtl"]  .cke_editable blockquote {
+[dir="rtl"] .text-content blockquote, [dir="rtl"]  .cke_editable blockquote {
     margin-right: 0
 }
 
-[dir="ltr"] .text-content blockquote,[dir="ltr"]  .cke_editable blockquote {
+[dir="ltr"] .text-content blockquote, [dir="ltr"]  .cke_editable blockquote {
     margin-right: 0
 }
 
-[dir="rtl"] .text-content blockquote,[dir="rtl"]  .cke_editable blockquote {
+[dir="rtl"] .text-content blockquote, [dir="rtl"]  .cke_editable blockquote {
     margin-left: 0
 }
 
-[dir="ltr"] .text-content blockquote,[dir="ltr"]  .cke_editable blockquote {
+[dir="ltr"] .text-content blockquote, [dir="ltr"]  .cke_editable blockquote {
     padding-left: 2.25rem
 }
 
-[dir="rtl"] .text-content blockquote,[dir="rtl"]  .cke_editable blockquote {
+[dir="rtl"] .text-content blockquote, [dir="rtl"]  .cke_editable blockquote {
     padding-right: 2.25rem
 }
 
@@ -136,11 +132,11 @@
     line-height: 2.25rem
   }
 
-[dir="ltr"] .text-content blockquote:before,[dir="ltr"]  .cke_editable blockquote:before {
+[dir="ltr"] .text-content blockquote:before, [dir="ltr"]  .cke_editable blockquote:before {
       left: 0
 }
 
-[dir="rtl"] .text-content blockquote:before,[dir="rtl"]  .cke_editable blockquote:before {
+[dir="rtl"] .text-content blockquote:before, [dir="rtl"]  .cke_editable blockquote:before {
       right: 0
 }
 
@@ -152,19 +148,19 @@
       font-size: 3.375rem;
     }
 
-[dir="ltr"] .text-content blockquote:after,[dir="ltr"]  .cke_editable blockquote:after {
+[dir="ltr"] .text-content blockquote:after, [dir="ltr"]  .cke_editable blockquote:after {
       left: 0
 }
 
-[dir="rtl"] .text-content blockquote:after,[dir="rtl"]  .cke_editable blockquote:after {
+[dir="rtl"] .text-content blockquote:after, [dir="rtl"]  .cke_editable blockquote:after {
       right: 0
 }
 
-[dir="ltr"] .text-content blockquote:after,[dir="ltr"]  .cke_editable blockquote:after {
+[dir="ltr"] .text-content blockquote:after, [dir="ltr"]  .cke_editable blockquote:after {
       margin-left: 0.25rem
 }
 
-[dir="rtl"] .text-content blockquote:after,[dir="rtl"]  .cke_editable blockquote:after {
+[dir="rtl"] .text-content blockquote:after, [dir="rtl"]  .cke_editable blockquote:after {
       margin-right: 0.25rem
 }
 
@@ -195,8 +191,7 @@
 
 @media (min-width: 43.75rem) {
 
-.text-content,
-.cke_editable {
+.text-content, .cke_editable {
     font-size: 1.125rem;
     line-height: 2.25rem
 }
