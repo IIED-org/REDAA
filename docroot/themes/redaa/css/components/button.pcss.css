@@ -16,10 +16,10 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: var(--color--blue-20);
+  color: var(--color--white);
   border: solid 2px var(--color--blue-20);
   border-radius: var(--border-radius);
-  background-color: var(--color--white);
+  background-color: var(--color--blue-20);
   font-family: var(--font-sans);
   font-size: var(--font-size-l);
   font-weight: 700;
