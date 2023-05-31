@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd2144b1ed5857a7a1b11951b49ed3bc33be6293a',
+        'reference' => '217611da09e6faa662e51d9f30beacb7df8befe8',
         'name' => 'acquia/drupal-recommended-project',
         'dev' => true,
     ),
@@ -43,7 +43,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd2144b1ed5857a7a1b11951b49ed3bc33be6293a',
+            'reference' => '217611da09e6faa662e51d9f30beacb7df8befe8',
             'dev_requirement' => false,
         ),
         'acquia/hmac-request' => array(
@@ -551,12 +551,12 @@
             ),
         ),
         'drupal/ctools' => array(
-            'pretty_version' => '4.0.3',
-            'version' => '4.0.3.0',
+            'pretty_version' => '3.14.0',
+            'version' => '3.14.0.0',
             'type' => 'drupal-module',
             'install_path' => __DIR__ . '/../../docroot/modules/contrib/ctools',
             'aliases' => array(),
-            'reference' => '4.0.3',
+            'reference' => '8.x-3.14',
             'dev_requirement' => false,
         ),
         'drupal/eu_cookie_compliance' => array(
