@@ -53,3 +53,7 @@
     -ms-grid-row: 10;
   }
 }
+
+.red {
+  color: var(--color--red);
+}

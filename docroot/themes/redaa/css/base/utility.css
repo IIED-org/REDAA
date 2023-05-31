@@ -57,3 +57,7 @@
 .ie11-autorow > *:nth-child(10) {
     -ms-grid-row: 10;
   }
+
+.red {
+  color: #AB351C;
+}
