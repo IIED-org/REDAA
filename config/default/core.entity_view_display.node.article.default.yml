@@ -3,19 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
-    - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.wide
     - node.type.article
   module:
-    - comment
     - field_layout
-    - image
     - layout_builder
     - layout_discovery
+    - svg_image
     - text
     - user
 third_party_settings:
@@ -91,23 +88,6 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 3
             additional: {  }
-          b572c91e-6abd-40d9-ae38-cabca3dd0509:
-            uuid: b572c91e-6abd-40d9-ae38-cabca3dd0509
-            region: content
-            configuration:
-              id: 'field_block:node:article:comment'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: above
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
@@ -122,15 +102,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  comment:
-    type: comment_default
-    label: above
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    weight: 110
     region: content
   field_image:
     type: image
