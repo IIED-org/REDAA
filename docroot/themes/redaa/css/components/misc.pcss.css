@@ -11,3 +11,23 @@
     list-style-image: url("/themes/redaa/images/waves.png");
   }
  }
+
+ .node--view-mode-card a {
+  text-decoration: none;
+  & div {
+    border: solid 1px var(--color--gray-70);
+  }
+  & h3 {
+    color: var(--color--blue-20);
+    padding: 0 .5rem;
+    margin: 1rem 0;
+  }
+ }
+
+ .node--view-mode-card a div:hover, 
+ .node--view-mode-card a div:focus {
+    background-color: var(--color--gray-70);
+    & h3 {
+      color: black;
+    }
+}
