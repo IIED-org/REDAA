@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.teaser
     - node.type.article
   module:
@@ -460,16 +461,21 @@ display:
         groups:
           1: AND
       style:
-        type: default
+        type: grid
         options:
-          row_class: ''
-          default_row_class: true
           uses_fields: false
+          columns: 3
+          automatic_width: true
+          alignment: horizontal
+          row_class_custom: ''
+          row_class_default: true
+          col_class_custom: ''
+          col_class_default: true
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: card
       defaults:
         title: false
         use_more: false
