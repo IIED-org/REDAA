@@ -17,3 +17,25 @@
  .image-list li > ul li {
     list-style-image: url("/themes/redaa/images/waves.png");
   }
+
+ .node--view-mode-card a {
+  text-decoration: none
+ }
+
+ .node--view-mode-card a div {
+    border: solid 1px #d7e1e8;
+  }
+
+ .node--view-mode-card a h3 {
+    color: #005890;
+    padding: 0 .5rem;
+    margin: 1rem 0;
+  }
+
+ .node--view-mode-card a div:hover, .node--view-mode-card a div:focus {
+    background-color: #d7e1e8
+}
+
+ .node--view-mode-card a div:hover h3, .node--view-mode-card a div:focus h3 {
+      color: black;
+    }
