@@ -330,6 +330,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      title: News
       filters:
         status_extra:
           id: status_extra
@@ -470,6 +471,7 @@ display:
           relationship: none
           view_mode: teaser
       defaults:
+        title: false
         use_more: false
         use_more_always: false
         use_more_text: false
@@ -477,10 +479,25 @@ display:
         row: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
       use_more: true
       use_more_always: false
       use_more_text: 'More news'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2 class="red">Latest news</h2>'
+            format: full_html
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
