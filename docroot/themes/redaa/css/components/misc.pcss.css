@@ -17,7 +17,7 @@
   & div {
     border: solid 1px var(--color--gray-70);
   }
-  & h3 {
+  & h3, & p {
     color: var(--color--blue-20);
     padding: 0 .5rem;
     margin: 1rem 0;

@@ -54,10 +54,10 @@
 }
 
 .node__content {
-  padding-block-end: var(--sp1-5);
+  padding-block-end: var(--sp1);
 
   @media (--lg) {
-    padding-block-end: var(--sp3);
+    padding-block-end: var(--sp1-5);
   }
 }
 

@@ -26,7 +26,7 @@
     border: solid 1px #d7e1e8;
   }
 
- .node--view-mode-card a h3 {
+ .node--view-mode-card a h3, .node--view-mode-card a p {
     color: #005890;
     padding: 0 .5rem;
     margin: 1rem 0;

@@ -85,8 +85,9 @@
   <a href="{{ url }}" rel="bookmark">
     <div{{ content_attributes.addClass('node__content', layout) }}>
       {# Comments not part of content, so they won't inherit .text-content styles. #}
-      {{ content|without('comment', 'title') }}
+      {{ content|without('comment', 'title', 'body') }}
       <h3>{{ label }}</h3>
+      <p>{{ content.body['#items'][0].summary }}</p>
     </div>
   </a>
 </article>

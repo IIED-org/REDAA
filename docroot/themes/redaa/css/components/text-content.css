@@ -26,7 +26,7 @@
 }
 
 .text-content a:not(.button), .cke_editable a:not(.button) {
-    color: #005890;
+    /* color: var(--color--blue-20); */
     word-wrap: break-word;
     text-decoration: none
   }
