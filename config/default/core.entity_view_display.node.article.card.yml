@@ -13,6 +13,7 @@ dependencies:
     - field_layout
     - layout_builder
     - svg_image
+    - text
     - user
 third_party_settings:
   field_layout:
@@ -29,6 +30,14 @@ targetEntityType: node
 bundle: article
 mode: card
 content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_image:
     type: image
     label: hidden
@@ -45,6 +54,5 @@ content:
     weight: 0
     region: content
 hidden:
-  body: true
   field_tags: true
   links: true
