@@ -516,7 +516,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: 'News page'
     display_plugin: page
     position: 2
     display_options:
