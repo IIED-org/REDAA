@@ -53,11 +53,14 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:article:body'
+              label: Body
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                type: text_summary_or_trimmed
+                type: text_trimmed
                 label: hidden
                 settings:
                   trim_length: 600
@@ -130,4 +133,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  comment: true
