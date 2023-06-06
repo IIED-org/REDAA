@@ -51,6 +51,10 @@
   -webkit-font-smoothing: antialiased
 }
 
+.button a, .field--name-field-media-document .file--application-pdf a a {
+    color: #fff;
+  }
+
 .button:hover, .button:focus, .field--name-field-media-document .file--application-pdf a:hover, .field--name-field-media-document .file--application-pdf a:focus {
     text-decoration: none;
     color: #0f6292;
@@ -60,12 +64,13 @@
   }
 
 .button:focus, .field--name-field-media-document .file--application-pdf a:focus {
+    color: #fff;
     outline: 2px solid #53b0eb;
     outline-offset: 2px;
   }
 
 .button:active, .field--name-field-media-document .file--application-pdf a:active {
-    color: #005890;
+    color: #fff;
     border-color: #005890;
   }
 

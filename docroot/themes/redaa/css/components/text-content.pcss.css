@@ -21,7 +21,7 @@
   */
 
   & a:not(.button) {
-    color: var(--color--blue-20);
+    /* color: var(--color--blue-20); */
     overflow-wrap: break-word;
     text-decoration: none;
 
