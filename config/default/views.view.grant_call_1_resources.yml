@@ -395,7 +395,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: granty-call-1-resources
+      path: admin/grant-call-1-resources
     cache_metadata:
       max-age: -1
       contexts:
