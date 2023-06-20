@@ -26,7 +26,7 @@
   margin-left: 1.125rem
 }
 
-.button, .field--name-field-media-document .file--application-pdf a {
+.button, .field--name-field-media-document span.file a {
   display: inline-block;
   height: 3.375rem;
   margin-top: 1.125rem;
@@ -51,11 +51,11 @@
   -webkit-font-smoothing: antialiased
 }
 
-.button a, .field--name-field-media-document .file--application-pdf a a {
+.button a, .field--name-field-media-document span.file a a {
     color: #fff;
   }
 
-.button:hover, .button:focus, .field--name-field-media-document .file--application-pdf a:hover, .field--name-field-media-document .file--application-pdf a:focus {
+.button:hover, .button:focus, .field--name-field-media-document span.file a:hover, .field--name-field-media-document span.file a:focus {
     text-decoration: none;
     color: #0f6292;
     border: solid 2px #0f6292;
@@ -63,24 +63,24 @@
     font-weight: 700;
   }
 
-.button:focus, .field--name-field-media-document .file--application-pdf a:focus {
+.button:focus, .field--name-field-media-document span.file a:focus {
     color: #fff;
     outline: 2px solid #53b0eb;
     outline-offset: 2px;
   }
 
-.button:active, .field--name-field-media-document .file--application-pdf a:active {
+.button:active, .field--name-field-media-document span.file a:active {
     color: #fff;
     border-color: #005890;
   }
 
-.button:disabled, .button.is-disabled, .field--name-field-media-document .file--application-pdf a:disabled, .field--name-field-media-document .file--application-pdf a.is-disabled {
+.button:disabled, .button.is-disabled, .field--name-field-media-document span.file a:disabled, .field--name-field-media-document span.file a.is-disabled {
     cursor: default;
     color: #d7e1e8;
     border-color: #d7e1e8;
   }
 
-.button, .field--name-field-media-document .file--application-pdf a {
+.button, .field--name-field-media-document span.file a {
 
   /*
     IE11 doesn't work properly on button elements so we only do
@@ -90,7 +90,7 @@
 
 @supports (display: inline-flex) {
 
-.button, .field--name-field-media-document .file--application-pdf a {
+.button, .field--name-field-media-document span.file a {
     display: inline-flex;
     align-items: center;
 
@@ -197,4 +197,8 @@
 
 #mc-embedded-subscribe {
   background-color: #005890 !important;
+}
+
+.field--name-field-media-document span.file a {
+  margin-right: 1.125rem;
 }
