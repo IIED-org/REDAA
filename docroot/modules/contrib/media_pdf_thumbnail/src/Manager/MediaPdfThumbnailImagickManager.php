@@ -47,22 +47,13 @@ class MediaPdfThumbnailImagickManager {
     $this->fileSystem->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS | FileSystemInterface::EXISTS_REPLACE);
     try {
       $pdf = new Pdf($source);
-      $pdf->getNumberOfPages() > intval($page) ? $pdf->setPage(intval($page)) : '';
-      $pdf->setLayerMethod(NULL);
-      $pdf->setOutputFormat($imageFormat);
-      if (file_exists($target)) {
-        $this->fileSystem->delete($target);
-      }
-      $status = $pdf->saveImage($target);
+      $status = $this->generate($pdf, $target, $imageFormat, $page);
     }
     catch (\Exception $e) {
+      // If something goes wrong, try with real path.
       try {
         $pdf = new Pdf($this->fileSystem->realpath($source));
-        $pdf->getNumberOfPages() > intval($page) ? $pdf->setPage(intval($page)) : '';
-        if (file_exists($target)) {
-          $this->fileSystem->delete($target);
-        }
-        $status = $pdf->saveImage($target);
+        $status = $this->generate($pdf, $target, $imageFormat, $page);
       }
       catch (\Exception $e) {
         $this->logger->error($e->getMessage());
@@ -70,6 +61,24 @@ class MediaPdfThumbnailImagickManager {
       }
     }
     return $status ? $target : NULL;
+  }
+
+  /**
+   * @param $pdf
+   * @param $target
+   * @param $imageFormat
+   * @param $page
+   *
+   * @return mixed
+   */
+  protected function generate($pdf, $target, $imageFormat, $page): mixed {
+    $pdf->getNumberOfPages() > intval($page) ? $pdf->setPage(intval($page)) : '';
+    $pdf->setLayerMethod(NULL);
+    $pdf->setOutputFormat($imageFormat);
+    if (file_exists($target)) {
+      $this->fileSystem->delete($target);
+    }
+    return $pdf->saveImage($target);
   }
 
 }

@@ -7,10 +7,12 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\file\FileInterface;
+use Drupal\media_pdf_thumbnail\Form\MediaPdfThumbnailSettingsForm;
 use Exception;
 
 /**
@@ -66,6 +68,11 @@ class MediaPdfThumbnailImageManager {
   protected LoggerChannelInterface $logger;
 
   /**
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected ModuleHandlerInterface $moduleHandler;
+
+  /**
    * MediaPdfThumbnailImageManager constructor.
    *
    * @param \Drupal\media_pdf_thumbnail\Manager\MediaPdfThumbnailImagickManager $mediaPdfThumbnailImagickManager
@@ -75,8 +82,9 @@ class MediaPdfThumbnailImageManager {
    * @param \Drupal\Core\Database\Connection $connection
    * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cache
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerChannelFactory
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
    */
-  public function __construct(MediaPdfThumbnailImagickManager $mediaPdfThumbnailImagickManager, EntityTypeManagerInterface $entityTypeManager, FileSystemInterface $fileSystem, ConfigFactoryInterface $configFactory, Connection $connection, CacheTagsInvalidatorInterface $cache, LoggerChannelFactoryInterface $loggerChannelFactory) {
+  public function __construct(MediaPdfThumbnailImagickManager $mediaPdfThumbnailImagickManager, EntityTypeManagerInterface $entityTypeManager, FileSystemInterface $fileSystem, ConfigFactoryInterface $configFactory, Connection $connection, CacheTagsInvalidatorInterface $cache, LoggerChannelFactoryInterface $loggerChannelFactory, ModuleHandlerInterface $moduleHandler) {
     $this->mediaPdfThumbnailImagickManager = $mediaPdfThumbnailImagickManager;
     $this->entityTypeManager = $entityTypeManager;
     $this->fileSystem = $fileSystem;
@@ -84,6 +92,7 @@ class MediaPdfThumbnailImageManager {
     $this->connection = $connection;
     $this->cache = $cache;
     $this->logger = $loggerChannelFactory->get('Media pdf thumbnail');
+    $this->moduleHandler = $moduleHandler;
   }
 
   /**
@@ -297,10 +306,28 @@ class MediaPdfThumbnailImageManager {
    *
    * @return array
    */
-  protected function getFileInfos(FileInterface $fileEntity, $imageFormat, $page) {
+  protected function getFileInfos(FileInterface $fileEntity, $imageFormat, $page): array {
+
     $sourcePath = $fileEntity->getFileUri();
-    $destinationPath = $sourcePath . '-p' . $page . '.' . $imageFormat;
-    return ['source' => $sourcePath, 'destination' => $destinationPath];
+    $path = $sourcePath;
+
+    $destinationUri = str_starts_with($fileEntity->getFileUri(), 'private://') ? 'private' : 'public';
+
+    // Set destination from config.
+    $configDestinationUri = $this->configFactory->get(MediaPdfThumbnailSettingsForm::CONFIG_NAME)->get(MediaPdfThumbnailSettingsForm::getConfigUri($destinationUri));
+    if (!empty($configDestinationUri)) {
+      $fileBaseName = pathinfo($sourcePath)['basename'];
+      $path = $configDestinationUri . '/' . $fileBaseName;
+    }
+
+    $destinationPath = $path . '-p' . $page . '.' . $imageFormat;
+    $infos = ['source' => $sourcePath, 'destination' => $destinationPath];
+    $context = ['file_entity' => $fileEntity, 'image_format' => $imageFormat, 'page' => $page];
+
+    // Give a chance to alter destination with hook.
+    $this->moduleHandler->alter('media_pdf_thumbnail_image_destination', $infos, $context);
+
+    return $infos;
   }
 
   /**
