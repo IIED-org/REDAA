@@ -26,14 +26,23 @@ class GoogleTagController extends HtmlEntityFormController implements ContainerI
   private EntityInterface $googleTagEntity;
 
   /**
+   * The configuration factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
-    return new self(
+    $instance = new self(
       $container->get('http_kernel.controller.argument_resolver'),
       $container->get('form_builder'),
       $container->get('entity_type.manager'),
     );
+    $instance->configFactory = $container->get('config.factory');
+    return $instance;
   }
 
   /**
@@ -44,8 +53,8 @@ class GoogleTagController extends HtmlEntityFormController implements ContainerI
     // @todo Contemplate if dependency injection is needed here.
     $entity_type_id = 'google_tag_container';
     // @phpstan-ignore-next-line
-    $tag_entity = \Drupal::config('google_tag.settings')->get('default_google_tag_entity');
-    $tag_entities = $this->entityTypeManager->getStorage($entity_type_id)->loadMultiple();
+    $tag_entity = $this->configFactory->get('google_tag.settings')->get('default_google_tag_entity');
+    $tag_entities = $this->entityTypeManager->getStorage($entity_type_id)->loadMultipleOverrideFree();
     // Only one Google Tag exists, load it.
     // @todo There might be a better logic path here.
     if ($tag_entity && isset($tag_entities[$tag_entity])) {
@@ -55,10 +64,10 @@ class GoogleTagController extends HtmlEntityFormController implements ContainerI
   }
 
   /**
-   * Enables a Container object.
+   * Enables a tag container object.
    *
    * @param \Drupal\google_tag\Entity\TagContainer $google_tag_container
-   *   The Container object to enable.
+   *   The tag container object to enable.
    *
    * @return \Symfony\Component\HttpFoundation\RedirectResponse
    *   A redirect response to the google_tag_container listing page.
@@ -69,10 +78,10 @@ class GoogleTagController extends HtmlEntityFormController implements ContainerI
   }
 
   /**
-   * Disables a Container object.
+   * Disables a tag container object.
    *
    * @param \Drupal\google_tag\Entity\TagContainer $google_tag_container
-   *   The Container object to disable.
+   *   The tag container object to disable.
    *
    * @return \Symfony\Component\HttpFoundation\RedirectResponse
    *   A redirect response to the google_tag_container listing page.
@@ -127,7 +136,7 @@ class GoogleTagController extends HtmlEntityFormController implements ContainerI
   }
 
   /**
-   * Used for Accessing the Container Listing page.
+   * Used for Accessing the tag container Listing page.
    *
    * @param \Drupal\Core\Session\AccountInterface $account
    *   Run access checks for this account.
