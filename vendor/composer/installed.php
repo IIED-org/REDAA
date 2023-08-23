@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0d011e696dd3e2359b0b43200ab92a93358e733d',
+        'reference' => '2dc938ced43b4977ab895fc232c9a4c1f680b82e',
         'name' => 'acquia/drupal-recommended-project',
         'dev' => true,
     ),
@@ -43,7 +43,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0d011e696dd3e2359b0b43200ab92a93358e733d',
+            'reference' => '2dc938ced43b4977ab895fc232c9a4c1f680b82e',
             'dev_requirement' => false,
         ),
         'acquia/hmac-request' => array(
@@ -686,12 +686,12 @@
             'dev_requirement' => false,
         ),
         'drupal/upgrade_status' => array(
-            'pretty_version' => '3.19.0',
-            'version' => '3.19.0.0',
+            'pretty_version' => '4.0.0',
+            'version' => '4.0.0.0',
             'type' => 'drupal-module',
             'install_path' => __DIR__ . '/../../docroot/modules/contrib/upgrade_status',
             'aliases' => array(),
-            'reference' => '8.x-3.19',
+            'reference' => '4.0.0',
             'dev_requirement' => false,
         ),
         'drupal/views_field_view' => array(
