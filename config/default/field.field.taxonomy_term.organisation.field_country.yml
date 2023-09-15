@@ -1,0 +1,22 @@
+uuid: d6a2edf5-6cf4-4307-aae5-fbd47eaa4beb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_country
+    - taxonomy.vocabulary.organisation
+  module:
+    - address
+id: taxonomy_term.organisation.field_country
+field_name: field_country
+entity_type: taxonomy_term
+bundle: organisation
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

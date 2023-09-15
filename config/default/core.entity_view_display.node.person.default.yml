@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.person.field_job_title
     - field.field.node.person.field_org
     - field.field.node.person.field_roles
+    - field.field.node.person.field_sort_order
     - image.style.thumbnail
     - node.type.person
   module:
@@ -69,4 +70,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_sort_order: true
