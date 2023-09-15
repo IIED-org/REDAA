@@ -8,11 +8,14 @@ dependencies:
     - field.storage.node.field_job_title
     - field.storage.node.field_org
     - field.storage.node.field_roles
+    - field.storage.taxonomy_term.field_country
     - image.style.thumbnail_sq
     - node.type.person
   module:
+    - address
     - node
     - svg_image
+    - taxonomy
     - text
     - user
 id: team
@@ -419,6 +422,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_country:
+          id: field_country
+          table: taxonomy_term__field_country
+          field: field_country
+          relationship: field_org
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: ', {{ field_country }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: address_country_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_org:
           id: field_org
           table: node__field_org
@@ -431,7 +496,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<p>{{ field_org }} </p>'
+            text: '<p>{{ field_org }}{{ field_country }} </p>'
             make_link: false
             path: ''
             absolute: false
@@ -506,15 +571,17 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        field_roles_target_id:
-          id: field_roles_target_id
-          table: node__field_roles
-          field: field_roles_target_id
-          relationship: none
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: field_roles
           group_type: group
           admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
           plugin_id: standard
-          order: DESC
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -530,6 +597,19 @@ display:
           entity_field: sticky
           plugin_id: standard
           order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        field_sort_order_value:
+          id: field_sort_order_value
+          table: node__field_sort_order
+          field: field_sort_order_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -659,7 +739,25 @@ display:
           distinct: true
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        field_org:
+          id: field_org
+          table: node__field_org
+          field: field_org
+          relationship: none
+          group_type: group
+          admin_label: 'field_org: Taxonomy term'
+          plugin_id: standard
+          required: false
+        field_roles:
+          id: field_roles
+          table: node__field_roles
+          field: field_roles
+          relationship: none
+          group_type: group
+          admin_label: 'field_roles: Taxonomy term'
+          plugin_id: standard
+          required: false
       group_by: true
       header:
         area:
@@ -690,6 +788,7 @@ display:
         - 'config:field.storage.node.field_job_title'
         - 'config:field.storage.node.field_org'
         - 'config:field.storage.node.field_roles'
+        - 'config:field.storage.taxonomy_term.field_country'
   page_1:
     id: page_1
     display_title: Page
@@ -711,3 +810,4 @@ display:
         - 'config:field.storage.node.field_job_title'
         - 'config:field.storage.node.field_org'
         - 'config:field.storage.node.field_roles'
+        - 'config:field.storage.taxonomy_term.field_country'
