@@ -84,6 +84,7 @@ class MediaPdfThumbnailSettingsForm extends ConfigFormBase {
     return match ($value) {
       'public' => self::DESTINATION_URI_PUBLIC,
       'private' => self::DESTINATION_URI_PRIVATE,
+      default => NULL
     };
   }
 

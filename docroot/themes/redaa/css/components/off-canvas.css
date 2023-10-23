@@ -22,8 +22,7 @@
     line-height: 1.125rem
   }
 
-#drupal-off-canvas .form-type-boolean input[type="checkbox"],
-    #drupal-off-canvas .form-type-boolean input[type="radio"] {
+#drupal-off-canvas .form-type-boolean input[type="checkbox"], #drupal-off-canvas .form-type-boolean input[type="radio"] {
       float: none;
       width: 0.84375rem;
       height: 0.84375rem;

@@ -17,3 +17,10 @@ media_pdf_thumbnail.settings.global:
   title: Settings
   route_name: media_pdf_thumbnail.settings.global
   base_route: view.pdf_image_entity.list
+
+media_pdf_thumbnail.permissions.module:
+  title: Permissions
+  route_name: user.admin_permissions.module
+  base_route: view.pdf_image_entity.list
+  route_parameters:
+    modules: 'media_pdf_thumbnail'
