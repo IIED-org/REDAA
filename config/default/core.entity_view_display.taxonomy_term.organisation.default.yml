@@ -1,0 +1,30 @@
+uuid: b0acd362-4c7f-42c2-8a3a-f2e6726c91d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.organisation.field_country
+    - taxonomy.vocabulary.organisation
+  module:
+    - address
+    - text
+id: taxonomy_term.organisation.default
+targetEntityType: taxonomy_term
+bundle: organisation
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_country:
+    type: address_country_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

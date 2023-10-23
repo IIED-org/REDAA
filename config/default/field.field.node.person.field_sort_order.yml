@@ -1,0 +1,19 @@
+uuid: 63b35a2b-5a76-4b7e-b005-b721aa3e493a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sort_order
+    - node.type.person
+id: node.person.field_sort_order
+field_name: field_sort_order
+entity_type: node
+bundle: person
+label: 'Sort order'
+description: 'Use 0, 1, 2 etc. to always sort at top of lists, otherwise enter the person''s surname.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

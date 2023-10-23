@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.person.field_job_title
     - field.field.node.person.field_org
     - field.field.node.person.field_roles
+    - field.field.node.person.field_sort_order
     - node.type.person
   module:
     - layout_builder
@@ -105,3 +106,4 @@ hidden:
   field_job_title: true
   field_org: true
   field_roles: true
+  field_sort_order: true
