@@ -46,32 +46,28 @@ class MediaPdfThumbnailImagickManager {
     $directory = dirname($target);
     $this->fileSystem->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS | FileSystemInterface::EXISTS_REPLACE);
     try {
-      $pdf = new Pdf($source);
+      $pdf = new Pdf($this->fileSystem->realpath($source));
       $status = $this->generate($pdf, $target, $imageFormat, $page);
     }
     catch (\Exception $e) {
-      // If something goes wrong, try with real path.
-      try {
-        $pdf = new Pdf($this->fileSystem->realpath($source));
-        $status = $this->generate($pdf, $target, $imageFormat, $page);
-      }
-      catch (\Exception $e) {
-        $this->logger->error($e->getMessage());
-        return NULL;
-      }
+      $this->logger->error($e->getMessage());
+      return NULL;
     }
     return $status ? $target : NULL;
   }
 
   /**
-   * @param $pdf
+   * @param \Spatie\PdfToImage\Pdf $pdf
    * @param $target
    * @param $imageFormat
    * @param $page
    *
-   * @return mixed
+   * @return bool
+   * @throws \Spatie\PdfToImage\Exceptions\InvalidFormat
+   * @throws \Spatie\PdfToImage\Exceptions\InvalidLayerMethod
+   * @throws \Spatie\PdfToImage\Exceptions\PageDoesNotExist
    */
-  protected function generate($pdf, $target, $imageFormat, $page): mixed {
+  protected function generate(Pdf $pdf, $target, $imageFormat, $page): bool {
     $pdf->getNumberOfPages() > intval($page) ? $pdf->setPage(intval($page)) : '';
     $pdf->setLayerMethod(NULL);
     $pdf->setOutputFormat($imageFormat);

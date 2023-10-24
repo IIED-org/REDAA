@@ -51,6 +51,7 @@ permissions:
   - 'create terms in tags'
   - 'create url aliases'
   - 'delete own article content'
+  - 'delete own files'
   - 'delete own person content'
   - 'delete own project content'
   - 'delete own resource content'

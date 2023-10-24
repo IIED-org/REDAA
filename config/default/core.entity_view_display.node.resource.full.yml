@@ -32,11 +32,11 @@ third_party_settings:
         layout_id: 'layout_builder_boolean:layout_twocol_section'
         layout_settings:
           label: ''
+          switch_field: field_main_image
+          base_layout: layout_twocol_section
           context_mapping:
             entity: layout_builder.entity
           column_widths: 33-67
-          switch_field: field_main_image
-          base_layout: layout_twocol_section
         components:
           f496fe75-2d5d-4216-a2d0-1099191f4581:
             uuid: f496fe75-2d5d-4216-a2d0-1099191f4581

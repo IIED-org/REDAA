@@ -15,7 +15,7 @@ type: theme
 base theme: false
 description: 'A clean, accessible, and flexible Drupal front-end theme.'
 alt text: 'Screenshot of REDAA, Drupal front-end theme.'
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 version: VERSION
 libraries:
   - redaa/global-styling
@@ -79,16 +79,3 @@ libraries-extend:
     - redaa/layout_discovery_section
   node/drupal.node.preview:
     - redaa/drupal.node.preview
-  core/ckeditor:
-    - redaa/cke-dialog
-  content_moderation/content_moderation:
-    - redaa/content_moderation
-ckeditor_stylesheets:
-  - css/base/fonts.css
-  - css/base/base.css
-  - css/components/embedded-media.css
-  - css/components/table.css
-  - css/components/text-content.css
-  - css/theme/ckeditor-frame.css
-
-ckeditor5-stylesheets: false

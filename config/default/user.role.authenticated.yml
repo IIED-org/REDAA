@@ -8,6 +8,7 @@ dependencies:
     - comment
     - contact
     - eu_cookie_compliance
+    - file
     - filter
     - media
     - media_pdf_thumbnail
@@ -25,6 +26,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'post comments'
   - 'search content'

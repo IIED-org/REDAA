@@ -10,6 +10,19 @@ final class GeneratedConfig
 {
 
 	public const EXTENSIONS = array (
+  'composer/composer' => 
+  array (
+    'install_path' => '/app/vendor/composer/composer',
+    'relative_install_path' => '../../../composer/composer',
+    'extra' => 
+    array (
+      'includes' => 
+      array (
+        0 => 'phpstan/rules.neon',
+      ),
+    ),
+    'version' => '2.6.5',
+  ),
   'mglaman/phpstan-drupal' => 
   array (
     'install_path' => '/app/vendor/mglaman/phpstan-drupal',
@@ -22,7 +35,7 @@ final class GeneratedConfig
         1 => 'rules.neon',
       ),
     ),
-    'version' => '1.1.37',
+    'version' => '1.2.0',
   ),
   'phpstan/phpstan-deprecation-rules' => 
   array (
@@ -35,7 +48,7 @@ final class GeneratedConfig
         0 => 'rules.neon',
       ),
     ),
-    'version' => '1.1.3',
+    'version' => '1.1.4',
   ),
 );
 

@@ -55,3 +55,9 @@ filters:
       default_view_mode: full
       allowed_view_modes: {  }
       allowed_media_types: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 12
+    settings: {  }
