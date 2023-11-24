@@ -1,0 +1,5 @@
+filter[taxonomy_term--series][condition][path]=field_series.name
+filter[taxonomy_term--series][condition][operator]=IN
+filter[taxonomy_term--series][condition][value][]=CREED
+
+https://iied-main.lndo.site/jsonapi/node/publication?filter[series][condition][path]=field_series.name&filter[series][condition][operator]=IN&filter[series][condition][value][]=HiFi%20News
