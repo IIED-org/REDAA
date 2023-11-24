@@ -11,7 +11,7 @@ dev:
   ac-env: 'dev'
   ac-realm: 'prod'
   paths:
-    drush-script: 'drush10'
+    drush-script: '/var/www/html/gwi.dev/vendor/drush/drush/drush'
 test:
   host: 'gwi6vgcrvdbma.ssh.devcloud.acquia-sites.com'
   user: 'gwi.test'
@@ -21,7 +21,7 @@ test:
   ac-realm: 'prod'
   uri: 'redaa-stage.ac.iied.org'
   paths:
-    drush-script: 'drush10'
+    drush-script: '/var/www/html/gwi.dev/vendor/drush/drush/drush'
 prod:
   host: 'gwirh2zmhpkug.ssh.devcloud.acquia-sites.com'
   user: 'gwi.prod'
@@ -31,4 +31,4 @@ prod:
   ac-realm: 'prod'
   uri: 'redaa.org'
   paths:
-    drush-script: 'drush10'
+    drush-script: '/var/www/html/gwi.dev/vendor/drush/drush/drush'

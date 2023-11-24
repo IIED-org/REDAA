@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.resource.body
+    - field.field.node.resource.feeds_item
     - field.field.node.resource.field_author_s_
     - field.field.node.resource.field_countries
     - field.field.node.resource.field_document_type
@@ -32,11 +33,11 @@ third_party_settings:
         layout_id: 'layout_builder_boolean:layout_twocol_section'
         layout_settings:
           label: ''
-          switch_field: field_main_image
-          base_layout: layout_twocol_section
           context_mapping:
             entity: layout_builder.entity
           column_widths: 33-67
+          switch_field: field_main_image
+          base_layout: layout_twocol_section
         components:
           f496fe75-2d5d-4216-a2d0-1099191f4581:
             uuid: f496fe75-2d5d-4216-a2d0-1099191f4581
@@ -365,6 +366,7 @@ content:
     weight: 100
     region: content
 hidden:
+  feeds_item: true
   field_countries: true
   field_document_type: true
   field_link: true

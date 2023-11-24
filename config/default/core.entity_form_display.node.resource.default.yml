@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.body
+    - field.field.node.resource.feeds_item
     - field.field.node.resource.field_author_s_
     - field.field.node.resource.field_countries
     - field.field.node.resource.field_document_type
@@ -169,4 +170,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  feeds_item: true

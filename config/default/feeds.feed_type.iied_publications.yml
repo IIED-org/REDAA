@@ -1,0 +1,100 @@
+uuid: b7a7c18c-cbf1-42e3-9f00-489d231f39ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resource.body
+    - field.field.node.resource.field_link
+    - node.type.resource
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      10827391-f1f2-4f1c-9e41-881d0141c4db:
+        text: 'https://www.iied.org[path_alias]'
+        uuid: 10827391-f1f2-4f1c-9e41-881d0141c4db
+        plugin: rewrite
+        source: path_alias
+        weight: 1
+        label: Rewrite
+label: 'IIED publications'
+id: iied_publications
+description: ''
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.data.*.attributes.'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: resource
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  '':
+    value: title
+    label: title
+    machine_name: ''
+    type: json
+  title:
+    value: .title
+    label: title
+    machine_name: title
+    type: json
+  body_value:
+    value: .body.value
+    label: body.value
+    machine_name: body_value
+    type: json
+  path_alias:
+    value: .path.alias
+    label: path.alias
+    machine_name: path_alias
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: body
+    map:
+      value: body_value
+      summary: ''
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_link
+    map:
+      uri: path_alias
+      title: ''
+    settings:
+      language: null
