@@ -40,9 +40,11 @@ body {
 
 a {
   color: var(--color--blue-20);
+  font-weight: 700;
 
   &:hover {
     color: var(--color--blue-50);
+    font-weight: 700;
   }
 
   &:focus {
