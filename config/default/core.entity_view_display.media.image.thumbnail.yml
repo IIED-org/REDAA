@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.thumbnail
+    - field.field.media.image.feeds_item
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_media_image
     - image.style.cover_embedded
@@ -28,17 +29,18 @@ content:
     settings:
       image_link: ''
       image_style: cover_embedded
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   created: true
+  feeds_item: true
   field_image_caption: true
   name: true
   thumbnail: true

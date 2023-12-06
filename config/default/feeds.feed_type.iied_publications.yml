@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.body
+    - field.field.node.resource.field_author_s_
     - field.field.node.resource.field_link
+    - field.field.node.resource.field_main_image
+    - field.field.node.resource.field_publication_date
     - node.type.resource
   module:
     - feeds_ex
@@ -13,13 +16,21 @@ dependencies:
 third_party_settings:
   feeds_tamper:
     tampers:
-      10827391-f1f2-4f1c-9e41-881d0141c4db:
-        text: 'https://www.iied.org[path_alias]'
-        uuid: 10827391-f1f2-4f1c-9e41-881d0141c4db
+      1cd52119-c8fd-46db-a3d6-74a930ef32de:
+        text: 'https://iied-main.lndo.site[field_cover_image]'
+        uuid: 1cd52119-c8fd-46db-a3d6-74a930ef32de
         plugin: rewrite
-        source: path_alias
-        weight: 1
-        label: Rewrite
+        source: field_cover_image
+        weight: -9
+        label: 'Add fully qualified path '
+      e5fd23e7-c8a0-442f-8ecb-3fb42eae1740:
+        character: ''
+        side: trim
+        uuid: e5fd23e7-c8a0-442f-8ecb-3fb42eae1740
+        plugin: trim
+        source: field_cover_image
+        weight: -10
+        label: 'Characters to trim'
 label: 'IIED publications'
 id: iied_publications
 description: ''
@@ -35,7 +46,7 @@ fetcher_configuration:
 parser: jsonpath
 parser_configuration:
   context:
-    value: '$.data.*.attributes.'
+    value: '*.'
   source_encoding:
     - auto
   display_errors: false
@@ -46,7 +57,7 @@ processor_configuration:
     type: resource
   langcode: en
   insert_new: 1
-  update_existing: 2
+  update_existing: 1
   update_non_existent: _keep
   skip_hash_check: false
   authorize: true
@@ -61,19 +72,34 @@ custom_sources:
     machine_name: ''
     type: json
   title:
-    value: .title
+    value: title
     label: title
     machine_name: title
     type: json
   body_value:
-    value: .body.value
-    label: body.value
+    value: body
+    label: body
     machine_name: body_value
     type: json
   path_alias:
-    value: .path.alias
-    label: path.alias
+    value: link
+    label: link
     machine_name: path_alias
+    type: json
+  field_author_s_:
+    value: field_author_s_
+    label: field_author_s_
+    machine_name: field_author_s_
+    type: json
+  _field_date_published:
+    value: field_date_published
+    label: field_date_published
+    machine_name: _field_date_published
+    type: json
+  field_cover_image:
+    value: field_cover_image
+    label: field_cover_image
+    machine_name: field_cover_image
     type: json
 mappings:
   -
@@ -89,8 +115,8 @@ mappings:
       value: body_value
       summary: ''
     settings:
-      language: null
-      format: plain_text
+      language: ''
+      format: basic_html
   -
     target: field_link
     map:
@@ -98,3 +124,26 @@ mappings:
       title: ''
     settings:
       language: null
+  -
+    target: field_author_s_
+    map:
+      value: field_author_s_
+    settings:
+      language: ''
+    unique: {  }
+  -
+    target: field_publication_date
+    map:
+      value: _field_date_published
+    settings:
+      language: ''
+      timezone: UTC
+  -
+    target: field_main_image
+    map:
+      target_id: field_cover_image
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: image
