@@ -1,0 +1,21 @@
+uuid: f995595d-7f87-4983-9ce2-2a05838a061a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtype
+    - node.type.project
+  module:
+    - options
+id: node.project.field_subtype
+field_name: field_subtype
+entity_type: node
+bundle: project
+label: Subtype
+description: 'Select where this page should appear (Demo projects or Nature Facility case studies)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

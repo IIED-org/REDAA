@@ -120,3 +120,6 @@ oauth_keys/
 /.env*
 /.editorconfig
 /.gitattributes
+
+# SQL dumps
+*.sql
