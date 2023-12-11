@@ -1,0 +1,30 @@
+uuid: f44693e8-8ef6-4a7e-b2d7-bf98ef5835d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_subtype
+field_name: field_subtype
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: case_study
+      label: 'Case study'
+    -
+      value: demo_project
+      label: 'Demonstrator project'
+    -
+      value: case_study_nf
+      label: 'Nature Facility case study'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

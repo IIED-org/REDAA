@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.project.body
     - field.field.node.project.field_main_image
     - field.field.node.project.field_standfirst
+    - field.field.node.project.field_subtype
     - node.type.project
   module:
     - field_layout
@@ -53,6 +54,12 @@ content:
     settings:
       rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  field_subtype:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
