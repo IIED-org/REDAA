@@ -21,7 +21,7 @@ test:
   ac-realm: 'prod'
   uri: 'redaa-stage.ac.iied.org'
   paths:
-    drush-script: '/var/www/html/gwi.dev/vendor/drush/drush/drush'
+    drush-script: '/var/www/html/gwi.test/vendor/drush/drush/drush'
 prod:
   host: 'gwirh2zmhpkug.ssh.devcloud.acquia-sites.com'
   user: 'gwi.prod'
@@ -31,4 +31,4 @@ prod:
   ac-realm: 'prod'
   uri: 'redaa.org'
   paths:
-    drush-script: '/var/www/html/gwi.dev/vendor/drush/drush/drush'
+    drush-script: '/var/www/html/gwi.prod/vendor/drush/drush/drush'
