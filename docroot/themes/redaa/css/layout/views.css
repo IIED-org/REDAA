@@ -24,3 +24,8 @@
       margin-bottom: 3.375rem
   }
     }
+
+.views-view-grid__item {
+    border: solid 1px #d7e1e8;
+    margin-bottom: 2%;
+}

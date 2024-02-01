@@ -13,21 +13,25 @@
  }
 
  .node--view-mode-card a {
+  height: 100%;
+  display: table;
   text-decoration: none;
-  & div {
-    border: solid 1px var(--color--gray-70);
-  }
   & h3, & p {
     color: var(--color--blue-20);
-    padding: 0 .5rem;
+    padding: 0 .6rem;
     margin: 1rem 0;
+  }
+  & .field--name-field-subtype, .meta {
+    color: var(--color--gray-20);
+    padding: 0 .6rem;
+    margin: 1rem 0 0;
   }
  }
 
  .node--view-mode-card a div:hover, 
  .node--view-mode-card a div:focus {
     background-color: var(--color--gray-70);
-    & h3 {
+    & h3, & p, & div {
       color: black;
     }
 }

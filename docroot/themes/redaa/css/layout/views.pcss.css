@@ -18,3 +18,8 @@
     }
   }
 }
+
+.views-view-grid__item {
+    border: solid 1px var(--color--gray-70);
+    margin-bottom: 2%;
+}

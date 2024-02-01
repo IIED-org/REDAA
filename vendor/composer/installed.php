@@ -3,7 +3,7 @@
         'name' => 'acquia/drupal-recommended-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '30456ea9033ae1e113d181011f03efd7dcc285c6',
+        'reference' => 'd7ffdeef1e7b6b3ea9b6bda4f5968ab180c3c9a6',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'acquia/drupal-recommended-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '30456ea9033ae1e113d181011f03efd7dcc285c6',
+            'reference' => 'd7ffdeef1e7b6b3ea9b6bda4f5968ab180c3c9a6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -562,6 +562,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/draggableviews' => array(
+            'pretty_version' => '2.1.3',
+            'version' => '2.1.3.0',
+            'reference' => '2.1.3',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../docroot/modules/contrib/draggableviews',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/eu_cookie_compliance' => array(
             'pretty_version' => '1.24.0',
             'version' => '1.24.0.0',
@@ -694,6 +703,15 @@
             'reference' => '4.0.0',
             'type' => 'drupal-module',
             'install_path' => __DIR__ . '/../../docroot/modules/contrib/upgrade_status',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'drupal/views_bulk_operations' => array(
+            'pretty_version' => '4.2.6',
+            'version' => '4.2.6.0',
+            'reference' => '4.2.6',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../docroot/modules/contrib/views_bulk_operations',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1114,9 +1132,9 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.1|2.0',
-                1 => '^1.1 || ^2.0',
-                2 => '^1.0',
+                0 => '^1.1 || ^2.0',
+                1 => '^1.0',
+                2 => '1.1|2.0',
             ),
         ),
         'psr/event-dispatcher' => array(
