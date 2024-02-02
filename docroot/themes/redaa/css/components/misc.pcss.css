@@ -21,6 +21,9 @@
    & img {
     border: none;
    } 
+   & .field--name-field-image, .field--name-field-main-image {
+    margin-bottom: 1rem;
+   }
     & a {
     height: 100%;
     display: flex;
@@ -33,9 +36,11 @@
   }
   & h3 {
     color: var(--color--blue-20);
+    margin: 0;
   }
   & p {
     color: var(--color--black);
+    font-weight: 500;
   }
   & .meta {
     color: var(--color--gray-50);
@@ -100,5 +105,4 @@
   overflow: hidden;
   font-size: .75rem;
   }
-  padding-bottom: 0;
 }

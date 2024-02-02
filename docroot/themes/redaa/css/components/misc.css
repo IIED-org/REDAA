@@ -31,6 +31,12 @@
     border: none;
    }
 
+ .node--view-mode-card { 
+   & .field--name-field-image, .field--name-field-main-image {
+    margin-bottom: 1rem;
+   }
+ }
+
  .node--view-mode-card a {
     height: 100%;
     display: flex;
@@ -45,10 +51,12 @@
 
  .node--view-mode-card h3 {
     color: #005890;
+    margin: 0;
   }
 
  .node--view-mode-card p {
     color: #000;
+    font-weight: 500;
   }
 
  .node--view-mode-card .meta {
@@ -73,7 +81,7 @@
     }
 
  .node--type-feature {
-  border: solid 1px #d7e1e8;
+  border: solid 1px #d7e1e8
 }
 
  .node--type-feature .node__content {
@@ -95,7 +103,7 @@
     }
 
  .node--type-feature {
-  padding-bottom: 0;
+  padding-bottom: 0
 }
 
  .node--type-feature .layout {
@@ -125,7 +133,3 @@
   overflow: hidden;
   font-size: .75rem;
   }
-
- .node--type-feature {
-  padding-bottom: 0;
-}
