@@ -20,6 +20,10 @@
 }
 
 .views-view-grid__item {
-    border: solid 1px var(--color--gray-70);
+    display: flex;
     margin-bottom: 2%;
+}
+
+.views-view-grid__item-inner {
+  display: flex;
 }

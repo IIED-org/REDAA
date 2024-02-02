@@ -82,24 +82,8 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <a href="{{ url }}" rel="bookmark">
     <div{{ content_attributes.addClass('node__content', layout) }}>
       {# Comments not part of content, so they won't inherit .text-content styles. #}
-      {{ content|without('comment', 'title', 'body', 'field_subtype') }}
-       <div class="cardbody">
-        <h3>{{ label }}</h3>
-        <p>{{ content.body['#items'][0].summary }}</p>
-        {# <div class="meta">     
-          <span>
-          {% if content.field_subtype %}
-            {{ content.field_subtype }} 
-            {% else %}
-          {{ node.type.entity.label }}
-          {% endif %}
-          </span>
-          <span class="date">{{ node.getCreatedTime|date("d M Y") }}</span>
-        </div> #}
-      </div>
+         {{ content|without('comment') }}
     </div>
-  </a>
 </article>

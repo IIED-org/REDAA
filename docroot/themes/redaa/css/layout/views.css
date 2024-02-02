@@ -26,6 +26,10 @@
     }
 
 .views-view-grid__item {
-    border: solid 1px #d7e1e8;
+    display: flex;
     margin-bottom: 2%;
+}
+
+.views-view-grid__item-inner {
+  display: flex;
 }

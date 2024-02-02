@@ -18,30 +18,114 @@
     list-style-image: url("/themes/redaa/images/waves.png");
   }
 
- .node--view-mode-card a {
-  height: 100%;
-  display: table;
-  text-decoration: none
+ .node--view-mode-card {
+   border: solid 1px #d7e1e8
  }
 
- .node--view-mode-card a h3, .node--view-mode-card a p {
-    color: #005890;
-    padding: 0 .6rem;
+ .node--view-mode-card .node__content {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+ .node--view-mode-card img {
+    border: none;
+   }
+
+ .node--view-mode-card a {
+    height: 100%;
+    display: flex;
+    text-decoration: none;
+    position: relative;
+    }
+
+ .node--view-mode-card .cardbody {
+    padding: 0 .75rem;
     margin: 1rem 0;
   }
 
- .node--view-mode-card a {
-  & .field--name-field-subtype, .meta {
-    color: #6e7172;
-    padding: 0 .6rem;
-    margin: 1rem 0 0;
+ .node--view-mode-card h3 {
+    color: #005890;
   }
- }
+
+ .node--view-mode-card p {
+    color: #000;
+  }
+
+ .node--view-mode-card .meta {
+    color: #9ea0a1;
+    display: flex;
+    padding: 0 .75rem;
+    margin: 2rem 0 0;
+    position: absolute;
+    bottom: .5rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: small;
+  }
 
  .node--view-mode-card a div:hover, .node--view-mode-card a div:focus {
-    background-color: #d7e1e8
+    background-color: #e7edf1
 }
 
  .node--view-mode-card a div:hover h3, .node--view-mode-card a div:hover p, .node--view-mode-card a div:hover div, .node--view-mode-card a div:focus h3, .node--view-mode-card a div:focus p, .node--view-mode-card a div:focus div {
       color: black;
     }
+
+ .node--type-feature {
+  border: solid 1px #d7e1e8;
+}
+
+ .node--type-feature .node__content {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+ .node--type-feature .field--name-body {
+    padding: .75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    & h2, h3, h4, h4, h5, h6 {
+      margin: .5rem 0 0 0;
+    }
+  }
+
+ .node--type-feature .field--name-body p {
+      margin: 1rem 0;
+    }
+
+ .node--type-feature {
+  padding-bottom: 0;
+}
+
+ .node--type-feature .layout {
+    margin-bottom: 0;
+  }
+
+ .node--type-feature .field--name-field-main-image {
+    position: relative
+  }
+
+ .node--type-feature .field--name-field-main-image .field--name-field-media-image {
+      margin-bottom: 0;
+    }
+
+ .node--type-feature .field--name-field-main-image img {
+      border: none;
+    }
+
+ .node--type-feature .field--name-field-image-caption {
+  position: absolute;
+  bottom: .25rem;
+  background-color: rgba(0,0,0,.2);
+  color: white;
+  padding: .25rem .5rem;
+  max-height: 2.5rem;
+  line-height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  }
+
+ .node--type-feature {
+  padding-bottom: 0;
+}
