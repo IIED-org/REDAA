@@ -455,6 +455,7 @@ display:
         options:
           offset: 0
           items_per_page: 3
+      empty: {  }
       sorts:
         created:
           id: created
@@ -652,6 +653,7 @@ display:
           relationship: none
           view_mode: full
       defaults:
+        empty: false
         title: false
         use_more: false
         use_more_always: false

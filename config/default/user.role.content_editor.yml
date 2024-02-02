@@ -14,6 +14,7 @@ dependencies:
   module:
     - comment
     - contextual
+    - draggableviews
     - eu_cookie_compliance
     - file
     - filter
@@ -36,6 +37,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
+  - 'access draggableviews'
   - 'access files overview'
   - 'access media overview'
   - 'access toolbar'
