@@ -1,0 +1,87 @@
+uuid: a3e35dc6-328d-4943-8c4e-fbadad0d0ee3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.feature.body
+    - field.field.node.feature.field_main_image
+    - field.field.node.feature.layout_builder__layout
+    - node.type.feature
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          3c2be482-619e-4ac8-9258-31ebece1502d:
+            uuid: 3c2be482-619e-4ac8-9258-31ebece1502d
+            region: first
+            configuration:
+              id: 'field_block:node:feature:field_main_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: embedded
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          abdc69eb-255f-44e9-bc68-260d0dcddf40:
+            uuid: abdc69eb-255f-44e9-bc68-260d0dcddf40
+            region: second
+            configuration:
+              id: 'field_block:node:feature:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.feature.full
+targetEntityType: node
+bundle: feature
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  layout_builder__layout: true

@@ -1,0 +1,82 @@
+uuid: 86a76ed9-fe95-43f3-970a-41a70ecec825
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.feature.body
+    - field.field.node.feature.field_main_image
+    - field.field.node.feature.layout_builder__layout
+    - node.type.feature
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          3d17fd56-fc66-41e5-b385-2644fede2cf7:
+            uuid: 3d17fd56-fc66-41e5-b385-2644fede2cf7
+            region: content
+            configuration:
+              id: 'field_block:node:feature:field_main_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: embedded
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          7fabeed4-cfb0-4b77-8e13-a9ed007eeb42:
+            uuid: 7fabeed4-cfb0-4b77-8e13-a9ed007eeb42
+            region: content
+            configuration:
+              id: 'field_block:node:feature:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.feature.card
+targetEntityType: node
+bundle: feature
+mode: card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  layout_builder__layout: true
+  links: true

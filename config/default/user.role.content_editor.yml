@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.node.feature.full
     - filter.format.full_html
     - node.type.article
     - node.type.page
@@ -16,6 +17,7 @@ dependencies:
     - eu_cookie_compliance
     - file
     - filter
+    - layout_builder
     - media
     - media_pdf_thumbnail
     - node
@@ -43,6 +45,7 @@ permissions:
   - 'administer nodes'
   - 'administer url aliases'
   - 'bypass node access'
+  - 'configure editable feature node layout overrides'
   - 'create article content'
   - 'create media'
   - 'create person content'

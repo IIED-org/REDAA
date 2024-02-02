@@ -1,0 +1,95 @@
+uuid: 152f3afe-47ea-4661-8ab7-0e0d5f418c90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.feature.body
+    - field.field.node.feature.field_main_image
+    - field.field.node.feature.layout_builder__layout
+    - node.type.feature
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          eb78abad-a9e1-4ecc-a892-3e422604c333:
+            uuid: eb78abad-a9e1-4ecc-a892-3e422604c333
+            region: content
+            configuration:
+              id: 'extra_field_block:node:feature:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          8f9fa3fe-a70a-4684-96fe-a2a71898f552:
+            uuid: 8f9fa3fe-a70a-4684-96fe-a2a71898f552
+            region: content
+            configuration:
+              id: 'field_block:node:feature:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          8c5f00de-cd31-447d-bc57-b1c853730219:
+            uuid: 8c5f00de-cd31-447d-bc57-b1c853730219
+            region: content
+            configuration:
+              id: 'field_block:node:feature:field_main_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: embedded
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: node.feature.default
+targetEntityType: node
+bundle: feature
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true
