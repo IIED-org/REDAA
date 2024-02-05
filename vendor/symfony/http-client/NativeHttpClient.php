@@ -203,9 +203,14 @@ final class NativeHttpClient implements HttpClientInterface, LoggerAwareInterfac
         }
 
         switch ($cryptoMethod = $options['crypto_method']) {
-            case \STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT: $cryptoMethod |= \STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT;
-            case \STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT: $cryptoMethod |= \STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT;
-            case \STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT: $cryptoMethod |= \STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT;
+            case \STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT:
+                $cryptoMethod |= \STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT;
+                // no break
+            case \STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT:
+                $cryptoMethod |= \STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT;
+                // no break
+            case \STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT:
+                $cryptoMethod |= \STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT;
         }
 
         $context = [
@@ -264,7 +269,7 @@ final class NativeHttpClient implements HttpClientInterface, LoggerAwareInterfac
         return new NativeResponse($this->multi, $context, implode('', $url), $options, $info, $resolver, $onProgress, $this->logger);
     }
 
-    public function stream(ResponseInterface|iterable $responses, float $timeout = null): ResponseStreamInterface
+    public function stream(ResponseInterface|iterable $responses, ?float $timeout = null): ResponseStreamInterface
     {
         if ($responses instanceof NativeResponse) {
             $responses = [$responses];
