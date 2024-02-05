@@ -1125,7 +1125,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<!--<h2 class="red">Featured content</h2>-->'
+            value: '<!--<h2 class="red">[view:title]</h2>-->'
             format: full_html
           tokenize: false
       display_extenders: {  }
