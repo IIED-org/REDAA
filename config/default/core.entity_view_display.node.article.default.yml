@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_image
+    - field.field.node.article.field_short_title
     - field.field.node.article.field_tags
     - image.style.wide
     - node.type.article
@@ -114,6 +115,14 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: -1
+    region: content
+  field_short_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
     region: content
   field_tags:
     type: entity_reference_label

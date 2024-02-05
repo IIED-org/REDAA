@@ -85,9 +85,15 @@
   <a href="{{ url }}" rel="bookmark">
     <div{{ content_attributes.addClass('node__content', layout) }}>
       {# Comments not part of content, so they won't inherit .text-content styles. #}
-      {{ content|without('comment', 'title', 'body') }}
+      {{ content|without('comment', 'title', 'body', 'field_short_title') }}
       <div class="cardbody">
-        <h3>{{ label }}</h3>
+        <h3>
+        {% if node.field_short_title.value %}
+         {{ content.field_short_title }}
+        {% else %}
+          {{ label }}
+        {% endif %}
+        </h3>
         <p>{{ content.body['#items'][0].summary }}</p>
         {# <div class="meta">     
           <span>

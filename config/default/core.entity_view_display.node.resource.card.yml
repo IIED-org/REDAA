@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.resource.field_organisation
     - field.field.node.resource.field_publication_date
     - field.field.node.resource.field_publisher
+    - field.field.node.resource.field_short_title
     - field.field.node.resource.field_tags
     - image.style.card_cover
     - node.type.resource
@@ -37,7 +38,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_main_image:
     type: media_thumbnail
@@ -47,6 +48,14 @@ content:
       image_style: card_cover
       image_loading:
         attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
