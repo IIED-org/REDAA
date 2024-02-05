@@ -20,6 +20,7 @@ dependencies:
     - file
     - filter
     - layout_builder
+    - help
     - media
     - media_pdf_thumbnail
     - node
@@ -40,6 +41,7 @@ permissions:
   - 'access contextual links'
   - 'access draggableviews'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access toolbar'
   - 'access tour'

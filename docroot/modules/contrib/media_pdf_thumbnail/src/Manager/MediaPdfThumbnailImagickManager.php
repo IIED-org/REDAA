@@ -4,6 +4,8 @@ namespace Drupal\media_pdf_thumbnail\Manager;
 
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\StreamWrapper\StreamWrapperManager;
+use Drupal\Core\StreamWrapper\StreamWrapperManagerInterface;
 use Spatie\PdfToImage\Pdf;
 
 /**
@@ -24,14 +26,21 @@ class MediaPdfThumbnailImagickManager {
   protected FileSystemInterface $fileSystem;
 
   /**
+   * @var \Drupal\Core\StreamWrapper\StreamWrapperManagerInterface
+   */
+  protected StreamWrapperManagerInterface $streamWrapperManager;
+
+  /**
    * MediaPdfThumbnailImagickManager constructor.
    *
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerChannel
    * @param \Drupal\Core\File\FileSystemInterface $fileSystem
+   * @param \Drupal\Core\StreamWrapper\StreamWrapperManagerInterface $streamWrapperManager
    */
-  public function __construct(LoggerChannelFactoryInterface $loggerChannel, FileSystemInterface $fileSystem) {
+  public function __construct(LoggerChannelFactoryInterface $loggerChannel, FileSystemInterface $fileSystem, StreamWrapperManagerInterface $streamWrapperManager) {
     $this->logger = $loggerChannel->get('Media PDF Thumbnail (MediaPdfThumbnailImagickManager');
     $this->fileSystem = $fileSystem;
+    $this->streamWrapperManager = $streamWrapperManager;
   }
 
   /**
@@ -46,7 +55,10 @@ class MediaPdfThumbnailImagickManager {
     $directory = dirname($target);
     $this->fileSystem->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS | FileSystemInterface::EXISTS_REPLACE);
     try {
-      $pdf = new Pdf($this->fileSystem->realpath($source));
+      $streamWrapper = $this->streamWrapperManager->getViaUri($source);
+      $realPath = $streamWrapper->realpath();
+      $path = !empty($realPath) ? $realPath : $source;
+      $pdf = new Pdf($path);
       $status = $this->generate($pdf, $target, $imageFormat, $page);
     }
     catch (\Exception $e) {
