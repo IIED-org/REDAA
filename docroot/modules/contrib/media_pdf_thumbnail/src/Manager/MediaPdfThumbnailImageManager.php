@@ -108,13 +108,15 @@ class MediaPdfThumbnailImageManager {
    */
   public function createThumbnail(EntityInterface $entity, $fileFieldName, $imageFormat, $page = 1) {
 
-    if (empty($entity)) {
+    if (empty($entity->id())) {
+      $this->logger->error('Entity id is empty');
       return FALSE;
     }
 
     $fileEntity = $this->getFileEntityFromField($entity, $fileFieldName);
 
     if (empty($fileEntity)) {
+      $this->logger->error('File entity is empty');
       return FALSE;
     }
 

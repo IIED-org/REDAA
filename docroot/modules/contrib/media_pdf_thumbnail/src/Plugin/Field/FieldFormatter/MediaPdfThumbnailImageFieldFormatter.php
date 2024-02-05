@@ -201,6 +201,10 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
       $fieldInfos = $this->getThumbnail($entity, $items->getName(), $settings[static::PDF_FILE_FIELD_SETTING], $settings[static::IMAGE_FORMAT_SETTINGS], $settings[static::PDF_PAGE_SETTING]);
     }
 
+    if (!$fieldInfos) {
+      return $element;
+    }
+
     // Rendering image.
     if (!empty($fieldInfos['image_id'])) {
       $element[0]['#image_style'] = $settings['image_style'];
@@ -255,6 +259,10 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
   protected function getThumbnail(EntityInterface $entity, $imageFieldName, $fileFieldName, $imageFormat, $page = 1) {
 
     $fieldInfos = $this->mediaPdfThumbnailImageManager->createThumbnail($entity, $fileFieldName, $imageFormat, $page);
+
+    if (!$fieldInfos) {
+      return FALSE;
+    }
 
     if (empty($fieldInfos['image_id'])) {
 
