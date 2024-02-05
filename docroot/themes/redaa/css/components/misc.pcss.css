@@ -12,22 +12,97 @@
   }
  }
 
- .node--view-mode-card a {
-  text-decoration: none;
-  & div {
-    border: solid 1px var(--color--gray-70);
+ .node--view-mode-card {
+   border: solid 1px var(--color--gray-70);
+   & .node__content {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
-  & h3, & p {
-    color: var(--color--blue-20);
-    padding: 0 .5rem;
+   & img {
+    border: none;
+   } 
+   & .field--name-field-image, .field--name-field-main-image {
+    margin-bottom: 1rem;
+   }
+    & a {
+    height: 100%;
+    display: flex;
+    text-decoration: none;
+    position: relative;
+    }
+  & .cardbody {
+    padding: 0 .75rem;
     margin: 1rem 0;
+  }
+  & h3 {
+    color: var(--color--blue-20);
+    margin: 0;
+  }
+  & p {
+    color: var(--color--black);
+    font-weight: 500;
+  }
+  & .meta {
+    color: var(--color--gray-50);
+    display: flex;
+    padding: 0 .75rem;
+    margin: 2rem 0 0;
+    position: absolute;
+    bottom: .5rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: small;
   }
  }
 
  .node--view-mode-card a div:hover, 
  .node--view-mode-card a div:focus {
-    background-color: var(--color--gray-70);
-    & h3 {
+    background-color: var(--color--gray-80);
+    & h3, & p, & div {
       color: black;
     }
+}
+
+.node--type-feature {
+  border: solid 1px var(--color--gray-70);
+  & .node__content {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  & .field--name-body {
+    padding: .75rem;
+    font-size: 1rem;
+    line-height: var(--sp1-5);
+    & h2, h3, h4, h4, h5, h6 {
+      margin: .5rem 0 0 0;
+    }
+    & p {
+      margin: 1rem 0;
+    }
+  }
+  padding-bottom: 0;
+  & .layout {
+    margin-bottom: 0;
+  }
+  & .field--name-field-main-image {
+    position: relative;
+    & .field--name-field-media-image {
+      margin-bottom: 0;
+    }
+    & img {
+      border: none;
+    }
+  }
+ & .field--name-field-image-caption {
+  position: absolute;
+  bottom: .25rem;
+  background-color: rgba(0,0,0,.2);
+  color: white;
+  padding: .25rem .5rem;
+  max-height: 2.5rem;
+  line-height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  }
 }

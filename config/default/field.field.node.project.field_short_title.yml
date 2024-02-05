@@ -1,0 +1,19 @@
+uuid: 135a170f-dfa2-48ab-a1b1-4917e85a671d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title
+    - node.type.project
+id: node.project.field_short_title
+field_name: field_short_title
+entity_type: node
+bundle: project
+label: 'Short title'
+description: 'For display on card views (maximum length 140 characters)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

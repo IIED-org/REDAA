@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.resource.field_organisation
     - field.field.node.resource.field_publication_date
     - field.field.node.resource.field_publisher
+    - field.field.node.resource.field_short_title
     - field.field.node.resource.field_tags
     - node.type.resource
   module:
@@ -121,8 +122,8 @@ third_party_settings:
         layout_id: layout_twocol_section
         layout_settings:
           label: ''
-          column_widths: 33-67
           context_mapping: {  }
+          column_widths: 33-67
         components:
           70f3193c-1a9a-4843-8b7b-5bb969533d2b:
             uuid: 70f3193c-1a9a-4843-8b7b-5bb969533d2b
@@ -342,6 +343,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_short_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
     region: content
   field_tags:
     type: entity_reference_label

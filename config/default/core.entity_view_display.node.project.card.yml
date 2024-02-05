@@ -1,0 +1,69 @@
+uuid: 8e3d011f-309d-445c-83f3-9397b63d9725
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.project.body
+    - field.field.node.project.field_countries
+    - field.field.node.project.field_main_image
+    - field.field.node.project.field_publication_date
+    - field.field.node.project.field_short_title
+    - field.field.node.project.field_standfirst
+    - field.field.node.project.field_subtype
+    - image.style.card_cover
+    - node.type.project
+  module:
+    - layout_builder
+    - media
+    - options
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.project.card
+targetEntityType: node
+bundle: project
+mode: card
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_main_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: card_cover
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_subtype:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_countries: true
+  field_publication_date: true
+  field_standfirst: true
+  links: true

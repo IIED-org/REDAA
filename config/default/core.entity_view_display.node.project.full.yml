@@ -1,0 +1,50 @@
+uuid: bdb6c331-5d9f-4372-a8cf-36f8e588046b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.project.body
+    - field.field.node.project.field_countries
+    - field.field.node.project.field_main_image
+    - field.field.node.project.field_publication_date
+    - field.field.node.project.field_short_title
+    - field.field.node.project.field_standfirst
+    - field.field.node.project.field_subtype
+    - node.type.project
+  module:
+    - address
+    - datetime
+    - user
+id: node.project.full
+targetEntityType: node
+bundle: project
+mode: full
+content:
+  field_countries:
+    type: address_country_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_publication_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: redaa_medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_main_image: true
+  field_short_title: true
+  field_standfirst: true
+  field_subtype: true

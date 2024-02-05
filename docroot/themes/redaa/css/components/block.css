@@ -12,11 +12,17 @@
 
 .block__title {
   margin-top: 0;
-  margin-bottom: 1.125rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.02em;
   color: #6e7172;
   font-size: 0.875rem;
-  line-height: 1.125rem;
+  line-height: 1rem;
+}
+
+.path-frontpage h2.block__title {
+  color: #AB351C;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .site-footer .block__title {

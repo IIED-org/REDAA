@@ -1,0 +1,24 @@
+uuid: 3489e304-d4d5-45af-9393-4923b384eddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.feature
+  module:
+    - text
+id: node.feature.body
+field_name: body
+entity_type: node
+bundle: feature
+label: Body
+description: 'Limit to ~50 words'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

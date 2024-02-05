@@ -40,7 +40,7 @@
   /* Layout */
   --max-width: 1350px;
   --max-bg-color: 1570px;
-  --sp: 18px;
+  --sp: 16px;
   --content-left: 80px;
   --container-padding: var(--sp);
   --container-padding-nav: var(--sp2);

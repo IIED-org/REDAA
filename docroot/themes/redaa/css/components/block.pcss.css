@@ -13,6 +13,12 @@
   line-height: var(--sp);
 }
 
+.path-frontpage h2.block__title {
+  color: var(--color--red);
+  font-size: 24px;
+  line-height: var(--sp2);
+}
+
 .site-footer .block__title {
   color: var(--color--gray-50);
 }

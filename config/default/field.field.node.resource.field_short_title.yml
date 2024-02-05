@@ -1,0 +1,19 @@
+uuid: 849b3bcd-d46d-42d9-b230-258b1308636b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title
+    - node.type.resource
+id: node.resource.field_short_title
+field_name: field_short_title
+entity_type: node
+bundle: resource
+label: 'Short title'
+description: 'For display on card views (maximum length 140 characters)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

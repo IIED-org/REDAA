@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.node.feature.full
+    - core.entity_view_display.node.page.full
     - filter.format.full_html
     - node.type.article
     - node.type.page
@@ -13,9 +15,11 @@ dependencies:
   module:
     - comment
     - contextual
+    - draggableviews
     - eu_cookie_compliance
     - file
     - filter
+    - layout_builder
     - help
     - media
     - media_pdf_thumbnail
@@ -35,6 +39,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
+  - 'access draggableviews'
   - 'access files overview'
   - 'access help pages'
   - 'access media overview'
@@ -45,6 +50,8 @@ permissions:
   - 'administer nodes'
   - 'administer url aliases'
   - 'bypass node access'
+  - 'configure editable feature node layout overrides'
+  - 'configure editable page node layout overrides'
   - 'create article content'
   - 'create media'
   - 'create person content'

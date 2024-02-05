@@ -18,3 +18,12 @@
     }
   }
 }
+
+.views-view-grid__item {
+    display: flex;
+    margin-bottom: 2%;
+}
+
+.views-view-grid__item-inner {
+  display: flex;
+}

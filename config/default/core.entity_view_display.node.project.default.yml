@@ -4,11 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.project.body
+    - field.field.node.project.field_countries
     - field.field.node.project.field_main_image
+    - field.field.node.project.field_publication_date
+    - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
     - node.type.project
   module:
+    - address
+    - datetime
     - options
     - text
     - user
@@ -24,6 +29,13 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_countries:
+    type: address_country_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_main_image:
     type: entity_reference_entity_view
     label: hidden
@@ -32,6 +44,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_publication_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: redaa_medium
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_standfirst:
     type: text_default
@@ -52,4 +73,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_short_title: true
