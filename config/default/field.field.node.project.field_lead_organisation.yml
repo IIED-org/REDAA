@@ -1,0 +1,22 @@
+uuid: a0e271e0-b7e2-4469-9e30-fc2f225f1685
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead_organisation
+    - node.type.project
+  module:
+    - text
+id: node.project.field_lead_organisation
+field_name: field_lead_organisation
+entity_type: node
+bundle: project
+label: 'Lead organisation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

@@ -17,6 +17,7 @@ module:
   contextual: 0
   ctools: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   draggableviews: 0
   dynamic_page_cache: 0
@@ -26,6 +27,8 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  geocoder: 0
+  geofield: 0
   google_tag: 0
   help: 0
   history: 0
@@ -33,6 +36,7 @@ module:
   layout_builder: 0
   layout_builder_boolean: 0
   layout_discovery: 0
+  leaflet: 0
   link: 0
   media: 0
   media_entity_file_replace: 0

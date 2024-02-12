@@ -5,15 +5,21 @@ dependencies:
   config:
     - field.field.node.project.body
     - field.field.node.project.field_countries
+    - field.field.node.project.field_dates
+    - field.field.node.project.field_grant_reference
+    - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_main_image
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
+    - field.field.node.project.field_tags
+    - field.field.node.project.field_value
     - node.type.project
   module:
     - address
     - datetime
+    - datetime_range
     - field_layout
     - layout_discovery
     - media_library
@@ -51,6 +57,28 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_dates:
+    type: daterange_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_grant_reference:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_lead_organisation:
+    type: text_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_main_image:
     type: media_library_widget
     weight: 9
@@ -85,6 +113,23 @@ content:
     weight: 13
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_value:
+    type: number
+    weight: 28
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

@@ -12,7 +12,7 @@ field_name: field_subtype
 entity_type: node
 bundle: project
 label: Subtype
-description: 'Select where this page should appear (Demo projects or Nature Facility case studies)'
+description: 'Select where this page should appear (Demo projects, Grantee projects, Nature Facility case studies)'
 required: false
 translatable: false
 default_value: {  }

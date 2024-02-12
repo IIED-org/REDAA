@@ -18,6 +18,9 @@ settings:
       value: demo_project
       label: 'Demonstrator project'
     -
+      value: grantee_project
+      label: 'Grantee project'
+    -
       value: case_study_nf
       label: 'Nature Facility case study'
   allowed_values_function: ''

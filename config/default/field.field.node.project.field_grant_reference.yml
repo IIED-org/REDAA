@@ -1,0 +1,19 @@
+uuid: 7428469d-b3b9-4d58-bf6e-2d4af32d0df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grant_reference
+    - node.type.project
+id: node.project.field_grant_reference
+field_name: field_grant_reference
+entity_type: node
+bundle: project
+label: 'Grant reference'
+description: 'Unique GMS system reference e.g. <em>RGC1-PG-FA-23-100087</em>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

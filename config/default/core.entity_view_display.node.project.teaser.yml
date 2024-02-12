@@ -6,11 +6,16 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.body
     - field.field.node.project.field_countries
+    - field.field.node.project.field_dates
+    - field.field.node.project.field_grant_reference
+    - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_main_image
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
+    - field.field.node.project.field_tags
+    - field.field.node.project.field_value
     - node.type.project
   module:
     - layout_builder
@@ -80,6 +85,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+          2fc1c06c-363f-4759-84f6-a9d1bea5949d:
+            uuid: 2fc1c06c-363f-4759-84f6-a9d1bea5949d
+            region: first
+            configuration:
+              id: 'field_block:node:project:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.project.teaser
 targetEntityType: node
@@ -110,6 +131,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: first
   links:
     settings: {  }
     third_party_settings: {  }
@@ -117,6 +146,10 @@ content:
     region: content
 hidden:
   field_countries: true
+  field_dates: true
+  field_grant_reference: true
+  field_lead_organisation: true
   field_publication_date: true
   field_short_title: true
   field_subtype: true
+  field_value: true
