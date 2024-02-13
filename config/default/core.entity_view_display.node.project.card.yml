@@ -5,8 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.project.body
+    - field.field.node.project.feeds_item
     - field.field.node.project.field_countries
     - field.field.node.project.field_dates
+    - field.field.node.project.field_ecosystem_landscape
+    - field.field.node.project.field_focal_countries_text
+    - field.field.node.project.field_focal_country
     - field.field.node.project.field_grant_reference
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_main_image
@@ -15,6 +19,7 @@ dependencies:
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
     - field.field.node.project.field_tags
+    - field.field.node.project.field_thematic_priorities
     - field.field.node.project.field_value
     - image.style.card_cover
     - node.type.project
@@ -68,12 +73,17 @@ content:
     weight: 3
     region: content
 hidden:
+  feeds_item: true
   field_countries: true
   field_dates: true
+  field_ecosystem_landscape: true
+  field_focal_countries_text: true
+  field_focal_country: true
   field_grant_reference: true
   field_lead_organisation: true
   field_publication_date: true
   field_standfirst: true
   field_tags: true
+  field_thematic_priorities: true
   field_value: true
   links: true

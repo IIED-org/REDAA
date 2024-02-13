@@ -1,0 +1,20 @@
+uuid: afe0b9c7-a9d9-4b4b-8921-33252e220a22
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_ecosystem_landscape
+field_name: field_ecosystem_landscape
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

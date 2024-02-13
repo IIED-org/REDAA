@@ -1,0 +1,8 @@
+uuid: f2e57d24-2e58-4536-affc-c830b9455c1f
+langcode: en
+status: true
+dependencies: {  }
+name: Ecosystem
+vid: ecosystem
+description: Ecosystem/landscape
+weight: 0

@@ -1,0 +1,20 @@
+uuid: 69aafb20-c4d3-4d7d-9b2a-7858ac52e7fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_thematic_priorities
+field_name: field_thematic_priorities
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
