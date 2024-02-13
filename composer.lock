@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "359b2d4044f47fec6798ddeedbdf9192",
+    "content-hash": "a44d0c155337c58faf211120b6f755a1",
     "packages": [
         {
             "name": "acquia/acquia-cms-starterkit",
@@ -420,28 +420,28 @@
         },
         {
             "name": "commerceguys/addressing",
-            "version": "v1.4.2",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/addressing.git",
-                "reference": "406c7b5f0fbe4f6a64155c0fe03b1adb34d01308"
+                "reference": "d7faef18fc7110b233b81c8d18006e74c6c49a52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/406c7b5f0fbe4f6a64155c0fe03b1adb34d01308",
-                "reference": "406c7b5f0fbe4f6a64155c0fe03b1adb34d01308",
+                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/d7faef18fc7110b233b81c8d18006e74c6c49a52",
+                "reference": "d7faef18fc7110b233b81c8d18006e74c6c49a52",
                 "shasum": ""
             },
             "require": {
-                "doctrine/collections": "^1.2 || ^2.0",
-                "php": ">=7.3"
+                "doctrine/collections": "^1.6 || ^2.0",
+                "php": ">=8.0"
             },
             "require-dev": {
                 "ext-json": "*",
-                "mikey179/vfsstream": "^1.6.10",
-                "phpunit/phpunit": "^9.5",
-                "squizlabs/php_codesniffer": "^3.6",
-                "symfony/validator": "^4.4 || ^5.4 || ^6.0"
+                "mikey179/vfsstream": "^1.6.11",
+                "phpunit/phpunit": "^9.6",
+                "squizlabs/php_codesniffer": "^3.7",
+                "symfony/validator": "^5.4 || ^6.3 || ^7.0"
             },
             "suggest": {
                 "symfony/validator": "to validate addresses"
@@ -449,7 +449,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -478,9 +478,9 @@
             ],
             "support": {
                 "issues": "https://github.com/commerceguys/addressing/issues",
-                "source": "https://github.com/commerceguys/addressing/tree/v1.4.2"
+                "source": "https://github.com/commerceguys/addressing/tree/v2.1.1"
             },
-            "time": "2023-02-15T10:11:14+00:00"
+            "time": "2023-11-28T18:04:35+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -2302,22 +2302,22 @@
         },
         {
             "name": "drupal/address",
-            "version": "1.12.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/address.git",
-                "reference": "8.x-1.12"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/address-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "67dd4699040aabf0cd6169e437706fa6a39b0b3a"
+                "url": "https://ftp.drupal.org/files/projects/address-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "4f7936b6bf08188ecbfddafb3d105ee956e6a952"
             },
             "require": {
-                "commerceguys/addressing": "^1.4.2",
-                "drupal/core": "^9.2 || ^10",
-                "php": "^7.3 || ^8.0"
+                "commerceguys/addressing": "^2.1.1",
+                "drupal/core": "^9.5 || ^10",
+                "php": "^8.0"
             },
             "require-dev": {
                 "drupal/token": "^1.0"
@@ -2325,8 +2325,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.12",
-                    "datestamp": "1684710176",
+                    "version": "2.0.0",
+                    "datestamp": "1703692572",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3028,6 +3028,187 @@
                 "forum": "https://drupal.stackexchange.com/search?q=eu+cookie+compliance",
                 "issues": "https://www.drupal.org/project/issues/eu_cookie_compliance?version=8.x",
                 "slack": "https://app.slack.com/client/T06GX3JTS/C012XBTH81E"
+            }
+        },
+        {
+            "name": "drupal/feeds",
+            "version": "3.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/feeds.git",
+                "reference": "8.x-3.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/feeds-8.x-3.0-beta4.zip",
+                "reference": "8.x-3.0-beta4",
+                "shasum": "d715c428819b71d7018d022862c8d1c453bcf4d7"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10",
+                "laminas/laminas-feed": "^2.13"
+            },
+            "require-dev": {
+                "drupal/pathauto": "^1.8",
+                "drush/drush": "^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.0-beta4",
+                    "datestamp": "1685558328",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10 || ^11"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "alex_b",
+                    "homepage": "https://www.drupal.org/user/53995"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "e2thex",
+                    "homepage": "https://www.drupal.org/user/189123"
+                },
+                {
+                    "name": "febbraro",
+                    "homepage": "https://www.drupal.org/user/43670"
+                },
+                {
+                    "name": "franz",
+                    "homepage": "https://www.drupal.org/user/581844"
+                },
+                {
+                    "name": "Ian Ward",
+                    "homepage": "https://www.drupal.org/user/4736"
+                },
+                {
+                    "name": "jmiccolis",
+                    "homepage": "https://www.drupal.org/user/31731"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                },
+                {
+                    "name": "kking",
+                    "homepage": "https://www.drupal.org/user/24399"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "tobby",
+                    "homepage": "https://www.drupal.org/user/154797"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                },
+                {
+                    "name": "Will White",
+                    "homepage": "https://www.drupal.org/user/32237"
+                },
+                {
+                    "name": "yhahn",
+                    "homepage": "https://www.drupal.org/user/264833"
+                }
+            ],
+            "description": "Aggregates RSS/Atom/RDF feeds, imports CSV files and more.",
+            "homepage": "https://www.drupal.org/project/feeds",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/feeds",
+                "issues": "https://www.drupal.org/project/issues/feeds"
+            }
+        },
+        {
+            "name": "drupal/feeds_tamper",
+            "version": "2.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/feeds_tamper.git",
+                "reference": "8.x-2.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/feeds_tamper-8.x-2.0-beta3.zip",
+                "reference": "8.x-2.0-beta3",
+                "shasum": "5e70d15af38b41d913eb4d8ffea99db29024cbc9"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/feeds": "^3.0",
+                "drupal/tamper": "^1.0-alpha3"
+            },
+            "require-dev": {
+                "drupal/feeds": "3.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta3",
+                    "datestamp": "1670507596",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "franz",
+                    "homepage": "https://www.drupal.org/user/581844"
+                },
+                {
+                    "name": "Honza Pobořil",
+                    "homepage": "https://www.drupal.org/user/123612"
+                },
+                {
+                    "name": "mausolos",
+                    "homepage": "https://www.drupal.org/user/642118"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                }
+            ],
+            "description": "Modify feeds data before it gets saved.",
+            "homepage": "http://drupal.org/project/feeds_tamper",
+            "keywords": [
+                "Drupal",
+                "feeds",
+                "tamper"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/feeds_tamper",
+                "issues": "http://drupal.org/project/issues/feeds_tamper"
             }
         },
         {
@@ -3953,6 +4134,67 @@
             }
         },
         {
+            "name": "drupal/tamper",
+            "version": "1.0.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tamper.git",
+                "reference": "8.x-1.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tamper-8.x-1.0-alpha4.zip",
+                "reference": "8.x-1.0-alpha4",
+                "shasum": "ab591ab64adb923a9901390119bbe0beabc23859"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha4",
+                    "datestamp": "1684984837",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "ericgsmith",
+                    "homepage": "https://www.drupal.org/user/1649952"
+                },
+                {
+                    "name": "jamesdixon",
+                    "homepage": "https://www.drupal.org/user/762570"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                }
+            ],
+            "description": "Generic plugin to modify data.",
+            "homepage": "https://www.drupal.org/project/tamper",
+            "keywords": [
+                "Drupal",
+                "tamper"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/tamper",
+                "issues": "http://drupal.org/project/issues/tamper"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.13.0",
             "source": {
@@ -4541,6 +4783,305 @@
             "time": "2023-11-17T15:01:25+00:00"
         },
         {
+            "name": "geocoder-php/chain-provider",
+            "version": "4.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geocoder-php/chain-provider.git",
+                "reference": "ebcae03b9cc6f8dd1ebebf48f8105103e28b9152"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geocoder-php/chain-provider/zipball/ebcae03b9cc6f8dd1ebebf48f8105103e28b9152",
+                "reference": "ebcae03b9cc6f8dd1ebebf48f8105103e28b9152",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "psr/log": "^1.0|^2.0|^3.0",
+                "willdurand/geocoder": "^4.0"
+            },
+            "provide": {
+                "geocoder-php/provider-implementation": "1.0"
+            },
+            "require-dev": {
+                "nyholm/nsa": "^1.1",
+                "php-http/curl-client": "^2.2",
+                "php-http/message": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Geocoder\\Provider\\Chain\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com"
+                }
+            ],
+            "description": "Geocoder chain adapter",
+            "homepage": "http://geocoder-php.org/Geocoder/",
+            "support": {
+                "source": "https://github.com/geocoder-php/chain-provider/tree/4.5.0"
+            },
+            "time": "2022-07-30T12:09:30+00:00"
+        },
+        {
+            "name": "geocoder-php/common-http",
+            "version": "4.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geocoder-php/php-common-http.git",
+                "reference": "d8c22a66120daed35ba8017467bc1ebfec28a63e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/d8c22a66120daed35ba8017467bc1ebfec28a63e",
+                "reference": "d8c22a66120daed35ba8017467bc1ebfec28a63e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "php-http/discovery": "^1.17",
+                "psr/http-client-implementation": "^1.0",
+                "psr/http-factory-implementation": "^1.0",
+                "willdurand/geocoder": "^4.0"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.0",
+                "php-http/message": "^1.0",
+                "php-http/mock-client": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "symfony/stopwatch": "~2.5 || ~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Geocoder\\Http\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "Common files for HTTP based Geocoders",
+            "homepage": "http://geocoder-php.org",
+            "keywords": [
+                "http geocoder"
+            ],
+            "support": {
+                "source": "https://github.com/geocoder-php/php-common-http/tree/4.6.0"
+            },
+            "time": "2023-12-28T10:51:54+00:00"
+        },
+        {
+            "name": "geocoder-php/geo-plugin-provider",
+            "version": "4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geocoder-php/geo-plugin-provider.git",
+                "reference": "fcb8fd60bb6324be305a90deae59497b928ccbd3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geocoder-php/geo-plugin-provider/zipball/fcb8fd60bb6324be305a90deae59497b928ccbd3",
+                "reference": "fcb8fd60bb6324be305a90deae59497b928ccbd3",
+                "shasum": ""
+            },
+            "require": {
+                "geocoder-php/common-http": "^4.0",
+                "igorw/get-in": "^1.0",
+                "php": "^7.4 || ^8.0",
+                "willdurand/geocoder": "^4.0"
+            },
+            "provide": {
+                "geocoder-php/provider-implementation": "1.0"
+            },
+            "require-dev": {
+                "geocoder-php/provider-integration-tests": "^1.0",
+                "php-http/curl-client": "^2.2",
+                "php-http/message": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Geocoder\\Provider\\GeoPlugin\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com"
+                }
+            ],
+            "description": "Geocoder GeoPlugin adapter",
+            "homepage": "http://geocoder-php.org/Geocoder/",
+            "support": {
+                "source": "https://github.com/geocoder-php/geo-plugin-provider/tree/4.3.0"
+            },
+            "time": "2022-07-30T10:48:32+00:00"
+        },
+        {
+            "name": "geocoder-php/google-maps-provider",
+            "version": "4.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geocoder-php/google-maps-provider.git",
+                "reference": "ee0dbc229380903043542ae2a79b4518b9f0df17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geocoder-php/google-maps-provider/zipball/ee0dbc229380903043542ae2a79b4518b9f0df17",
+                "reference": "ee0dbc229380903043542ae2a79b4518b9f0df17",
+                "shasum": ""
+            },
+            "require": {
+                "geocoder-php/common-http": "^4.0",
+                "php": "^7.4 || ^8.0",
+                "willdurand/geocoder": "^4.0"
+            },
+            "provide": {
+                "geocoder-php/provider-implementation": "1.0"
+            },
+            "require-dev": {
+                "geocoder-php/provider-integration-tests": "^1.0",
+                "php-http/curl-client": "^2.2",
+                "php-http/message": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Geocoder\\Provider\\GoogleMaps\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com"
+                }
+            ],
+            "description": "Geocoder GoogleMaps adapter",
+            "homepage": "http://geocoder-php.org/Geocoder/",
+            "support": {
+                "source": "https://github.com/geocoder-php/google-maps-provider/tree/4.7.1"
+            },
+            "time": "2023-04-14T11:13:20+00:00"
+        },
+        {
+            "name": "geocoder-php/nominatim-provider",
+            "version": "5.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geocoder-php/nominatim-provider.git",
+                "reference": "a50486161f6babad7b1ed7ee7bf86147b0844413"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geocoder-php/nominatim-provider/zipball/a50486161f6babad7b1ed7ee7bf86147b0844413",
+                "reference": "a50486161f6babad7b1ed7ee7bf86147b0844413",
+                "shasum": ""
+            },
+            "require": {
+                "geocoder-php/common-http": "^4.1",
+                "php": "^7.4 || ^8.0",
+                "willdurand/geocoder": "^4.0"
+            },
+            "provide": {
+                "geocoder-php/provider-implementation": "1.0"
+            },
+            "require-dev": {
+                "geocoder-php/provider-integration-tests": "^1.0",
+                "php-http/curl-client": "^2.2",
+                "php-http/message": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Geocoder\\Provider\\Nominatim\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com"
+                }
+            ],
+            "description": "Geocoder Nominatim adapter",
+            "homepage": "http://geocoder-php.org/Geocoder/",
+            "support": {
+                "source": "https://github.com/geocoder-php/nominatim-provider/tree/5.7.0"
+            },
+            "time": "2023-03-01T10:18:27+00:00"
+        },
+        {
             "name": "grasmash/expander",
             "version": "3.0.0",
             "source": {
@@ -4974,6 +5515,55 @@
             "time": "2023-12-03T20:05:35+00:00"
         },
         {
+            "name": "igorw/get-in",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/get-in.git",
+                "reference": "170ded831f49abc6a6061f655aba9bdbcf7b8111"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/get-in/zipball/170ded831f49abc6a6061f655aba9bdbcf7b8111",
+                "reference": "170ded831f49abc6a6061f655aba9bdbcf7b8111",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/get_in.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                }
+            ],
+            "description": "Functions for for hash map (assoc array) traversal.",
+            "keywords": [
+                "assoc-array",
+                "hash-map"
+            ],
+            "support": {
+                "issues": "https://github.com/igorw/get-in/issues",
+                "source": "https://github.com/igorw/get-in/tree/v1.0.3"
+            },
+            "time": "2014-12-15T23:03:51+00:00"
+        },
+        {
             "name": "itamair/geophp",
             "version": "1.6",
             "source": {
@@ -5088,6 +5678,148 @@
                 "source": "https://github.com/justinrainbow/json-schema/tree/v5.2.13"
             },
             "time": "2023-09-26T02:20:38+00:00"
+        },
+        {
+            "name": "laminas/laminas-escaper",
+            "version": "2.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-escaper.git",
+                "reference": "af459883f4018d0f8a0c69c7a209daef3bf973ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-escaper/zipball/af459883f4018d0f8a0c69c7a209daef3bf973ba",
+                "reference": "af459883f4018d0f8a0c69c7a209daef3bf973ba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-mbstring": "*",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
+            },
+            "conflict": {
+                "zendframework/zend-escaper": "*"
+            },
+            "require-dev": {
+                "infection/infection": "^0.27.0",
+                "laminas/laminas-coding-standard": "~2.5.0",
+                "maglnet/composer-require-checker": "^3.8.0",
+                "phpunit/phpunit": "^9.6.7",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "vimeo/psalm": "^5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Escaper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Securely and safely escape HTML, HTML attributes, JavaScript, CSS, and URLs",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "escaper",
+                "laminas"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-escaper/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-escaper/issues",
+                "rss": "https://github.com/laminas/laminas-escaper/releases.atom",
+                "source": "https://github.com/laminas/laminas-escaper"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2023-10-10T08:35:13+00:00"
+        },
+        {
+            "name": "laminas/laminas-feed",
+            "version": "2.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-feed.git",
+                "reference": "669792b819fca7274698147ad7a2ecc1b0a9b141"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/669792b819fca7274698147ad7a2ecc1b0a9b141",
+                "reference": "669792b819fca7274698147ad7a2ecc1b0a9b141",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "laminas/laminas-escaper": "^2.9",
+                "laminas/laminas-stdlib": "^3.6",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
+            },
+            "conflict": {
+                "laminas/laminas-servicemanager": "<3.3",
+                "zendframework/zend-feed": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-cache": "^2.13.2 || ^3.11",
+                "laminas/laminas-cache-storage-adapter-memory": "^1.1.0 || ^2.2",
+                "laminas/laminas-coding-standard": "~2.5.0",
+                "laminas/laminas-db": "^2.18",
+                "laminas/laminas-http": "^2.18",
+                "laminas/laminas-servicemanager": "^3.21.0",
+                "laminas/laminas-validator": "^2.38",
+                "phpunit/phpunit": "^10.3.1",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "psr/http-message": "^2.0",
+                "vimeo/psalm": "^5.14.1"
+            },
+            "suggest": {
+                "laminas/laminas-cache": "Laminas\\Cache component, for optionally caching feeds between requests",
+                "laminas/laminas-db": "Laminas\\Db component, for use with PubSubHubbub",
+                "laminas/laminas-http": "Laminas\\Http for PubSubHubbub, and optionally for use with Laminas\\Feed\\Reader",
+                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component, for easily extending ExtensionManager implementations",
+                "laminas/laminas-validator": "Laminas\\Validator component, for validating email addresses used in Atom feeds and entries when using the Writer subcomponent",
+                "psr/http-message": "PSR-7 ^1.0.1, if you wish to use Laminas\\Feed\\Reader\\Http\\Psr7ResponseDecorator"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Feed\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides functionality for creating and consuming RSS and Atom feeds",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "atom",
+                "feed",
+                "laminas",
+                "rss"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-feed/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-feed/issues",
+                "rss": "https://github.com/laminas/laminas-feed/releases.atom",
+                "source": "https://github.com/laminas/laminas-feed"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2023-10-11T20:16:37+00:00"
         },
         {
             "name": "laminas/laminas-servicemanager",
@@ -6104,6 +6836,84 @@
                 "source": "https://github.com/phootwork/lang/tree/v3.2.2"
             },
             "time": "2023-05-26T05:37:59+00:00"
+        },
+        {
+            "name": "php-http/discovery",
+            "version": "1.19.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/discovery.git",
+                "reference": "61e1a1eb69c92741f5896d9e05fb8e9d7e8bb0cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/61e1a1eb69c92741f5896d9e05fb8e9d7e8bb0cb",
+                "reference": "61e1a1eb69c92741f5896d9e05fb8e9d7e8bb0cb",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0|^2.0",
+                "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "nyholm/psr7": "<1.0",
+                "zendframework/zend-diactoros": "*"
+            },
+            "provide": {
+                "php-http/async-client-implementation": "*",
+                "php-http/client-implementation": "*",
+                "psr/http-client-implementation": "*",
+                "psr/http-factory-implementation": "*",
+                "psr/http-message-implementation": "*"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0.2|^2.0",
+                "graham-campbell/phpspec-skip-example-extension": "^5.0",
+                "php-http/httplug": "^1.0 || ^2.0",
+                "php-http/message-factory": "^1.0",
+                "phpspec/phpspec": "^5.1 || ^6.1 || ^7.3",
+                "symfony/phpunit-bridge": "^6.2"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Http\\Discovery\\Composer\\Plugin",
+                "plugin-optional": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Discovery\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "src/Composer/Plugin.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "Finds and installs PSR-7, PSR-17, PSR-18 and HTTPlug implementations",
+            "homepage": "http://php-http.org",
+            "keywords": [
+                "adapter",
+                "client",
+                "discovery",
+                "factory",
+                "http",
+                "message",
+                "psr17",
+                "psr7"
+            ],
+            "support": {
+                "issues": "https://github.com/php-http/discovery/issues",
+                "source": "https://github.com/php-http/discovery/tree/1.19.2"
+            },
+            "time": "2023-11-30T16:49:05+00:00"
         },
         {
             "name": "php-http/guzzle7-adapter",
@@ -12736,6 +13546,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/feeds": 10,
+        "drupal/feeds_tamper": 10,
         "drupal/layout_builder_boolean": 15
     },
     "prefer-stable": true,

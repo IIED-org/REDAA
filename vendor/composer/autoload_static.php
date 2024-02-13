@@ -11,8 +11,8 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
@@ -29,6 +29,7 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        'a16312f9300fed4a097923eacb0ba814' => __DIR__ . '/..' . '/igorw/get-in/src/get_in.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
@@ -144,6 +145,8 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
             'Laminas\\Text\\' => 13,
             'Laminas\\Stdlib\\' => 15,
             'Laminas\\ServiceManager\\' => 23,
+            'Laminas\\Feed\\' => 13,
+            'Laminas\\Escaper\\' => 16,
         ),
         'J' => 
         array (
@@ -153,6 +156,7 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         array (
             'Http\\Promise\\' => 13,
             'Http\\Message\\' => 13,
+            'Http\\Discovery\\' => 15,
             'Http\\Client\\' => 12,
             'Http\\Adapter\\Guzzle7\\' => 21,
         ),
@@ -163,6 +167,11 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
             'GuzzleHttp\\' => 11,
             'Grasmash\\YamlCli\\' => 17,
             'Grasmash\\Expander\\' => 18,
+            'Geocoder\\Provider\\Nominatim\\' => 28,
+            'Geocoder\\Provider\\GoogleMaps\\' => 29,
+            'Geocoder\\Provider\\GeoPlugin\\' => 28,
+            'Geocoder\\Provider\\Chain\\' => 24,
+            'Geocoder\\Http\\' => 14,
             'Geocoder\\' => 9,
         ),
         'E' => 
@@ -513,6 +522,14 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src',
         ),
+        'Laminas\\Feed\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-feed/src',
+        ),
+        'Laminas\\Escaper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-escaper/src',
+        ),
         'JsonSchema\\' => 
         array (
             0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
@@ -524,6 +541,10 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         'Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/message/src',
+        ),
+        'Http\\Discovery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/discovery/src',
         ),
         'Http\\Client\\' => 
         array (
@@ -552,6 +573,26 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         'Grasmash\\Expander\\' => 
         array (
             0 => __DIR__ . '/..' . '/grasmash/expander/src',
+        ),
+        'Geocoder\\Provider\\Nominatim\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geocoder-php/nominatim-provider',
+        ),
+        'Geocoder\\Provider\\GoogleMaps\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geocoder-php/google-maps-provider',
+        ),
+        'Geocoder\\Provider\\GeoPlugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geocoder-php/geo-plugin-provider',
+        ),
+        'Geocoder\\Provider\\Chain\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geocoder-php/chain-provider',
+        ),
+        'Geocoder\\Http\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geocoder-php/common-http',
         ),
         'Geocoder\\' => 
         array (
