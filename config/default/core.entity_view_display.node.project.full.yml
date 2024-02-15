@@ -15,18 +15,36 @@ dependencies:
   module:
     - address
     - datetime
+    - options
+    - text
     - user
 id: node.project.full
 targetEntityType: node
 bundle: project
 mode: full
 content:
-  field_countries:
-    type: address_country_default
-    label: inline
+  body:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 3
+    region: content
+  field_countries:
+    type: address_country_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_publication_date:
     type: datetime_default
@@ -35,16 +53,26 @@ content:
       timezone_override: ''
       format_type: redaa_medium
     third_party_settings: {  }
-    weight: 102
+    weight: 6
+    region: content
+  field_standfirst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_subtype:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
-  body: true
-  field_main_image: true
   field_short_title: true
-  field_standfirst: true
-  field_subtype: true
