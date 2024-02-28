@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.project.field_focal_country
     - field.field.node.project.field_grant_reference
     - field.field.node.project.field_lead_organisation
+    - field.field.node.project.field_location_text
     - field.field.node.project.field_main_image
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
@@ -158,6 +159,7 @@ hidden:
   field_focal_country: true
   field_grant_reference: true
   field_lead_organisation: true
+  field_location_text: true
   field_publication_date: true
   field_short_title: true
   field_subtype: true

@@ -67,6 +67,7 @@ module:
   purge_processor_lateruntime: 0
   purge_queuer_coretags: 0
   purge_ui: 0
+  redaa_map: 0
   search: 0
   seckit: 0
   shortcut: 0

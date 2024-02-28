@@ -1,0 +1,19 @@
+uuid: 046c32ee-12da-46a7-91c0-e5ea3d1dff4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_text
+    - node.type.project
+id: node.project.field_location_text
+field_name: field_location_text
+entity_type: node
+bundle: project
+label: 'Location text'
+description: 'Specific location'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
