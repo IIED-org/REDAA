@@ -5,6 +5,7 @@ config:
   ah_application_uuid: eeab35dc-2307-455c-b232-5f436ecb0af8
   ah_site_group: gwi
   php: '8.2'
+  xdebug: true
 services:
   appserver:
     webroot: docroot
@@ -12,6 +13,7 @@ services:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/docroot'
         DRUSH_OPTIONS_URI: 'https://redaa.lndo.site'
+        XDEBUG_MODE: 'debug,develop'
   node:
     type: node:16
 tooling:
@@ -28,3 +30,17 @@ tooling:
     description: Update Imagick policy for PDF
     cmd: sed -i 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<policy domain="coder" rights="read|write" pattern="PDF" \/>/g' /etc/ImageMagick-6/policy.xml
     user: root
+  xdebug-on:
+    service: appserver
+    description: Enable Xdebug.
+    user: root
+    cmd:
+      - docker-php-ext-enable xdebug && kill -USR2 $(pgrep -o php-fpm) > /dev/null || /etc/init.d/apache2 reload
+      - tput setaf 2 && echo "Xdebug On" && tput sgr 0 && echo
+  xdebug-off:
+    service: appserver
+    description: Disable Xdebug.
+    user: root
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && kill -USR2 $(pgrep -o php-fpm) > /dev/null || /etc/init.d/apache2 reload
+      - tput setaf 1 && echo "Xdebug Off" && tput sgr 0 && echo

@@ -1,0 +1,41 @@
+<?php
+use Drupal\Core\Field\FieldItemInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\views\ViewExecutable;
+use Drupal\geofield\Plugin\Field\FieldType\GeofieldItem;
+
+/**
+* Implements hook_views_pre_render().
+*/
+function redaa_map_views_pre_render(ViewExecutable $view) {
+    if (isset($view) && ($view->storage->id() == 'demo_projects')) {
+      $view->element['#attached']['library'][] = 'redaa_map/redaa_map';
+      $view->element['#attached']['library'][] = 'redaa_map/sidebar-v2';
+    }
+  }
+
+/**
+ * Adjust the array representing a leaflet formatter feature/marker.
+ *
+ * @param array $feature
+ *   The leaflet feature. Available keys are:
+ *   - type: Indicates the type of feature (usually one of these: point,
+ *     polygon, linestring, multipolygon, multipolyline).
+ *   - popup: This value is displayed in a popup after the user clicks on the
+ *     feature.
+ *   - Other possible keys include "lat", "lon", "points", "component",
+ *     depending on feature type.
+ * @param \Drupal\Core\Field\FieldItemInterface $item
+ *   The Geofield Item.
+ * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+ *   The Content Entity base of the formatter.
+ */
+function redaa_map_leaflet_views_feature_alter(&$feature, $row) {
+    // printr($feature);
+  // Check if the field is the one we want to alter.
+     if ($feature['type'] == 'point') {
+    // Change the bindPopup method to a custom one that creates a sidebar.
+        $feature['bindPopup'] = '(redaa_map_create_sidebar)';
+    }
+}
