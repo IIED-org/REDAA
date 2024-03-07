@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_display.node.page.full
     - filter.format.full_html
     - node.type.article
+    - node.type.feature
     - node.type.page
     - node.type.person
     - node.type.project
@@ -19,8 +20,8 @@ dependencies:
     - eu_cookie_compliance
     - file
     - filter
-    - layout_builder
     - help
+    - layout_builder
     - media
     - media_pdf_thumbnail
     - node
@@ -50,17 +51,22 @@ permissions:
   - 'administer nodes'
   - 'administer url aliases'
   - 'bypass node access'
+  - 'configure all feature node layout overrides'
   - 'configure editable feature node layout overrides'
   - 'configure editable page node layout overrides'
   - 'create article content'
+  - 'create feature content'
   - 'create media'
+  - 'create page content'
   - 'create person content'
   - 'create project content'
   - 'create resource content'
   - 'create terms in tags'
   - 'create url aliases'
   - 'delete own article content'
+  - 'delete own feature content'
   - 'delete own files'
+  - 'delete own page content'
   - 'delete own person content'
   - 'delete own project content'
   - 'delete own resource content'
@@ -73,6 +79,7 @@ permissions:
   - 'edit any resource content'
   - 'edit own article content'
   - 'edit own comments'
+  - 'edit own feature content'
   - 'edit own page content'
   - 'edit own person content'
   - 'edit own project content'
@@ -81,6 +88,7 @@ permissions:
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'revert article revisions'
+  - 'revert feature revisions'
   - 'revert page revisions'
   - 'revert person revisions'
   - 'revert project revisions'
@@ -91,6 +99,7 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view article revisions'
+  - 'view feature revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'

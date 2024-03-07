@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_grant_reference
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
+    - field.field.node.project.field_short_title
     - field.field.node.project.field_subtype
     - field.field.node.project.field_tags
     - field.field.node.project.field_thematic_priorities
@@ -37,53 +38,46 @@ third_party_settings:
         source: focal_region_s
         weight: 0
         label: Explode
-      acbf9aa9-e043-4b89-b373-1930422d20f7:
+      d648b981-8905-4a4c-8fad-0b53feada496:
         separator: ','
         limit: null
-        uuid: acbf9aa9-e043-4b89-b373-1930422d20f7
+        uuid: d648b981-8905-4a4c-8fad-0b53feada496
         plugin: explode
-        source: redaa_thematics_priorities
+        source: redaa_thematic_priorities
         weight: 0
         label: Explode
-      92870664-b05d-4156-93ad-0f89c518b8e0:
+      35faf7e8-1431-4f7e-8c1a-efa694d19f3c:
+        character: ''
+        side: trim
+        uuid: 35faf7e8-1431-4f7e-8c1a-efa694d19f3c
+        plugin: trim
+        source: redaa_thematic_priorities
+        weight: 1
+        label: 'Remove whitespace'
+      e7369eed-bdb7-4d4f-8f3b-0c0a68bd25b9:
         separator: ;
         limit: null
-        uuid: 92870664-b05d-4156-93ad-0f89c518b8e0
+        uuid: e7369eed-bdb7-4d4f-8f3b-0c0a68bd25b9
         plugin: explode
-        source: ecosystem_landscape
-        weight: -10
-        label: Explode
-      9f2efaac-4fe5-4768-a32d-aae46f4417dd:
-        separator: ','
-        limit: null
-        uuid: 9f2efaac-4fe5-4768-a32d-aae46f4417dd
-        plugin: explode
-        source: focal_country
+        source: ecosystems_landscapes_land_types
         weight: 0
         label: Explode
-      2038051f-9383-41aa-9c4f-50e60000eca9:
-        operation: ucfirst
-        uuid: 2038051f-9383-41aa-9c4f-50e60000eca9
-        plugin: convert_case
-        source: ecosystem_landscape
-        weight: -8
-        label: 'Convert case'
-      0763768c-76f1-4fa9-9379-5094b8a2a932:
+      be49f22f-93b1-4cf2-9ea3-1702f9b9aa94:
         character: ''
         side: trim
-        uuid: 0763768c-76f1-4fa9-9379-5094b8a2a932
+        uuid: be49f22f-93b1-4cf2-9ea3-1702f9b9aa94
         plugin: trim
-        source: ecosystem_landscape
-        weight: -9
-        label: 'Characters to trim'
-      f49279e2-0953-44f6-a6c8-e880003f88ce:
-        character: ''
-        side: trim
-        uuid: f49279e2-0953-44f6-a6c8-e880003f88ce
-        plugin: trim
-        source: redaa_thematics_priorities
+        source: ecosystems_landscapes_land_types
         weight: 1
-        label: 'Characters to trim'
+        label: 'Remove whitespace'
+      ff4bdccd-f9b2-4769-9822-01c8520037f8:
+        character: ''
+        side: trim
+        uuid: ff4bdccd-f9b2-4769-9822-01c8520037f8
+        plugin: trim
+        source: title
+        weight: 0
+        label: 'Remove whitespace'
 label: 'Grantee project'
 id: grantee_project
 description: 'XLSX import for awarded projects'
@@ -193,6 +187,36 @@ custom_sources:
     label: 'Location (for map)'
     machine_name: location_for_map
     type: csv
+  overview:
+    value: Overview
+    label: Overview
+    machine_name: overview
+    type: csv
+  country:
+    value: Country
+    label: Country
+    machine_name: country
+    type: csv
+  location_s:
+    value: Location(s)
+    label: Location(s)
+    machine_name: location_s
+    type: csv
+  short_title:
+    value: 'Short title'
+    label: 'Short title'
+    machine_name: short_title
+    type: csv
+  ecosystems_landscapes_land_types:
+    value: 'Ecosystems / landscapes / land types'
+    label: 'Ecosystems / landscapes / land types'
+    machine_name: ecosystems_landscapes_land_types
+    type: csv
+  redaa_thematic_priorities:
+    value: 'REDAA thematic priorities'
+    label: 'REDAA thematic priorities'
+    machine_name: redaa_thematic_priorities
+    type: csv
 mappings:
   -
     target: field_grant_reference
@@ -212,8 +236,8 @@ mappings:
   -
     target: body
     map:
-      value: project_summary_not_edited
-      summary: two_sentence_summary_50_words_or_less
+      value: overview
+      summary: ''
     settings:
       language: ''
       format: basic_html
@@ -251,7 +275,7 @@ mappings:
   -
     target: field_thematic_priorities
     map:
-      target_id: redaa_thematics_priorities
+      target_id: redaa_thematic_priorities
     settings:
       language: ''
       reference_by: name
@@ -260,7 +284,7 @@ mappings:
   -
     target: field_ecosystem_landscape
     map:
-      target_id: ecosystem_landscape
+      target_id: ecosystems_landscapes_land_types
     settings:
       language: ''
       reference_by: name
@@ -275,13 +299,20 @@ mappings:
   -
     target: field_focal_countries_text
     map:
-      value: focal_country
+      value: country
     settings:
       language: null
     unique: {  }
   -
     target: field_location_text
     map:
-      value: location_for_map
+      value: location_s
     settings:
       language: null
+  -
+    target: field_short_title
+    map:
+      value: short_title
+    settings:
+      language: null
+    unique: {  }

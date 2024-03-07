@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Ecosystem
 vid: ecosystem
-description: Ecosystem/landscape
+description: 'Ecosystem / landscape / land type'
 weight: 0
