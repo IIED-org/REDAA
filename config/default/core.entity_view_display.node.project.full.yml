@@ -26,6 +26,8 @@ dependencies:
   module:
     - address
     - datetime
+    - options
+    - text
     - leaflet
     - options
     - text
@@ -35,6 +37,13 @@ targetEntityType: node
 bundle: project
 mode: full
 content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   body:
     type: text_default
     label: hidden
@@ -183,6 +192,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    weight: 6
+    region: content
+  field_standfirst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_subtype:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
     settings: {  }
