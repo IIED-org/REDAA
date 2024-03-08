@@ -2759,7 +2759,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<strong>Region: </strong>{{ field_location_text }} ({{ field_focal_countries_text }})'
+            text: '<strong>Region: </strong>{{ field_location_text }}'
             make_link: false
             path: ''
             absolute: false
