@@ -1,0 +1,12 @@
+name: REDAA map functions
+type: module
+description: Custom sidebar implementation
+core_version_requirement: ^10
+package: Custom
+libraries:
+  - redaa_map
+  - sidebar-v2
+dependencies:
+  - leaflet:leaflet
+  - leaflet:leaflet_views
+  - drupal:views

@@ -1,0 +1,10 @@
+uuid: c32197ab-f4fe-42a1-9126-df8f5dd1fb37
+langcode: en
+status: true
+dependencies:
+  module:
+    - geocoder_field
+id: file
+label: File
+plugin: file
+configuration: {  }

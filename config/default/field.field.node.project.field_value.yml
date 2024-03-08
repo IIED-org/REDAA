@@ -1,0 +1,23 @@
+uuid: 41042f65-f9e4-4354-bd90-c4e51722dd39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_value
+    - node.type.project
+id: node.project.field_value
+field_name: field_value
+entity_type: node
+bundle: project
+label: 'Value (GBP)'
+description: 'Project value in GBP'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: £
+  suffix: ''
+field_type: integer

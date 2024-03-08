@@ -1,0 +1,16 @@
+redaa_map:
+  js:
+    redaa_map.js: { weight: -10 }
+  dependencies:
+  - leaflet/leaflet
+  - leaflet/leaflet_views
+  - redaa_map/sidebar-v2
+sidebar-v2:
+  header: true
+  css:
+    theme: 
+      sidebar-v2/css/leaflet-sidebar.css: {}
+  js:
+    sidebar-v2/js/leaflet-sidebar.js: {}
+  dependencies:
+  - leaflet/leaflet

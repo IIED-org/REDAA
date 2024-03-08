@@ -1,0 +1,8 @@
+uuid: 0446f74b-40d0-4273-a419-e6693f1a04e2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Thematic priorities'
+vid: thematic_priorities
+description: ''
+weight: 0

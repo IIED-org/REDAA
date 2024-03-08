@@ -1,0 +1,308 @@
+uuid: f2a72bde-06fa-4a2d-8846-5984e8e9a59b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project.body
+    - field.field.node.project.field_dates
+    - field.field.node.project.field_ecosystem_landscape
+    - field.field.node.project.field_focal_countries_text
+    - field.field.node.project.field_grant_reference
+    - field.field.node.project.field_lead_organisation
+    - field.field.node.project.field_location_text
+    - field.field.node.project.field_subtype
+    - field.field.node.project.field_tags
+    - field.field.node.project.field_thematic_priorities
+    - field.field.node.project.field_value
+    - node.type.project
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      b8ab6f16-89d6-4e5d-be7b-80b2b684ad37:
+        default_value: grantee_project
+        only_if_empty: false
+        uuid: b8ab6f16-89d6-4e5d-be7b-80b2b684ad37
+        plugin: default_value
+        source: subtype
+        weight: 0
+        label: 'Set to grantee_project'
+      50a06103-a388-4648-9e2a-91777333702b:
+        separator: ','
+        limit: null
+        uuid: 50a06103-a388-4648-9e2a-91777333702b
+        plugin: explode
+        source: focal_region_s
+        weight: 0
+        label: Explode
+      d648b981-8905-4a4c-8fad-0b53feada496:
+        separator: ','
+        limit: null
+        uuid: d648b981-8905-4a4c-8fad-0b53feada496
+        plugin: explode
+        source: redaa_thematic_priorities
+        weight: 0
+        label: Explode
+      35faf7e8-1431-4f7e-8c1a-efa694d19f3c:
+        character: ''
+        side: trim
+        uuid: 35faf7e8-1431-4f7e-8c1a-efa694d19f3c
+        plugin: trim
+        source: redaa_thematic_priorities
+        weight: 1
+        label: 'Remove whitespace'
+      e7369eed-bdb7-4d4f-8f3b-0c0a68bd25b9:
+        separator: ;
+        limit: null
+        uuid: e7369eed-bdb7-4d4f-8f3b-0c0a68bd25b9
+        plugin: explode
+        source: ecosystems_landscapes_land_types
+        weight: 0
+        label: Explode
+      be49f22f-93b1-4cf2-9ea3-1702f9b9aa94:
+        character: ''
+        side: trim
+        uuid: be49f22f-93b1-4cf2-9ea3-1702f9b9aa94
+        plugin: trim
+        source: ecosystems_landscapes_land_types
+        weight: 1
+        label: 'Remove whitespace'
+      ff4bdccd-f9b2-4769-9822-01c8520037f8:
+        character: ''
+        side: trim
+        uuid: ff4bdccd-f9b2-4769-9822-01c8520037f8
+        plugin: trim
+        source: title
+        weight: 0
+        label: 'Remove whitespace'
+      9a87fc48-b024-4620-b07d-1ace5cae5eed:
+        separator: ','
+        limit: null
+        uuid: 9a87fc48-b024-4620-b07d-1ace5cae5eed
+        plugin: explode
+        source: country
+        weight: 0
+        label: Explode
+      fece6004-8d31-4f73-b6cd-692391ce4fe7:
+        character: ''
+        side: trim
+        uuid: fece6004-8d31-4f73-b6cd-692391ce4fe7
+        plugin: trim
+        source: country
+        weight: 1
+        label: 'Remove whitespace'
+      6956dfb9-578c-482e-a796-2284ad25e0ab:
+        operation: ucfirst
+        uuid: 6956dfb9-578c-482e-a796-2284ad25e0ab
+        plugin: convert_case
+        source: ecosystems_landscapes_land_types
+        weight: 2
+        label: 'Convert case'
+label: 'Grantee project'
+id: grantee_project
+description: 'CSV import for awarded projects'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: project
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: true
+  expire: -1
+  owner_feed_author: true
+  owner_id: 1
+custom_sources:
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: csv
+  subtype:
+    value: Subtype
+    label: Subtype
+    machine_name: subtype
+    type: blank
+  grant_reference:
+    value: 'Grant reference'
+    label: 'Grant reference'
+    machine_name: grant_reference
+    type: csv
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  lead_organisation:
+    value: 'Lead Organisation'
+    label: 'Lead Organisation'
+    machine_name: lead_organisation
+    type: csv
+  focal_region_s:
+    value: 'Focal region(s)'
+    label: 'Focal region(s)'
+    machine_name: focal_region_s
+    type: csv
+  start_date:
+    value: 'Start date'
+    label: 'Start date'
+    machine_name: start_date
+    type: csv
+  end_date:
+    value: 'End date'
+    label: 'End date'
+    machine_name: end_date
+    type: csv
+  focal_country:
+    value: 'Focal Country'
+    label: 'Focal Country'
+    machine_name: focal_country
+    type: csv
+  location_for_map:
+    value: 'Location (for map)'
+    label: 'Location (for map)'
+    machine_name: location_for_map
+    type: csv
+  overview:
+    value: Overview
+    label: Overview
+    machine_name: overview
+    type: csv
+  country:
+    value: Country
+    label: Country
+    machine_name: country
+    type: csv
+  location_s:
+    value: Location(s)
+    label: Location(s)
+    machine_name: location_s
+    type: csv
+  short_title:
+    value: 'Short title'
+    label: 'Short title'
+    machine_name: short_title
+    type: csv
+  ecosystems_landscapes_land_types:
+    value: 'Ecosystems / landscapes / land types'
+    label: 'Ecosystems / landscapes / land types'
+    machine_name: ecosystems_landscapes_land_types
+    type: csv
+  redaa_thematic_priorities:
+    value: 'REDAA thematic priorities'
+    label: 'REDAA thematic priorities'
+    machine_name: redaa_thematic_priorities
+    type: csv
+  grant_amount_gbp:
+    value: 'Grant Amount (GBP)'
+    label: 'Grant Amount (GBP)'
+    machine_name: grant_amount_gbp
+    type: csv
+mappings:
+  -
+    target: field_grant_reference
+    map:
+      value: grant_reference
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: title
+    map:
+      value: short_title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: body
+    map:
+      value: overview
+      summary: title
+    settings:
+      language: ''
+      format: basic_html
+  -
+    target: field_lead_organisation
+    map:
+      value: lead_organisation
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_tags
+    map:
+      target_id: focal_region_s
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: tags
+  -
+    target: field_dates
+    map:
+      value: start_date
+      end_value: end_date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_thematic_priorities
+    map:
+      target_id: redaa_thematic_priorities
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: thematic_priorities
+  -
+    target: field_ecosystem_landscape
+    map:
+      target_id: ecosystems_landscapes_land_types
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: ecosystem
+  -
+    target: field_subtype
+    map:
+      value: subtype
+    settings:
+      language: ''
+  -
+    target: field_focal_countries_text
+    map:
+      value: country
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_location_text
+    map:
+      value: location_s
+    settings:
+      language: null
+  -
+    target: field_value
+    map:
+      value: grant_amount_gbp
+    settings:
+      language: null
+    unique: {  }

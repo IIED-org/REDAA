@@ -1,0 +1,21 @@
+uuid: 173a7a81-52a1-42d4-a118-99a7ef907e5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates
+    - node.type.project
+  module:
+    - datetime_range
+id: node.project.field_dates
+field_name: field_dates
+entity_type: node
+bundle: project
+label: Dates
+description: 'Project start and end dates'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

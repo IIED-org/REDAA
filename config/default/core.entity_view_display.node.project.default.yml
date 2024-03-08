@@ -4,16 +4,29 @@ status: true
 dependencies:
   config:
     - field.field.node.project.body
+    - field.field.node.project.feeds_item
     - field.field.node.project.field_countries
+    - field.field.node.project.field_dates
+    - field.field.node.project.field_ecosystem_landscape
+    - field.field.node.project.field_focal_countries_text
+    - field.field.node.project.field_focal_country
+    - field.field.node.project.field_grant_reference
+    - field.field.node.project.field_lead_organisation
+    - field.field.node.project.field_location_text
     - field.field.node.project.field_main_image
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
+    - field.field.node.project.field_tags
+    - field.field.node.project.field_thematic_priorities
+    - field.field.node.project.field_value
     - node.type.project
   module:
     - address
     - datetime
+    - datetime_range
+    - leaflet
     - options
     - text
     - user
@@ -35,6 +48,151 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_dates:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_ecosystem_landscape:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_focal_countries_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_focal_country:
+    type: leaflet_formatter_default
+    label: above
+    settings:
+      multiple_map: false
+      leaflet_map: 'OSM Mapnik'
+      height: 400
+      height_unit: px
+      hide_empty_map: false
+      disable_wheel: false
+      gesture_handling: false
+      fitbounds_options: '{"padding":[0,0]}'
+      reset_map:
+        control: false
+        options: '{"position": "topleft", "title": "Reset View"}'
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+      locate:
+        control: false
+        options: '{"position": "topright", "setView": "untilPanOrZoom", "returnToPrevBounds":true, "keepCurrentZoomLevel": true, "strings": {"title": "Locate my position"}}'
+        automatic: false
+      leaflet_tooltip:
+        value: ''
+        options: '{"permanent":false,"direction":"center"}'
+      popup: false
+      popup_content: ''
+      leaflet_popup:
+        control: ''
+        content: ''
+        options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
+        value: ''
+        view_mode: full
+      map_position:
+        force: false
+        center:
+          lat: 0.0
+          lon: 0.0
+        zoomControlPosition: topleft
+        zoom: 5
+        minZoom: 1
+        maxZoom: 18
+        zoomFiner: 0
+      icon:
+        iconType: marker
+        iconUrl: ''
+        shadowUrl: ''
+        className: ''
+        iconSize:
+          x: null
+          'y': null
+        iconAnchor:
+          x: null
+          'y': null
+        shadowSize:
+          x: null
+          'y': null
+        shadowAnchor:
+          x: null
+          'y': null
+        popupAnchor:
+          x: null
+          'y': null
+        html: '<div></div>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius": 100, "color": "red", "fillColor": "#f03", "fillOpacity": 0.5}'
+      leaflet_markercluster:
+        control: false
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
+        excluded: ''
+        include_path: false
+      fullscreen:
+        control: false
+        options: '{"position":"topleft","pseudoFullscreen":false}'
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      feature_properties:
+        values: ''
+      geocoder:
+        control: false
+        settings:
+          autocomplete:
+            placeholder: 'Search Address'
+            title: 'Search an Address on the Map'
+          position: topright
+          input_size: 20
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          popup: false
+          options: ''
+      map_lazy_load:
+        lazy_load: false
+      weight: null
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_grant_reference:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_lead_organisation:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_location_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
     region: content
   field_main_image:
     type: entity_reference_entity_view
@@ -68,10 +226,36 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_thematic_priorities:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_value:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  feeds_item: true
   field_short_title: true

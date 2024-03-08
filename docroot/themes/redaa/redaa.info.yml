@@ -19,6 +19,7 @@ core_version_requirement: ^9 || ^10
 version: VERSION
 libraries:
   - redaa/global-styling
+  
 regions:
   header: Header
   primary_menu: 'Primary menu'

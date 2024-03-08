@@ -155,3 +155,7 @@
   /* Border radius */
   --border-radius: 3px;
 }
+
+.pb1 {
+  padding-bottom: var(--sp1);
+}

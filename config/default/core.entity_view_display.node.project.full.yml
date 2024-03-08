@@ -5,12 +5,23 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.project.body
+    - field.field.node.project.feeds_item
     - field.field.node.project.field_countries
+    - field.field.node.project.field_dates
+    - field.field.node.project.field_ecosystem_landscape
+    - field.field.node.project.field_focal_countries_text
+    - field.field.node.project.field_focal_country
+    - field.field.node.project.field_grant_reference
+    - field.field.node.project.field_lead_organisation
+    - field.field.node.project.field_location_text
     - field.field.node.project.field_main_image
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
+    - field.field.node.project.field_tags
+    - field.field.node.project.field_thematic_priorities
+    - field.field.node.project.field_value
     - node.type.project
   module:
     - address
@@ -28,51 +39,62 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_countries:
     type: address_country_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_main_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: full
+      link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_publication_date:
     type: datetime_default
-    label: inline
+    label: hidden
     settings:
       timezone_override: ''
       format_type: redaa_medium
     third_party_settings: {  }
-    weight: 6
+    weight: 3
     region: content
   field_standfirst:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_subtype:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 6
     region: content
 hidden:
+  feeds_item: true
+  field_dates: true
+  field_ecosystem_landscape: true
+  field_focal_countries_text: true
+  field_focal_country: true
+  field_grant_reference: true
+  field_lead_organisation: true
+  field_location_text: true
   field_short_title: true
+  field_tags: true
+  field_thematic_priorities: true
+  field_value: true

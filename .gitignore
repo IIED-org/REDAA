@@ -123,3 +123,4 @@ oauth_keys/
 
 # SQL dumps
 *.sql
+*.sql.gz

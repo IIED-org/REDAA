@@ -1,0 +1,20 @@
+uuid: 258a776f-efe4-445e-b702-5d98b44be468
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_lead_organisation
+field_name: field_lead_organisation
+entity_type: node
+type: text
+settings:
+  max_length: 512
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
