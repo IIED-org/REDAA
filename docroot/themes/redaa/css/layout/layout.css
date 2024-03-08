@@ -90,6 +90,9 @@
     padding: .5em 0
   } 
     .views-row:nth-child(odd) {
-      background-color: #e7edf1;
+      background-color: #f7f9fa;
+      .views-field-nothing {
+        display: none;
+      }
     }
 }
