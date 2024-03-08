@@ -89,7 +89,7 @@
   .views-row {
     padding: .5em 0
   } 
-    .views-row:nth-child(even) {
+    .views-row:nth-child(odd) {
       background-color: #e7edf1;
     }
 }
