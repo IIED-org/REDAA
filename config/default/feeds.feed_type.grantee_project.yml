@@ -159,11 +159,6 @@ custom_sources:
     label: 'Focal region(s)'
     machine_name: focal_region_s
     type: csv
-  value_gbp:
-    value: 'Value (GBP)'
-    label: 'Value (GBP)'
-    machine_name: value_gbp
-    type: csv
   start_date:
     value: 'Start date'
     label: 'Start date'
@@ -178,11 +173,6 @@ custom_sources:
     value: 'Focal Country'
     label: 'Focal Country'
     machine_name: focal_country
-    type: csv
-  two_sentence_summary_50_words_or_less:
-    value: 'Two sentence summary (50 words or less)'
-    label: 'Two sentence summary (50 words or less)'
-    machine_name: two_sentence_summary_50_words_or_less
     type: csv
   location_for_map:
     value: 'Location (for map)'
@@ -218,6 +208,11 @@ custom_sources:
     value: 'REDAA thematic priorities'
     label: 'REDAA thematic priorities'
     machine_name: redaa_thematic_priorities
+    type: csv
+  grant_amount_gbp:
+    value: 'Grant Amount (GBP)'
+    label: 'Grant Amount (GBP)'
+    machine_name: grant_amount_gbp
     type: csv
 mappings:
   -
@@ -259,13 +254,6 @@ mappings:
       reference_by: name
       autocreate: false
       autocreate_bundle: tags
-  -
-    target: field_value
-    map:
-      value: value_gbp
-    settings:
-      language: null
-    unique: {  }
   -
     target: field_dates
     map:
@@ -311,3 +299,10 @@ mappings:
       value: location_s
     settings:
       language: null
+  -
+    target: field_value
+    map:
+      value: grant_amount_gbp
+    settings:
+      language: null
+    unique: {  }
