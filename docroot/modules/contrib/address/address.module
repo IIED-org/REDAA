@@ -7,6 +7,7 @@
 
 use Drupal\address\AddressInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_theme().
@@ -87,5 +88,19 @@ function address_module_implements_alter(&$implementations, $hook) {
     $group = $implementations['address'];
     unset($implementations['address']);
     $implementations['address'] = $group;
+  }
+}
+
+/**
+ * Implements hook_field_info_alter().
+ *
+ * @todo Remove once minimum version supported is at least 10.2.0.
+ */
+function address_field_info_alter(&$info) {
+  // Allow module to work with versions of older versions of Drupal.
+  if (\version_compare(\Drupal::VERSION, '10.1.9999', '<')) {
+    $info['address']['category'] = new TranslatableMarkup("Address");
+    $info['address_country']['category'] = new TranslatableMarkup("Address");
+    $info['address_zone']['category'] = new TranslatableMarkup("Address");
   }
 }

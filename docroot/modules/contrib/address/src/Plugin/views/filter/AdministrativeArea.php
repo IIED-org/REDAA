@@ -131,7 +131,7 @@ class AdministrativeArea extends CountryAwareInOperatorBase {
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     $this->formState = $form_state;
-
+    \Drupal::moduleHandler()->loadInclude('views_ui', 'inc', 'admin');
     $form['country'] = [
       '#type' => 'container',
       '#weight' => -300,
@@ -259,9 +259,6 @@ class AdministrativeArea extends CountryAwareInOperatorBase {
    * {@inheritdoc}
    */
   public function validateOptionsForm(&$form, FormStateInterface $form_state) {
-    if (empty($form_state)) {
-      return;
-    }
     $is_exposed = !empty($this->options['exposed']);
 
     $country_source = $form_state->getValue([

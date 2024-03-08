@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit892d445074a8a222047c7b633fef0ade
+class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -24,9 +24,7 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         '2f69d3914119f042cca9e44442d5ce95' => __DIR__ . '/../..' . '/docroot/core/includes/bootstrap.inc',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
-        'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'a16312f9300fed4a097923eacb0ba814' => __DIR__ . '/..' . '/igorw/get-in/src/get_in.php',
@@ -50,6 +48,10 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         'e' => 
         array (
             'enshrined\\svgSanitize\\' => 22,
+        ),
+        'd' => 
+        array (
+            'dekor\\' => 6,
         ),
         'c' => 
         array (
@@ -136,15 +138,12 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         ),
         'M' => 
         array (
-            'MathieuViossat\\Util\\' => 20,
             'Masterminds\\' => 12,
         ),
         'L' => 
         array (
             'League\\Container\\' => 17,
-            'Laminas\\Text\\' => 13,
             'Laminas\\Stdlib\\' => 15,
-            'Laminas\\ServiceManager\\' => 23,
             'Laminas\\Feed\\' => 13,
             'Laminas\\Escaper\\' => 16,
         ),
@@ -248,6 +247,10 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         'enshrined\\svgSanitize\\' => 
         array (
             0 => __DIR__ . '/..' . '/enshrined/svg-sanitize/src',
+        ),
+        'dekor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dekor/php-array-table/src',
         ),
         'cweagans\\Composer\\' => 
         array (
@@ -451,8 +454,8 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -498,10 +501,6 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         array (
             0 => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src',
         ),
-        'MathieuViossat\\Util\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mathieuviossat/arraytotexttable/src',
-        ),
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
@@ -510,17 +509,9 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
         ),
-        'Laminas\\Text\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-text/src',
-        ),
         'Laminas\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-stdlib/src',
-        ),
-        'Laminas\\ServiceManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src',
         ),
         'Laminas\\Feed\\' => 
         array (
@@ -766,13 +757,6 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
             'Stiphle' => 
             array (
                 0 => __DIR__ . '/..' . '/davedevelopment/stiphle/src',
-            ),
-        ),
-        'H' => 
-        array (
-            'HTMLPurifier' => 
-            array (
-                0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
             ),
         ),
         'C' => 
@@ -1224,6 +1208,7 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
         'PharIo\\Manifest\\ManifestLoader' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestLoader.php',
         'PharIo\\Manifest\\ManifestLoaderException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/ManifestLoaderException.php',
         'PharIo\\Manifest\\ManifestSerializer' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestSerializer.php',
+        'PharIo\\Manifest\\NoEmailAddressException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/NoEmailAddressException.php',
         'PharIo\\Manifest\\PhpElement' => __DIR__ . '/..' . '/phar-io/manifest/src/xml/PhpElement.php',
         'PharIo\\Manifest\\PhpExtensionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpExtensionRequirement.php',
         'PharIo\\Manifest\\PhpVersionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpVersionRequirement.php',
@@ -1473,11 +1458,11 @@ class ComposerStaticInit892d445074a8a222047c7b633fef0ade
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit892d445074a8a222047c7b633fef0ade::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit892d445074a8a222047c7b633fef0ade::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit892d445074a8a222047c7b633fef0ade::$prefixesPsr0;
-            $loader->fallbackDirsPsr0 = ComposerStaticInit892d445074a8a222047c7b633fef0ade::$fallbackDirsPsr0;
-            $loader->classMap = ComposerStaticInit892d445074a8a222047c7b633fef0ade::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$fallbackDirsPsr0;
+            $loader->classMap = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -103,21 +103,17 @@ class ZoneDefaultFormatter extends FormatterBase implements ContainerFactoryPlug
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
-    $elements = [];
-    if (!empty($items)) {
-      $elements = [
-        '#type' => 'container',
-        '#cache' => [
-          'contexts' => [
-            'languages:' . LanguageInterface::TYPE_CONTENT,
-          ],
+    $elements = [
+      '#type' => 'container',
+      '#cache' => [
+        'contexts' => [
+          'languages:' . LanguageInterface::TYPE_CONTENT,
         ],
-      ];
-      foreach ($items as $delta => $item) {
-        $elements[$delta] = $this->viewElement($item->value, $langcode);
-      }
+      ],
+    ];
+    foreach ($items as $delta => $item) {
+      $elements[$delta] = $this->viewElement($item->value, $langcode);
     }
-
     return $elements;
   }
 

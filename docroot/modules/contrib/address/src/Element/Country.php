@@ -84,7 +84,7 @@ class Country extends FormElement {
     if (count($country_list) == 1 && $element['#required']) {
       $element['country_code'] = [
         '#type' => 'hidden',
-        '#value' => key($available_countries),
+        '#value' => key($country_list),
       ];
     }
     else {

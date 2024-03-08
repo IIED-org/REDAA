@@ -22,10 +22,68 @@ use Drupal\Core\TypedData\DataDefinition;
  *   id = "address",
  *   label = @Translation("Address"),
  *   description = @Translation("An entity field containing a postal address"),
- *   category = @Translation("Address"),
+ *   category = "address",
  *   default_widget = "address_default",
  *   default_formatter = "address_default",
- *   list_class = "\Drupal\address\Plugin\Field\FieldType\AddressFieldItemList"
+ *   list_class = "\Drupal\address\Plugin\Field\FieldType\AddressFieldItemList",
+ *   column_groups = {
+ *     "langcode" = {
+ *       "label" = @Translation("Langcode"),
+ *       "translatable" = TRUE
+ *     },
+ *     "country_code" = {
+ *       "label" = @Translation("Country code"),
+ *       "translatable" = TRUE
+ *     },
+ *     "administrative_area" = {
+ *       "label" = @Translation("Administrative area"),
+ *       "translatable" = TRUE
+ *     },
+ *     "locality" = {
+ *       "label" = @Translation("Locality"),
+ *       "translatable" = TRUE
+ *     },
+ *     "dependent_locality" = {
+ *       "label" = @Translation("Dependent locality"),
+ *       "translatable" = TRUE
+ *     },
+ *     "postal_code" = {
+ *       "label" = @Translation("Postal code"),
+ *       "translatable" = TRUE
+ *     },
+ *     "sorting_code" = {
+ *       "label" = @Translation("Sorting code"),
+ *       "translatable" = TRUE
+ *     },
+ *     "address_line1" = {
+ *       "label" = @Translation("Address line 1"),
+ *       "translatable" = TRUE
+ *     },
+ *     "address_line2" = {
+ *       "label" = @Translation("Address line 2"),
+ *       "translatable" = TRUE
+ *     },
+ *     "address_line3" = {
+ *       "label" = @Translation("Address line 3"),
+ *       "translatable" = TRUE
+ *     },
+ *     "organization" = {
+ *       "label" = @Translation("Organization"),
+ *       "translatable" = TRUE
+ *     },
+ *     "given_name" = {
+ *       "label" = @Translation("Given name"),
+ *       "translatable" = TRUE
+ *     },
+ *     "additional_name" = {
+ *       "label" = @Translation("Additional name"),
+ *       "translatable" = TRUE
+ *     },
+ *     "family_name" = {
+ *       "label" = @Translation("Family name"),
+ *       "translatable" = TRUE
+ *     },
+ *   },
  * )
  */
 class AddressItem extends FieldItemBase implements AddressInterface {

@@ -14,7 +14,7 @@ use Drupal\Core\TypedData\DataDefinition;
  *   id = "address_country",
  *   label = @Translation("Country"),
  *   description = @Translation("An entity field containing a country"),
- *   category = @Translation("Address"),
+ *   category = "address",
  *   default_widget = "address_country_default",
  *   default_formatter = "address_country_default"
  * )

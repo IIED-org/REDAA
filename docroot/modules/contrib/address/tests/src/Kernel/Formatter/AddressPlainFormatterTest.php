@@ -23,7 +23,7 @@ class AddressPlainFormatterTest extends FormatterTestBase {
   /**
    * Tests the rendered output.
    *
-   * @dataProvider testRenderDataProvider
+   * @dataProvider renderDataProvider
    */
   public function testRender($value, $expected_elements) {
     $entity = EntityTestMul::create([]);
@@ -39,7 +39,7 @@ class AddressPlainFormatterTest extends FormatterTestBase {
   /**
    * Data provider for plain formatter output test.
    */
-  public function testRenderDataProvider(): array {
+  public function renderDataProvider(): array {
     return [
       // Regular address.
       [

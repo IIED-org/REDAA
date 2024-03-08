@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-      - node.type.address_test
+    - node.type.address_test
   module:
-      - address
-      - node
-      - user
+    - address
+    - node
+    - user
 id: address_test_views_ui
 label: 'Address test UI'
 module: views
@@ -174,8 +174,8 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-          - 'languages:language_content'
-          - 'languages:language_interface'
-          - 'user.node_grants:view'
-          - user.permissions
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
       tags: {  }

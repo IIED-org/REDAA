@@ -118,9 +118,6 @@ class ZoneTerritory extends FormElement {
    *
    * @return array
    *   The processed element.
-   *
-   * @throws \InvalidArgumentException
-   *   Thrown when #available_countries or #used_fields is malformed.
    */
   public static function processTerritory(array &$element, FormStateInterface $form_state, array &$complete_form) {
     $id_prefix = implode('-', $element['#parents']);
