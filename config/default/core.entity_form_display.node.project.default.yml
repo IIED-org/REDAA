@@ -86,39 +86,39 @@ content:
     region: content
     settings:
       map:
-        leaflet_map: '- Default Leaflet - OSM Mapnik - '
+        leaflet_map: esri-world_topo_map
         height: 400
         auto_center: 1
         map_position:
-          force: false
+          force: true
           center:
             lat: 0.0
             lon: 0.0
           zoomControlPosition: topleft
-          zoom: 5
+          zoom: 4
           minZoom: 1
-          maxZoom: 18
+          maxZoom: 12
           zoomFiner: 0
         scroll_zoom_enabled: 1
       input:
         show: true
-        readonly: false
+        readonly: true
       toolbar:
         position: topright
         marker: defaultMarker
-        drawPolyline: true
-        drawRectangle: true
-        drawPolygon: true
+        drawPolyline: false
+        drawRectangle: false
+        drawPolygon: false
         drawCircle: false
         drawText: false
-        editMode: true
-        dragMode: true
+        editMode: false
+        dragMode: false
         cutPolygon: false
-        removalMode: true
+        removalMode: false
         rotateMode: false
       reset_map:
         control: false
-        options: '{"position": "topleft", "title": "Reset View"}'
+        options: '{"position":"topleft","title":"Reset View"}'
       map_scale:
         control: false
         options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
@@ -128,20 +128,32 @@ content:
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
       locate:
         control: false
-        options: '{"position": "topright", "setView": "untilPanOrZoom", "returnToPrevBounds":true, "keepCurrentZoomLevel": true, "strings": {"title": "Locate my position"}}'
+        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
         automatic: false
       geocoder:
         control: false
         settings:
+          autocomplete:
+            placeholder: 'Search Address'
+            title: 'Search an Address on the Map'
           position: topright
           input_size: 20
-          providers: {  }
+          providers:
+            file:
+              weight: 0
+              checked: false
+            geoplugin:
+              weight: 0
+              checked: false
+            googlemaps:
+              weight: 0
+              checked: false
           min_terms: 4
           delay: 800
           zoom: 16
           popup: false
           options: ''
-      geometry_validation: false
+      geometry_validation: '1'
       feature_properties:
         values: ''
     third_party_settings: {  }

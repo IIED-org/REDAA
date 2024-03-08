@@ -93,6 +93,13 @@ third_party_settings:
         source: country
         weight: 1
         label: 'Remove whitespace'
+      6956dfb9-578c-482e-a796-2284ad25e0ab:
+        operation: ucfirst
+        uuid: 6956dfb9-578c-482e-a796-2284ad25e0ab
+        plugin: convert_case
+        source: ecosystems_landscapes_land_types
+        weight: 2
+        label: 'Convert case'
 label: 'Grantee project'
 id: grantee_project
 description: 'XLSX import for awarded projects'
