@@ -53,3 +53,15 @@
     padding-block-start: var(--sp5);
   }
 }
+
+.zebra {
+  .view-header {
+    margin-bottom: 0;
+  }
+  .views-row {
+    padding: .5em 0; 
+    &:nth-child(even) {
+      background-color: var(--color--gray-80);
+    }
+  }
+}

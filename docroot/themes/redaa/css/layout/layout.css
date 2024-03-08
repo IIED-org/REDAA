@@ -10,18 +10,22 @@
  * Base Layout.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .container {
   width: 100%;
   max-width: 84.375rem;
-  padding-left: 1.125rem;
-  padding-right: 1.125rem
+  padding-left: 1rem;
+  padding-right: 1rem
 }
 
 @media (min-width: 75rem) {
 
 .container {
-    padding-left: 2.25rem;
-    padding-right: 2.25rem
+    padding-left: 2rem;
+    padding-right: 2rem
 }
   }
 
@@ -55,11 +59,11 @@
 @media (min-width: 75rem) {
 
 [dir="ltr"] .main-content {
-    margin-right: auto
+    margin-right: auto;
   }
 
 [dir="rtl"] .main-content {
-    margin-left: auto
+    margin-left: auto;
   }
 
 .main-content {
@@ -68,12 +72,24 @@
   }
 
 .main-content__container {
-  padding-top: 3.375rem
+  padding-top: 3rem
 }
 
 @media (min-width: 43.75rem) {
 
 .main-content__container {
-    padding-top: 5.625rem
+    padding-top: 5rem
 }
   }
+
+.zebra {
+  .view-header {
+    margin-bottom: 0;
+  }
+  .views-row {
+    padding: .5em 0
+  } 
+    .views-row:nth-child(even) {
+      background-color: #e7edf1;
+    }
+}

@@ -111,6 +111,7 @@ h2 {
 h3 {
   font-size: 18px;
   line-height: var(--sp1-5);
+  margin-block: var(--sp0-5);
 
   @media (--md) {
     font-size: 20px;
