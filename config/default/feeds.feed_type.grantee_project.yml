@@ -102,7 +102,7 @@ third_party_settings:
         label: 'Convert case'
 label: 'Grantee project'
 id: grantee_project
-description: 'XLSX import for awarded projects'
+description: 'CSV import for awarded projects'
 help: ''
 import_period: -1
 fetcher: upload
@@ -126,8 +126,8 @@ processor_configuration:
   authorize: true
   revision: true
   expire: -1
-  owner_feed_author: false
-  owner_id: 0
+  owner_feed_author: true
+  owner_id: 1
 custom_sources:
   '':
     value: ''
