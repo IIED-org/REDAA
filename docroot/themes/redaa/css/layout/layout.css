@@ -96,3 +96,7 @@
       }
     }
 }
+
+.zebra.box .views-row {
+    padding: 1em 1.5em;
+  }
