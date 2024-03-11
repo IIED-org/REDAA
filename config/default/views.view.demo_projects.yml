@@ -3204,7 +3204,7 @@ display:
           alter:
             alter_text: true
             text: "<p><a href=\"#top\">Top of page ↑</a></p>\r\n<p><a href=\"/grantees\">To map page ←</a></p>"
-            make_link: true
+            make_link: false
             path: '/node/436#node_{{ nid }}'
             absolute: false
             external: false
@@ -3382,7 +3382,7 @@ display:
         filters: false
         filter_groups: false
         header: false
-      css_class: zebra
+      css_class: 'zebra box'
       display_description: ''
       header:
         area:
