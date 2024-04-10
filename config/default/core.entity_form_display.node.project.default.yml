@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
     - field.field.node.project.field_main_image
+    - field.field.node.project.field_org
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
@@ -27,6 +28,7 @@ dependencies:
     - datetime
     - datetime_range
     - field_layout
+    - inline_entity_form
     - layout_discovery
     - leaflet
     - media_library
@@ -60,19 +62,19 @@ content:
     third_party_settings: {  }
   field_countries:
     type: address_country_default
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   field_dates:
     type: daterange_default
-    weight: 17
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ecosystem_landscape:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -82,7 +84,7 @@ content:
     third_party_settings: {  }
   field_focal_country:
     type: leaflet_widget_default
-    weight: 20
+    weight: 21
     region: content
     settings:
       map:
@@ -170,12 +172,12 @@ content:
     weight: 15
     region: content
     settings:
-      size: 60
+      size: 120
       placeholder: ''
     third_party_settings: {  }
   field_location_text:
     type: string_textarea
-    weight: 26
+    weight: 23
     region: content
     settings:
       rows: 5
@@ -187,6 +189,24 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_org:
+    type: inline_entity_form_complex
+    weight: 16
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
     third_party_settings: {  }
   field_publication_date:
     type: datetime_default
@@ -228,7 +248,7 @@ content:
     third_party_settings: {  }
   field_thematic_priorities:
     type: entity_reference_autocomplete
-    weight: 18
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -238,7 +258,7 @@ content:
     third_party_settings: {  }
   field_value:
     type: number
-    weight: 16
+    weight: 17
     region: content
     settings:
       placeholder: ''

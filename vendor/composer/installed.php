@@ -3,7 +3,7 @@
         'name' => 'acquia/drupal-recommended-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3b8ca7aa701efc5375d69152b73ae45d46440526',
+        'reference' => '7bb4e2f3fea285defbbc941e56517a41d0f8b612',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'acquia/drupal-recommended-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3b8ca7aa701efc5375d69152b73ae45d46440526',
+            'reference' => '7bb4e2f3fea285defbbc941e56517a41d0f8b612',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -652,6 +652,15 @@
             'reference' => '2.0.4',
             'type' => 'drupal-module',
             'install_path' => __DIR__ . '/../../docroot/modules/contrib/google_tag',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'drupal/inline_entity_form' => array(
+            'pretty_version' => '3.0.0-rc19',
+            'version' => '3.0.0.0-RC19',
+            'reference' => '3.0.0-rc19',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../docroot/modules/contrib/inline_entity_form',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1320,8 +1329,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.1|2.0',
-                1 => '^1.0',
+                0 => '^1.0',
+                1 => '1.1|2.0',
             ),
         ),
         'psr/event-dispatcher' => array(
@@ -1351,8 +1360,8 @@
         'psr/http-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/http-factory' => array(
@@ -1367,8 +1376,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/http-message' => array(
@@ -1383,8 +1392,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/log' => array(
