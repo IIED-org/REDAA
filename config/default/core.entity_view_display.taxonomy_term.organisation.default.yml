@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.organisation.field_country
+    - field.field.taxonomy_term.organisation.field_link
     - taxonomy.vocabulary.organisation
   module:
     - address
+    - link
     - text
 id: taxonomy_term.organisation.default
 targetEntityType: taxonomy_term
@@ -26,5 +28,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden: {  }

@@ -1,0 +1,31 @@
+uuid: 413ab241-303a-4b90-b564-02b94fa82573
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.description
+    - field.field.taxonomy_term.organisation.field_country
+    - field.field.taxonomy_term.organisation.field_link
+    - taxonomy.vocabulary.organisation
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.organisation.description
+targetEntityType: taxonomy_term
+bundle: organisation
+mode: description
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_country: true
+  field_link: true

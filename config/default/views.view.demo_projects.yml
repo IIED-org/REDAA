@@ -15,13 +15,16 @@ dependencies:
     - field.storage.node.field_short_title
     - field.storage.node.field_standfirst
     - field.storage.node.field_value
+    - field.storage.taxonomy_term.field_link
     - node.type.project
   module:
     - datetime_range
     - geofield
     - leaflet_views
+    - link
     - node
     - options
+    - taxonomy
     - text
     - user
 id: demo_projects
@@ -369,7 +372,16 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        field_org:
+          id: field_org
+          table: node__field_org
+          field: field_org
+          relationship: none
+          group_type: group
+          admin_label: 'field_org: Taxonomy term'
+          plugin_id: standard
+          required: false
       header:
         area:
           id: area
@@ -1705,7 +1717,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
             text: '<strong>Lead organisation: </strong>{{ field_lead_organisation }}'
@@ -1716,6 +1728,135 @@ display:
             replace_spaces: false
             path_case: none
             trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: '<strong>'
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_trimmed
+          settings:
+            trim_length: 600
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_org
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        field_link:
+          id: field_link
+          table: taxonomy_term__field_link
+          field: field_link
+          relationship: field_org
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<strong>Lead organisation: </strong><a href="{{ field_link }}">{{ name }}</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
             alt: ''
             rel: ''
             link_class: ''
@@ -1741,15 +1882,19 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: '{{ field_lead_organisation }}'
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_trimmed
+          hide_alter_empty: false
+          click_sort_column: uri
+          type: link
           settings:
-            trim_length: 600
-          group_column: value
+            trim_length: 100
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2242,6 +2387,7 @@ display:
         - 'config:field.storage.node.field_main_image'
         - 'config:field.storage.node.field_short_title'
         - 'config:field.storage.node.field_value'
+        - 'config:field.storage.taxonomy_term.field_link'
   block_4:
     id: block_4
     display_title: 'Grantee summaries block'
@@ -2880,7 +3026,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Ecosystems / landscapes / land types'
+          label: Environments
           exclude: false
           alter:
             alter_text: false
@@ -2944,7 +3090,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
             text: '<strong>Lead organisation: </strong>{{ field_lead_organisation }}'
@@ -2968,7 +3114,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: true
+            strip_tags: false
             trim: false
             preserve_tags: '<strong>'
             html: false
@@ -2989,6 +3135,139 @@ display:
           settings:
             trim_length: 600
           group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_org
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        field_link:
+          id: field_link
+          table: taxonomy_term__field_link
+          field: field_link
+          relationship: field_org
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<strong>Lead organisation: </strong><a href="{{ field_link }}">{{ name }}</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: '{{ field_lead_organisation }}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -3418,6 +3697,7 @@ display:
         - 'config:field.storage.node.field_main_image'
         - 'config:field.storage.node.field_short_title'
         - 'config:field.storage.node.field_value'
+        - 'config:field.storage.taxonomy_term.field_link'
   page_1:
     id: page_1
     display_title: Page

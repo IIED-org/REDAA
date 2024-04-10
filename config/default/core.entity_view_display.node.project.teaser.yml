@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
     - field.field.node.project.field_main_image
+    - field.field.node.project.field_org
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
@@ -107,6 +108,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          1170a4c2-5b26-4f09-8b5c-312ce516ddc8:
+            uuid: 1170a4c2-5b26-4f09-8b5c-312ce516ddc8
+            region: first
+            configuration:
+              id: 'field_block:node:project:field_org'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.project.teaser
 targetEntityType: node
@@ -129,6 +146,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_org:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: first
   field_standfirst:
     type: text_trimmed
     label: hidden

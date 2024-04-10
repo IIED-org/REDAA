@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
     - field.field.node.project.field_main_image
+    - field.field.node.project.field_org
     - field.field.node.project.field_publication_date
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
@@ -202,6 +203,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_org:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_publication_date:
     type: datetime_default

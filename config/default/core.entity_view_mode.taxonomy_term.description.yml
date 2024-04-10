@@ -1,0 +1,11 @@
+uuid: 0ad16681-45a3-40bc-9117-d47f17fe7344
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.description
+label: Description
+description: 'Show only description field'
+targetEntityType: taxonomy_term
+cache: true
