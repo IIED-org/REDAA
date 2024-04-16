@@ -23,7 +23,7 @@
   These are "compiled" by postcss/postcss-custom-properties for IE11 compatibility.
 */
 :root {
-  --font-sans: "Arial", sans-serif;
+  --font-sans: "Open Sans", "Arial", sans-serif;
   --font-serif: "Lora", "georgia", serif;
   --font-open-sans: "Open Sans", "Arial", sans-serif;
 

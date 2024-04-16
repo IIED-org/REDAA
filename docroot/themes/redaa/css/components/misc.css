@@ -10,6 +10,10 @@
  * Misc css classes.
  */
 
+ .pb1 {
+  padding-bottom: 1rem;
+}
+
  .image-list li {
   list-style-image: url("/themes/redaa/images/leaf.png")
  }
@@ -133,3 +137,11 @@
   overflow: hidden;
   font-size: .75rem;
   }
+
+ .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
+  background-color: #005890;
+}
+
+ .ckeditor-accordion-container > dl dd {
+  margin: 1rem 0;
+}
