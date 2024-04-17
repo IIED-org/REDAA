@@ -12,6 +12,7 @@ dependencies:
     - node.type.person
     - node.type.project
     - node.type.resource
+    - taxonomy.vocabulary.organisation
     - taxonomy.vocabulary.tags
   module:
     - comment
@@ -61,6 +62,7 @@ permissions:
   - 'create person content'
   - 'create project content'
   - 'create resource content'
+  - 'create terms in organisation'
   - 'create terms in tags'
   - 'create url aliases'
   - 'delete own article content'
@@ -71,8 +73,10 @@ permissions:
   - 'delete own project content'
   - 'delete own resource content'
   - 'delete pdf image entity entities'
+  - 'delete terms in organisation'
   - 'display eu cookie compliance popup'
   - 'edit any article content'
+  - 'edit any feature content'
   - 'edit any page content'
   - 'edit any person content'
   - 'edit any project content'
@@ -85,6 +89,7 @@ permissions:
   - 'edit own project content'
   - 'edit own resource content'
   - 'edit pdf image entity entities'
+  - 'edit terms in organisation'
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'revert article revisions'
