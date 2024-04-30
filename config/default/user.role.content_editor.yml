@@ -27,6 +27,7 @@ dependencies:
     - media_pdf_thumbnail
     - node
     - path
+    - redirect
     - system
     - taxonomy
     - toolbar
@@ -50,6 +51,7 @@ permissions:
   - 'add pdf image entity entities'
   - 'administer media'
   - 'administer nodes'
+  - 'administer redirects'
   - 'administer url aliases'
   - 'bypass node access'
   - 'configure all feature node layout overrides'

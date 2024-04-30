@@ -37,7 +37,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: ''
+      allowed_html: '<ul class="image-list">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
