@@ -27,6 +27,7 @@ settings:
       - blockQuote
       - drupalInsertImage
       - '|'
+      - style
       - sourceEditing
   plugins:
     ckeditor5_alignment:
@@ -51,6 +52,11 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Image list'
+          element: '<ul class="image-list">'
     media_media:
       allow_view_mode_override: false
 image_upload:
