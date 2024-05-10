@@ -5,11 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.feature.body
+    - field.field.node.feature.field_link
     - field.field.node.feature.field_main_image
     - field.field.node.feature.layout_builder__layout
     - node.type.feature
   module:
     - layout_builder
+    - link
     - text
     - user
 third_party_settings:
@@ -69,6 +71,18 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_link:
+    type: link
+    label: inline
+    settings:
+      trim_length: 100
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: first
   field_main_image:
     type: entity_reference_entity_view
     label: hidden
