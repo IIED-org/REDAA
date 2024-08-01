@@ -14,7 +14,7 @@ use Drupal\node\Entity\Node;
 function layout_builder_boolean_tests_install() {
 
   // Make an image.
-  $image_path = 	\Drupal::service('extension.list.theme')->getPath('stable') . '/images/core/druplicon.png';
+  $image_path = 'core/tests/fixtures/files/image-1.png';
   file_put_contents('public://first.png', file_get_contents($image_path));
   $first_image = File::create([
     'uri' => 'public://first.png',

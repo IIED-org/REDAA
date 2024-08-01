@@ -3,9 +3,11 @@
 namespace tests;
 
 use AcquiaCMS\Cli\Cli;
+use AcquiaCMS\Cli\Helpers\Packages;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class CliTest extends TestCase {
   use ProphecyTrait;
@@ -47,8 +49,9 @@ class CliTest extends TestCase {
     $output = $this->output->reveal();
     $this->projectDirectory = getcwd();
     $this->rootDirectory = $this->projectDirectory;
-    $container = $this->createMock('Symfony\Component\DependencyInjection\ContainerInterface');
-    $this->acquiaCli = new Cli($this->projectDirectory, $this->rootDirectory, $output, $container);
+    $container = $this->createMock(ContainerInterface::class);
+    $package = $this->createMock(Packages::class);
+    $this->acquiaCli = new Cli($this->projectDirectory, $this->rootDirectory, $output, $container, $package);
   }
 
   /**
@@ -56,26 +59,123 @@ class CliTest extends TestCase {
    *
    * @test
    */
-  public function testExecute() :void {
+  public function testExecute(): void {
     $this->assertEquals("Welcome to Acquia CMS Starter Kit installer", $this->acquiaCli->headline);
     $this->assertEquals($this->projectDirectory . "/assets/acquia_cms.icon.ascii", $this->acquiaCli->getLogo());
-    $this->assertEquals($this->getAcmsFileContents(), $this->acquiaCli->getAcquiaCmsFile($this->projectDirectory . '/acms/acms.yml'));
+    $this->assertEquals(self::getAcmsFileContents(), $this->acquiaCli->getAcquiaCmsFile($this->projectDirectory . '/acms/acms.yml'));
   }
 
   /**
+   * Test the alteration of modules and theme.
+   *
    * @dataProvider alterModuleThemesDataProvider
    */
   public function testAlterModuleThemes(string $bundle, array $userValues, array $expected, string $message = ''): void {
-    $starter_kit = $this->getAcmsFileContents()['starter_kits'][$bundle];
+    $starter_kit = self::getAcmsFileContents()['starter_kits'][$bundle];
+
     $expected = array_replace_recursive($starter_kit, ...$expected);
     $this->acquiaCli->alterModulesAndThemes($starter_kit, $userValues);
     $this->assertEquals($starter_kit, $expected, $message);
   }
 
   /**
+   * Test the low code package.
+   */
+  public function testAlterPackagesForLowCode(): void {
+    $container = $this->createMock(ContainerInterface::class);
+    $package = $this->createMock(Packages::class);
+    $starter_kit = [
+      "name" => "Acquia CMS Enterprise Low-code",
+      "description" => "The low-code starter kit will install Acquia CMS with Site Studio and a UIkit",
+      "modules" => [
+        "require" => [
+          "acquia_cms_site_studio",
+          "acquia_cms_page",
+          "acquia_cms_search",
+          "acquia_cms_tour",
+          "acquia_cms_toolbar",
+          "google_tag",
+          "honeypot",
+          "mnsami/composer-custom-directory-installer",
+          "recaptcha",
+          "reroute_email",
+          "shield",
+          "sitestudio_gin",
+        ],
+        "install" => [
+          "acquia_cms_site_studio",
+          "acquia_cms_page",
+          "acquia_cms_search",
+          "acquia_cms_tour",
+          "acquia_cms_toolbar",
+          "sitestudio_gin",
+          "gin_toolbar",
+        ],
+      ],
+      "themes" => [
+        "require" => ["gin"],
+        "install" => ["gin"],
+        "admin" => "gin",
+        "default" => "cohesion_theme",
+      ],
+    ];
+    $package->method('getInstalledPackages')->willReturnCallback(function ($reset) {
+      return [
+        "acquia/cohesion" => $this->createPackage([
+          "name" => "acquia/cohesion",
+          "version" => "7.4.3",
+        ]),
+        "drupal/core" => $this->createPackage([
+          "name" => "drupal/core",
+          "version" => "10.1.2",
+        ]),
+      ];
+    });
+    $cli = new Cli($this->projectDirectory, $this->rootDirectory, $this->output->reveal(), $container, $package);
+    $expected = unserialize(serialize($starter_kit), ['allowed_classes' => FALSE]);
+    $expected['themes']['require'] = ["acquia_claro"];
+    $expected['themes']['install'] = ["acquia_claro"];
+    $expected['themes']['admin'] = "acquia_claro";
+    unset($expected['modules']['require'][11]);
+    unset($expected['modules']['install'][6]);
+    $expected['modules']['install'][5] = "sitestudio_claro";
+    $this->assertEquals($expected, $cli->alterModulesAndThemes($starter_kit, []));
+
+    $package->method('getInstalledPackages')->willReturnCallback(function ($reset) {
+      return [
+        "acquia/cohesion" => $this->createPackage([
+          "name" => "acquia/cohesion",
+          "version" => "7.5.0",
+        ]),
+        "drupal/core" => $this->createPackage([
+          "name" => "drupal/core",
+          "version" => "10.1.2",
+        ]),
+      ];
+    });
+    $cli = new Cli($this->projectDirectory, $this->rootDirectory, $this->output->reveal(), $container, $package);
+    $expected = unserialize(serialize($starter_kit), ['allowed_classes' => FALSE]);
+    $this->assertEquals($expected, $cli->alterModulesAndThemes($starter_kit, []));
+  }
+
+  /**
+   * Returns a package object.
+   *
+   * @param array $data
+   *   An array of data for package.
+   */
+  private function createPackage(array $data): object {
+    $obj = new \stdClass();
+    foreach ($data as $key => $value) {
+      $obj->$key = $value;
+    }
+    return $obj;
+  }
+
+  /**
    * An array of default contents for acms/acms.yml file.
    */
-  protected function getAcmsFileContents() :array {
+  public static function getAcmsFileContents(): array {
     return [
       "starter_kits" => [
         "acquia_cms_enterprise_low_code" => [
@@ -94,20 +194,22 @@ class CliTest extends TestCase {
               "recaptcha",
               "reroute_email",
               "shield",
+              "sitestudio_gin",
             ],
             "install" => [
               "acquia_cms_site_studio",
-              "sitestudio_claro",
               "acquia_cms_page",
               "acquia_cms_search",
               "acquia_cms_tour",
               "acquia_cms_toolbar",
+              "sitestudio_gin",
+              "gin_toolbar",
             ],
           ],
           "themes" => [
-            "require" => ["acquia_claro"],
-            "install" => ["acquia_claro"],
-            "admin" => "acquia_claro",
+            "require" => ["gin"],
+            "install" => ["gin"],
+            "admin" => "gin",
             "default" => "cohesion_theme",
           ],
         ],
@@ -130,12 +232,13 @@ class CliTest extends TestCase {
               "acquia_cms_search",
               "acquia_cms_tour",
               "acquia_cms_toolbar",
+              "gin_toolbar",
             ],
           ],
           "themes" => [
-            "require" => ["acquia_claro"],
-            "install" => ["acquia_claro"],
-            "admin" => "acquia_claro",
+            "require" => ["gin"],
+            "install" => ["gin"],
+            "admin" => "gin",
             "default" => "olivero",
           ],
         ],
@@ -159,12 +262,13 @@ class CliTest extends TestCase {
               "acquia_cms_tour",
               "acquia_cms_toolbar",
               "consumer_image_styles",
+              "gin_toolbar",
             ],
           ],
           "themes" => [
-            "require" => ["acquia_claro"],
-            "install" => ["acquia_claro"],
-            "admin" => "acquia_claro",
+            "require" => ["gin"],
+            "install" => ["gin"],
+            "admin" => "gin",
             "default" => "olivero",
           ],
         ],
@@ -416,8 +520,11 @@ class CliTest extends TestCase {
 
   /**
    * Function to return data provider for method: alterModulesAndThemes().
+   *
+   * @return array[]
+   *   Returns the list of modules and theme.
    */
-  public function alterModuleThemesDataProvider() :array {
+  public static function alterModuleThemesDataProvider(): array {
     foreach (['acquia_cms_enterprise_low_code', 'acquia_cms_community', 'acquia_cms_headless'] as $bundle) {
       $returnArray = [
         [
@@ -429,12 +536,12 @@ class CliTest extends TestCase {
             [
               "modules" => [
                 "require" => array_unique(array_merge(
-                  $this->getAcmsFileContents()['starter_kits'][$bundle]['modules']['require'],
-                  $this->getUpdatedModulesThemesArray($bundle, 'demo_content'),
+                  self::getAcmsFileContents()['starter_kits'][$bundle]['modules']['require'],
+                  self::getUpdatedModulesThemesArray($bundle, 'demo_content'),
                 )),
                 "install" => array_unique(array_merge(
-                  $this->getAcmsFileContents()['starter_kits'][$bundle]['modules']['install'],
-                  $this->getUpdatedModulesThemesArray($bundle, 'demo_content'),
+                  self::getAcmsFileContents()['starter_kits'][$bundle]['modules']['install'],
+                  self::getUpdatedModulesThemesArray($bundle, 'demo_content'),
                 )),
               ],
             ],
@@ -454,12 +561,12 @@ class CliTest extends TestCase {
             [
               "modules" => [
                 "require" => array_unique(array_merge(
-                  $this->getAcmsFileContents()['starter_kits'][$bundle]['modules']['require'],
-                  $this->getUpdatedModulesThemesArray($bundle, 'content_model'),
+                  self::getAcmsFileContents()['starter_kits'][$bundle]['modules']['require'],
+                  self::getUpdatedModulesThemesArray($bundle, 'content_model'),
                 )),
                 "install" => array_unique(array_merge(
-                  $this->getAcmsFileContents()['starter_kits'][$bundle]['modules']['install'],
-                  $this->getUpdatedModulesThemesArray($bundle, 'content_model'),
+                  self::getAcmsFileContents()['starter_kits'][$bundle]['modules']['install'],
+                  self::getUpdatedModulesThemesArray($bundle, 'content_model'),
                 )),
               ],
             ],
@@ -478,8 +585,8 @@ class CliTest extends TestCase {
           [
             [
               "modules" => [
-                "require" => $this->getAcmsFileContents()['starter_kits'][$bundle]['modules']['require'],
-                "install" => $this->getAcmsFileContents()['starter_kits'][$bundle]['modules']['install'],
+                "require" => self::getAcmsFileContents()['starter_kits'][$bundle]['modules']['require'],
+                "install" => self::getAcmsFileContents()['starter_kits'][$bundle]['modules']['install'],
               ],
             ],
             [
@@ -490,6 +597,7 @@ class CliTest extends TestCase {
         ],
       ];
     }
+
     return $returnArray;
   }
 
@@ -501,7 +609,7 @@ class CliTest extends TestCase {
    * @param string $question_type
    *   A question machine_name.
    */
-  public function getUpdatedModulesThemesArray(string $bundle, string $question_type = ''): array {
+  public static function getUpdatedModulesThemesArray(string $bundle, string $question_type = ''): array {
     switch ($question_type) :
       case 'content_model':
         $packages = [

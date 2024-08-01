@@ -4,6 +4,7 @@ namespace tests\Helpers;
 
 use AcquiaCMS\Cli\Cli;
 use AcquiaCMS\Cli\Helpers\InstallerQuestions;
+use AcquiaCMS\Cli\Helpers\Packages;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -81,7 +82,8 @@ class InstallerQuestionsTest extends TestCase {
     $this->projectDirectory = getcwd();
     $this->rootDirectory = $this->projectDirectory;
     $container = $this->createMock('Symfony\Component\DependencyInjection\ContainerInterface');
-    $this->acquiaCli = new Cli($this->projectDirectory, $this->rootDirectory, $output, $container);
+    $package = $this->createMock(Packages::class);
+    $this->acquiaCli = new Cli($this->projectDirectory, $this->rootDirectory, $output, $container, $package);
     $this->installerQuestions = new InstallerQuestions();
     $this->acmsBuildQuestions = $this->acquiaCli->getInstallerQuestions('build');
     $this->acmsInstallQuestions = $this->acquiaCli->getInstallerQuestions('install');
@@ -97,7 +99,7 @@ class InstallerQuestionsTest extends TestCase {
    *
    * @dataProvider providerBundleBuild
    */
-  public function testGetQuestionsForBundleBuild(string $bundle, array $questions) :void {
+  public function testGetQuestionsForBundleBuild(string $bundle, array $questions): void {
     $this->assertEquals($questions, $this->installerQuestions->getQuestions($this->acmsBuildQuestions, $bundle));
   }
 
@@ -111,7 +113,7 @@ class InstallerQuestionsTest extends TestCase {
    *
    * @dataProvider providerBundleInstall
    */
-  public function testGetQuestionsForBundleInstall(string $bundle, array $questions) :void {
+  public function testGetQuestionsForBundleInstall(string $bundle, array $questions): void {
     $this->assertEquals($questions, $this->installerQuestions->getQuestions($this->acmsInstallQuestions, $bundle));
   }
 
@@ -129,7 +131,7 @@ class InstallerQuestionsTest extends TestCase {
    *
    * @dataProvider providerDefaultValue
    */
-  public function testQuestionDefaultValue(array $actual, string $expected, string $key = '', array $envVariables = []) :void {
+  public function testQuestionDefaultValue(array $actual, string $expected, string $key = '', array $envVariables = []): void {
     if ($envVariables) {
       foreach ($envVariables as $envVariable => $value) {
         putenv("$envVariable=$value");
@@ -152,27 +154,11 @@ class InstallerQuestionsTest extends TestCase {
    *
    * @dataProvider dataShouldAskQuestion
    */
-  public function testShouldAskQuestion(array $question, array $userInputValues, bool $expected, string $exception = '') : void {
+  public function testShouldAskQuestion(array $question, array $userInputValues, bool $expected, string $exception = ''): void {
     if ($exception) {
       $this->expectExceptionMessageMatches($exception);
     }
     $this->assertEquals($expected, $this->installerQuestions->shouldAskQuestion($question, $userInputValues));
-  }
-
-  /**
-   * Returns an array of dummy question.
-   *
-   * @return array
-   *   Returns an array of dummy question.
-   */
-  protected function dummyQuestion(): array {
-    return [
-      'dependencies' => [
-        'starter_kits' => 'acquia_cms_enterprise_low_code',
-      ],
-      'question' => "Please provide the Site Studio Organization Key",
-      'warning' => "The Site Studio Organization key is not set. The Site Studio packages won't get imported.\nYou can set the key later from: /admin/cohesion/configuration/account-settings to import Site Studio packages.",
-    ];
   }
 
   /**
@@ -181,11 +167,16 @@ class InstallerQuestionsTest extends TestCase {
    * @return array[]
    *   Returns an array of dataProvider.
    */
-  public function dataShouldAskQuestion(): array {
-    $dummyQuestion = $this->dummyQuestion();
+  public static function dataShouldAskQuestion(): array {
     return [
       [
-        $dummyQuestion,
+        [
+          'dependencies' => [
+            'starter_kits' => 'acquia_cms_enterprise_low_code',
+          ],
+          'question' => "Please provide the Site Studio Organization Key",
+          'warning' => "The Site Studio Organization key is not set. The Site Studio packages won't get imported.\nYou can set the key later from: /admin/cohesion/configuration/account-settings to import Site Studio packages.",
+        ],
         [
           'demo_content' => 'ALL',
         ],
@@ -200,7 +191,7 @@ class InstallerQuestionsTest extends TestCase {
    * @return array[]
    *   Returns an array of values.
    */
-  public function providerDefaultValue(): array {
+  public static function providerDefaultValue(): array {
     return [
       [
         CliTest::getContentModel()['content_model'],
@@ -231,7 +222,7 @@ class InstallerQuestionsTest extends TestCase {
    * @return array[]
    *   Sets of arguments to pass to the test method.
    */
-  public function providerBundleBuild() :array {
+  public static function providerBundleBuild(): array {
     return [
       [
         'acquia_cms_enterprise_low_code',
@@ -268,7 +259,7 @@ class InstallerQuestionsTest extends TestCase {
    * @return array[]
    *   Sets of arguments to pass to the test method.
    */
-  public function providerBundleInstall() :array {
+  public static function providerBundleInstall(): array {
     return [
       [
         'acquia_cms_enterprise_low_code',
