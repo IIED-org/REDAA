@@ -232,6 +232,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -2768,10 +2769,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
+        field_standfirst:
+          id: field_standfirst
+          table: node__field_standfirst
+          field: field_standfirst
           relationship: none
           group_type: group
           admin_label: ''
@@ -2780,7 +2781,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<strong>Overview: </strong>{{ body }}'
+            text: '<strong>Overview: </strong>{{ field_standfirst }}'
             make_link: false
             path: ''
             absolute: false
@@ -2807,7 +2808,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: strong
+          element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
@@ -3081,69 +3082,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_lead_organisation:
-          id: field_lead_organisation
-          table: node__field_lead_organisation
-          field: field_lead_organisation
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '<strong>Lead organisation: </strong>{{ field_lead_organisation }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: true
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: true
-            trim: false
-            preserve_tags: '<strong> <a>'
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_trimmed
-          settings:
-            trim_length: 600
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         name:
           id: name
           table: taxonomy_term_field_data
@@ -3210,6 +3148,69 @@ display:
           separator: ', '
           field_api_classes: false
           convert_spaces: false
+        field_lead_organisation:
+          id: field_lead_organisation
+          table: node__field_lead_organisation
+          field: field_lead_organisation
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '<strong>Lead organisation: </strong>{{ field_lead_organisation }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: '<strong> <a>'
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: '<strong>Lead organisation: </strong>{{ field_lead_organisation__value }}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          click_sort_column: value
+          type: text_trimmed
+          settings:
+            trim_length: 600
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_link:
           id: field_link
           table: taxonomy_term__field_link
@@ -3648,12 +3649,14 @@ display:
           inline:
             field_focal_countries_text: field_focal_countries_text
             field_ecosystem_landscape: field_ecosystem_landscape
+            name: name
           separator: ''
           hide_empty: false
       defaults:
         title: false
         css_class: false
         pager: false
+        group_by: false
         style: false
         row: false
         fields: false
@@ -3662,6 +3665,7 @@ display:
         filter_groups: false
         header: false
       css_class: 'zebra box'
+      group_by: false
       display_description: ''
       header:
         area:
@@ -3696,6 +3700,7 @@ display:
         - 'config:field.storage.node.field_location_text'
         - 'config:field.storage.node.field_main_image'
         - 'config:field.storage.node.field_short_title'
+        - 'config:field.storage.node.field_standfirst'
         - 'config:field.storage.node.field_value'
         - 'config:field.storage.taxonomy_term.field_link'
   page_1:

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.project.field_main_image
     - field.field.node.project.field_org
     - field.field.node.project.field_publication_date
+    - field.field.node.project.field_related
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
@@ -56,6 +57,7 @@ content:
     settings:
       timezone_override: ''
       format_type: medium
+      from_to: both
       separator: '-'
     third_party_settings: {  }
     weight: 12
@@ -220,6 +222,14 @@ content:
       format_type: redaa_medium
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_related:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 18
     region: content
   field_standfirst:
     type: text_default

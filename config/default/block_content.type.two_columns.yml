@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: two_columns
 label: 'Two columns'
-revision: 0
+revision: false
 description: 'For footer block etc.'

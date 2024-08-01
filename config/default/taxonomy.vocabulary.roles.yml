@@ -6,3 +6,4 @@ name: Roles
 vid: roles
 description: 'Steering, SMU, ITAP etc'
 weight: 0
+new_revision: false

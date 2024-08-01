@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.project.field_main_image
     - field.field.node.project.field_org
     - field.field.node.project.field_publication_date
+    - field.field.node.project.field_related
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
@@ -186,6 +187,7 @@ hidden:
   field_lead_organisation: true
   field_location_text: true
   field_publication_date: true
+  field_related: true
   field_short_title: true
   field_subtype: true
   field_thematic_priorities: true

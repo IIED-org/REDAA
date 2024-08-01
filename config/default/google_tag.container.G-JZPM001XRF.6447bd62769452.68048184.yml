@@ -3,24 +3,23 @@ langcode: en
 status: true
 dependencies:
   module:
-    - node
     - system
-    - taxonomy
-    - user
 id: G-JZPM001XRF.6447bd62769452.68048184
 label: G-JZPM001XRF
 weight: 0
 tag_container_ids:
   - GTM-NB8NL3J
 advanced_settings:
+  consent_mode: false
   gtm:
-    data_layer: dataLayer
-    include_classes: false
-    allowlist_classes: ''
-    blocklist_classes: ''
-    include_environment: false
-    environment_id: ''
-    environment_token: ''
+    GTM-NB8NL3J:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
 dimensions_metrics: {  }
 conditions:
   request_path:
