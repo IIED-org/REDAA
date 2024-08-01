@@ -6,3 +6,4 @@ name: Ecosystem
 vid: ecosystem
 description: 'Ecosystem / landscape / land type'
 weight: 0
+new_revision: false

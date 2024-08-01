@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.project.field_main_image
     - field.field.node.project.field_org
     - field.field.node.project.field_publication_date
+    - field.field.node.project.field_related
     - field.field.node.project.field_short_title
     - field.field.node.project.field_standfirst
     - field.field.node.project.field_subtype
@@ -214,6 +215,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_related:
+    type: entity_reference_autocomplete
+    weight: 51
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_short_title:
     type: string_textfield
     weight: 1
@@ -307,6 +318,11 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   feeds_item: true
