@@ -1,8 +1,9 @@
-uuid: 7416a423-c692-40dd-b9b0-76336c6a43fc
+uuid: 8f387a22-20a3-4997-b315-a3c8d863770d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.article.body
     - field.field.node.article.field_image
     - field.field.node.article.field_main_image
@@ -31,53 +32,8 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          c71151c6-8e54-45fa-bed0-507b95cc5767:
-            uuid: c71151c6-8e54-45fa-bed0-507b95cc5767
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: wide
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          c3131ccb-3b04-4cb4-a15a-cff103ca25d6:
-            uuid: c3131ccb-3b04-4cb4-a15a-cff103ca25d6
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_tags'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          422c8b11-a56e-4c44-85ab-0d7875efada8:
-            uuid: 422c8b11-a56e-4c44-85ab-0d7875efada8
-            region: content
-            configuration:
-              id: 'extra_field_block:node:article:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 6
-            additional: {  }
-          9fe9a0ba-22a6-4d6c-b288-709ae329db66:
-            uuid: 9fe9a0ba-22a6-4d6c-b288-709ae329db66
+          6e070be1-2ef8-4562-8d82-f93482a894f1:
+            uuid: 6e070be1-2ef8-4562-8d82-f93482a894f1
             region: content
             configuration:
               id: 'field_block:node:article:body'
@@ -89,10 +45,20 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 4
+            weight: 0
             additional: {  }
-          377d7096-8be8-4e70-b9f5-0e4da69f2035:
-            uuid: 377d7096-8be8-4e70-b9f5-0e4da69f2035
+          0e1bb89e-8469-4e5e-9d2e-f293a219088e:
+            uuid: 0e1bb89e-8469-4e5e-9d2e-f293a219088e
+            region: content
+            configuration:
+              id: 'extra_field_block:node:article:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          8d418393-afaa-41d4-ac5c-3ee65b7ec34f:
+            uuid: 8d418393-afaa-41d4-ac5c-3ee65b7ec34f
             region: content
             configuration:
               id: 'field_block:node:article:field_main_image'
@@ -108,15 +74,15 @@ third_party_settings:
                 settings:
                   view_mode: full
                 third_party_settings: {  }
-            weight: 3
+            weight: -1
             additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
-id: node.article.default
+id: node.article.full
 targetEntityType: node
 bundle: article
-mode: default
+mode: full
 content:
   body:
     type: text_default
@@ -133,6 +99,10 @@ content:
       image_style: wide
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: -1
     region: content

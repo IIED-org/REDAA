@@ -1,21 +1,27 @@
-uuid: c07b19cc-a330-4ce4-8b24-4c4d50a146fa
+uuid: fd8e7ea1-388c-4691-bd04-46bba9c18f78
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.embedded
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_media_image
-    - image.style.thumbnail
+    - image.style.cover_embedded
     - media.type.image
   module:
+    - layout_builder
     - svg_image
     - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
-id: media.image.default
+id: media.image.embedded
 targetEntityType: media
 bundle: image
-mode: default
+mode: embedded
 content:
   field_image_caption:
     type: text_default
@@ -29,7 +35,7 @@ content:
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: thumbnail
+      image_style: cover_embedded
       image_loading:
         attribute: lazy
       svg_attributes:
