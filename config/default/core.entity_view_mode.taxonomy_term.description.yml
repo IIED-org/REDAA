@@ -5,7 +5,7 @@ dependencies:
   module:
     - taxonomy
 id: taxonomy_term.description
-label: Description
-description: 'Show only description field'
+label: Link
+description: 'Show only title linked to external org site'
 targetEntityType: taxonomy_term
 cache: true

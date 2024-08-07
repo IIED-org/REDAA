@@ -27,7 +27,6 @@ dependencies:
     - node.type.project
   module:
     - datetime_range
-    - geocoder_field
     - text
     - user
 id: node.project.full
@@ -40,7 +39,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_dates:
     type: daterange_default
@@ -51,24 +50,15 @@ content:
       from_to: both
       separator: '-'
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_ecosystem_landscape:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 7
-    region: content
-  field_lead_organisation:
-    type: geocoder_geocode_formatter
-    label: above
-    settings:
-      dumper: wkt
-      providers: {  }
-    third_party_settings: {  }
-    weight: 13
+    weight: 2
     region: content
   field_main_image:
     type: entity_reference_entity_view
@@ -77,15 +67,15 @@ content:
       view_mode: embedded
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_org:
     type: entity_reference_label
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
   field_related:
     type: entity_reference_label
@@ -93,7 +83,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_standfirst:
     type: text_default
@@ -105,7 +95,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
 hidden:
   feeds_item: true
@@ -113,6 +103,7 @@ hidden:
   field_focal_countries_text: true
   field_focal_country: true
   field_grant_reference: true
+  field_lead_organisation: true
   field_location_text: true
   field_publication_date: true
   field_short_title: true

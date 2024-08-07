@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.field_image
+    - field.field.node.article.field_main_image
     - field.field.node.article.field_short_title
     - field.field.node.article.field_tags
     - image.style.medium
@@ -24,33 +25,30 @@ third_party_settings:
       label: ''
   layout_builder:
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
         layout_settings:
           label: ''
         components:
-          7a536f06-5fa5-4d76-8c48-09be094c161b:
-            uuid: 7a536f06-5fa5-4d76-8c48-09be094c161b
+          03cb2cd6-f2df-4ba0-a406-9c3bd5082f6e:
+            uuid: 03cb2cd6-f2df-4ba0-a406-9c3bd5082f6e
             region: content
             configuration:
-              id: 'field_block:node:article:field_image'
+              id: 'extra_field_block:node:article:links'
+              label: Links
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: content
-                  image_style: medium
-                  image_loading:
-                    attribute: lazy
+                settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 3
             additional: {  }
-          111265a6-0d1b-46c5-9c2e-e1e6c1aa0faf:
-            uuid: 111265a6-0d1b-46c5-9c2e-e1e6c1aa0faf
+          8b71b03d-76c8-482d-a166-004b925e9ea4:
+            uuid: 8b71b03d-76c8-482d-a166-004b925e9ea4
             region: content
             configuration:
               id: 'field_block:node:article:body'
@@ -61,38 +59,38 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: text_trimmed
+                type: text_summary_or_trimmed
                 label: hidden
                 settings:
                   trim_length: 600
                 third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          dd5c01b1-ac47-40f2-908e-dfe0967ef96c:
-            uuid: dd5c01b1-ac47-40f2-908e-dfe0967ef96c
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_tags'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
             weight: 2
             additional: {  }
-          8cafff2b-8569-4a80-b974-791df5a6a16d:
-            uuid: 8cafff2b-8569-4a80-b974-791df5a6a16d
+          1be1cf45-6fd1-4da6-b9a5-56d3c86dfb29:
+            uuid: 1be1cf45-6fd1-4da6-b9a5-56d3c86dfb29
             region: content
             configuration:
-              id: 'extra_field_block:node:article:links'
+              id: 'field_block:node:article:field_image'
+              label: 'Card image'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-            weight: 3
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
 _core:
@@ -120,6 +118,15 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: -1
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_tags:
     type: entity_reference_label

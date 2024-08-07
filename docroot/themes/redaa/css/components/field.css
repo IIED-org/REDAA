@@ -10,12 +10,16 @@
  * Visual styles for fields.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .field:not(:last-child) {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
 }
 
 .node--view-mode-teaser .field {
-  margin-bottom: 1.125rem
+  margin-bottom: 1rem
 }
 
 .node--view-mode-teaser .field:last-child {
@@ -25,7 +29,7 @@
 @media (min-width: 62.5rem) {
 
 .node--view-mode-teaser .field {
-    margin-bottom: 2.25rem
+    margin-bottom: 2rem
 }
   }
 
@@ -60,7 +64,7 @@
 }
 
 .text-content.field--name-field-image-caption {
-  margin-top: -2.25rem;
+  margin-top: -2rem;
   color: #7e96a7;
   font-size: 0.875rem;
 }
@@ -90,4 +94,8 @@
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.item-with-comma::after {
+  content: ", ";
 }
