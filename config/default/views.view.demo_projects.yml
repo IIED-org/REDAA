@@ -9,6 +9,7 @@ dependencies:
     - field.storage.node.field_ecosystem_landscape
     - field.storage.node.field_focal_countries_text
     - field.storage.node.field_focal_country
+    - field.storage.node.field_full_title
     - field.storage.node.field_lead_organisation
     - field.storage.node.field_location_text
     - field.storage.node.field_main_image
@@ -2379,6 +2380,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_full_title:
+          id: field_full_title
+          table: node__field_full_title
+          field: field_full_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<h4><a name=\"node_{{ nid }}\" id=\"node_{{ nid }}\"></a>{{ field_full_title }}</h4>\r\n<strong>Overview: </strong><p>{{ body_1 }}</p>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: '<a> <strong> <h4> <br> <p>'
+            html: false
+          element_type: h4
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: "<h4><a name=\"node_{{ nid }}\" id=\"node_{{ nid }}\"></a>{{ body_1 }}</h4>\r\n<strong>Overview: </strong>{{ body }}"
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -2434,68 +2497,6 @@ display:
           type: string
           settings:
             link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_standfirst:
-          id: field_standfirst
-          table: node__field_standfirst
-          field: field_standfirst
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<h4><a name=\"node_{{ nid }}\" id=\"node_{{ nid }}\"></a>{{ field_standfirst }}</h4>\r\n<strong>Overview: </strong><p>{{ body_1 }}</p>"
-            make_link: false
-            path: '{{ view_node }} '
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: true
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: true
-            trim: false
-            preserve_tags: '<a> <strong> <h4> <br> <p>'
-            html: false
-          element_type: h4
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: "<h4><a name=\"node_{{ nid }}\" id=\"node_{{ nid }}\"></a>{{ body_1 }}</h4>\r\n<strong>Overview: </strong>{{ body }}"
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -3076,7 +3077,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<strong>Project dates: </strong>{{ field_dates }}'
+            text: '<strong>Project dates: </strong>{{ field_dates }}<br />'
             make_link: false
             path: ''
             absolute: false
@@ -3118,6 +3119,7 @@ display:
           settings:
             timezone_override: ''
             date_format: 'F Y'
+            from_to: both
             separator: '-'
           group_column: value
           group_columns: {  }
@@ -3129,13 +3131,13 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_standfirst_1:
-          id: field_standfirst_1
-          table: node__field_standfirst
-          field: field_standfirst
+        field_full_title_1:
+          id: field_full_title_1
+          table: node__field_full_title
+          field: field_full_title
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Read more link'
           plugin_id: field
           label: ''
           exclude: false
@@ -3151,7 +3153,7 @@ display:
             trim_whitespace: false
             alt: ''
             rel: ''
-            link_class: ''
+            link_class: red
             prefix: ''
             suffix: ''
             target: ''
@@ -3166,7 +3168,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h5
+          element_type: p
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -3175,11 +3177,11 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: true
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
+          type: basic_string
           settings: {  }
           group_column: value
           group_columns: {  }
@@ -3197,7 +3199,7 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Top / back links'
           plugin_id: custom
           label: ''
           exclude: false
@@ -3234,7 +3236,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: flow-left
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -3417,11 +3419,11 @@ display:
         - 'config:field.storage.node.field_ecosystem_landscape'
         - 'config:field.storage.node.field_focal_countries_text'
         - 'config:field.storage.node.field_focal_country'
+        - 'config:field.storage.node.field_full_title'
         - 'config:field.storage.node.field_lead_organisation'
         - 'config:field.storage.node.field_location_text'
         - 'config:field.storage.node.field_org'
         - 'config:field.storage.node.field_short_title'
-        - 'config:field.storage.node.field_standfirst'
         - 'config:field.storage.node.field_value'
   page_1:
     id: page_1
