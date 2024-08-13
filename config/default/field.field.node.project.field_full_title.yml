@@ -1,0 +1,19 @@
+uuid: 7ef0004f-5949-42bd-8352-321f169dddb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_full_title
+    - node.type.project
+id: node.project.field_full_title
+field_name: field_full_title
+entity_type: node
+bundle: project
+label: 'Full title'
+description: 'The full project title'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
