@@ -37,7 +37,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<ul class="image-list">'
+      allowed_html: '<ul class="image-list"> <blockquote class="green blue red">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
