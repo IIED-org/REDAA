@@ -77,3 +77,14 @@
 .item-with-comma::after {
   content: ", ";
 }
+
+
+  .flow-left {
+    @media (min-width: 1200px) {
+    margin-left: -12em;
+    height: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+  }

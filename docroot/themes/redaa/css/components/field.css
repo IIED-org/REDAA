@@ -99,3 +99,17 @@
 .item-with-comma::after {
   content: ", ";
 }
+
+@media (min-width: 75rem) {
+
+.flow-left {
+    margin-left: -12em;
+    height: 0
+  }
+    }
+
+.flow-left {
+    a {
+      text-decoration: none;
+    }
+  }

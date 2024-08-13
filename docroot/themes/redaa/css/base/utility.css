@@ -10,6 +10,10 @@
  * Utility classes.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 /*
   ie11-autorow
 
@@ -60,4 +64,16 @@
 
 .red {
   color: #AB351C;
+}
+
+.green {
+  color: #446629;
+}
+
+.blue {
+  color: #005890;
+}
+
+.gold {
+  color: #F4BB37;
 }

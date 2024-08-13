@@ -55,6 +55,15 @@ settings:
         -
           label: 'Image list'
           element: '<ul class="image-list">'
+        -
+          label: Green
+          element: '<blockquote class="green">'
+        -
+          label: Blue
+          element: '<blockquote class="blue">'
+        -
+          label: Red
+          element: '<blockquote class="red">'
     media_media:
       allow_view_mode_override: false
 image_upload:

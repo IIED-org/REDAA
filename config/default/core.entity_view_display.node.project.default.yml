@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_ecosystem_landscape
     - field.field.node.project.field_focal_countries_text
     - field.field.node.project.field_focal_country
+    - field.field.node.project.field_full_title
     - field.field.node.project.field_grant_reference
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
@@ -174,6 +175,13 @@ content:
       weight: null
     third_party_settings: {  }
     weight: 15
+    region: content
+  field_full_title:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
     region: content
   field_grant_reference:
     type: string

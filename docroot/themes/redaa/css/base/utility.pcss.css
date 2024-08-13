@@ -57,3 +57,15 @@
 .red {
   color: var(--color--red);
 }
+
+.green {
+  color: var(--color--green);
+}
+
+.blue {
+  color: var(--color--blue-20);
+}
+
+.gold {
+  color: var(--color--gold);
+}
