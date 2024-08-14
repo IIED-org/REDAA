@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: cover_embedded
-label: 'Cover embedded'
+label: 'Cover embedded (300w)'
 effects:
   c5295c8b-806f-440f-9f49-cb0fda308642:
     uuid: c5295c8b-806f-440f-9f49-cb0fda308642
