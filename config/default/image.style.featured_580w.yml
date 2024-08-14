@@ -1,0 +1,15 @@
+uuid: 511987d9-475c-4f9b-b9df-6532815f0f24
+langcode: en
+status: true
+dependencies: {  }
+name: featured_580w
+label: 'Featured (580x387)'
+effects:
+  f06d5cc8-f8c3-445e-a04d-1039b920a147:
+    uuid: f06d5cc8-f8c3-445e-a04d-1039b920a147
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 580
+      height: 387
+      anchor: center-center

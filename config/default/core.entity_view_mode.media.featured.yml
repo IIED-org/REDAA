@@ -1,0 +1,11 @@
+uuid: 92d9923c-0ed0-4b47-a5d7-3ef137558b14
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.featured
+label: Featured
+description: 'For display on home page etc. (2 columns)'
+targetEntityType: media
+cache: true
