@@ -69,12 +69,14 @@ AddEncoding gzip svgz
 
   RewriteCond %{ENV:AH_SITE_ENVIRONMENT} prod [NC]
   RewriteCond %{HTTPS} !=on
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R]
 
   RewriteCond %{ENV:AH_SITE_ENVIRONMENT} prod [NC]
   RewriteCond %{HTTP_HOST} !^www\.
   RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L,E=HTTPS:1]
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+  <IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+  </IfModule>
 
   # RewriteCond %{ENV:AH_SITE_ENVIRONMENT} prod [NC]
   # RewriteCond %{HTTPS} off
