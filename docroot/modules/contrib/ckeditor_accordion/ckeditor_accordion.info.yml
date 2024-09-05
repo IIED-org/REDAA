@@ -2,10 +2,10 @@ name: CKEditor Accordion
 type: module
 description: "Accordion plugin for CKEditor 5"
 package: CKEditor
-core_version_requirement: ^9.4 || ^10
+core_version_requirement: ^9.4 || ^10 || ^11
 configure: ckeditor_accordion.settings
 
-# Information added by Drupal.org packaging script on 2023-12-01
-version: '2.1.0'
+# Information added by Drupal.org packaging script on 2024-08-21
+version: '2.2.0'
 project: 'ckeditor_accordion'
-datestamp: 1701411381
+datestamp: 1724231024
