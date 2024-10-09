@@ -1,26 +1,26 @@
-uuid: ac8a6f96-6c12-4191-bb5c-03d0bc51a666
+uuid: 4e72412e-b6bb-4665-912f-772476dbd405
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_theme
     - node.type.resource
-    - taxonomy.vocabulary.tags
-id: node.resource.field_tags
-field_name: field_tags
+    - taxonomy.vocabulary.theme
+id: node.resource.field_theme
+field_name: field_theme
 entity_type: node
 bundle: resource
-label: Region
+label: Theme
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      theme: theme
     sort:
       field: name
       direction: asc

@@ -1,29 +1,29 @@
-uuid: ac8a6f96-6c12-4191-bb5c-03d0bc51a666
+uuid: 59fdb25f-c7c3-4895-9aba-4e343b584cbe
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_ecosystem_landscape
     - node.type.resource
-    - taxonomy.vocabulary.tags
-id: node.resource.field_tags
-field_name: field_tags
+    - taxonomy.vocabulary.ecosystem
+id: node.resource.field_ecosystem_landscape
+field_name: field_ecosystem_landscape
 entity_type: node
 bundle: resource
-label: Region
-description: ''
+label: Environment
+description: 'Ecosystem / landscape / etc.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      ecosystem: ecosystem
     sort:
       field: name
       direction: asc
-    auto_create: false
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

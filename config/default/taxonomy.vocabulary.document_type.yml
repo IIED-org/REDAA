@@ -2,8 +2,8 @@ uuid: f5508c9b-ce44-4ca5-a78e-d474acde7b93
 langcode: en
 status: true
 dependencies: {  }
-name: 'Document type'
+name: 'Resource type'
 vid: document_type
-description: null
+description: 'Document type, etc.'
 weight: 0
 new_revision: false
