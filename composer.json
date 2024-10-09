@@ -42,6 +42,7 @@
         "drupal/pathauto": "^1.11",
         "drupal/redirect": "^1.9",
         "drupal/seckit": "^2.0",
+        "drupal/stage_file_proxy": "^3.1",
         "drupal/svg_image": "^3.0",
         "drupal/upgrade_status": "^4.0",
         "drupal/varnish_purge": "^2.2",
