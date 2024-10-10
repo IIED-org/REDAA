@@ -1,5 +1,5 @@
 purgers:
   -
-    instance_id: 46b7d01ba9
-    plugin_id: acquia_purge
+    instance_id: 7a7f562784
+    plugin_id: varnish
     order_index: 2

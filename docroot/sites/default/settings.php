@@ -220,7 +220,7 @@ $databases = [];
  * directory in the public files path. The setting below allows you to set
  * its location.
  */
-# $settings['config_sync_directory'] = '/directory/outside/webroot';
+$settings['config_sync_directory'] = $app_root . '/../config/default/';
 
 /**
  * Settings:
@@ -249,7 +249,7 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 't5JYRWHZIz3WPfCcbIkZAYnumAGVJnl0ROrGFJFQZL7ZsDyXqldC50dSOmzdhrmQ';
 
 /**
  * Deployment identifier.
@@ -772,18 +772,9 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-#
-
-// On Acquia Cloud, this include file configures Drupal to use the correct
-// database in each site environment (Dev, Stage, or Prod). To use this
-// settings.php for development on your local workstation, set $db_url
-// (Drupal 5 or 6) or $databases (Drupal 7 or 8) as described in comments above.
-if (file_exists('/var/www/site-php')) {
-  require('/var/www/site-php/gwi/gwi-settings.inc');
-}
-
-$settings['config_sync_directory'] = $app_root . '/../config/default/';
-
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
+}
+elseif (getenv('LANDO_INFO') !== FALSE && file_exists($app_root . '/' . $site_path . '/settings.lando.php')) {
+  include $app_root . '/' . $site_path . '/settings.lando.php';
 }

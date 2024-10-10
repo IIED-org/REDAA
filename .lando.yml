@@ -1,22 +1,42 @@
 name: redaa
-recipe: acquia
+recipe: drupal10
 config:
-  acli_version: latest
-  ah_application_uuid: eeab35dc-2307-455c-b232-5f436ecb0af8
-  ah_site_group: gwi
   php: '8.3'
-  xdebug: true
+  webroot: docroot
+  xdebug: debug
 services:
   appserver:
-    webroot: docroot
+    # Install Imagick PECL extension which isn't included with PHP 8.3
+    # https://docs.lando.dev/plugins/php/extensions.html#installed-extensions
+    build_as_root:
+       - git clone https://github.com/Imagick/imagick.git /tmp/imagick
+       - printf "\n" | pecl install /tmp/imagick/package.xml
+       - docker-php-ext-enable imagick
     overrides:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/docroot'
         DRUSH_OPTIONS_URI: 'https://redaa.lndo.site'
         XDEBUG_MODE: 'debug,develop'
+  database:
+    type: mariadb:10.11
+    creds:
+      user: database
+      password: database
+      database: database
   node:
     type: node:16
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+    portforward: true
+proxy:
+  mailhog:
+    - mail.redaa.lndo.site
 tooling:
+  composer:
+    service: appserver
+    cmd: '/usr/local/bin/composer'
   npm:
     service: node
   yarn:
