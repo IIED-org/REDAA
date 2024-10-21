@@ -9,9 +9,8 @@ services:
     # Install Imagick PECL extension which isn't included with PHP 8.3
     # https://docs.lando.dev/plugins/php/extensions.html#installed-extensions
     build_as_root:
-       - git clone https://github.com/Imagick/imagick.git /tmp/imagick
-       - printf "\n" | pecl install /tmp/imagick/package.xml
-       - docker-php-ext-enable imagick
+      - apt update && apt install libgmp-dev -y && docker-php-ext-install gmp
+      - /app/scripts/imagick.sh
     overrides:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/docroot'
