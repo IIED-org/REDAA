@@ -18,8 +18,6 @@ third_party_settings:
     hidden: false
     providers:
       - googlemaps
-      - geoplugin
-      - file
     dumper: wkt
     delta_handling: default
     failure:

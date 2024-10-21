@@ -1,9 +1,9 @@
-uuid: 3fddbbed-9d5b-4c57-9b99-3be0c697a2f9
+uuid: 00bf2226-359f-4eb8-a426-006d96e5aa18
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.search_result
     - field.field.node.article.body
     - field.field.node.article.field_document_type
     - field.field.node.article.field_ecosystem_landscape
@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.article.field_short_title
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
-    - image.style.card_cover
+    - image.style.thumbnail_sq
     - node.type.article
   module:
     - field_layout
@@ -30,25 +30,41 @@ third_party_settings:
     allow_custom: false
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
-id: node.article.card
+id: node.article.search_result
 targetEntityType: node
 bundle: article
-mode: card
+mode: search_result
 content:
   body:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_document_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ecosystem_landscape:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: card_cover
+      image_style: thumbnail_sq
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -64,12 +80,24 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_theme:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
-  field_document_type: true
-  field_ecosystem_landscape: true
   field_main_image: true
-  field_tags: true
-  field_theme: true
   links: true

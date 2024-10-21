@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.resource.field_author_s_
     - field.field.node.resource.field_countries
     - field.field.node.resource.field_document_type
+    - field.field.node.resource.field_ecosystem_landscape
     - field.field.node.resource.field_link
     - field.field.node.resource.field_main_image
     - field.field.node.resource.field_media
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.resource.field_publisher
     - field.field.node.resource.field_short_title
     - field.field.node.resource.field_tags
+    - field.field.node.resource.field_theme
     - node.type.resource
   module:
     - address
@@ -116,6 +118,38 @@ third_party_settings:
                   link_to_entity: false
                 third_party_settings: {  }
             weight: 4
+            additional: {  }
+          8a4378bd-a91a-47c0-a653-748be5d2661b:
+            uuid: 8a4378bd-a91a-47c0-a653-748be5d2661b
+            region: content
+            configuration:
+              id: 'field_block:node:resource:field_theme'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          b8b4151b-c5bf-442a-a9e8-a2b0b5cc89f9:
+            uuid: b8b4151b-c5bf-442a-a9e8-a2b0b5cc89f9
+            region: content
+            configuration:
+              id: 'field_block:node:resource:field_ecosystem_landscape'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
             additional: {  }
         third_party_settings: {  }
       -
@@ -289,6 +323,14 @@ content:
     third_party_settings: {  }
     weight: 110
     region: content
+  field_ecosystem_landscape:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
   field_link:
     type: link
     label: above
@@ -359,6 +401,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 109
+    region: content
+  field_theme:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
     region: content
   links:
     settings: {  }

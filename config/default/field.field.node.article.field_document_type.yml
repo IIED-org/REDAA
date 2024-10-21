@@ -1,15 +1,15 @@
-uuid: 8b08cb70-2c8c-418a-bed5-7173832bd272
+uuid: fe71ae94-ca75-42a0-8553-5e3e28f355cd
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_document_type
-    - node.type.resource
+    - node.type.article
     - taxonomy.vocabulary.document_type
-id: node.resource.field_document_type
+id: node.article.field_document_type
 field_name: field_document_type
 entity_type: node
-bundle: resource
+bundle: article
 label: 'Resource type'
 description: ''
 required: false

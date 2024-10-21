@@ -5,10 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.article.body
+    - field.field.node.article.field_document_type
+    - field.field.node.article.field_ecosystem_landscape
     - field.field.node.article.field_image
     - field.field.node.article.field_main_image
     - field.field.node.article.field_short_title
     - field.field.node.article.field_tags
+    - field.field.node.article.field_theme
     - image.style.wide
     - node.type.article
   module:
@@ -91,6 +94,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_ecosystem_landscape:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_image:
     type: image
     label: hidden
@@ -128,4 +139,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_document_type: true
   field_main_image: true
+  field_theme: true

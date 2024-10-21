@@ -5,10 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
+    - field.field.node.article.field_document_type
+    - field.field.node.article.field_ecosystem_landscape
     - field.field.node.article.field_image
     - field.field.node.article.field_main_image
     - field.field.node.article.field_short_title
     - field.field.node.article.field_tags
+    - field.field.node.article.field_theme
     - image.style.medium
     - node.type.article
   module:
@@ -143,4 +146,7 @@ content:
     region: content
 hidden:
   comment: true
+  field_document_type: true
+  field_ecosystem_landscape: true
   field_short_title: true
+  field_theme: true

@@ -10,7 +10,7 @@ id: node.project.field_ecosystem_landscape
 field_name: field_ecosystem_landscape
 entity_type: node
 bundle: project
-label: Ecosystem/landscape
+label: Environment
 description: ''
 required: false
 translatable: false

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.resource.field_author_s_
     - field.field.node.resource.field_countries
     - field.field.node.resource.field_document_type
+    - field.field.node.resource.field_ecosystem_landscape
     - field.field.node.resource.field_link
     - field.field.node.resource.field_main_image
     - field.field.node.resource.field_media
@@ -16,6 +17,7 @@ dependencies:
     - field.field.node.resource.field_publisher
     - field.field.node.resource.field_short_title
     - field.field.node.resource.field_tags
+    - field.field.node.resource.field_theme
     - node.type.resource
   module:
     - datetime
@@ -193,6 +195,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          4a62945d-0aff-4398-8686-70c5df42717b:
+            uuid: 4a62945d-0aff-4398-8686-70c5df42717b
+            region: content
+            configuration:
+              id: 'field_block:node:resource:field_ecosystem_landscape'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -267,24 +285,6 @@ third_party_settings:
           label: Meta
           context_mapping: {  }
         components:
-          ce85f6b7-3c66-4b33-9332-87e58cfd2b21:
-            uuid: ce85f6b7-3c66-4b33-9332-87e58cfd2b21
-            region: content
-            configuration:
-              id: 'field_block:node:resource:field_countries'
-              label: Countries
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: address_country_default
-                label: inline
-                settings: {  }
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
           763e35fc-ba1a-4e93-bd01-0a28f6942801:
             uuid: 763e35fc-ba1a-4e93-bd01-0a28f6942801
             region: content
@@ -324,6 +324,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_ecosystem_landscape:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_main_image:
     type: entity_reference_entity_view
@@ -372,3 +380,4 @@ hidden:
   field_organisation: true
   field_short_title: true
   field_tags: true
+  field_theme: true
