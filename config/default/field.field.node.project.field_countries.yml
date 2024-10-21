@@ -12,7 +12,7 @@ field_name: field_countries
 entity_type: node
 bundle: project
 label: Countries
-description: ''
+description: 'Country or countries where the project is operating'
 required: false
 translatable: false
 default_value: {  }

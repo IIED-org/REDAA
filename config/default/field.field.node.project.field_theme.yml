@@ -1,16 +1,16 @@
-uuid: 8b08cb70-2c8c-418a-bed5-7173832bd272
+uuid: 5a8483d0-c869-4d6e-ade9-215fc5fb9bb1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_document_type
-    - node.type.resource
-    - taxonomy.vocabulary.document_type
-id: node.resource.field_document_type
-field_name: field_document_type
+    - field.storage.node.field_theme
+    - node.type.project
+    - taxonomy.vocabulary.theme
+id: node.project.field_theme
+field_name: field_theme
 entity_type: node
-bundle: resource
-label: 'Resource type'
+bundle: project
+label: Theme
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      document_type: document_type
+      theme: theme
     sort:
       field: name
       direction: asc

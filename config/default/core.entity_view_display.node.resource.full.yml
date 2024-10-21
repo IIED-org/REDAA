@@ -285,24 +285,6 @@ third_party_settings:
           label: Meta
           context_mapping: {  }
         components:
-          ce85f6b7-3c66-4b33-9332-87e58cfd2b21:
-            uuid: ce85f6b7-3c66-4b33-9332-87e58cfd2b21
-            region: content
-            configuration:
-              id: 'field_block:node:resource:field_countries'
-              label: Countries
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: address_country_default
-                label: inline
-                settings: {  }
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
           763e35fc-ba1a-4e93-bd01-0a28f6942801:
             uuid: 763e35fc-ba1a-4e93-bd01-0a28f6942801
             region: content
