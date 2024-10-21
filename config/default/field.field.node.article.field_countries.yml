@@ -1,18 +1,18 @@
-uuid: 88e93ea9-eb6f-4253-9641-220d1a4d1a39
+uuid: 61e7e24c-905c-43fe-be4d-256ee5fdee88
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_countries
-    - node.type.project
+    - node.type.article
   module:
     - address
-id: node.project.field_countries
+id: node.article.field_countries
 field_name: field_countries
 entity_type: node
-bundle: project
+bundle: article
 label: Country
-description: 'Country or countries where the project is operating'
+description: 'Country or countries relevant to the project, article or resource'
 required: false
 translatable: false
 default_value: {  }

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
+    - field.field.node.article.field_countries
     - field.field.node.article.field_document_type
     - field.field.node.article.field_ecosystem_landscape
     - field.field.node.article.field_image
@@ -146,7 +147,9 @@ content:
     region: content
 hidden:
   comment: true
+  field_countries: true
   field_document_type: true
   field_ecosystem_landscape: true
   field_short_title: true
   field_theme: true
+  search_api_excerpt: true

@@ -12,7 +12,6 @@ dependencies:
     - filter
     - media
     - media_pdf_thumbnail
-    - search
     - shortcut
     - system
 _core:
@@ -29,7 +28,6 @@ permissions:
   - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'post comments'
-  - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'

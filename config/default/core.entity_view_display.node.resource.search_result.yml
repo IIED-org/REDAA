@@ -38,9 +38,9 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 300
+      trim_length: 250
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_author_s_:
     type: string
@@ -48,20 +48,20 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_countries:
     type: address_country_default
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_document_type:
     type: entity_reference_label
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
@@ -71,7 +71,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_main_image:
     type: entity_reference_entity_view
@@ -89,7 +89,7 @@ content:
       timezone_override: ''
       format_type: redaa_medium
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_short_title:
     type: string
@@ -105,7 +105,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_theme:
     type: entity_reference_label
@@ -113,7 +113,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 9
+    weight: 10
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   field_link: true

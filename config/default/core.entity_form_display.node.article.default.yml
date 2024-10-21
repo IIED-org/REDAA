@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_countries
     - field.field.node.article.field_document_type
     - field.field.node.article.field_ecosystem_landscape
     - field.field.node.article.field_image
@@ -14,6 +15,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.article
   module:
+    - address
     - field_layout
     - layout_discovery
     - media_library
@@ -48,6 +50,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_countries:
+    type: address_country_default
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_document_type:
     type: options_select
     weight: 11
@@ -56,7 +64,7 @@ content:
     third_party_settings: {  }
   field_ecosystem_landscape:
     type: options_select
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -91,7 +99,7 @@ content:
     third_party_settings: {  }
   field_theme:
     type: options_select
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -141,7 +149,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
