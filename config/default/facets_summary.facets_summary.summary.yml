@@ -1,0 +1,38 @@
+uuid: 722715ab-0fb6-4919-b968-1f451601a349
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.db_index
+    - views.view.search
+  module:
+    - search_api
+id: summary
+name: Summary
+facet_source_id: 'search_api:views_page__search__page_1'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  reset_facets:
+    processor_id: reset_facets
+    weights:
+      build: '30'
+    settings:
+      link_text: Reset
+      position: before
+facets:
+  region_country:
+    checked: true
+    label: 'Region / Country'
+    separator: ', '
+    show_count: false
+    weight: 0
+  type:
+    checked: true
+    label: 'Resource type'
+    separator: ', '
+    show_count: false
+    weight: 0

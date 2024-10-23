@@ -1,0 +1,24 @@
+uuid: 6c6a0dfc-909b-4877-b006-9a470e3d1909
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.region_country
+  module:
+    - facets
+  theme:
+    - redaa
+id: redaa_regioncountry
+theme: redaa
+region: content_above
+weight: 0
+provider: null
+plugin: 'facet_block:region_country'
+settings:
+  id: 'facet_block:region_country'
+  label: 'Filter by country or region'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: redaa_regioncountry
+visibility: {  }

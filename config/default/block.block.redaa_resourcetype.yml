@@ -1,0 +1,24 @@
+uuid: 0d455b6b-fd47-41e0-9bab-8ba468a729fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type
+  module:
+    - facets
+  theme:
+    - redaa
+id: redaa_resourcetype
+theme: redaa
+region: content_above
+weight: 0
+provider: null
+plugin: 'facet_block:type'
+settings:
+  id: 'facet_block:type'
+  label: 'Filter by resource type'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: redaa_resourcetype
+visibility: {  }
