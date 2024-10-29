@@ -50,6 +50,7 @@ third_party_settings:
         - field_theme
         - uid
         - created
+        - field_publication_date
         - promote
         - sticky
         - path
@@ -58,7 +59,7 @@ third_party_settings:
       label: Metadata
       region: content
       parent_name: group_resource
-      weight: 27
+      weight: 28
       format_type: tab
       format_settings:
         classes: ''
@@ -75,7 +76,6 @@ third_party_settings:
         - body
         - field_media
         - field_link
-        - field_publication_date
       label: Content
       region: content
       parent_name: group_resource
@@ -137,7 +137,7 @@ content:
       rows: 10
       summary_rows: 5
       placeholder: ''
-      show_summary: false
+      show_summary: true
     third_party_settings: {  }
   created:
     type: datetime_timestamp
@@ -211,7 +211,7 @@ content:
     third_party_settings: {  }
   field_publication_date:
     type: datetime_default
-    weight: 8
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -253,27 +253,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -297,7 +297,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

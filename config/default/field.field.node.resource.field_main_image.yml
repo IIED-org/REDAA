@@ -10,8 +10,8 @@ id: node.resource.field_main_image
 field_name: field_main_image
 entity_type: node
 bundle: resource
-label: 'Image '
-description: 'Replacement cover image (not needed for PDFs or videos)'
+label: 'Main image '
+description: 'Main image (for HTML content) or replacement cover image (deprecated, not required for PDFs or videos)'
 required: false
 translatable: true
 default_value: {  }
