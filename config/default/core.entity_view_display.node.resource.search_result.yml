@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.resource.field_countries
     - field.field.node.resource.field_document_type
     - field.field.node.resource.field_ecosystem_landscape
+    - field.field.node.resource.field_image
     - field.field.node.resource.field_link
     - field.field.node.resource.field_main_image
     - field.field.node.resource.field_media
@@ -16,13 +17,16 @@ dependencies:
     - field.field.node.resource.field_publication_date
     - field.field.node.resource.field_publisher
     - field.field.node.resource.field_short_title
+    - field.field.node.resource.field_standfirst
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
+    - image.style.thumbnail_sq
     - node.type.resource
   module:
     - address
     - datetime
     - layout_builder
+    - svg_image
     - text
     - user
 third_party_settings:
@@ -73,6 +77,21 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail_sq
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_main_image:
     type: entity_reference_entity_view
     label: hidden
@@ -120,4 +139,5 @@ hidden:
   field_media: true
   field_organisation: true
   field_publisher: true
+  field_standfirst: true
   links: true
