@@ -10,7 +10,7 @@ field_name: field_organisation
 entity_type: node
 bundle: resource
 label: Organisation
-description: ''
+description: '<strong>Optional</strong>'
 required: false
 translatable: false
 default_value: {  }

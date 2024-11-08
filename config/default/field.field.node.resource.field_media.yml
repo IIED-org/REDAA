@@ -11,8 +11,8 @@ id: node.resource.field_media
 field_name: field_media
 entity_type: node
 bundle: resource
-label: 'Document or video'
-description: ''
+label: Document
+description: 'Upload a file for storage directly on redaa.org (n.b. <strong>Remote video</strong> is deprecated)'
 required: false
 translatable: false
 default_value: {  }

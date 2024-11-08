@@ -10,7 +10,7 @@ field_name: field_publisher
 entity_type: node
 bundle: resource
 label: Publisher
-description: ''
+description: '<strong>Optional</strong>: use for non-HTML and remotely hosted resources'
 required: false
 translatable: false
 default_value: {  }

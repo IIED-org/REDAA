@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.resource.field_countries
     - field.field.node.resource.field_document_type
     - field.field.node.resource.field_ecosystem_landscape
+    - field.field.node.resource.field_image
     - field.field.node.resource.field_link
     - field.field.node.resource.field_main_image
     - field.field.node.resource.field_media
@@ -15,8 +16,10 @@ dependencies:
     - field.field.node.resource.field_publication_date
     - field.field.node.resource.field_publisher
     - field.field.node.resource.field_short_title
+    - field.field.node.resource.field_standfirst
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
+    - image.style.wide
     - node.type.resource
   module:
     - address
@@ -24,6 +27,7 @@ dependencies:
     - layout_builder
     - layout_discovery
     - link
+    - svg_image
     - text
     - user
 third_party_settings:
@@ -150,6 +154,44 @@ third_party_settings:
                   link: true
                 third_party_settings: {  }
             weight: 6
+            additional: {  }
+          1e1afe4b-cab8-4450-9982-92fca7386b86:
+            uuid: 1e1afe4b-cab8-4450-9982-92fca7386b86
+            region: content
+            configuration:
+              id: 'field_block:node:resource:field_standfirst'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          b1fccd4d-4c72-47e3-95aa-50a03d36fc06:
+            uuid: b1fccd4d-4c72-47e3-95aa-50a03d36fc06
+            region: content
+            configuration:
+              id: 'field_block:node:resource:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: lazy
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                third_party_settings: {  }
+            weight: 8
             additional: {  }
         third_party_settings: {  }
       -
@@ -331,6 +373,21 @@ content:
     third_party_settings: {  }
     weight: 14
     region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
   field_link:
     type: link
     label: above
@@ -393,6 +450,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 112
+    region: content
+  field_standfirst:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 114
     region: content
   field_tags:
     type: entity_reference_label

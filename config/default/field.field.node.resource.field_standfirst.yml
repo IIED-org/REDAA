@@ -1,0 +1,24 @@
+uuid: 94305859-e5a6-4661-89bd-2ad859f63a01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_standfirst
+    - filter.format.plain_text
+    - node.type.resource
+  module:
+    - text
+id: node.resource.field_standfirst
+field_name: field_standfirst
+entity_type: node
+bundle: resource
+label: 'Card summary'
+description: 'Single sentence for card or search result text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long
