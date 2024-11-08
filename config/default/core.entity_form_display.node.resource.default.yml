@@ -23,7 +23,6 @@ dependencies:
     - node.type.resource
   module:
     - address
-    - datetime
     - field_group
     - field_layout
     - layout_discovery
@@ -50,16 +49,14 @@ third_party_settings:
         - field_theme
         - uid
         - created
-        - field_publication_date
         - promote
-        - sticky
         - path
         - url_redirects
         - status
       label: Metadata
       region: content
       parent_name: group_resource
-      weight: 28
+      weight: 27
       format_type: tab
       format_settings:
         classes: ''
@@ -97,7 +94,7 @@ third_party_settings:
       label: Resource
       region: content
       parent_name: ''
-      weight: 1
+      weight: 0
       format_type: tabs
       format_settings:
         classes: ''
@@ -209,12 +206,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_publication_date:
-    type: datetime_default
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_publisher:
     type: string_textfield
     weight: 3
@@ -271,13 +262,6 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    weight: 12
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 2
@@ -301,4 +285,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_publication_date: true
+  sticky: true

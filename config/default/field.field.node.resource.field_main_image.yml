@@ -11,7 +11,7 @@ field_name: field_main_image
 entity_type: node
 bundle: resource
 label: 'Main image '
-description: 'Main image (for HTML content) or replacement cover image (deprecated, not required for PDFs or videos)'
+description: 'Wide image, for use in HTML-based resources'
 required: false
 translatable: true
 default_value: {  }

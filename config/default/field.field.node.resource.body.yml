@@ -12,7 +12,7 @@ field_name: body
 entity_type: node
 bundle: resource
 label: Body
-description: 'Use the summary sub-field for non-HTML resource (e.g. PDF) abstracts'
+description: 'Use separate Summary field (above) for PDF abstracts'
 required: true
 translatable: true
 default_value: {  }
