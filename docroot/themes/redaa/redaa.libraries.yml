@@ -89,6 +89,12 @@ content-below:
     layout:
       css/layout/region-content-below.css: {}
 
+content-wide:
+  version: VERSION
+  css:
+    layout:
+      css/layout/region-content-wide.css: {}      
+
 content_moderation:
   version: VERSION
   css:
