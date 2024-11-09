@@ -10,7 +10,7 @@ dependencies:
     - redaa
 id: redaa_resourcetype
 theme: redaa
-region: content_above
+region: content_wide
 weight: 0
 provider: null
 plugin: 'facet_block:type'

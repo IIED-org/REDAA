@@ -11,16 +11,16 @@ dependencies:
     - redaa
 id: redaa_exposedformsearchpage_1
 theme: redaa
-region: content_above
+region: content_wide
 weight: -7
 provider: null
 plugin: 'views_exposed_filter_block:search-page_1'
 settings:
   id: 'views_exposed_filter_block:search-page_1'
   label: ''
-  label_display: '0'
+  label_display: visible
   provider: views
-  views_label: ''
+  views_label: 'Filter by keyword'
 visibility:
   request_path:
     id: request_path

@@ -7,6 +7,7 @@ dependencies:
     - search_api.index.db_index
     - system.menu.main
   module:
+    - better_exposed_filters
     - search_api
     - text
 id: search
@@ -116,7 +117,7 @@ display:
             offset: false
             offset_label: Offset
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: true
@@ -125,6 +126,42 @@ display:
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            sort:
+              plugin_id: default
+              advanced:
+                combine: false
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
+            filter:
+              search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
       access:
         type: none
         options: {  }
@@ -145,7 +182,7 @@ display:
           expose:
             label: Relevance
             field_identifier: rel
-          exposed: true
+          exposed: false
         field_dates:
           id: field_dates
           table: search_api_index_db_index
@@ -158,7 +195,7 @@ display:
           expose:
             label: Date
             field_identifier: date
-          exposed: true
+          exposed: false
         title:
           id: title
           table: search_api_index_db_index
@@ -171,7 +208,7 @@ display:
           expose:
             label: Title
             field_identifier: title
-          exposed: true
+          exposed: false
       arguments: {  }
       filters:
         search_api_fulltext:
@@ -188,7 +225,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Filter by keyword'
+            label: ''
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -233,6 +270,7 @@ display:
           operator: not
           value:
             feature: feature
+            person: person
           group: 1
           exposed: false
           expose:
@@ -296,7 +334,20 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<p>Find valuable resources, tools, and case studies to support your work in environmental restoration and climate resilience.</p>'
+            format: basic_html
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -306,7 +357,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
@@ -341,7 +391,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
