@@ -267,10 +267,9 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api_options
-          operator: not
+          operator: or
           value:
-            feature: feature
-            person: person
+            resource: resource
           group: 1
           exposed: false
           expose:
@@ -318,14 +317,6 @@ display:
               person: search_result
               project: search_result
               resource: search_result
-            'entity:taxonomy_term':
-              document_type: default
-              ecosystem: default
-              organisation: default
-              roles: default
-              tags: default
-              thematic_priorities: default
-              theme: default
       query:
         type: search_api_query
         options:
@@ -334,20 +325,7 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: false
-          content:
-            value: '<p>Find valuable resources, tools, and case studies to support your work in environmental restoration and climate resilience.</p>'
-            format: basic_html
-          tokenize: false
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:

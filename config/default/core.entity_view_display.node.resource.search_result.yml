@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.resource.field_theme
     - node.type.resource
   module:
-    - address
     - datetime
     - layout_builder
     - text
@@ -40,22 +39,7 @@ content:
     settings:
       trim_length: 250
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_author_s_:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_countries:
-    type: address_country_default
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   field_document_type:
     type: entity_reference_label
@@ -64,14 +48,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_ecosystem_landscape:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 9
     region: content
   field_main_image:
     type: entity_reference_entity_view
@@ -84,12 +60,12 @@ content:
     region: content
   field_publication_date:
     type: datetime_default
-    label: inline
+    label: hidden
     settings:
       timezone_override: ''
       format_type: redaa_medium
     third_party_settings: {  }
-    weight: 5
+    weight: 2
     region: content
   field_short_title:
     type: string
@@ -97,32 +73,21 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_theme:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
+    weight: 3
     region: content
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden:
+  field_author_s_: true
+  field_countries: true
+  field_ecosystem_landscape: true
   field_link: true
   field_media: true
   field_organisation: true
   field_publisher: true
+  field_tags: true
+  field_theme: true
   links: true
