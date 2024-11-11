@@ -1,0 +1,56 @@
+/**
+ * @file
+ * Block styling.
+ */
+
+@import "../base/variables.pcss.css";
+
+
+.card-link, .card-link:hover  {
+  color: inherit;
+  text-decoration-line: none;
+  font-weight: normal;
+} 
+
+.card-link:hover .search--card {
+  border-color: var(--color--red);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search--card {
+  border: 1px solid var(--color--gold);
+  border-radius: var(--border-radius);
+  padding: var(--sp1);
+  margin-block-end: var(--sp3);
+  display: flex;
+}
+
+.card__title {
+  margin-block: 0 var(--sp);
+  letter-spacing: 0.02em;
+  color: var(--color--gray-20);
+  font-size: var(--font-size-s);
+  line-height: var(--sp);
+}
+
+.card-image {
+  margin-right: 1.125rem;
+}
+
+.meta {
+  color: var(--color--gray-25);
+}
+
+.card-title {
+  font-size: 20px;
+  line-height: var(--sp1-5);
+  margin-block: var(--sp0-5);
+
+  @media (--md) {
+    font-size: 24px;
+    line-height: var(--sp2);
+  }
+}
+

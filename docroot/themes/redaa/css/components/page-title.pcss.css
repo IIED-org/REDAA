@@ -12,3 +12,24 @@
   */
   display: inline;
 }
+
+.gradient-text { 
+position: relative;
+}
+
+.gradient-text::after { 
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: -5px; 
+  width: 100%; 
+  height: 6px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #7F9A29, #F4BB37); 
+}
+
+  @media (--md) {
+    .gradient-text ~ p {
+      margin-top: 3rem !important;
+  }
+}
