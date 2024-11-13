@@ -65,3 +65,25 @@
   /* There is no variable for the color - #fff4f4. */
   background-color: #fff4f4;
 }
+
+/* node resources */
+
+.details .field:not(:last-child) {
+  margin-bottom: 0;
+ }
+
+ .date, .details {
+  margin-bottom: 2rem;
+ }
+
+ .comma-list .field__item {
+  display: inline;
+  &:after {
+    content: ", ";
+  }
+}
+.comma-list .field__item:last-child::after {
+  content: "";
+}
+
+
