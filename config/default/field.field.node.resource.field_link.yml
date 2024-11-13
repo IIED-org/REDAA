@@ -12,12 +12,12 @@ field_name: field_link
 entity_type: node
 bundle: resource
 label: 'Link to resource'
-description: 'Link to remote resource'
+description: "Link to a resource on external site, e.g. iied.org publications library. Link text defaults to 'Download from source'"
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   title: 1
-  link_type: 17
+  link_type: 16
 field_type: link

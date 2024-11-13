@@ -10,7 +10,7 @@ field_name: field_author_s_
 entity_type: node
 bundle: resource
 label: Author(s)
-description: 'Add each author as a separate item in the format &lt;lastName&gt;, &lt;initial&gt;. e.g. "Goodrich, R."'
+description: '<strong>Optional</strong>: Add each author as a separate item in the format &lt;lastName&gt;, &lt;initial&gt;. e.g. "Goodrich, R."'
 required: false
 translatable: false
 default_value: {  }
