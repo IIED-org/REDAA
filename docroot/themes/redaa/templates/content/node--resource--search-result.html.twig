@@ -79,19 +79,6 @@
 <article{{ attributes.addClass(classes) }}>
 
 
-
-            {# {% set media_items = content.field_media['#items'] %}
-            {% if media_items[0] is not empty and media_items[0].entity is not empty %}
-              {% set referenced_media = media_items[0].entity %}
-                {{ drupal_entity('media', referenced_media.id(), 'embedded') }}
-              {% endif %}
-        {% endif %} #}
-        {# {% if node.field_media[0] is not empty  %}
-          {{ node.field_media[0].entity|view('embedded') }}
-          {% endif %} #}
-
-
-
   <div class="card-image">
     
       {% if content.field_image['#items'].0.entity is not empty %}
@@ -103,67 +90,7 @@
       {% else %}
       {{ content.field_main_image }}
       {% endif %}
-</div>
-
-
-
-        {# {% set image_entity = content.field_image['#items'].0.entity %}
-          <img src="{{ image_entity.uri.value | image_style('max_180') }}" alt="{{ image_entity.alt }}" title="{{ image_entity.title }}">
-         #}
-
-
-      {# <div class="card-image">
-         {% if content.field_image[0] %}
-            {% set image_uri = node.field_cover_image|file_uri %}
-            {% set image_alt = node.field_cover_image.alt %}
-            {% if image_uri is not null %}
-          img src="{{ image_uri|image_style('cover_embedded') }}" alt="{{ image_alt }}" />
-        {% elseif node.field_media[0] is not empty  %}
-          {{ node.field_media[0].entity|view('embedded') }}
-        {% else %}
-        {{ content.field_main_image }}
-        {% endif %}
-      </div> #}
-      
-      
-      {# <div class="card-image">
-         {% if content.field_image['#items'].0.entity is not empty %}
-        {% set image_entity = content.field_image['#items'].0.entity %}
-          <img src="{{ image_entity.uri.value | image_style('cover_embedded') }}" alt="{{ image_entity.alt }}" title="{{ image_entity.title }}">
-        {% elseif node.field_media[0] is not empty  %}
-          {{ node.field_media.entity|view('embedded') }}
-        {% else %}
-        {{ content.field_main_image }}
-        {% endif %}
-      </div> #}
-
-
-{# {% if content.field_cover_image[0] %}
-      {% set image_uri = node.field_cover_image|file_uri %}
-      {% set image_alt = node.field_cover_image.alt %}
-      {% if image_uri is not null %}
-        <div class="m-auto shadow-lg w-fit">
-          <img src="{{ image_uri|image_style('search_cover') }}" alt="{{ image_alt }}" />
-         </div>
-      {% endif %}
-        {% else %}
-          <div class="m-auto shadow-lg w-fit not-prose">
-            {{ node.field_media[0].entity|view('search_cover') }}
-          </div>
-      {% endif %} #}
-
-
-      {# <div class="cover">
-        {% if content.field_image['#items'].0.entity is not empty %}
-        {% set image_entity = content.field_image['#items'].0.entity %}
-          <img src="{{ image_entity.uri.value | image_style('cover_embedded') }}" alt="{{ image_entity.alt }}" title="{{ image_entity.title }}">
-        {% elseif node.field_media[0] is not empty  %}
-          {{ node.field_media.entity|view('embedded') }}
-        {% else %}
-        {% endif %}
-      </div> #}
-
-
+  </div>
 
 
 
@@ -172,32 +99,31 @@
           {{ content.field_document_type.0 }}, {{ node.created.value|format_date('redaa_medium') }}
       </div>
 
-      {# {% if content.field_short_title is not empty %}
-        <h3 class="card-title">
-          {{ content.field_short_title }}
-        </h3>
-        {% else %}
-        <h3 class="card-title">
-          {{ label }}
-        </h3>
-      {% endif %} #}
 
       <h3 class="card-title">
+      {% if content.field_short_title.value %}
+      {{ content.field_short_title }}
+      {% else %}
         {{ label }}
+       {% endif %}
       </h3>
 
-
+     
       <div>
       {% if content.search_api_excerpt %}
-      {{ content.search_api_excerpt }}
+        {{ content.search_api_excerpt }}
+      {% elseif content.field_standfirst %}
+        {{ content.field_standfirst }}
       {% else %}
-      {% set body_text = content.body|render|striptags|trim %}
-      {% set max_length = 250 %} 
-      {% set truncated_text = body_text|length > max_length ? body_text|slice(0, max_length) ~ '...' : body_text %}
-      {{ truncated_text }}
+        {{ content.body.0 }}
       {% endif %}
       </div>
   </div>
 
 </article>
-</a>
+</a>        
+
+{# {% set body_text = content.body|render|striptags|trim %}
+        {% set max_length = 250 %} 
+        {% set truncated_text = body_text|length > max_length ? body_text|slice(0, max_length) ~ '...' : body_text %}
+        {{ truncated_text }} #}
