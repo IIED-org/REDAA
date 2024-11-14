@@ -95,6 +95,13 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_standfirst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
@@ -108,7 +115,6 @@ hidden:
   field_media: true
   field_organisation: true
   field_publisher: true
-  field_standfirst: true
   field_tags: true
   field_theme: true
   field_video: true

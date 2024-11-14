@@ -47,6 +47,7 @@
 
 .card-image {
   margin-right: 1.125rem;
+  min-width: 11.25rem;
 }
 
 .meta {
@@ -67,4 +68,8 @@
     line-height: 2rem
 }
   }
+
+
+
+
 

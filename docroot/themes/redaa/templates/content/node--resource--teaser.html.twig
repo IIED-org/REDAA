@@ -96,7 +96,10 @@
 
   <div class="card-contents-wrapper">
       <div class="meta">
-          {{ content.field_document_type.0 }}, {{ node.created.value|format_date('redaa_medium') }}
+        {% if node.field_document_type %}
+          {{ content.field_document_type.0 }}, 
+        {% endif %}
+          {{ node.created.value|format_date('redaa_medium') }}
       </div>
 
 
