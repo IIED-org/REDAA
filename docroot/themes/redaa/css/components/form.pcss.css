@@ -225,7 +225,7 @@ tr .form-item,
 .facet-summary-item--facet {
   text-decoration: none;
   list-style-type: none;
-
+  display: inline-flex;
 
 
   & .filter-chip {
@@ -250,9 +250,4 @@ tr .form-item,
     width: 24px;
   }
 
-}
-
-.block-facets-summary ul {
-  display: inline-flex
-;
 }

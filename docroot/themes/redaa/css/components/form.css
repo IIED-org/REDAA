@@ -271,7 +271,8 @@ tr .form-item, .container-inline .form-item {
 
 .facet-summary-item--facet {
   text-decoration: none;
-  list-style-type: none
+  list-style-type: none;
+  display: inline-flex
 
 }
 
@@ -296,8 +297,3 @@ tr .form-item, .container-inline .form-item {
     height: 1.5rem;
     width: 1.5rem;
   }
-
-.block-facets-summary ul {
-  display: inline-flex
-;
-}
