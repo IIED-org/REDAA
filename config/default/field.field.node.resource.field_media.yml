@@ -5,13 +5,14 @@ dependencies:
   config:
     - field.storage.node.field_media
     - media.type.document
+    - media.type.remote_video
     - node.type.resource
 id: node.resource.field_media
 field_name: field_media
 entity_type: node
 bundle: resource
 label: Document
-description: 'Upload a file for storage directly on redaa.org (n.b. <strong>Remote video</strong> is deprecated)'
+description: 'Upload a file for storage directly on redaa.org (n.b. <strong>Remote video</strong> is deprecated – do not use!)'
 required: false
 translatable: false
 default_value: {  }
@@ -21,6 +22,7 @@ settings:
   handler_settings:
     target_bundles:
       document: document
+      remote_video: remote_video
     sort:
       field: _none
       direction: ASC
