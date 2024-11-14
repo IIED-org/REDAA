@@ -10,7 +10,7 @@ dependencies:
 id: region_country
 name: 'Region / Country'
 weight: -2
-min_count: 0
+min_count: 1
 missing: false
 missing_label: others
 url_alias: region_country
