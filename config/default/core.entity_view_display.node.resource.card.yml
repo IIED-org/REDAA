@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.resource.field_standfirst
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
+    - field.field.node.resource.field_video
     - image.style.card_cover
     - node.type.resource
   module:
@@ -92,4 +93,6 @@ hidden:
   field_standfirst: true
   field_tags: true
   field_theme: true
+  field_video: true
   links: true
+  search_api_excerpt: true

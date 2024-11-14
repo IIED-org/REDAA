@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.resource.field_standfirst
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
+    - field.field.node.resource.field_video
     - image.style.medium
     - node.type.resource
   module:
@@ -275,3 +276,5 @@ hidden:
   field_short_title: true
   field_tags: true
   field_theme: true
+  field_video: true
+  search_api_excerpt: true
