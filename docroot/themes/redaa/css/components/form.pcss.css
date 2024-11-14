@@ -251,3 +251,8 @@ tr .form-item,
   }
 
 }
+
+.block-facets-summary ul {
+  display: inline-flex
+;
+}

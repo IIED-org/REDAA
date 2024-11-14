@@ -296,3 +296,8 @@ tr .form-item, .container-inline .form-item {
     height: 1.5rem;
     width: 1.5rem;
   }
+
+.block-facets-summary ul {
+  display: inline-flex
+;
+}
