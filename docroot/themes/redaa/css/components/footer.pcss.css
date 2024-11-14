@@ -50,4 +50,5 @@
 .region--footer-top {
   background-color: var(--color--gold);
   margin-bottom: 2rem;
+  border-radius: var(--border-radius-l);
 }

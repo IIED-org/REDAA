@@ -95,6 +95,19 @@
     <div class="layout layout--twocol-section layout--twocol-section--33-67">
       <div class="layout__region layout__region--first">
 
+
+      <div class="cover">
+        {% if content.field_image['#items'].0.entity is not empty %}
+        {% set image_entity = content.field_image['#items'].0.entity %}
+          <img src="{{ image_entity.uri.value | image_style('cover_embedded') }}" alt="{{ image_entity.alt }}" title="{{ image_entity.title }}">
+        
+        {% elseif node.field_media[0] is not empty  %}
+          {{ node.field_media.entity|view('embedded') }}
+        {% else %}
+        {% endif %}
+      </div>
+
+{# 
       {% if content.field_image['#items'].0.entity is not empty %}
         {% set image_entity = content.field_image['#items'].0.entity %}
           <img src="{{ image_entity.uri.value | image_style('cover_embedded') }}" alt="{{ image_entity.alt }}" title="{{ image_entity.title }}">
@@ -102,6 +115,7 @@
 
         {% if content.field_media is defined and content.field_media['#items'] is not empty %}
           {% set media_items = content.field_media['#items'] %}
+         
           {% if media_items[0] is not empty and media_items[0].entity is not empty %}
             {% set referenced_media = media_items[0].entity %}
             {% if referenced_media %}
@@ -113,12 +127,12 @@
         {% else %}
         {% endif %}
 
-      {% endif %}
-
-        {# {% if content.field_media['#items'].0 %}
-        {{ drupal_entity('media', content.field_media['#items'].0.entity.id, 'embedded') }}
-        {% endif %}
       {% endif %} #}
+
+
+
+
+
 
 
       </div>

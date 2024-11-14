@@ -10,6 +10,10 @@
  * Site header.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .site-header {
   position: relative;
   /**
@@ -23,7 +27,7 @@
 
 .site-header {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
-    min-height: 11.25rem;
+    min-height: 10rem;
     border-bottom: solid 1px transparent /* Will show in Windows high contrast mode. */
 }
   }
@@ -36,6 +40,7 @@
   -ms-grid-row-align: stretch;
   align-self: stretch;
   background-color: #005890;
+  border-radius: 0 0 2.8125rem 2.8125rem;
 }
 
 .site-header__fixable {
@@ -54,7 +59,7 @@
     body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed {
       position: fixed;
       z-index: 102; /* Appear above body content that is position: relative */
-      top: -9rem;
+      top: -8rem;
       max-width: 98.125rem;
     }
   body:not(.is-always-mobile-nav) {
@@ -62,13 +67,13 @@
     /* Toolbar is fixed, and tray is either vertical or closed and horizontal. */
   }
       body:not(.is-always-mobile-nav).toolbar-vertical.toolbar-fixed .site-header__fixable.is-fixed, body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .site-header__fixable.is-fixed {
-        top: -6.5625rem;
+        top: -5.5625rem;
       }
   body:not(.is-always-mobile-nav) {
     /* Toolbar is fixed, and tray is open and horizontal. */
   }
     body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed.toolbar-tray-open .site-header__fixable.is-fixed {
-      top: -4.0625rem;
+      top: -3.0625rem;
     }
 }
 

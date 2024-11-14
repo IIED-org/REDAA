@@ -13,6 +13,10 @@
  * toggles fixing the header to the top of the viewport.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .sticky-header-toggle {
   display: none
 }
@@ -25,12 +29,13 @@
     align-items: center;
     justify-content: center;
     width: 5rem;
-    height: 4.5rem;
+    height: 4rem;
     pointer-events: none;
     opacity: 0;
     border: 0;
     outline: 0;
-    background-color: #005890
+    background-color: #005890;
+    border-radius: 0 0 2.8125rem 2.8125rem
 }
 
     .sticky-header-toggle:focus {
@@ -58,7 +63,7 @@ body.is-always-mobile-nav .sticky-header-toggle {
 
 .sticky-header-toggle__icon {
   position: relative;
-  width: 2.25rem;
+  width: 2rem;
   height: 1.3125rem;
   transition: opacity 0.2s;
   pointer-events: none;
@@ -73,11 +78,11 @@ body.is-always-mobile-nav .sticky-header-toggle {
   }
 
 [dir="ltr"] .sticky-header-toggle__icon > span:nth-child(1) {
-      left: 0
+      left: 0;
 }
 
 [dir="rtl"] .sticky-header-toggle__icon > span:nth-child(1) {
-      right: 0
+      right: 0;
 }
 
 .sticky-header-toggle__icon > span:nth-child(1) {
@@ -90,11 +95,11 @@ body.is-always-mobile-nav .sticky-header-toggle {
     }
 
 [dir="ltr"] .sticky-header-toggle__icon > span:nth-child(2) {
-      left: 0
+      left: 0;
 }
 
 [dir="rtl"] .sticky-header-toggle__icon > span:nth-child(2) {
-      right: 0
+      right: 0;
 }
 
 .sticky-header-toggle__icon > span:nth-child(2) {
@@ -107,11 +112,11 @@ body.is-always-mobile-nav .sticky-header-toggle {
     }
 
 [dir="ltr"] .sticky-header-toggle__icon > span:nth-child(3) {
-      left: 0
+      left: 0;
 }
 
 [dir="rtl"] .sticky-header-toggle__icon > span:nth-child(3) {
-      right: 0
+      right: 0;
 }
 
 .sticky-header-toggle__icon > span:nth-child(3) {

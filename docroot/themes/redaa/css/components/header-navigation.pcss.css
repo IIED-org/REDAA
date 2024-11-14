@@ -107,9 +107,10 @@ body:not(.is-always-mobile-nav) .header-nav {
     align-items: center;
     justify-content: flex-end;
     max-width: none;
-    height: var(--header-height-wide-when-fixed);
+    /* height: var(--header-height-wide-when-fixed); */
+    height: auto;
     margin-block-start: auto;
-    margin-block-end: auto;
+    /* margin-block-end: auto; */
     padding-block: 0;
     padding-inline-start: 0;
     padding-inline-end: 0;

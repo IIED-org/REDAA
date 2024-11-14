@@ -193,9 +193,10 @@ body:not(.is-always-mobile-nav) .header-nav {
     align-items: center;
     justify-content: flex-end;
     max-width: none;
-    height: 12rem;
+    /* height: var(--header-height-wide-when-fixed); */
+    height: auto;
     margin-top: auto;
-    margin-bottom: auto;
+    /* margin-block-end: auto; */
     padding-top: 0;
     padding-bottom: 0;
     transition: transform 0.2s;

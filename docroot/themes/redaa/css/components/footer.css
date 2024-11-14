@@ -10,6 +10,10 @@
  * Footer regions.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .site-footer {
   position: relative; /* stack above left social bar */
   color: #6e7172;
@@ -18,11 +22,11 @@
 }
 
 [dir="ltr"] .site-footer .menu {
-    margin-left: 0
+    margin-left: 0;
 }
 
 [dir="rtl"] .site-footer .menu {
-    margin-right: 0
+    margin-right: 0;
 }
 
 .site-footer .menu {
@@ -30,11 +34,11 @@
   }
 
 [dir="ltr"] .site-footer .menu ul {
-      margin-left: 1.125rem
+      margin-left: 1rem;
 }
 
 [dir="rtl"] .site-footer .menu ul {
-      margin-right: 1.125rem
+      margin-right: 1rem;
 }
 
 .site-footer .menu ul {
@@ -42,9 +46,9 @@
     }
 
 .site-footer .menu li {
-      margin-bottom: 0.5625rem;
+      margin-bottom: 0.5rem;
       float: left;
-      padding: 1.125rem;
+      padding: 1rem;
     }
 
 .site-footer a {
@@ -57,10 +61,10 @@
 
 @media (min-width: 75rem) {
   [dir="ltr"] body:not(.is-always-mobile-nav) .site-footer {
-    border-left: solid 80px #f1f4f7
+    border-left: solid 80px #f1f4f7;
   }
   [dir="rtl"] body:not(.is-always-mobile-nav) .site-footer {
-    border-right: solid 80px #f1f4f7
+    border-right: solid 80px #f1f4f7;
   }
 }
 
@@ -74,4 +78,5 @@
 .region--footer-top {
   background-color: #F4BB37;
   margin-bottom: 2rem;
+  border-radius: 1.5rem;
 }

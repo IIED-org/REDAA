@@ -18,7 +18,7 @@
   padding-block: var(--sp2);
 
   @media (--nav) {
-    padding-block: var(--sp4) calc(13 * var(--sp));
+    padding-block: var(--sp4) calc(4 * var(--sp));
   }
 }
 .region--footer_top__inner,
