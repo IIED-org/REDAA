@@ -20,7 +20,7 @@ dependencies:
     - field.field.node.resource.field_standfirst
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
-    - image.style.thumbnail_sq
+    - image.style.max_180
     - node.type.resource
   module:
     - datetime
@@ -45,28 +45,12 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_document_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_ecosystem_landscape:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: thumbnail_sq
+      image_style: max_180
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -83,7 +67,7 @@ content:
       view_mode: thumbnail
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_publication_date:
     type: datetime_default
@@ -110,6 +94,7 @@ content:
 hidden:
   field_author_s_: true
   field_countries: true
+  field_document_type: true
   field_ecosystem_landscape: true
   field_link: true
   field_media: true
