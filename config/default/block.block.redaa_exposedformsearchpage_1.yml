@@ -1,0 +1,28 @@
+uuid: 6ff4d8e8-b524-4355-ba96-0ad8b65829f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - system
+    - views
+  theme:
+    - redaa
+id: redaa_exposedformsearchpage_1
+theme: redaa
+region: content_wide
+weight: -7
+provider: null
+plugin: 'views_exposed_filter_block:search-page_1'
+settings:
+  id: 'views_exposed_filter_block:search-page_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: 'Filter by keyword'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/search*\r\n/resources*"

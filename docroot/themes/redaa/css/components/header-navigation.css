@@ -10,28 +10,32 @@
  * Navigation in header.
  */
 
-[dir="ltr"] .header-nav {
-  left: 100%
-}
-
-[dir="rtl"] .header-nav {
-  right: 100%
+.pb1 {
+  padding-bottom: 1rem;
 }
 
 [dir="ltr"] .header-nav {
-  padding-left: 1.125rem
+  left: 100%;
 }
 
 [dir="rtl"] .header-nav {
-  padding-right: 1.125rem
+  right: 100%;
 }
 
 [dir="ltr"] .header-nav {
-  padding-right: 1.125rem
+  padding-left: 1rem;
 }
 
 [dir="rtl"] .header-nav {
-  padding-left: 1.125rem
+  padding-right: 1rem;
+}
+
+[dir="ltr"] .header-nav {
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .header-nav {
+  padding-left: 1rem;
 }
 
 .header-nav {
@@ -50,14 +54,14 @@
   max-width: 31.25rem;
   height: 100%;
   padding-top: 0;
-  padding-bottom: 1.125rem;
+  padding-bottom: 1rem;
   /**
    * Create room for the "close" button. We cannot use margin because The
    * mobile navigation needs to slide beneath the button, but we also cannot
    * use padding because that would enable the button to scroll out of the
    * viewport on short screens.
    */
-  border-top: solid #fff 54px;
+  border-top: solid #fff 48px;
   background-color: #fff;
   box-shadow: 0 0 72px rgba(0, 0, 0, 0.1)
 }
@@ -77,23 +81,23 @@
 @media (min-width: 31.25rem) {
 
 .header-nav {
-    border-top-width: 90px
+    border-top-width: 80px
 }
   }
 
 @media (min-width: 43.75rem) {
 
 [dir="ltr"] .header-nav {
-    padding-left: 3.375rem
+    padding-left: 3rem;
   }
 
 [dir="rtl"] .header-nav {
-    padding-right: 3.375rem
+    padding-right: 3rem;
   }
 
 .header-nav {
-    padding-bottom: 3.375rem;
-    border-top-width: 126px
+    padding-bottom: 3rem;
+    border-top-width: 112px
 }
   }
 
@@ -132,13 +136,13 @@ html.js .header-nav {
 /* Toolbar is fixed, and tray is vertical. */
 
 body.toolbar-vertical .header-nav {
-  border-top-width: 93px
+  border-top-width: 87px
 }
 
 @media (min-width: 31.25rem) {
 
 body.toolbar-vertical .header-nav {
-    border-top-width: 129px
+    border-top-width: 119px
 }
   }
 
@@ -146,9 +150,8 @@ body.toolbar-vertical .header-nav {
 
 @media (min-width: 43.75rem) {
 
-body.toolbar-vertical .header-nav,
-body.toolbar-horizontal.toolbar-fixed .header-nav {
-    border-top-width: 165px
+body.toolbar-vertical .header-nav, body.toolbar-horizontal.toolbar-fixed .header-nav {
+    border-top-width: 151px
 }
   }
 
@@ -157,26 +160,26 @@ body.toolbar-horizontal.toolbar-fixed .header-nav {
 @media (min-width: 43.75rem) {
 
 body.toolbar-horizontal.toolbar-fixed.toolbar-tray-open .header-nav {
-    border-top-width: 205px
+    border-top-width: 191px
 }
   }
 
 @media (min-width: 75rem) {
 
 [dir="ltr"] body:not(.is-always-mobile-nav) .header-nav {
-    padding-left: 0
+    padding-left: 0;
   }
 
 [dir="rtl"] body:not(.is-always-mobile-nav) .header-nav {
-    padding-right: 0
+    padding-right: 0;
   }
 
 [dir="ltr"] body:not(.is-always-mobile-nav) .header-nav {
-    padding-right: 0
+    padding-right: 0;
   }
 
 [dir="rtl"] body:not(.is-always-mobile-nav) .header-nav {
-    padding-left: 0
+    padding-left: 0;
   }
 
 body:not(.is-always-mobile-nav) .header-nav {
@@ -190,8 +193,10 @@ body:not(.is-always-mobile-nav) .header-nav {
     align-items: center;
     justify-content: flex-end;
     max-width: none;
-    height: 6.75rem;
+    /* height: var(--header-height-wide-when-fixed); */
+    height: auto;
     margin-top: auto;
+    /* margin-block-end: auto; */
     padding-top: 0;
     padding-bottom: 0;
     transition: transform 0.2s;
@@ -207,9 +212,8 @@ body.is-always-mobile-nav {
 
 @media (min-width: 75rem) {
 
-body.is-always-mobile-nav.toolbar-vertical .header-nav,
-  body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed .header-nav {
-      border-top-width: 237px
+body.is-always-mobile-nav.toolbar-vertical .header-nav, body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed .header-nav {
+      border-top-width: 215px
   }
     }
 
@@ -221,40 +225,40 @@ body.is-always-mobile-nav {
 @media (min-width: 75rem) {
 
 body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed.toolbar-tray-open .header-nav {
-      border-top-width: 277px
+      border-top-width: 255px
   }
     }
 
 @media (min-width: 75rem) {
 
 [dir="ltr"] body.is-always-mobile-nav .header-nav {
-      padding-right: 1.125rem
+      padding-right: 1rem;
   }
 
 [dir="rtl"] body.is-always-mobile-nav .header-nav {
-      padding-left: 1.125rem
+      padding-left: 1rem;
   }
 
 body.is-always-mobile-nav .header-nav {
       overflow: auto;
-      max-width: calc(50vw - 4.40625rem);
+      max-width: calc(50vw - 3.96875rem);
       transition: transform 0.2s, visibility 0.2s;
-      border-top-width: 198px
+      border-top-width: 176px
   }
     }
 
 @media (min-width: 90rem) {
 
 [dir="ltr"] body.is-always-mobile-nav .header-nav {
-      padding-right: calc(100vw - 88.875rem)
+      padding-right: calc(100vw - 88.375rem);
   }
 
 [dir="rtl"] body.is-always-mobile-nav .header-nav {
-      padding-left: calc(100vw - 88.875rem)
+      padding-left: calc(100vw - 88.375rem);
   }
 
 body.is-always-mobile-nav .header-nav {
-      max-width: calc(100vw - 48.9375rem)
+      max-width: calc(100vw - 48.1875rem)
   }
     }
 
@@ -263,11 +267,11 @@ body.is-always-mobile-nav .header-nav {
 }
 
 [dir="ltr"] .header-nav-overlay {
-  left: 0
+  left: 0;
 }
 
 [dir="rtl"] .header-nav-overlay {
-  right: 0
+  right: 0;
 }
 
 .header-nav-overlay {
@@ -278,7 +282,7 @@ body.is-always-mobile-nav .header-nav {
   width: 100%;
   height: 100vh;
   opacity: 0.2;
-  background: #0d77b5
+  background: #005890
 }
 
 @media (forced-colors: active) {

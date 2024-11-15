@@ -10,13 +10,17 @@
  * Node specific styles.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .node__meta {
   display: flex;
   align-items: center;
-  margin-bottom: 1.125rem;
+  margin-bottom: 1rem;
   color: #6e7172;
   font-size: 0.875rem;
-  line-height: 1.125rem
+  line-height: 1rem
 }
 
 .node__meta a {
@@ -26,21 +30,21 @@
 @media (min-width: 31.25rem) {
 
 .node__meta {
-    margin-bottom: 2.25rem
+    margin-bottom: 2rem
 }
   }
 
 [dir="ltr"] .node__author-image img {
-  margin-right: 0.5625rem
+  margin-right: 0.5rem;
 }
 
 [dir="rtl"] .node__author-image img {
-  margin-left: 0.5625rem
+  margin-left: 0.5rem;
 }
 
 .node__author-image img {
-  width: 2.8125rem;
-  height: 2.8125rem;
+  width: 2.5rem;
+  height: 2.5rem;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
@@ -67,13 +71,13 @@
 }
 
 .node__content {
-  padding-bottom: 1.125rem
+  padding-bottom: 1rem
 }
 
 @media (min-width: 62.5rem) {
 
 .node__content {
-    padding-bottom: 1.6875rem
+    padding-bottom: 1.5rem
 }
   }
 
@@ -81,3 +85,27 @@
   /* There is no variable for the color - #fff4f4. */
   background-color: #fff4f4;
 }
+
+/* node resources */
+
+.details .field:not(:last-child) {
+  margin-bottom: 0;
+ }
+
+.date, .details {
+  margin-bottom: 2rem;
+ }
+
+.comma-list .field__item {
+  display: inline
+}
+
+.comma-list .field__item:after {
+    content: ", ";
+  }
+
+.comma-list .field__item:last-child::after {
+  content: "";
+}
+
+

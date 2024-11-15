@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a facet result item.
+ *
+ * Available variables:
+ * - value: The item value.
+ * - raw_value: The raw item value.
+ * - show_count: If this facet provides count.
+ * - count: The amount of results.
+ * - is_active: The item is active.
+ * - facet: The facet for this result item.
+ *   - id: the machine name for the facet.
+ *   - label: The facet label.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if is_active %}
+  <span class="filter-chip">
+  <span class="facet-item__value">{{ value }}</span>
+    <span class="facet-item__status js-facet-deactivate">
+   <svg viewBox="0 0 24 24" focusable="false" height="24" width="24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+    </span>
+  </span>
+  {% else %}
+  <span class="facet-item__value">{{ value }}</span>
+{% endif %}
+{% if show_count %}
+  <span class="facet-item__count">({{ count }})</span>
+{% endif %}
+

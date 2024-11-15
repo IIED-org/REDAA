@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.resource.field_standfirst
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
+    - field.field.node.resource.field_video
     - image.style.wide
     - node.type.resource
   module:
@@ -192,6 +193,23 @@ third_party_settings:
                   svg_render_as_image: true
                 third_party_settings: {  }
             weight: 8
+            additional: {  }
+          d7a99fa1-adcb-4b80-a123-ae8413798986:
+            uuid: d7a99fa1-adcb-4b80-a123-ae8413798986
+            region: content
+            configuration:
+              id: 'field_block:node:resource:field_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 9
             additional: {  }
         third_party_settings: {  }
       -
@@ -474,9 +492,19 @@ content:
     third_party_settings: {  }
     weight: 113
     region: content
+  field_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 116
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

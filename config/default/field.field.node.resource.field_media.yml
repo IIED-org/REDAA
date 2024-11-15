@@ -12,7 +12,7 @@ field_name: field_media
 entity_type: node
 bundle: resource
 label: Document
-description: 'Upload a file for storage directly on redaa.org (n.b. <strong>Remote video</strong> is deprecated)'
+description: 'Upload a file for storage directly on redaa.org (n.b. <strong>Remote video</strong> is deprecated – do not use!)'
 required: false
 translatable: false
 default_value: {  }

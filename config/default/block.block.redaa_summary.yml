@@ -1,0 +1,28 @@
+uuid: 03a085c3-b27b-4d30-8c4f-67d1b757eb2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets_summary.facets_summary.summary
+  module:
+    - facets_summary
+    - system
+  theme:
+    - redaa
+id: redaa_summary
+theme: redaa
+region: content
+weight: -9
+provider: null
+plugin: 'facets_summary_block:summary'
+settings:
+  id: 'facets_summary_block:summary'
+  label: Summary
+  label_display: '0'
+  provider: facets_summary
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/resources*'

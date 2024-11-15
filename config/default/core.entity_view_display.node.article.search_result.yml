@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_result
     - field.field.node.article.body
+    - field.field.node.article.field_countries
     - field.field.node.article.field_document_type
     - field.field.node.article.field_ecosystem_landscape
     - field.field.node.article.field_image
@@ -15,6 +16,7 @@ dependencies:
     - image.style.thumbnail_sq
     - node.type.article
   module:
+    - address
     - field_layout
     - layout_builder
     - svg_image
@@ -39,15 +41,22 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 300
+      trim_length: 256
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_countries:
+    type: address_country_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_document_type:
     type: entity_reference_label
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
@@ -57,7 +66,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_image:
     type: image
@@ -74,19 +83,11 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_short_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_tags:
     type: entity_reference_label
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 4
     region: content
@@ -96,8 +97,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 7
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   field_main_image: true
+  field_short_title: true
   links: true

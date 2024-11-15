@@ -1,0 +1,22 @@
+uuid: 61e7e24c-905c-43fe-be4d-256ee5fdee88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_countries
+    - node.type.article
+  module:
+    - address
+id: node.article.field_countries
+field_name: field_countries
+entity_type: node
+bundle: article
+label: Country
+description: 'Country or countries relevant to the project, article or resource'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

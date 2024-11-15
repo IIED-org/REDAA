@@ -11,7 +11,7 @@ id: node.resource.field_link
 field_name: field_link
 entity_type: node
 bundle: resource
-label: 'Link to resource'
+label: 'Link to external resource'
 description: "Link to a resource on external site, e.g. iied.org publications library. Link text defaults to 'Download from source'"
 required: false
 translatable: false

@@ -11,7 +11,7 @@ _core:
 id: redaa_help
 theme: redaa
 region: content_above
-weight: 0
+weight: -8
 provider: null
 plugin: help_block
 settings:

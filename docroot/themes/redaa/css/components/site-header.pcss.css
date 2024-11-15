@@ -27,6 +27,7 @@
   align-items: flex-end;
   align-self: stretch;
   background-color: var(--color--blue-20);
+  border-radius: 0 0 45px 45px;
 }
 
 .site-header__fixable {

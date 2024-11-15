@@ -16,3 +16,7 @@
     margin-block-end: var(--sp3);
   }
 }
+
+.path-resources .region--content-above > * {
+  margin-bottom: 0;
+}

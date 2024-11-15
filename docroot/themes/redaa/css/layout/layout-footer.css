@@ -10,6 +10,10 @@
  * Grid system definition for the footer top and footer bottom layouts.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 /**
  * Creates stacking context ensuring that child elements can never appear in
  * front of mobile navigation.
@@ -21,20 +25,20 @@
 }
 
 .site-footer__inner {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem
+  padding-top: 2rem;
+  padding-bottom: 2rem
 }
 
 @media (min-width: 75rem) {
 
 .site-footer__inner {
-    padding-top: 4.5rem;
-    padding-bottom: 14.625rem
+    padding-top: 4rem;
+    padding-bottom: 4rem
 }
   }
 
 .region--footer_top__inner > *, .region--footer_bottom__inner > * {
-    margin-bottom: 2.25rem
+    margin-bottom: 2rem
   }
 
 @media (min-width: 43.75rem) {
@@ -44,19 +48,18 @@
       margin-bottom: 0
   }
 
-      [dir="ltr"] .region--footer_top__inner > *:not(:last-child),[dir="ltr"]  .region--footer_bottom__inner > *:not(:last-child) {
-        margin-right: 2.25rem;
+      [dir="ltr"] .region--footer_top__inner > *:not(:last-child), [dir="ltr"]  .region--footer_bottom__inner > *:not(:last-child) {
+        margin-right: 2rem;
   }
 
-      [dir="rtl"] .region--footer_top__inner > *:not(:last-child),[dir="rtl"]  .region--footer_bottom__inner > *:not(:last-child) {
-        margin-left: 2.25rem;
+      [dir="rtl"] .region--footer_top__inner > *:not(:last-child), [dir="rtl"]  .region--footer_bottom__inner > *:not(:last-child) {
+        margin-left: 2rem;
   }
     }
 
 @media (min-width: 43.75rem) {
 
-.region--footer_top__inner,
-.region--footer_bottom__inner {
+.region--footer_top__inner, .region--footer_bottom__inner {
     display: flex;
     flex-wrap: wrap
 }

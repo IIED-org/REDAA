@@ -1,0 +1,15 @@
+uuid: 872f9ad0-6d73-4390-90ec-7954259cb5c7
+langcode: en
+status: true
+dependencies: {  }
+name: max_180
+label: 'Max 180'
+effects:
+  c58557f2-bb4c-4e99-b7e0-b07fa2935780:
+    uuid: c58557f2-bb4c-4e99-b7e0-b07fa2935780
+    id: image_scale
+    weight: 1
+    data:
+      width: 180
+      height: null
+      upscale: false

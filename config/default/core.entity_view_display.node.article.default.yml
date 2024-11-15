@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_countries
     - field.field.node.article.field_document_type
     - field.field.node.article.field_ecosystem_landscape
     - field.field.node.article.field_image
@@ -14,6 +15,7 @@ dependencies:
     - image.style.wide
     - node.type.article
   module:
+    - address
     - field_layout
     - layout_builder
     - layout_discovery
@@ -161,6 +163,21 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 9
             additional: {  }
+          93b23203-009d-46a7-9cfe-2e424f0390e3:
+            uuid: 93b23203-009d-46a7-9cfe-2e424f0390e3
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_countries'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: address_country_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
@@ -175,6 +192,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_countries:
+    type: address_country_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_document_type:
     type: entity_reference_label
@@ -234,3 +258,4 @@ content:
     region: content
 hidden:
   field_main_image: true
+  search_api_excerpt: true

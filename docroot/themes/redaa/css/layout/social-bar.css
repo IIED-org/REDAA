@@ -11,79 +11,83 @@
  .
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 @media (min-width: 75rem) {
 
 .social-bar {
     flex-shrink: 0;
     width: 5rem;
-    background-color: #f1f4f7
+    background-color: #fff
 }
   }
 
 [dir="ltr"] .social-bar__inner {
-  padding-left: 1.125rem
+  padding-left: 1rem;
 }
 
 [dir="rtl"] .social-bar__inner {
-  padding-right: 1.125rem
+  padding-right: 1rem;
 }
 
 [dir="ltr"] .social-bar__inner {
-  padding-right: 1.125rem
+  padding-right: 1rem;
 }
 
 [dir="rtl"] .social-bar__inner {
-  padding-left: 1.125rem
+  padding-left: 1rem;
 }
 
 .social-bar__inner {
   position: relative;
-  padding-top: 0.5625rem;
-  padding-bottom: 0.5625rem
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem
 }
 
 @media (min-width: 75rem) {
 
 [dir="ltr"] .social-bar__inner {
-    padding-left: 0
-}
+    padding-left: 0;
+  }
 
 [dir="rtl"] .social-bar__inner {
-    padding-right: 0
-}
+    padding-right: 0;
+  }
 
 [dir="ltr"] .social-bar__inner {
-    padding-right: 0
-}
+    padding-right: 0;
+  }
 
 [dir="rtl"] .social-bar__inner {
-    padding-left: 0
-}
+    padding-left: 0;
+  }
 
 .social-bar__inner {
     position: relative;
     width: 5rem;
-    padding-top: 5.625rem;
-    padding-bottom: 5.625rem
+    padding-top: 5rem;
+    padding-bottom: 5rem
 }
 
     [dir="ltr"] .social-bar__inner.is-fixed {
-      left: 0
-}
+      left: 0;
+  }
 
     [dir="rtl"] .social-bar__inner.is-fixed {
-      right: 0
-}
+      right: 0;
+  }
 
     .social-bar__inner.is-fixed {
       position: fixed;
-      top: 6.75rem;
-      height: calc(100vh - 6.75rem);
+      top: 6rem;
+      height: calc(100vh - 6rem);
     }
   }
 
 .rotate > * {
-    margin-bottom: 2.25rem
+    margin-bottom: 2rem
   }
 
 @media (min-width: 75rem) {
@@ -95,25 +99,25 @@
   }
 
       [dir="ltr"] .rotate > *:not(:first-child) {
-        margin-right: 2.25rem
-}
+        margin-right: 2rem;
+  }
 
       [dir="rtl"] .rotate > *:not(:first-child) {
-        margin-left: 2.25rem
-}
+        margin-left: 2rem;
+  }
     }
 
 @media (min-width: 75rem) {
 
 [dir="ltr"] .rotate .contextual {
       left: 100%;
-      right: auto
-}
+      right: auto;
+  }
 
 [dir="rtl"] .rotate .contextual {
       right: 100%;
-      left: auto
-}
+      left: auto;
+  }
 
 .rotate .contextual {
       transform: rotate(90deg); /* LTR */
@@ -121,23 +125,23 @@
   }
 
       [dir="ltr"] .rotate .contextual .trigger {
-        float: left
-}
+        float: left;
+  }
 
       [dir="rtl"] .rotate .contextual .trigger {
-        float: right
-}
+        float: right;
+  }
     }
 
 @media (min-width: 75rem) {
 
 [dir="ltr"] .rotate {
-    left: 50%
-}
+    left: 50%;
+  }
 
 [dir="rtl"] .rotate {
-    right: 50%
-}
+    right: 50%;
+  }
 
 .rotate {
     position: absolute;
@@ -150,10 +154,9 @@
     .rotate #block-socialicons svg {
       transform: rotate(90deg);
     }
-    @supports ((width: -webkit-max-content) or (width: max-content)) {
+    @supports (width: max-content) {
 
 .rotate {
-      width: -webkit-max-content;
       width: max-content
 }
     }

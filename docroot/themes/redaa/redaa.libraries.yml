@@ -24,6 +24,7 @@ global-styling:
       css/components/embedded-media.css: {}
       css/components/footer.css: {}
       css/components/button.css: {}
+      css/components/card.css: {}      
       css/components/container-inline.module.css: {}
       css/components/fieldset.css: {}
       css/components/field.css: {}
@@ -88,6 +89,12 @@ content-below:
   css:
     layout:
       css/layout/region-content-below.css: {}
+
+content-wide:
+  version: VERSION
+  css:
+    layout:
+      css/layout/region-content-wide.css: {}      
 
 content_moderation:
   version: VERSION

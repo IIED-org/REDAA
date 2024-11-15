@@ -29,8 +29,8 @@ dependencies:
     - node.type.project
   module:
     - address
+    - datetime_range
     - options
-    - text
     - user
 id: node.project.search_result
 targetEntityType: node
@@ -44,6 +44,17 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_dates:
+    type: daterange_custom
+    label: inline
+    settings:
+      timezone_override: ''
+      date_format: 'F Y'
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_short_title:
     type: string
     label: hidden
@@ -51,13 +62,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_standfirst:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_subtype:
     type: list_default
@@ -85,12 +89,16 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   body: true
   feeds_item: true
-  field_dates: true
   field_ecosystem_landscape: true
   field_focal_countries_text: true
   field_focal_country: true
@@ -102,5 +110,6 @@ hidden:
   field_org: true
   field_publication_date: true
   field_related: true
+  field_standfirst: true
   field_thematic_priorities: true
   field_value: true

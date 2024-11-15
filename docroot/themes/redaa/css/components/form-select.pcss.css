@@ -11,7 +11,7 @@
 
 select {
   max-width: 100%;
-  height: var(--sp3);
+  min-height: 3.375rem;
   padding-block: 0;
   padding-inline-start: var(--sp);
   padding-inline-end: var(--sp3);

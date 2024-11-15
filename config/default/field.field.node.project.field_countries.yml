@@ -11,7 +11,7 @@ id: node.project.field_countries
 field_name: field_countries
 entity_type: node
 bundle: project
-label: Countries
+label: Country
 description: 'Country or countries where the project is operating'
 required: false
 translatable: false

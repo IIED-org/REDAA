@@ -11,7 +11,7 @@ _core:
 id: redaa_page_title
 theme: redaa
 region: content_above
-weight: -5
+weight: -9
 provider: null
 plugin: page_title_block
 settings:
@@ -23,4 +23,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: '<front>'
+    pages: "<front>\r\n/resources"

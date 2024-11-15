@@ -1,0 +1,96 @@
+uuid: ad5226b9-7f39-4f71-9ac1-f7e60e6ef94a
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.db_index
+    - views.view.search
+  module:
+    - search_api
+id: type
+name: 'Resource type / Project subtype'
+weight: 1
+min_count: 0
+missing: false
+missing_label: others
+url_alias: type
+facet_source_id: 'search_api:views_page__search__page_1'
+field_identifier: restype_subtype
+query_operator: and
+hard_limit: 0
+exclude: false
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+hierarchy:
+  type: taxonomy
+  config: {  }
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+widget:
+  type: dropdown
+  config:
+    show_numbers: true
+    default_option_label: '– Any –'
+empty_behavior:
+  behavior: none
+only_visible_when_facet_source_is_visible: true
+show_only_one_result: false
+show_title: false
+processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: -10
+    settings:
+      sort: DESC
+  combine_processor:
+    processor_id: combine_processor
+    weights:
+      build: -9
+    settings:
+      country:
+        combine: false
+        mode: null
+      region_country:
+        combine: false
+        mode: null
+      resource_type:
+        combine: true
+        mode: union
+      subtype:
+        combine: true
+        mode: union
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: -8
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: -9
+    settings:
+      sort: ASC
+  hierarchy_processor:
+    processor_id: hierarchy_processor
+    weights:
+      build: -6
+    settings: {  }
+  replace:
+    processor_id: replace
+    weights:
+      post_query: 50
+    settings:
+      replacements: "grantee_project|Grantee project\r\ncase_study_nf|Nature Facility case study\r\ndemo_project|Demonstrator project"
+  translate_entity_aggregated_fields:
+    processor_id: translate_entity_aggregated_fields
+    weights:
+      build: 5
+    settings: {  }
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: -7
+    settings: {  }

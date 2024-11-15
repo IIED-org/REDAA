@@ -142,3 +142,10 @@
   @extend .button;
   margin-right: var(--sp1);
 }
+
+#block-signupformoreinformation #mc_embed_signup .button {
+border-radius: 12px;
+height: 52px;
+padding: 10px 22px;
+font-size: 1.2rem;
+}

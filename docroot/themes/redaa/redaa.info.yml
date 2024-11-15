@@ -32,6 +32,7 @@ regions:
   content: Content
   sidebar: 'Sidebar'
   content_below: 'Content Below'
+  content_wide: 'Content Wide'
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'
 libraries-override:
