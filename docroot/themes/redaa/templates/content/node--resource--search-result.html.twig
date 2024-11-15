@@ -76,7 +76,7 @@
 %}
 
 <a href="{{ url }}" class="card-link">
-<article{{ attributes.addClass(classes) }}>
+  <article{{ attributes.addClass(classes) }}>
 
 
   <div class="card-image">
@@ -113,9 +113,9 @@
       {% if content.search_api_excerpt %}
         {{ content.search_api_excerpt }}
       {% elseif node.field_standfirst is not empty %}
-        {{ content.field_standfirst.0 }}
+        {{ content.field_standfirst.0|render|striptags }}
       {% else %}
-        {{ content.body.0 }}
+        {{ content.body.0|render|striptags }}
       {% endif %}
       </div>
   </div>
