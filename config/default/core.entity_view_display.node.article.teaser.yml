@@ -13,12 +13,11 @@ dependencies:
     - field.field.node.article.field_short_title
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
-    - image.style.medium
+    - image.style.max_180
     - node.type.article
   module:
     - field_layout
     - layout_builder
-    - layout_discovery
     - svg_image
     - text
     - user
@@ -28,75 +27,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
+    enabled: false
     allow_custom: false
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          03cb2cd6-f2df-4ba0-a406-9c3bd5082f6e:
-            uuid: 03cb2cd6-f2df-4ba0-a406-9c3bd5082f6e
-            region: content
-            configuration:
-              id: 'extra_field_block:node:article:links'
-              label: Links
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                settings: {  }
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          8b71b03d-76c8-482d-a166-004b925e9ea4:
-            uuid: 8b71b03d-76c8-482d-a166-004b925e9ea4
-            region: content
-            configuration:
-              id: 'field_block:node:article:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_summary_or_trimmed
-                label: hidden
-                settings:
-                  trim_length: 600
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          1be1cf45-6fd1-4da6-b9a5-56d3c86dfb29:
-            uuid: 1be1cf45-6fd1-4da6-b9a5-56d3c86dfb29
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_image'
-              label: 'Card image'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: medium
-                  image_loading:
-                    attribute: lazy
-                  svg_attributes:
-                    width: null
-                    height: null
-                  svg_render_as_image: true
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
 _core:
   default_config_hash: 83jX5ChAGdMzOxiDA_B1NjgebVMuD8lNVDgClg_QVP8
 id: node.article.teaser
@@ -108,48 +40,44 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 250
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_image:
     type: image
     label: hidden
     settings:
-      image_link: content
-      image_style: medium
+      image_link: ''
+      image_style: max_180
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
-    weight: -1
+    weight: 0
     region: content
-  field_main_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: full
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_tags:
-    type: entity_reference_label
+  field_short_title:
+    type: string
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 3
     region: content
 hidden:
   comment: true
   field_countries: true
   field_document_type: true
   field_ecosystem_landscape: true
-  field_short_title: true
+  field_main_image: true
+  field_tags: true
   field_theme: true
   search_api_excerpt: true
