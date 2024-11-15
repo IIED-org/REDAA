@@ -160,6 +160,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        created:
+          id: created
+          table: search_api_index_db_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         search_api_relevance:
           id: search_api_relevance
           table: search_api_index_db_index
@@ -172,19 +185,6 @@ display:
           expose:
             label: Relevance
             field_identifier: rel
-          exposed: false
-        field_dates:
-          id: field_dates
-          table: search_api_index_db_index
-          field: field_dates
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api
-          order: DESC
-          expose:
-            label: Date
-            field_identifier: date
           exposed: false
         title:
           id: title
