@@ -6,6 +6,7 @@ dependencies:
     - facets_summary.facets_summary.summary
   module:
     - facets_summary
+    - system
   theme:
     - redaa
 id: redaa_summary
@@ -20,4 +21,8 @@ settings:
   label_display: '0'
   provider: facets_summary
   context_mapping: {  }
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/resources*'
