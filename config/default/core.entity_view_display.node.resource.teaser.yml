@@ -21,12 +21,10 @@ dependencies:
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
     - field.field.node.resource.field_video
-    - image.style.medium
+    - image.style.max_180
     - node.type.resource
   module:
     - layout_builder
-    - layout_builder_boolean
-    - layout_discovery
     - svg_image
     - text
     - user
@@ -45,14 +43,22 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 2
+    region: content
+  field_document_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_image:
     type: image
-    label: hidden
+    label: above
     settings:
       image_link: ''
-      image_style: medium
+      image_style: max_180
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -60,8 +66,8 @@ content:
         height: null
       svg_render_as_image: true
     third_party_settings: {  }
-    weight: 102
-    region: 'true:first'
+    weight: 4
+    region: content
   field_standfirst:
     type: text_default
     label: hidden
@@ -72,12 +78,11 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
   field_author_s_: true
   field_countries: true
-  field_document_type: true
   field_ecosystem_landscape: true
   field_link: true
   field_main_image: true
