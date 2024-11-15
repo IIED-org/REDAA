@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * REDAA's theme implementation to display a node.
+ * REDAA's theme implementation to display a node teaser.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -67,58 +67,39 @@
  */
 #}
 
-{% set layout = layout ? 'layout--' ~ layout|clean_class %}
-
 {%
   set classes = [
-    'search--card',
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
 
-<a href="{{ url }}" class="card-link">
-  <article{{ attributes.addClass(classes) }}>
-
-  <div class="card-image">
-    
-      {% if content.field_image['#items'].0.entity is not empty %}
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="node__meta">
+        <span{{ author_attributes }}>
+          {{ 'By'|t }} {% apply spaceless %}<span class="node__author">{{ author_name }}</span>{% endapply %}, {{ date }}
+        </span>
+        {{ metadata }}
+      </div>
+    {% endif %}
+    {% if label and not page %}
+      <div class="node__top-wrapper">
         {{ content.field_image }}
-
-      {% elseif node.field_media is not empty %}
-        {{ node.field_media.entity|view('thumbnail') }}
-
-      {% else %}
-      {{ content.field_main_image }}
-      {% endif %}
-  </div>
-
-  <div class="card-contents-wrapper">
-      <div class="meta">
-        {%- if content.field_document_type %}
-          {{- content.field_document_type.0 -}}, 
-        {% endif -%}
-        {{- node.created.value|format_date('redaa_medium') -}}
+        <h2{{ title_attributes.addClass('node__title') }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
       </div>
-
-
-      <h3 class="card-title">
-      {% if node.field_short_title is not empty %}
-        {{ content.field_short_title.0|render|striptags }}
-      {% else %}
-        {{ label }}
-       {% endif %}
-      </h3>
-
-     
-      <div>
-      {% if content.search_api_excerpt %}
-        {{ content.search_api_excerpt }}
-      {% elseif node.field_standfirst is not empty %}
-        {{ content.field_standfirst.0|render|striptags }}
-      {% else %}
-        {{ content.body.0|render|striptags }}
-      {% endif %}
-      </div>
+    {% endif %}
+  </header>
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content|without('field_image', 'links') }}
   </div>
-
-  </article>
-</a>        
+</article>
