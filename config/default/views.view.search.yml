@@ -6,6 +6,11 @@ dependencies:
     - field.storage.node.body
     - search_api.index.db_index
     - system.menu.main
+    - taxonomy.vocabulary.document_type
+  content:
+    - 'taxonomy_term:document_type:1b7643eb-0823-4182-a37b-720aed8e773a'
+    - 'taxonomy_term:document_type:64c89622-f660-4d37-8874-65e9cb9a8f2d'
+    - 'taxonomy_term:document_type:eccb0aa2-1f10-45e3-bd02-2313c7cc66ce'
   module:
     - better_exposed_filters
     - search_api
@@ -290,63 +295,19 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-        restype_subtype:
-          id: restype_subtype
+        field_document_type:
+          id: field_document_type
           table: search_api_index_db_index
-          field: restype_subtype
+          field: field_document_type
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_string
-          operator: '!='
+          plugin_id: search_api_term
+          operator: not
           value:
-            min: ''
-            max: ''
-            value: '31'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: restype_subtype_op
-            label: 'Resource type / Project subtype'
-            description: null
-            use_operator: false
-            operator: restype_subtype_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: restype_subtype
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: null
-            max_placeholder: null
-            placeholder: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        restype_subtype_1:
-          id: restype_subtype_1
-          table: search_api_index_db_index
-          field: restype_subtype
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_string
-          operator: '!='
-          value:
-            min: ''
-            max: ''
-            value: '26'
+            31: 31
+            372: 372
+            26: 26
           group: 1
           exposed: false
           expose:
@@ -363,9 +324,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -378,6 +337,12 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          reduce_duplicates: false
+          vid: document_type
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
