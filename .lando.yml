@@ -4,6 +4,8 @@ config:
   php: '8.2'
   webroot: docroot
   xdebug: debug
+  composer: []
+  composer_version: '2'
 services:
   appserver:
     # Install Imagick PECL extension which isn't included with PHP 8.3
@@ -33,9 +35,6 @@ proxy:
   mailhog:
     - mail.redaa.lndo.site
 tooling:
-  composer:
-    service: appserver
-    cmd: '/usr/local/bin/composer'
   npm:
     service: node
   yarn:
