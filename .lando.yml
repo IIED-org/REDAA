@@ -4,6 +4,8 @@ config:
   php: '8.3'
   webroot: docroot
   xdebug: debug
+  composer: []
+  composer_version: '2'
 services:
   appserver:
     xdebug: debug
@@ -40,9 +42,6 @@ proxy:
   mailhog:
     - mail.redaa.lndo.site
 tooling:
-  composer:
-    service: appserver
-    cmd: '/usr/local/bin/composer'
   npm:
     service: node
   yarn:
