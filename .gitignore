@@ -87,8 +87,8 @@ nbproject/*
 # DevDesktop
 *.dd
 
-# NPM
-npm-debug.log
+# Log files
+*.log
 
 # Drush 9 Checksums
 drush/sites/.checksums

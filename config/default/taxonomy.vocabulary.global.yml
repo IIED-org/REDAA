@@ -1,0 +1,9 @@
+uuid: 5411e66b-c0d3-4015-89e2-746169bc3a19
+langcode: en
+status: true
+dependencies: {  }
+name: Global
+vid: global
+description: 'Sitewide terms for navigation / breadcrumbs'
+weight: 0
+new_revision: true

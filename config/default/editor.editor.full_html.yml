@@ -65,6 +65,6 @@ settings:
           label: Red
           element: '<blockquote class="red">'
     media_media:
-      allow_view_mode_override: false
+      allow_view_mode_override: true
 image_upload:
   status: false
