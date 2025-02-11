@@ -1,21 +1,28 @@
 name: redaa
 recipe: drupal10
 config:
-  php: '8.2'
+  php: '8.3'
   webroot: docroot
   xdebug: debug
 services:
   appserver:
+    xdebug: debug
+    config:
+      php: .lando.php.ini
     # Install Imagick PECL extension which isn't included with PHP 8.3
     # https://docs.lando.dev/plugins/php/extensions.html#installed-extensions
     build_as_root:
       - apt update && apt install libgmp-dev -y && docker-php-ext-install gmp
+      - apt install libmagickwand-dev libmagickcore-dev -y
       - /app/scripts/imagick.sh
     overrides:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/docroot'
         DRUSH_OPTIONS_URI: 'https://redaa.lndo.site'
-        XDEBUG_MODE: 'debug,develop'
+        # Support debugging Drush with XDEBUG. Use lando drush to debug.
+        PHP_IDE_CONFIG: "serverName=appserver"
+        LANDO_HOST_IP: "host.docker.internal"
+        XDEBUG_CONFIG: "remote_enable=1 remote_host=host.docker.internal"
   database:
     type: mariadb:10.11
     creds:
