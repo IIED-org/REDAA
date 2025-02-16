@@ -1543,7 +1543,24 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: grid_responsive
+        options:
+          grouping:
+            -
+              field: field_roles
+              rendered: true
+              rendered_strip: false
+          columns: 2
+          cell_min_width: 100
+          grid_gutter: 10
+          alignment: horizontal
+      row:
+        type: fields
+        options: {  }
       defaults:
+        style: false
+        row: false
         filters: false
         filter_groups: false
       display_extenders: {  }
