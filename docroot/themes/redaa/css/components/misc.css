@@ -138,10 +138,52 @@
   font-size: .75rem;
   }
 
- .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
-  background-color: #005890;
-}
+ /*
+  Accordion tabs that have not been created using Javascript
+*/
 
  .ckeditor-accordion-container > dl dd {
   margin: 1rem 0;
+}
+
+ .ckeditor-accordion-container {
+  border-radius: 0.75rem;
+}
+
+ .ckeditor-accordion-container > dl {
+  position: relative;
+  border: 1px solid #005890;
+  border-radius: 0.75rem;
+}
+
+ .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
+  background-color: #fffff;
+  color: #0d1214;
+  border-bottom: 0;
+}
+
+ .ckeditor-accordion-container > dl dt > a:focus, .ckeditor-accordion-container > dl dt > a:not(.button):focus {
+  outline-color: #333;
+}
+
+ .ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
+  background-color: #e7edf1;
+  box-shadow: none;
+  color: #000;
+  text-decoration: none;
+  border-radius: 0.75rem;
+}
+
+ .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
+  background-color: #e7edf1;
+  border-radius: 0.75rem;
+}
+
+ .ckeditor-accordion-container > dl dt.active > a {
+  background-color: #f1f4f7;
+  border-radius: 0.75rem;
+}
+
+ .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
+    background: black;
 }
