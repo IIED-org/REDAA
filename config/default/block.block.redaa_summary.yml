@@ -12,7 +12,7 @@ dependencies:
 id: redaa_summary
 theme: redaa
 region: content
-weight: -9
+weight: -12
 provider: null
 plugin: 'facets_summary_block:summary'
 settings:

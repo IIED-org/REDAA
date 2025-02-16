@@ -1,0 +1,30 @@
+uuid: f0567128-520b-4e38-89ae-893ca6393e45
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:two_columns:ea4d6697-ff49-4229-ab0f-ee8923036ea3'
+  module:
+    - block_content
+    - system
+  theme:
+    - redaa
+id: redaa_homepageprojects
+theme: redaa
+region: content_wide
+weight: -9
+provider: null
+plugin: 'block_content:ea4d6697-ff49-4229-ab0f-ee8923036ea3'
+settings:
+  id: 'block_content:ea4d6697-ff49-4229-ab0f-ee8923036ea3'
+  label: 'Homepage projects'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

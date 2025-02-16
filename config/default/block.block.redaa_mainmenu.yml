@@ -1,22 +1,22 @@
-uuid: 5b5e39f6-657c-4ffc-81f4-476a7669f468
+uuid: aa4442a1-01e4-463e-8f34-fec5eb42b46f
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.footer
+    - system.menu.main-menu
   module:
     - system
   theme:
     - redaa
-id: footer
+id: redaa_mainmenu
 theme: redaa
-region: footer_bottom
-weight: -7
+region: primary_menu
+weight: 0
 provider: null
-plugin: 'system_menu_block:footer'
+plugin: 'system_menu_block:main-menu'
 settings:
-  id: 'system_menu_block:footer'
-  label: Footer
+  id: 'system_menu_block:main-menu'
+  label: 'Main menu'
   label_display: '0'
   provider: system
   level: 1
