@@ -17,14 +17,31 @@
   set classes = [
     'region',
     'region--' ~ region|clean_class,
-    'grid-full',
-    'layout--pass--content-medium',
-    'ie11-autorow',
   ]
 %}
 
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
     {{ content }}
+  </div>
+  <div class="footer-links">
+    <div> 
+    &copy;{{ 'now' | date('Y') }}   Reversing Environmental Degradation in Africa and Asia (REDAA).
+    </div>
+
+    <div>
+    <ul class="menu menu--level-1">
+       <li class="menu__item menu__item--link menu__item--level-1">
+         <a href="/contact" class="menu__link menu__link--link menu__link--level-1">Contact</a>
+       </li>
+       <li class="menu__item menu__item--link menu__item--level-1">      
+         <a href="/privacy-policy" class="menu__link menu__link--link menu__link--level-1">Privacy policy</a>
+       </li>
+       <li class="menu__item menu__item--link menu__item--level-1">
+         <a href="/terms-and-conditions" class="menu__link menu__link--link menu__link--level-1" data-drupal-link-system-path="node/161">Website T&amp;Cs</a>
+        </li>
+     </ul>
+    </div>
+
   </div>
 {% endif %}

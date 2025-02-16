@@ -5,7 +5,7 @@
 
 @import "../base/variables.pcss.css";
 
-.region--content-wide {
+.path-resources .region--content-wide {
   @media (--md) {
     display: flex;
     flex-wrap: wrap;
@@ -57,4 +57,9 @@
     display: flex;
     justify-content: center;
   }
+}
+
+/* centres images in the layout__region */
+.region--content-wide img {
+  margin: auto;
 }

@@ -21,7 +21,7 @@
   font-weight: normal;
 }
 
-.card-link:hover .search--card {
+.card-link:hover .search--card, .card-link:hover .grid--card {
   border-color: #AB351C;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
@@ -34,6 +34,15 @@
   padding: 1rem;
   margin-bottom: 3rem;
   display: flex;
+}
+
+.grid--card {
+  border: 1px solid #F4BB37;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  height: 100%;
 }
 
 .card__title {

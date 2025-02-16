@@ -33,10 +33,12 @@
   border-block-start: solid var(--color--white) var(--sp3);
   background-color: var(--color--white);
   box-shadow: 0 0 72px rgba(0, 0, 0, 0.1);
+  
 
   &.is-active {
     visibility: visible;
     transform: translateX(-100%); /* LTR */
+    padding-block-end: var(--sp1); /* adjust spacing */
   }
 
   @supports (flex-basis: max-content) {
