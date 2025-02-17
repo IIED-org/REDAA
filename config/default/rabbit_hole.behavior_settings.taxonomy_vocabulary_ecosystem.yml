@@ -1,0 +1,14 @@
+uuid: 34cb768a-18c9-4871-b348-e787237a1a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ecosystem
+id: taxonomy_vocabulary_ecosystem
+entity_type_id: taxonomy_vocabulary
+entity_id: ecosystem
+action: access_denied
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

@@ -45,7 +45,7 @@ filters:
     status: false
     weight: -44
     settings:
-      allowed_html: '<ul class="image-list"> <blockquote class="green blue red"> <div class="box box-yellow box-blue">'
+      allowed_html: '<ul class="image-list"> <blockquote class="green blue red"> <div class="box box-yellow box-blue aspect-ratio"> <span class="highlight-text">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:

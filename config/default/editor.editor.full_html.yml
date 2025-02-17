@@ -73,6 +73,12 @@ settings:
         -
           label: 'Box blue'
           element: '<div class="box box-blue">'
+        -
+          label: 'Aspect ratio'
+          element: '<div class="aspect-ratio">'
+        -
+          label: Highlight
+          element: '<span class="highlight-text">'
     media_media:
       allow_view_mode_override: true
 image_upload:
