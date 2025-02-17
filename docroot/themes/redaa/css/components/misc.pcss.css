@@ -123,6 +123,7 @@
   position: relative;
   border: 1px solid var(--color--blue-20);
   border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 .ckeditor-accordion-container > dl dt > a,
@@ -139,7 +140,7 @@
 
 .ckeditor-accordion-container > dl dt > a:hover,
 .ckeditor-accordion-container > dl dt > a:not(.button):hover {
-  background-color: var(--color--gray-80);
+  background-color: var(--color--gray-90);
   box-shadow: none;
   color: var(--color--black);
   text-decoration: none;
@@ -148,7 +149,7 @@
 
 .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
   background-color: var(--color--gray-80);
-  border-radius: var(--border-radius);
+  border-bottom: 1px solid white;
 }
 
 .ckeditor-accordion-container > dl dt.active > a {

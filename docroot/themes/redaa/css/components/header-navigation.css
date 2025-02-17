@@ -207,6 +207,26 @@ body:not(.is-always-mobile-nav) .header-nav {
 }
   }
 
+body:not(.is-always-mobile-nav) .site-header__fixable .header-nav { /* Fix for the header nav */
+}
+
+@media (min-width: 75rem) {
+
+body:not(.is-always-mobile-nav) .site-header__fixable .header-nav {
+    padding-bottom: 2rem
+}
+  }
+
+body:not(.is-always-mobile-nav) .is-fixed .header-nav { /* Fix for the header nav */
+}
+
+@media (min-width: 75rem) {
+
+body:not(.is-always-mobile-nav) .is-fixed .header-nav {
+    padding-bottom: 0
+}
+  }
+
 body.is-always-mobile-nav {
   /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */
 }

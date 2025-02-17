@@ -6,9 +6,13 @@
 @import "../base/variables.pcss.css";
 
 .path-resources .region--content-wide {
-  @media (--md) {
+  display: flex;
+  flex-direction: column;
+
+  @media (--lg) {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: var(--grid-gap--md);
 
     & > * {
       flex-basis: calc(50% - (var(--grid-gap--md) / 2));
@@ -23,7 +27,7 @@
     }
   }
 
-  @media (--md) {
+  @media (--lg) {
     & > * {
       flex-basis: calc(33.33% - (var(--grid-gap--md) * 0.667));
 
@@ -55,11 +59,15 @@
 .path-resources .region--content-wide .block {
   @media (--lg) {
     display: flex;
-    justify-content: center;
+    justify-content: end;
   }
 }
 
 /* centres images in the layout__region */
 .region--content-wide img {
   margin: auto;
+}
+
+.path-resources .region--content-wide .views-exposed-form > div:first-child, .path-resources .region--content-wide .block-facets > div:first-child {
+  width: 90%;
 }

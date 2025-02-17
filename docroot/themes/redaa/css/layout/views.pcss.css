@@ -27,3 +27,34 @@
 .views-view-grid__item-inner {
   display: flex;
 }
+
+/* People views */
+
+.view-team img {
+  border-radius: 50%;
+  margin-right: var(--sp2);
+}
+
+.view-team h3 {
+  margin-bottom: var(--sp2);
+  margin-top: var(--sp1);
+}
+
+.view-team .views-view-responsive-grid__item-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--color--gray-70);
+  border-radius: var(--border-radius);
+  padding: var(--sp1);
+  height: 100%;
+  align-items: flex-start;
+
+  @media (--md) {
+    flex-direction: row;
+  }
+}
+
+.views-view-responsive-grid, .block-views-blockcontent-recent-block-4 {
+  margin-block-end: var(--sp4);
+}

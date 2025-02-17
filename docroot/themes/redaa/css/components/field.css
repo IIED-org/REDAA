@@ -67,6 +67,7 @@
   margin-top: -2rem;
   color: #7e96a7;
   font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-content.field--name-field-standfirst {
@@ -77,11 +78,30 @@
   border: solid 1px #e7edf1;
 }
 
+.field--name-field-media-image img {
+  border-radius: 0.75rem;
+}
+
 .field--name-field-media-oembed-video {
   position: relative;
   overflow: hidden;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.aspect-ratio {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.aspect-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Then style the iframe to fit in the container div with full height and width */
@@ -112,4 +132,14 @@
     a {
       text-decoration: none;
     }
+  }
+
+.field--name-field-main-image { 
+    margin-bottom: 2rem;
+  }
+
+.highlight-text {
+    background-color: rgba(255, 255, 0, 0.4); /* Yellow with 40% opacity */
+    padding: 2px 0.3125rem;
+    border-radius: 0.1875rem;
   }
