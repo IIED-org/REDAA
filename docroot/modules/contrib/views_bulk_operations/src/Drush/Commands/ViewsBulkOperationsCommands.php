@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\views_bulk_operations\Commands;
+namespace Drupal\views_bulk_operations\Drush\Commands;
 
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -11,38 +11,27 @@ use Drupal\views_bulk_operations\Action\ViewsBulkOperationsActionCompletedTrait;
 use Drupal\views_bulk_operations\Service\ViewsBulkOperationsActionManager;
 use Drupal\views_bulk_operations\Service\ViewsbulkOperationsViewDataInterface;
 use Drupal\views_bulk_operations\ViewsBulkOperationsBatch;
+use Drush\Attributes as CLI;
+use Drush\Commands\AutowireTrait;
 use Drush\Commands\DrushCommands;
 use Drush\Drush;
 use Psr\Log\LogLevel;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 /**
  * Defines Drush commands for the module.
  */
-class ViewsBulkOperationsCommands extends DrushCommands {
+final class ViewsBulkOperationsCommands extends DrushCommands {
 
   use ViewsBulkOperationsActionCompletedTrait {
     message as traitMessage;
   }
-
-  /**
-   * The current user object.
-   */
-  protected AccountInterface $currentUser;
+  use AutowireTrait;
 
   /**
    * The user storage.
    */
   protected UserStorageInterface $userStorage;
-
-  /**
-   * Object that gets the current view data.
-   */
-  protected ViewsbulkOperationsViewDataInterface $viewData;
-
-  /**
-   * Views Bulk Operations action manager.
-   */
-  protected ViewsBulkOperationsActionManager $actionManager;
 
   /**
    * ViewsBulkOperationsCommands object constructor.
@@ -57,63 +46,43 @@ class ViewsBulkOperationsCommands extends DrushCommands {
    *   VBO Action manager service.
    */
   public function __construct(
-    AccountInterface $currentUser,
-    EntityTypeManagerInterface $entityTypeManager,
-    ViewsbulkOperationsViewDataInterface $viewData,
-    ViewsBulkOperationsActionManager $actionManager
+    protected AccountInterface $currentUser,
+    protected  EntityTypeManagerInterface $entityTypeManager,
+    #[Autowire(service: 'views_bulk_operations.data')]
+    protected ViewsbulkOperationsViewDataInterface $viewData,
+    #[Autowire(service: 'plugin.manager.views_bulk_operations_action')]
+    protected ViewsBulkOperationsActionManager $actionManager
   ) {
-    $this->currentUser = $currentUser;
+    parent::__construct();
     $this->userStorage = $entityTypeManager->getStorage('user');
-    $this->viewData = $viewData;
-    $this->actionManager = $actionManager;
   }
 
   /**
    * Execute an action on all results of the specified view.
    *
-   * Use the --verbose parameter to see progress messages.
-   *
-   * @param string $view_id
-   *   The ID of the view to use.
-   * @param string $action_id
-   *   The ID of the action to execute.
-   * @param array $options
-   *   (optional) An array of options.
-   *
-   * @command views:bulk-operations:execute
-   *
-   * @option display-id
-   *   ID of the display to use.
-   * @option args
-   *   View arguments (slash is a delimiter).
-   * @option exposed
-   *   Exposed filters (query string format).
-   * @option batch-size
-   *   Processing batch size.
-   * @option configuration
-   *   Action configuration (query string format).
-   * @option user-id
-   *   The ID of the user account used for performing the operation.
-   *
-   * @usage drush views:bulk-operations:execute some_view some_action
-   *   Execute some action on some view.
-   * @usage drush vbo-execute some_view some_action --args=arg1/arg2 --batch-size=50
-   *   Execute some action on some view with arg1 and arg2 as
-   *   the view arguments and 50 entities processed per batch.
-   * @usage drush vbo-exec some_view some_action --configuration=&quot;key1=value1&amp;key2=value2&quot;
-   *   Execute some action on some view with the specified action configuration.
-   *
-   * @aliases vbo-execute, vbo-exec, views-bulk-operations:execute
+   * Use the --verbose option to see progress messages.
    */
+  #[CLI\Command(name: 'views:bulk-operations:execute', aliases: ['vbo-execute', 'vbo-exec', 'views-bulk-operations:execute'])]
+  #[CLI\Argument(name: 'view_id', description: 'The ID of the view to use.')]
+  #[CLI\Argument(name: 'action_id', description: 'The ID of the action to execute.')]
+  #[CLI\Option(name: 'display-id', description: 'ID of the display to use.')]
+  #[CLI\Option(name: 'args', description: 'View arguments (slash is a delimiter).')]
+  #[CLI\Option(name: 'exposed', description: 'Exposed filters (query string format).')]
+  #[CLI\Option(name: 'batch-size', description: 'Processing batch size.')]
+  #[CLI\Option(name: 'configuration', description: 'Action configuration (query string format).')]
+  #[CLI\Option(name: 'user-id', description: 'The ID of the user account used for performing the operation.')]
+  #[CLI\Usage(name: 'drush views:bulk-operations:execute some_view some_action', description: 'Execute some action on some view.')]
+  #[CLI\Usage(name: 'drush vbo-execute some_view some_action --args=arg1/arg2 --batch-size=50', description: 'Execute some action on some view with arg1 and arg2 as the view arguments and 50 entities processed per batch.')]
+  #[CLI\Usage(name: 'drush vbo-exec some_view some_action --configuration=&quot;key1=value1&amp;key2=value2&quot;', description: 'Execute some action on some view with the specified action configuration.')]
   public function vboExecute(
     $view_id,
     $action_id,
     array $options = [
       'display-id' => 'default',
-      'args' => '',
-      'exposed' => '',
+      'args' => self::REQ,
+      'exposed' => self::REQ,
       'batch-size' => 10,
-      'configuration' => '',
+      'configuration' => self::REQ,
       'user-id' => 1,
     ]
   ): void {
@@ -243,26 +212,12 @@ class ViewsBulkOperationsCommands extends DrushCommands {
 
   /**
    * List available actions for a view.
-   *
-   * @return string
-   *   The summary message.
-   *
-   * @command views:bulk-operations:list
-   *
-   * @table-style default
-   * @field-labels
-   *   id: ID
-   *   label: Label
-   *   entity_type_id: Entity type ID
-   * @default-fields id,label,entity_type_id
-   *
-   * @usage drush views:bulk-operations:list some_view some_action
-   *   Execute some action on some view.
-   * @usage drush vbo-list
-   *   List all available actions info.
-   *
-   * @aliases vbo-list
    */
+  #[CLI\Command(name: 'views:bulk-operations:list', aliases: ['vbo-list'])]
+  #[CLI\DefaultTableFields(fields: ['id', 'label', 'entity_type_id'])]
+  #[CLI\FieldLabels(labels: ['id' => 'ID', 'label' => 'Label', 'entity_type_id' => 'Entity type ID'])]
+  #[CLI\Usage(name: 'drush views:bulk-operations:list some_view some_action', description: 'Execute some action on some view.')]
+  #[CLI\Usage(name: ' drush vbo-list', description: 'List all available actions info.')]
   public function vboList($options = ['format' => 'table']): RowsOfFields {
     $rows = [];
     $actions = $this->actionManager->getDefinitions(['nocache' => TRUE]);
