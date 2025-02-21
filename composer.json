@@ -52,7 +52,7 @@
         "drupal/twig_tweak": "^3.4",
         "drupal/upgrade_status": "^4.0",
         "drupal/varnish_purge": "^2.2",
-        "drupal/views_bulk_operations": "^4.2",
+        "drupal/views_bulk_operations": "^4.3",
         "drupal/views_field_view": "^1.0",
         "drush/drush": "^12",
         "geocoder-php/chain-provider": "^4.5",
