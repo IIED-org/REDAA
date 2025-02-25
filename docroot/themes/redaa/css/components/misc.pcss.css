@@ -161,3 +161,7 @@
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
     background: black;
 }
+
+.media--view-mode-rounded img {
+  border-radius: 999px;
+}
