@@ -1839,12 +1839,12 @@ display:
           admin_label: ''
           plugin_id: custom
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
-            text: '<p>Read project summary →</p>'
-            make_link: true
-            path: '/node/436#node_{{ nid }}'
+            text: '<p><a href="#node_{{ nid }}">Read project summary →</a></p>'
+            make_link: false
+            path: '#node_{{ nid }}'
             absolute: false
             external: false
             replace_spaces: false
