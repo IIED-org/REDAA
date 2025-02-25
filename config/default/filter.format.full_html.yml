@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.media.embedded
     - core.entity_view_mode.media.featured
     - core.entity_view_mode.media.full
+    - core.entity_view_mode.media.rounded
   module:
     - editor
     - media
@@ -90,5 +91,6 @@ filters:
         embedded: embedded
         featured: featured
         full: full
+        rounded: rounded
       allowed_media_types:
         image: image
