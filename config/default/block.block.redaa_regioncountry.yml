@@ -11,7 +11,7 @@ dependencies:
 id: redaa_regioncountry
 theme: redaa
 region: content_wide
-weight: 0
+weight: -11
 provider: null
 plugin: 'facet_block:region_country'
 settings:

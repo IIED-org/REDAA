@@ -44,6 +44,7 @@
   margin-top: calc(var(--sp2) * -1);
   color: var(--color--gray-30);
   font-size: var(--font-size-s);
+  line-height: 1.25rem;
 }
 
 .text-content.field--name-field-standfirst {
@@ -56,11 +57,31 @@
   border: solid 1px var(--color--gray-80);
 }
 
+.field--name-field-media-image img {
+  border-radius: var(--border-radius);
+}
+
+
 .field--name-field-media-oembed-video {
   position: relative;
   overflow: hidden;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.aspect-ratio {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.aspect-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Then style the iframe to fit in the container div with full height and width */
@@ -77,8 +98,6 @@
 .item-with-comma::after {
   content: ", ";
 }
-
-
   .flow-left {
     @media (min-width: 1200px) {
     margin-left: -12em;
@@ -87,4 +106,14 @@
     a {
       text-decoration: none;
     }
+  }
+
+  .field--name-field-main-image { 
+    margin-bottom: var(--sp2);
+  }
+
+  .highlight-text {
+    background-color: rgba(255, 255, 0, 0.4); /* Yellow with 40% opacity */
+    padding: 2px 5px;
+    border-radius: 3px;
   }

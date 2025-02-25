@@ -108,4 +108,27 @@
   content: "";
 }
 
+.node__content .field--name-field-standfirst {
+  margin-bottom: 2rem;
+}
+
+/* CKE styles  */
+
+.box {
+  border: 1px solid #d7e1e8;
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.box h2:first-of-type, .box h3:first-of-type {
+  margin-top: 0;
+}
+
+.box-yellow {
+  border-color: #F4BB37;
+}
+
+.box-blue {
+  border-color: #005890;
+}
 

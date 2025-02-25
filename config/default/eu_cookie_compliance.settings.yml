@@ -34,8 +34,8 @@ popup_height: null
 popup_width: 100%
 popup_delay: 500
 show_more_info: true
-popup_bg_hex: A0C03B
-popup_text_hex: '000000'
+popup_bg_hex: E8EFF6
+popup_text_hex: '343434'
 domain: ''
 domains_option: 1
 domains_list: ''

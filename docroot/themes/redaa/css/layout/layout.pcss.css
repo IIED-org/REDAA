@@ -28,6 +28,7 @@
 .layout-main-wrapper {
   position: relative;
   z-index: 1;
+  border-bottom: 6px solid var(--color--gold);
 }
 
 /* Contains the social sidebar, and the primary content area. */

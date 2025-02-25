@@ -107,10 +107,61 @@
   }
 }
 
-.ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
-  background-color: var(--color--blue-20);
-}
 
+
+/*
+  Accordion tabs that have not been created using Javascript
+*/
 .ckeditor-accordion-container > dl dd {
   margin: 1rem 0;
+}
+
+.ckeditor-accordion-container {
+  border-radius: var(--border-radius);
+}
+.ckeditor-accordion-container > dl {
+  position: relative;
+  border: 1px solid var(--color--blue-20);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.ckeditor-accordion-container > dl dt > a,
+.ckeditor-accordion-container > dl dt > a:not(.button) {
+  background-color: #fffff;
+  color: var(--color--gray-0);
+  border-bottom: 0;
+}
+
+.ckeditor-accordion-container > dl dt > a:focus,
+.ckeditor-accordion-container > dl dt > a:not(.button):focus {
+  outline-color: #333;
+}
+
+.ckeditor-accordion-container > dl dt > a:hover,
+.ckeditor-accordion-container > dl dt > a:not(.button):hover {
+  background-color: var(--color--gray-90);
+  box-shadow: none;
+  color: var(--color--black);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+}
+
+.ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
+  background-color: var(--color--gray-80);
+  border-bottom: 1px solid white;
+}
+
+.ckeditor-accordion-container > dl dt.active > a {
+  background-color: var(--color--gray-90);
+  border-radius: var(--border-radius);
+}
+
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before,
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
+    background: black;
+}
+
+.media--view-mode-rounded img {
+  border-radius: 999px;
 }

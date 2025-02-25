@@ -33,7 +33,7 @@
 .button, .field--name-field-media-document span.file a {
   display: inline-block;
   height: 3rem;
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 1rem;
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
@@ -44,10 +44,10 @@
   text-decoration: none;
   color: #fff;
   border: solid 2px #005890;
-  border-radius: 0.75rem;
+  border-radius: 1.5rem;
   background-color: #005890;
   font-family: "Open Sans", "Arial", sans-serif;
-  font-size: 1.25rem;
+  /* font-size: var(--font-size-l); */
   font-weight: 700;
   -webkit-appearance: none;
   appearance: none;
@@ -160,6 +160,51 @@
     background-color: #d7e1e8;
   }
 
+/* Button variants */
+
+.button--secondary {
+  color: #005890;
+  background-color: #fff
+}
+
+.button--secondary:hover, .button--secondary:focus {
+    color: #005890;
+    border-color: #005890;
+    background-color: #f1f4f7;
+  }
+
+.button--secondary:active {
+    color: #005890;
+    background-color: #f1f4f7;
+  }
+
+.button--secondary:disabled, .button--secondary.is-disabled {
+    color: #fff;
+    background-color: #d7e1e8;
+  }
+
+.button--action {
+  color: #000;
+  background-color: #F4BB37;
+  border-color: #F4BB37
+}
+
+.button--action:hover, .button--action:focus {
+    color: #000;
+    border-color: #F6C14A;
+    background-color: #F6C14A;
+  }
+
+.button--action:active {
+    color: #000;
+    background-color: #F6C14A;
+  }
+
+.button--action:disabled, .button--action.is-disabled {
+    color: #fff;
+    background-color: #d7e1e8;
+  }
+
 .button--icon-back {
   display: inline-flex;
   align-items: center
@@ -198,17 +243,51 @@
   font-size: 1.5em;
 }
 
+/* Mailchimp form styling */
+
 #mc-embedded-subscribe {
-  background-color: #005890 !important;
+  background-color: #F4BB37 !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+
+#mc-embedded-subscribe:hover {
+  background-color: #F6C14A !important;
+}
+
+#block-signupformoreinformation #mc_embed_signup .button {
+  border-radius: 1.5rem;
+  height: 3.375rem;
+  padding: 0.625rem 1.375rem;
+  font-size: 1.2rem;
 }
 
 .field--name-field-media-document span.file a {
   margin-right: 1rem;
 }
 
-#block-signupformoreinformation #mc_embed_signup .button {
-border-radius: 0.75rem;
-height: 3.25rem;
-padding: 0.625rem 1.375rem;
-font-size: 1.2rem;
+/* Cookie banner button styling */
+
+.find-more-button {
+    color: #005890 !important;
+    font-size: 1rem;
+  }
+
+a:hover {
+      color: #32A4D5;
+    }
+
+a:focus {
+      outline: solid 2px currentColor;
+      outline-offset: 2px;
+    }
+
+.eu-cookie-compliance-default-button {
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.eu-cookie-compliance-buttons {
+  margin-top: 1rem;
 }

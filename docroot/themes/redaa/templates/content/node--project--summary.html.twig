@@ -1,0 +1,81 @@
+{#
+/*
+ * summary card
+ */
+#}
+
+{%
+  set classes = [
+    'summary--card',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <div>
+    <h3 class="card-title">
+      {% if node.field_short_title is not empty %}
+        {{ content.field_short_title.0|render|striptags }}
+      {% else %}
+        {{ label }}
+    {% endif %}
+  </h3>
+
+    <div class="summary-description">
+
+      <div>
+      {% if content.field_standfirst and content.field_standfirst.value %} 
+        {{ content.field_standfirst }}
+      {% else %}
+        {{ content.body }}
+      {% endif %}
+      </div>
+
+       <div class="summary-card-image">
+          {% if content.field_image['#items'].0.entity is not empty %}
+            {{ content.field_image }}
+          {% elseif node.field_media is not empty %}
+            {{ node.field_media.entity|view('thumbnail') }}
+          {% else %}
+          {{ content.field_main_image }}
+          {% endif %}
+      </div>
+
+    </div>
+
+    <div class="info-list">
+      <div class="il-item">
+        <dt class="il-label">Country:</dt>
+        <dd class="il-value">
+          {{ content.field_countries}}
+        </dd>
+      </div>
+      <div class="il-item">
+        <dt class="il-label">Location:</dt>
+        <dd class="il-value">{{ content.field_location_text }}</dd>
+      </div>
+      <div class="il-item">
+        <dt class="il-label">Environments:</dt>
+        <dd class="il-value">{{ content.field_ecosystem_landscape }}</dd>
+      </div>
+      <div class="il-item">
+        <dt class="il-label">Lead organisation:</dt>
+        <dd class="il-value">{{ content.field_org }}</dd>
+      </div>
+      <div class="il-item">
+        <dt class="il-label">Grant amount (GBP):</dt>
+        <dd class="il-value">{{ content.field_value }}</dd>
+      </div>
+      <div class="il-item">
+        <dt class="il-label">Project dates:</dt>
+        <dd class="il-value">{{ content.field_dates }}</dd>
+      </div>
+    </div>
+
+
+    <a href="{{ url }}" class="summary--more">Read more about this project 
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg>
+</a>
+  </div>
+</article>

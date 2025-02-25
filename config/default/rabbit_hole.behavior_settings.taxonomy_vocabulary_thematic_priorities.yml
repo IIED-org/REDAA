@@ -1,0 +1,14 @@
+uuid: d9d6ac6b-cfde-4643-a681-ddea5a3c68ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.thematic_priorities
+id: taxonomy_vocabulary_thematic_priorities
+entity_type_id: taxonomy_vocabulary
+entity_id: thematic_priorities
+action: access_denied
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

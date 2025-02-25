@@ -14,14 +14,20 @@
   padding-bottom: 1rem;
 }
 
-@media (min-width: 43.75rem) {
-
-.region--content-wide {
-    display: flex;
-    flex-wrap: wrap
+.path-resources .region--content-wide {
+  display: flex;
+  flex-direction: column
 }
 
-    .region--content-wide > * {
+@media (min-width: 62.5rem) {
+
+.path-resources .region--content-wide {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 2rem
+}
+
+    .path-resources .region--content-wide > * {
       flex-basis: calc(50% - 1rem);
       flex-grow: 1;
       flex-shrink: 0;
@@ -34,8 +40,8 @@
     }
   }
 
-@media (min-width: 43.75rem) {
-    .region--content-wide > * {
+@media (min-width: 62.5rem) {
+    .path-resources .region--content-wide > * {
       flex-basis: calc(33.33% - 1.334rem)
 
       /* &:nth-child(2n),
@@ -44,29 +50,29 @@
       } */
     }
 
-      [dir="ltr"] .region--content-wide > *:nth-child(3n), [dir="ltr"] 
-      .region--content-wide > *:last-child {
+      [dir="ltr"] .path-resources .region--content-wide > *:nth-child(3n), [dir="ltr"] 
+      .path-resources .region--content-wide > *:last-child {
         margin-right: 0;
   }
 
-      [dir="rtl"] .region--content-wide > *:nth-child(3n), [dir="rtl"] 
-      .region--content-wide > *:last-child {
+      [dir="rtl"] .path-resources .region--content-wide > *:nth-child(3n), [dir="rtl"] 
+      .path-resources .region--content-wide > *:last-child {
         margin-left: 0;
   }
   }
 
-.region--content-wide > * {
+.path-resources .region--content-wide > * {
     margin-bottom: 1rem
   }
 
 @media (min-width: 43.75rem) {
 
-.region--content-wide > * {
+.path-resources .region--content-wide > * {
       margin-bottom: 1rem
   }
     }
 
-.region--content-wide > * {
+.path-resources .region--content-wide > * {
   
     /* @media (--lg) {
       margin-block-end: var(--sp2);
@@ -77,6 +83,16 @@
 
 .path-resources .region--content-wide .block {
     display: flex;
-    justify-content: center
+    justify-content: end
 }
   }
+
+/* centres images in the layout__region */
+
+.region--content-wide img {
+  margin: auto;
+}
+
+.path-resources .region--content-wide .views-exposed-form > div:first-child, .path-resources .region--content-wide .block-facets > div:first-child {
+  width: 90%;
+}

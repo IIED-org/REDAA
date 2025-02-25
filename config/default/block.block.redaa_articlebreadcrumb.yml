@@ -1,0 +1,33 @@
+uuid: b03d32ba-4156-4e64-8f77-2c8e34206a9b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e816b852-e461-457b-87ea-1d24918f2188'
+  module:
+    - block_content
+    - node
+  theme:
+    - redaa
+id: redaa_articlebreadcrumb
+theme: redaa
+region: breadcrumb
+weight: 0
+provider: null
+plugin: 'block_content:e816b852-e461-457b-87ea-1d24918f2188'
+settings:
+  id: 'block_content:e816b852-e461-457b-87ea-1d24918f2188'
+  label: 'Article breadcrumb'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

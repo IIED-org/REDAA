@@ -1,0 +1,46 @@
+uuid: 82159cc1-88e9-4237-b466-7a9b95e11f85
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.rounded
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_media_image
+    - image.style.medium
+    - media.type.image
+  module:
+    - layout_builder
+    - svg_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.rounded
+targetEntityType: media
+bundle: image
+mode: rounded
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_image_caption: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

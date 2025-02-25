@@ -12,7 +12,7 @@
   font-weight: normal;
 } 
 
-.card-link:hover .search--card {
+.card-link:hover .search--card, .card-link:hover .grid--card {
   border-color: var(--color--red);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
@@ -24,7 +24,42 @@
   border-radius: var(--border-radius);
   padding: var(--sp1);
   margin-block-end: var(--sp3);
+  display: flex;  
+  flex-direction: column;
+
+  @media (--md) {
+    flex-direction: row;
+  }
+  & img {
+    border-radius: 0.5rem;
+    margin-block-end: var(--sp1);
+  }
+}
+
+.grid--card {
+  border: 1px solid var(--color--gold);
+  border-radius: var(--border-radius);
+  padding: var(--sp1);
+  margin-block-end: var(--sp3);
   display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media (--md) {
+    flex-direction: row;
+  }
+
+  & img {
+    border-radius: 0.5rem ;
+    margin-block-end: var(--sp1);
+  }
+}
+
+@media (--md) {
+  .card-image {
+    margin-right: 1.125rem;
+    min-width: 180px;
+  }
 }
 
 .card__title {
@@ -33,11 +68,6 @@
   color: var(--color--gray-20);
   font-size: var(--font-size-s);
   line-height: var(--sp);
-}
-
-.card-image {
-  margin-right: 1.125rem;
-  min-width: 180px;
 }
 
 .meta {
@@ -55,7 +85,61 @@
   }
 }
 
+/* Summary cards */
+.summary--card {
+  border: 1px solid var(--color--blue-20);
+  border-radius: var(--border-radius);
+  padding: var(--sp1);
+  margin-block-end: var(--sp3);
+  display: flex;
+}
 
+.summary--card p {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--sp1) !important;
+}
+.summary--card h3 {
+  margin-bottom: var(--sp1) !important;
+}
 
+.info-list {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Adjust as needed */
+  gap: 2px; /* Adjust spacing between items */
+  margin-bottom: var(--sp2);
+}
 
+.il-item {
+  display: contents; /* Makes dt and dd part of the grid */
+}
 
+.il-label {
+  text-align: right;
+  padding-right: 5px; /* Add some space between label and value */
+  font-weight: 600; 
+}
+
+.il-value {
+  text-align: left;
+  margin-inline-start: 0px;
+}
+
+.summary--more a {
+  display: inline-flex; 
+  align-items: center; 
+}
+
+.summary--more svg {
+  margin-left: 5px; 
+  vertical-align: middle; 
+}
+
+.summary-description {
+  display: flex;
+  margin-bottom: var(--sp1);
+}
+
+.summary-card-image {
+  margin-left: 1.125rem;
+  max-width: 180px;
+}

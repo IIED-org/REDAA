@@ -10,40 +10,44 @@
  * Site branding in header.
  */
 
-[dir="ltr"] .site-branding {
-  margin-left: -1.125rem;
-  margin-right: 1.125rem
-}
-
-[dir="rtl"] .site-branding {
-  margin-right: -1.125rem;
-  margin-left: 1.125rem
+.pb1 {
+  padding-bottom: 1rem;
 }
 
 [dir="ltr"] .site-branding {
-  padding-left: 1.125rem
+  margin-left: -1rem;
+  margin-right: 1rem;
 }
 
 [dir="rtl"] .site-branding {
-  padding-right: 1.125rem
+  margin-right: -1rem;
+  margin-left: 1rem;
 }
 
 [dir="ltr"] .site-branding {
-  padding-right: 1.125rem
+  padding-left: 1rem;
 }
 
 [dir="rtl"] .site-branding {
-  padding-left: 1.125rem
+  padding-right: 1rem;
+}
+
+[dir="ltr"] .site-branding {
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .site-branding {
+  padding-left: 1rem;
 }
 
 .site-branding {
   display: block;
   /* flex-shrink: 1;
   align-items: flex-end; */
-  min-width: calc(33.33333vw + 0.75rem);
-  min-height: 3.375rem;
+  min-width: calc(33.33333vw + 0.66667rem);
+  min-height: 3rem;
   padding-top: 0;
-  padding-bottom: 0.5625rem;
+  padding-bottom: 0.5rem;
 
   /* @todo - #0d7ab8 isn't currently a variable. */
   background-image: linear-gradient(160deg, #32A4D5 0%, #0d7ab8 78.66%)
@@ -52,54 +56,54 @@
 @media (min-width: 31.25rem) {
 
 .site-branding {
-    min-height: 4.5rem
+    min-height: 4rem
 }
   }
 
 @media (min-width: 43.75rem) {
 
 .site-branding {
-    min-height: 6.75rem;
-    padding-bottom: 1.125rem
+    min-height: 6rem;
+    padding-bottom: 1rem
 }
   }
 
 @media (min-width: 62.5rem) {
 
 .site-branding {
-    min-width: calc(14.28571vw + 0.99107rem)
+    min-width: calc(14.28571vw + 0.86607rem)
 }
   }
 
 @media (min-width: 75rem) {
 
 [dir="ltr"] .site-branding {
-    margin-left: -2.25rem
+    margin-left: -2rem;
   }
 
 [dir="rtl"] .site-branding {
-    margin-right: -2.25rem
+    margin-right: -2rem;
   }
 
 [dir="ltr"] .site-branding {
-    padding-left: 2.25rem
+    padding-left: 2rem;
   }
 
 [dir="rtl"] .site-branding {
-    padding-right: 2.25rem
+    padding-right: 2rem;
   }
 
 [dir="ltr"] .site-branding {
-    padding-right: 2.25rem
+    padding-right: 2rem;
   }
 
 [dir="rtl"] .site-branding {
-    padding-left: 2.25rem
+    padding-left: 2rem;
   }
 
 .site-branding {
-    min-width: calc(14.28571vw + 1.08036rem);
-    min-height: 11.25rem;
+    min-width: calc(14.28571vw + 0.86607rem);
+    min-height: 10rem;
     padding-top: 0;
     padding-bottom: 0
 }
@@ -108,7 +112,7 @@
 @media (min-width: 90rem) {
 
 .site-branding {
-    min-width: 13.98214rem
+    min-width: 13.76786rem
 }
   }
 
@@ -126,8 +130,8 @@
 
 .site-branding__inner {
   display: flex;
-  align-items: center;
-  flex-direction: column
+  align-items: end;
+  flex-direction: column-reverse
 }
 
 .site-branding__inner a {
@@ -137,57 +141,57 @@
 @media (min-width: 75rem) {
 
 [dir="ltr"] .site-branding__inner {
-    padding-left: 0
+    padding-left: 0;
   }
 
 [dir="rtl"] .site-branding__inner {
-    padding-right: 0
+    padding-right: 0;
   }
 
 [dir="ltr"] .site-branding__inner {
-    padding-right: 0
+    padding-right: 0;
   }
 
 [dir="rtl"] .site-branding__inner {
-    padding-left: 0
+    padding-left: 0;
   }
 
 .site-branding__inner {
-    height: 13.5rem;
-    padding-top: 0.5625rem;
-    padding-bottom: 0.5625rem
+    height: 12rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem
 }
   }
 
 .site-branding__logo {
   flex-shrink: 0;
-  max-width: 25rem
+  max-width: 23rem
 }
 
 .site-branding__logo img {
-    width: 25rem;
+    width: 23rem;
     max-width: 100%;
-    max-height: 6.75rem
+    max-height: 6rem
   }
 
 @media (min-width: 31.25rem) {
 
 .site-branding__logo img {
-      max-height: 7.875rem
+      max-height: 7rem
   }
     }
 
 @media (min-width: 43.75rem) {
 
 .site-branding__logo img {
-      max-height: 9rem
+      max-height: 8rem
   }
     }
 
 @media (min-width: 75rem) {
 
 .site-branding__logo img {
-      max-height: 12.375rem
+      max-height: 11rem
   }
     }
 
@@ -196,27 +200,28 @@
   }
 
 .is-fixed .site-branding__logo img {
-      width: 12.5rem
+      width: 12.5rem;
+      transition: width 0.1s ease
     }
 
 @media (min-width: 31.25rem) {
 
 .is-fixed .site-branding__logo img {
-        margin-top: 2.25rem
+        margin-top: 2rem
     }
       }
 
 @media (min-width: 43.75rem) {
 
 .is-fixed .site-branding__logo img {
-        margin-top: 2.25rem
+        margin-top: 2rem
     }
       }
 
 @media (min-width: 75rem) {
 
 .is-fixed .site-branding__logo img {
-        margin-top: 9rem
+        margin-top: 8rem
     }
       }
 
@@ -244,19 +249,18 @@
 .site-branding__text {
     letter-spacing: 0.02em;
     font-size: 2rem;
-    line-height: 2.25rem
+    line-height: 2rem
 }
   }
 
-.site-branding--bg-gray .site-branding__text,
-.site-branding--bg-white .site-branding__text {
+.site-branding--bg-gray .site-branding__text, .site-branding--bg-white .site-branding__text {
   color: #32A4D5;
 }
 
 [dir="ltr"] .site-branding__logo + .site-branding__text {
-  margin-left: 0.75rem
+  margin-left: 0.75rem;
 }
 
 [dir="rtl"] .site-branding__logo + .site-branding__text {
-  margin-right: 0.75rem
+  margin-right: 0.75rem;
 }

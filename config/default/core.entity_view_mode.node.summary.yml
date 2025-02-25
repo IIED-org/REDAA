@@ -1,0 +1,11 @@
+uuid: f75efeec-0a5a-470c-92b4-c63b20c8050d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.summary
+label: Summary
+description: 'Summary for projects'
+targetEntityType: node
+cache: true

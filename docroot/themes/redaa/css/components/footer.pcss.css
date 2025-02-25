@@ -9,7 +9,7 @@
   position: relative; /* stack above left social bar */
   color: var(--color--gray-20);
   /* background: linear-gradient(180deg, var(--color--gray-95) 0%, var(--color--gray-90 100%)); */
-  background-color: var(--color--gray-90);
+  background-color: var(--color--gray-95);
   
   & .menu {
     margin-inline-start: 0;
@@ -23,7 +23,7 @@
     & li {
       margin-block-end: var(--sp0-5);
       float: left;
-      padding: var(--sp);
+      padding-right: var(--sp);
     }
   }
 
@@ -38,7 +38,7 @@
 
 @media (--nav) {
   body:not(.is-always-mobile-nav) .site-footer {
-    border-inline-start: solid var(--content-left) var(--color--gray-90);
+    border-inline-start: solid var(--content-left) var(--color--gray-95);
   }
 }
 
@@ -48,7 +48,72 @@
 }
 
 .region--footer-top {
-  background-color: var(--color--gold);
-  margin-bottom: 2rem;
-  border-radius: var(--border-radius-l);
+
+}
+
+#block-signupformoreinformation .layout, #block-footerlogos .layout {
+  margin-bottom: var(--sp2);
+}
+
+/* Mailchimp form */
+#block-signupformoreinformation #mc_embed_signup form {
+  margin: 2rem 0;
+}
+
+#block-signupformoreinformation #mc_embed_signup #mc_embed_signup_scroll {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+
+#block-signupformoreinformation #mc_embed_signup .mc-field-group { 
+  flex: 1 0 100%; /* 1 column */
+  margin-bottom: 20px;
+  padding: 0 10px; 
+  box-sizing: border-box; 
+}
+
+label {
+  display: block; /* Make labels stack above inputs */
+  margin-bottom: 5px;
+}
+
+/* Style for input fields */
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+@media (--md) {
+  #block-signupformoreinformation #mc_embed_signup .mc-field-group {
+      flex: 1 0 calc(50% - 20px); /* 2 columns */
+  }
+}
+
+/* Media query for larger screens  */
+@media (--lg) {
+  #block-signupformoreinformation #mc_embed_signup .mc-field-group {
+    flex: 1 0 calc(25% - 20px); /* 4 columns */
+  }
+}
+
+#block-signupformoreinformation .layout--onecol {
+  border-bottom: 4px solid var(--color--gray-70);
+}
+
+#block-footerlogos {
+  border-bottom: 1px solid var(--color--gold);
+}
+.region--footer_top__inner {
+  margin-bottom: 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
 }

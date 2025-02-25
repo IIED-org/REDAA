@@ -18,7 +18,7 @@
   position: relative; /* stack above left social bar */
   color: #6e7172;
   /* background: linear-gradient(180deg, var(--color--gray-95) 0%, var(--color--gray-90 100%)); */
-  background-color: #f1f4f7
+  background-color: #f7f9fa
 }
 
 [dir="ltr"] .site-footer .menu {
@@ -48,7 +48,7 @@
 .site-footer .menu li {
       margin-bottom: 0.5rem;
       float: left;
-      padding: 1rem;
+      padding-right: 1rem;
     }
 
 .site-footer a {
@@ -61,10 +61,10 @@
 
 @media (min-width: 75rem) {
   [dir="ltr"] body:not(.is-always-mobile-nav) .site-footer {
-    border-left: solid 80px #f1f4f7;
+    border-left: solid 80px #f7f9fa;
   }
   [dir="rtl"] body:not(.is-always-mobile-nav) .site-footer {
-    border-right: solid 80px #f1f4f7;
+    border-right: solid 80px #f7f9fa;
   }
 }
 
@@ -76,7 +76,74 @@
 }
 
 .region--footer-top {
-  background-color: #F4BB37;
+
+}
+
+#block-signupformoreinformation .layout, #block-footerlogos .layout {
   margin-bottom: 2rem;
-  border-radius: 1.5rem;
+}
+
+/* Mailchimp form */
+
+#block-signupformoreinformation #mc_embed_signup form {
+  margin: 2rem 0;
+}
+
+#block-signupformoreinformation #mc_embed_signup #mc_embed_signup_scroll {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+
+#block-signupformoreinformation #mc_embed_signup .mc-field-group { 
+  flex: 1 0 100%; /* 1 column */
+  margin-bottom: 1.25rem;
+  padding: 0 0.625rem; 
+  box-sizing: border-box; 
+}
+
+label {
+  display: block; /* Make labels stack above inputs */
+  margin-bottom: 0.3125rem;
+}
+
+/* Style for input fields */
+
+input[type="text"], input[type="email"], input[type="submit"] {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 0.3125rem;
+}
+
+@media (min-width: 43.75rem) {
+  #block-signupformoreinformation #mc_embed_signup .mc-field-group {
+      flex: 1 0 calc(50% - 1.25rem); /* 2 columns */
+  }
+}
+
+/* Media query for larger screens  */
+
+@media (min-width: 62.5rem) {
+  #block-signupformoreinformation #mc_embed_signup .mc-field-group {
+    flex: 1 0 calc(25% - 1.25rem); /* 4 columns */
+  }
+}
+
+#block-signupformoreinformation .layout--onecol {
+  border-bottom: 4px solid #d7e1e8;
+}
+
+#block-footerlogos {
+  border-bottom: 1px solid #F4BB37;
+}
+
+.region--footer_top__inner {
+  margin-bottom: 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
 }

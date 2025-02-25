@@ -12,7 +12,7 @@ dependencies:
 id: redaa_exposedformsearchpage_1
 theme: redaa
 region: content_wide
-weight: -7
+weight: -12
 provider: null
 plugin: 'views_exposed_filter_block:search-page_1'
 settings:

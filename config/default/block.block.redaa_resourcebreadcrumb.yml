@@ -1,0 +1,33 @@
+uuid: d7478bac-1e29-4d85-9eae-439b2ce853b6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2c37281d-aa22-490a-8d5c-8ab80f38de1d'
+  module:
+    - block_content
+    - node
+  theme:
+    - redaa
+id: redaa_resourcebreadcrumb
+theme: redaa
+region: breadcrumb
+weight: 0
+provider: null
+plugin: 'block_content:2c37281d-aa22-490a-8d5c-8ab80f38de1d'
+settings:
+  id: 'block_content:2c37281d-aa22-490a-8d5c-8ab80f38de1d'
+  label: 'Resource breadcrumb'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      resource: resource

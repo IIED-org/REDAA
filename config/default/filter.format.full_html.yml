@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.media.embedded
     - core.entity_view_mode.media.featured
     - core.entity_view_mode.media.full
+    - core.entity_view_mode.media.rounded
   module:
     - editor
     - media
@@ -45,7 +46,7 @@ filters:
     status: false
     weight: -44
     settings:
-      allowed_html: '<ul class="image-list"> <blockquote class="green blue red">'
+      allowed_html: '<ul class="image-list"> <blockquote class="green blue red"> <div class="box box-yellow box-blue aspect-ratio"> <span class="highlight-text">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:
@@ -90,5 +91,6 @@ filters:
         embedded: embedded
         featured: featured
         full: full
+        rounded: rounded
       allowed_media_types:
         image: image

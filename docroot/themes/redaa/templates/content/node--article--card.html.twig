@@ -71,6 +71,62 @@
 
 {%
   set classes = [
+    'grid--card',
+  ]
+%}
+
+<a href="{{ url }}" class="card-link">
+  <article{{ attributes.addClass(classes) }}>
+
+  <div class="card-image">
+    
+      {% if content.field_image['#items'].0.entity is not empty %}
+        {{ content.field_image }}
+
+      {% elseif node.field_media is not empty %}
+        {{ node.field_media.entity|view('thumbnail') }}
+
+      {% else %}
+      {{ content.field_main_image }}
+      {% endif %}
+  </div>
+
+  <div class="card-contents-wrapper">
+      <div class="meta">
+     {{- 'News, ' -}}
+        {{- node.created.value|format_date('redaa_medium') -}}
+      </div>
+
+
+      <h3 class="card-title">
+      {% if node.field_short_title is not empty %}
+        {{ content.field_short_title.0|render|striptags }}
+      {% else %}
+        {{ label }}
+       {% endif %}
+      </h3>
+
+     
+      <div>
+      {% if content.field_standfirst is not empty %}
+        {{ content.field_standfirst.0|render|striptags }}
+      {% else %}
+        {{ content.body.0|render|striptags }}
+      {% endif %}
+      </div>
+  </div>
+
+  </article>
+</a>        
+
+
+
+{# OLD VERSION #}
+
+{# {% set layout = layout ? 'layout--' ~ layout|clean_class %}
+
+{%
+  set classes = [
     'node',
     'node--type-' ~ node.bundle|clean_class,
     layout ? 'grid-full',
@@ -84,7 +140,6 @@
 <article{{ attributes.addClass(classes) }}>
   <a href="{{ url }}" rel="bookmark">
     <div{{ content_attributes.addClass('node__content', layout) }}>
-      {# Comments not part of content, so they won't inherit .text-content styles. #}
       {{ content|without('comment', 'title', 'body', 'field_short_title') }}
       <div class="cardbody">
         <h3>
@@ -104,8 +159,7 @@
           {% endif %}
           </span>
           <span class="date">{{ node.getCreatedTime|date("d M Y") }}</span>
-        </div> #}
-      </div>
+        </div> 
     </div>
   </a>
-</article>
+</article> #}

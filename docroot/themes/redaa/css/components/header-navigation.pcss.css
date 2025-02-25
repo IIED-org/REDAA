@@ -33,10 +33,12 @@
   border-block-start: solid var(--color--white) var(--sp3);
   background-color: var(--color--white);
   box-shadow: 0 0 72px rgba(0, 0, 0, 0.1);
+  
 
   &.is-active {
     visibility: visible;
     transform: translateX(-100%); /* LTR */
+    padding-block-end: var(--sp1); /* adjust spacing */
   }
 
   @supports (flex-basis: max-content) {
@@ -120,6 +122,19 @@ body:not(.is-always-mobile-nav) .header-nav {
     box-shadow: none;
   }
 }
+
+body:not(.is-always-mobile-nav) .site-header__fixable .header-nav { /* Fix for the header nav */
+  @media (--nav) {
+    padding-bottom: var(--sp2);
+  }
+}
+
+body:not(.is-always-mobile-nav) .is-fixed .header-nav { /* Fix for the header nav */
+  @media (--nav) {
+    padding-bottom: 0;
+  }
+}
+
 
 body.is-always-mobile-nav {
   /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */

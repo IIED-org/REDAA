@@ -1,0 +1,33 @@
+uuid: f66f9778-0181-4434-afc6-1a5947c29e5a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6def5f90-954a-4229-88be-579ff35e121f'
+  module:
+    - block_content
+    - node
+  theme:
+    - redaa
+id: redaa_projectbreadcrumb
+theme: redaa
+region: breadcrumb
+weight: 0
+provider: null
+plugin: 'block_content:6def5f90-954a-4229-88be-579ff35e121f'
+settings:
+  id: 'block_content:6def5f90-954a-4229-88be-579ff35e121f'
+  label: 'Project breadcrumb'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      project: project

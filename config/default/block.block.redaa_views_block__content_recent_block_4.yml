@@ -1,0 +1,29 @@
+uuid: 90f658b7-fcd9-4c50-8414-6e72153e85da
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_recent
+  module:
+    - system
+    - views
+  theme:
+    - redaa
+id: redaa_views_block__content_recent_block_4
+theme: redaa
+region: content_wide
+weight: -8
+provider: null
+plugin: 'views_block:content_recent-block_4'
+settings:
+  id: 'views_block:content_recent-block_4'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

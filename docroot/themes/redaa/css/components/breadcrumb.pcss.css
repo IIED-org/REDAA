@@ -109,3 +109,9 @@
     text-decoration: underline;
   }
 }
+
+#block-redaa-articlebreadcrumb .layout,
+#block-redaa-projectbreadcrumb .layout,
+#block-redaa-resourcebreadcrumb .layout {
+  margin-bottom: 0;
+}
