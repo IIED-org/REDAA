@@ -59,6 +59,8 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
         'c' => 
         array (
             'cweagans\\Composer\\' => 18,
+            'chillerlan\\Settings\\' => 20,
+            'chillerlan\\QRCode\\' => 18,
         ),
         'V' => 
         array (
@@ -129,6 +131,7 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
             'Peast\\' => 6,
+            'ParagonIE\\ConstantTime\\' => 23,
             'PHPStan\\PhpDocParser\\' => 21,
             'PHPStan\\ExtensionInstaller\\' => 27,
             'PHPStan\\' => 8,
@@ -136,6 +139,7 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
         ),
         'O' => 
         array (
+            'Otp\\' => 4,
             'OomphInc\\ComposerInstallersExtender\\' => 36,
         ),
         'M' => 
@@ -259,6 +263,14 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
         'cweagans\\Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/cweagans/composer-patches/src',
+        ),
+        'chillerlan\\Settings\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chillerlan/php-settings-container/src',
+        ),
+        'chillerlan\\QRCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chillerlan/php-qrcode/src',
         ),
         'VariableAnalysis\\' => 
         array (
@@ -481,6 +493,10 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
         array (
             0 => __DIR__ . '/..' . '/mck89/peast/lib/Peast',
         ),
+        'ParagonIE\\ConstantTime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
+        ),
         'PHPStan\\PhpDocParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
@@ -496,6 +512,10 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
         'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
+        ),
+        'Otp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/christian-riesen/otp/src',
         ),
         'OomphInc\\ComposerInstallersExtender\\' => 
         array (
