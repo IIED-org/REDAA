@@ -1,22 +1,22 @@
-uuid: f66f9778-0181-4434-afc6-1a5947c29e5a
+uuid: a26a34b7-3f59-4a0a-8280-c1288cb5e691
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:6def5f90-954a-4229-88be-579ff35e121f'
+    - 'block_content:basic:c8dd07d6-c192-4190-b7fa-f83939c482fe'
   module:
     - block_content
     - node
   theme:
     - redaa
-id: redaa_projectbreadcrumb
+id: redaa_projectbreadcrumb_2
 theme: redaa
 region: breadcrumb
 weight: 0
 provider: null
-plugin: 'block_content:6def5f90-954a-4229-88be-579ff35e121f'
+plugin: 'block_content:c8dd07d6-c192-4190-b7fa-f83939c482fe'
 settings:
-  id: 'block_content:6def5f90-954a-4229-88be-579ff35e121f'
+  id: 'block_content:c8dd07d6-c192-4190-b7fa-f83939c482fe'
   label: 'Project breadcrumb'
   label_display: '0'
   provider: block_content

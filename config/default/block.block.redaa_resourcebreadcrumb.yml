@@ -1,9 +1,9 @@
-uuid: d7478bac-1e29-4d85-9eae-439b2ce853b6
+uuid: 6925f668-e923-4e0e-8e35-d1f2cf97978d
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:2c37281d-aa22-490a-8d5c-8ab80f38de1d'
+    - 'block_content:basic:b6dc8e08-5312-42f0-9543-d3c16b6c9de3'
   module:
     - block_content
     - node
@@ -14,9 +14,9 @@ theme: redaa
 region: breadcrumb
 weight: 0
 provider: null
-plugin: 'block_content:2c37281d-aa22-490a-8d5c-8ab80f38de1d'
+plugin: 'block_content:b6dc8e08-5312-42f0-9543-d3c16b6c9de3'
 settings:
-  id: 'block_content:2c37281d-aa22-490a-8d5c-8ab80f38de1d'
+  id: 'block_content:b6dc8e08-5312-42f0-9543-d3c16b6c9de3'
   label: 'Resource breadcrumb'
   label_display: '0'
   provider: block_content
