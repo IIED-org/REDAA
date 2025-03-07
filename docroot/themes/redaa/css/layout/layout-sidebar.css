@@ -10,6 +10,10 @@
  * Special grid system for sidebar.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .sidebar-grid > .site-main {
     -ms-grid-column: 1;
     -ms-grid-column-span: 6;
@@ -39,8 +43,7 @@
       grid-column: 3 / 11
   }
 
-      .sidebar-grid > .site-main > .region--content-above,
-      .sidebar-grid > .site-main > .region--content {
+      .sidebar-grid > .site-main > .region--content-above, .sidebar-grid > .site-main > .region--content {
         -ms-grid-columns: (minmax(0, 1fr))[8];
         grid-template-columns: repeat(8, minmax(0, 1fr));
         -ms-grid-column: 1;
@@ -48,10 +51,7 @@
         grid-column: 1 / 9;
       }
 
-      .sidebar-grid > .site-main .layout--content-narrow,
-      .sidebar-grid > .site-main .layout--pass--content-narrow > *,
-      .sidebar-grid > .site-main .layout--content-medium,
-      .sidebar-grid > .site-main .layout--pass--content-medium > * {
+      .sidebar-grid > .site-main .layout--content-narrow, .sidebar-grid > .site-main .layout--pass--content-narrow > *, .sidebar-grid > .site-main .layout--content-medium, .sidebar-grid > .site-main .layout--pass--content-medium > * {
         -ms-grid-column: 1;
         -ms-grid-column-span: 8;
         grid-column: 1 / 9;

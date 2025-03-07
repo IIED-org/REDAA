@@ -10,6 +10,10 @@
  * Book module styling.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 [dir="ltr"] .book-pager {
   margin-left: 0;
 }
@@ -45,11 +49,11 @@
 .book-pager {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0 1.125rem;
+  margin-top: 0 1rem;
   padding-top: 0;
-  padding-bottom: 1.125rem;
+  padding-bottom: 1rem;
   list-style: none;
-  border-bottom: solid 1px #0d77b5;
+  border-bottom: solid 1px #005890;
 }
 
 .book-pager__item {
@@ -93,7 +97,7 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #0d77b5;
+  color: #005890;
   font-family: "Lora", "georgia", serif;
   font-size: 1.125rem;
   font-weight: 600;
@@ -117,8 +121,8 @@
 
 .book-pager__link--previous:before {
     display: block;
-    width: 0.5625rem;
-    height: 0.5625rem;
+    width: 0.5rem;
+    height: 0.5rem;
     content: "";
     transform: rotate(-45deg);
     border-top: solid 3px currentColor;
@@ -142,8 +146,8 @@
 
 .book-pager__link--next:after {
     display: block;
-    width: 0.5625rem;
-    height: 0.5625rem;
+    width: 0.5rem;
+    height: 0.5rem;
     content: "";
     transform: rotate(135deg);
     border-top: solid 3px currentColor;
@@ -182,8 +186,8 @@
 }
 
 .book-navigation__menu {
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   padding-top: 0;
   padding-bottom: 0;
   list-style: none;

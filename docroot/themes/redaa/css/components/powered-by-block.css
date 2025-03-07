@@ -10,32 +10,35 @@
  * Powered by block specific styles.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .block-system-powered-by-block {
   letter-spacing: 0.02em;
   font-size: 0.875rem;
-  line-height: 1.125rem
+  line-height: 1rem
 }
 
 .block-system-powered-by-block a {
     text-decoration: underline
   }
 
-.block-system-powered-by-block a:hover,
-    .block-system-powered-by-block a:focus {
+.block-system-powered-by-block a:hover, .block-system-powered-by-block a:focus {
       text-decoration: none;
     }
 
 [dir="ltr"] .block-system-powered-by-block .drupal-logo {
-    margin-left: 0.28125rem
+    margin-left: 0.25rem;
 }
 
 [dir="rtl"] .block-system-powered-by-block .drupal-logo {
-    margin-right: 0.28125rem
+    margin-right: 0.25rem;
 }
 
 .block-system-powered-by-block .drupal-logo {
     display: inline-block;
-    margin-top: -0.28125rem;
+    margin-top: -0.25rem;
   }
 
 .block-system-powered-by-block svg {

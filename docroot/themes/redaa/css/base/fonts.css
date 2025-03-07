@@ -10,6 +10,10 @@
  * Base Fonts.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 @font-face {
   font-family: metropolis;
   src:

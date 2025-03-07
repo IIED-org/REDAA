@@ -10,6 +10,10 @@
  * Content below region layout.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 @media (min-width: 43.75rem) {
 
 .region--content-below {
@@ -18,52 +22,52 @@
 }
 
     [dir="ltr"] .region--content-below > * {
-      margin-right: 2.25rem
-}
+      margin-right: 2rem;
+  }
 
     [dir="rtl"] .region--content-below > * {
-      margin-left: 2.25rem
-}
+      margin-left: 2rem;
+  }
 
     .region--content-below > * {
-      flex-basis: calc(50% - 1.125rem);
+      flex-basis: calc(50% - 1rem);
       flex-grow: 1;
       flex-shrink: 0
     }
 
-      [dir="ltr"] .region--content-below > *:nth-child(2n),[dir="ltr"] 
+      [dir="ltr"] .region--content-below > *:nth-child(2n), [dir="ltr"] 
       .region--content-below > *:last-child {
-        margin-right: 0
-}
+        margin-right: 0;
+  }
 
-      [dir="rtl"] .region--content-below > *:nth-child(2n),[dir="rtl"] 
+      [dir="rtl"] .region--content-below > *:nth-child(2n), [dir="rtl"] 
       .region--content-below > *:last-child {
-        margin-left: 0
-}
+        margin-left: 0;
+  }
   }
 
 @media (min-width: 43.75rem) {
     .region--content-below > * {
-      flex-basis: calc(33.33% - 1.50075rem)
+      flex-basis: calc(33.33% - 1.334rem)
     }
 
-      [dir="ltr"] .region--content-below > *:nth-child(2n),[dir="ltr"] 
+      [dir="ltr"] .region--content-below > *:nth-child(2n), [dir="ltr"] 
       .region--content-below > *:last-child {
-        margin-right: 2.25rem
-}
+        margin-right: 2rem;
+  }
 
-      [dir="rtl"] .region--content-below > *:nth-child(2n),[dir="rtl"] 
+      [dir="rtl"] .region--content-below > *:nth-child(2n), [dir="rtl"] 
       .region--content-below > *:last-child {
-        margin-left: 2.25rem
-}
+        margin-left: 2rem;
+  }
 
-      [dir="ltr"] .region--content-below > *:nth-child(3n),[dir="ltr"] 
+      [dir="ltr"] .region--content-below > *:nth-child(3n), [dir="ltr"] 
       .region--content-below > *:last-child {
-        margin-right: 0
-}
+        margin-right: 0;
+  }
 
-      [dir="rtl"] .region--content-below > *:nth-child(3n),[dir="rtl"] 
+      [dir="rtl"] .region--content-below > *:nth-child(3n), [dir="rtl"] 
       .region--content-below > *:last-child {
-        margin-left: 0
-}
+        margin-left: 0;
+  }
   }

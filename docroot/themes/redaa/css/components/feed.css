@@ -10,6 +10,10 @@
  * RSS feed.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .feed-icon {
   display: flex;
   align-items: center;
@@ -29,11 +33,11 @@
 }
 
 [dir="ltr"] .feed-icon__icon {
-  margin-left: 0.5625rem
+  margin-left: 0.5rem;
 }
 
 [dir="rtl"] .feed-icon__icon {
-  margin-right: 0.5625rem
+  margin-right: 0.5rem;
 }
 
 .feed-icon__icon {
@@ -41,8 +45,8 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 1.6875rem;
-  height: 1.6875rem;
+  width: 1.5rem;
+  height: 1.5rem;
   color: #fff;
   background-color: #005890
 }

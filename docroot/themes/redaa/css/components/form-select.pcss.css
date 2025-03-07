@@ -97,3 +97,16 @@ select {
 [dir="rtl"] select {
   background-position: left var(--sp) center;
 }
+
+.bef--secondary .form-item {
+  display: inline-flex;
+  & label {
+    align-content: center;
+    font-weight: 600;
+    margin-inline-end: var(--sp);
+    padding-block: var(--sp0-5);
+  }
+  & select {
+    margin-inline-end: var(--sp);
+  }
+}

@@ -9,8 +9,11 @@
  * CKEditor frame styles.
  */
 /** cspell:ignore grouptitle */
+.pb1 {
+  padding-bottom: 1rem;
+}
 .cke_editable {
-  margin: 1.125rem;
+  margin: 1rem;
   background-image: none;
 }
 [dir].cke_panel_container body {
@@ -24,10 +27,10 @@
   margin: 0;
 }
 [dir="ltr"] .cke_editable blockquote {
-  margin-left: 3.375rem;
+  margin-left: 3rem;
 }
 [dir="rtl"] .cke_editable blockquote {
-  margin-right: 3.375rem;
+  margin-right: 3rem;
 }
 [dir="ltr"] .cke_editable .align-right {
   margin-right: 0;

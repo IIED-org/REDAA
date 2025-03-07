@@ -166,12 +166,30 @@
   vertical-align: middle; 
 }
 
+.summary--text-image {
+  display: flex;
+  flex-direction: column
+}
+
+@media (min-width: 43.75rem) {
+
+.summary--text-image {
+    flex-direction: row
+}
+  }
+
 .summary-description {
   display: flex;
   margin-bottom: 1rem;
 }
 
 .summary-card-image {
-  margin-left: 1.125rem;
-  max-width: 11.25rem;
+  min-width: 18.75rem
 }
+
+@media (min-width: 43.75rem) {
+
+.summary-card-image {
+    margin-left: 1.125rem
+}
+  } 

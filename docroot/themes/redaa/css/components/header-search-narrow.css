@@ -10,10 +10,14 @@
  * Header Search Narrow Block.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .block-search-narrow {
-  margin-left: -1.125rem;
-  margin-right: -1.125rem;
-  margin-bottom: 2.25rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: 2rem;
   background: #000
 }
 
@@ -31,31 +35,31 @@
   }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-    padding-left: 1.125rem
+    padding-left: 1rem;
 }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-    padding-right: 1.125rem
+    padding-right: 1rem;
 }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-    padding-right: 1.125rem
+    padding-right: 1rem;
 }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-    padding-left: 1.125rem
+    padding-left: 1rem;
 }
 
 .block-search-narrow input[type="search"] {
-    width: calc(100% + 2.25rem);
-    height: 3.375rem;
+    width: calc(100% + 2rem);
+    height: 3rem;
     padding-top: 0;
     padding-bottom: 0;
     transition: background-size 0.4s;
     color: #fff;
     border: solid 1px transparent;
     background-color: transparent;
-    background-image: linear-gradient(#2494db, #2494db); /* Two values are needed for IE11 support. */
+    background-image: linear-gradient(#32A4D5, #32A4D5); /* Two values are needed for IE11 support. */
     background-repeat: no-repeat;
     background-position: bottom left; /* LTR */
     background-size: 0% 0.3125rem;
@@ -91,56 +95,56 @@
 @media (min-width: 43.75rem) {
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-      padding-left: 2.25rem
+      padding-left: 2rem;
   }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-      padding-right: 2.25rem
+      padding-right: 2rem;
   }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-      padding-right: 2.25rem
+      padding-right: 2rem;
   }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-      padding-left: 2.25rem
+      padding-left: 2rem;
   }
 
 .block-search-narrow input[type="search"] {
-      height: 4.5rem
+      height: 4rem
   }
     }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-    margin-left: 0
+    margin-left: 0;
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-    margin-right: 0
+    margin-right: 0;
 }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-    margin-right: 0
+    margin-right: 0;
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-    margin-left: 0
+    margin-left: 0;
 }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-    padding-left: 0
+    padding-left: 0;
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-    padding-right: 0
+    padding-right: 0;
 }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-    padding-right: 0
+    padding-right: 0;
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-    padding-left: 0
+    padding-left: 0;
 }
 
 .block-search-narrow .search-form__submit {
@@ -148,7 +152,7 @@
     overflow: hidden;
     -ms-grid-row-align: stretch;
     align-self: stretch;
-    width: 3.375rem;
+    width: 3rem;
     height: auto;
     margin-top: 0;
     margin-bottom: 0;
@@ -165,11 +169,11 @@
   }
 
 [dir="ltr"] .block-search-narrow .search-form__submit .icon--search {
-      left: 0
+      left: 0;
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit .icon--search {
-      right: 0
+      right: 0;
 }
 
 .block-search-narrow .search-form__submit .icon--search {
@@ -186,11 +190,11 @@
     }
 
 [dir="ltr"] .block-search-narrow .search-form__submit .icon--search:after {
-        left: 0
+        left: 0;
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit .icon--search:after {
-        right: 0
+        right: 0;
 }
 
 .block-search-narrow .search-form__submit .icon--search:after {
@@ -202,7 +206,7 @@
         transition: transform 0.2s;
         transform: scaleX(0);
         transform-origin: left; /* LTR */
-        border-top: solid 5px #2494db;
+        border-top: solid 5px #32A4D5;
       }
 
 @media (forced-colors: active) {
@@ -231,7 +235,7 @@
 @media screen and (-ms-high-contrast: active) {
 
 .block-search-narrow .search-form__submit:focus {
-        border-bottom-width: 9px
+        border-bottom-width: 8px
     }
 
         .block-search-narrow .search-form__submit:focus span:after {
@@ -277,19 +281,19 @@
 @media (min-width: 31.25rem) {
 
 [dir="ltr"] .block-search-narrow {
-    margin-left: 0
+    margin-left: 0;
   }
 
 [dir="rtl"] .block-search-narrow {
-    margin-right: 0
+    margin-right: 0;
   }
 
 [dir="ltr"] .block-search-narrow {
-    margin-right: 0
+    margin-right: 0;
   }
 
 [dir="rtl"] .block-search-narrow {
-    margin-left: 0
+    margin-left: 0;
   }
   }
 

@@ -10,6 +10,10 @@
  * Messages.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 [dir="ltr"] .messages-list {
   padding-left: 0;
 }
@@ -27,33 +31,33 @@
 }
 
 .messages-list {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding-top: 0;
   padding-bottom: 0;
   list-style: none;
 }
 
 [dir="ltr"] .messages {
-  padding-left: 1.6875rem;
+  padding-left: 1.5rem;
 }
 
 [dir="rtl"] .messages {
-  padding-right: 1.6875rem;
+  padding-right: 1.5rem;
 }
 
 [dir="ltr"] .messages {
-  padding-right: 1.6875rem;
+  padding-right: 1.5rem;
 }
 
 [dir="rtl"] .messages {
-  padding-left: 1.6875rem;
+  padding-left: 1.5rem;
 }
 
 .messages {
-  min-height: 4.25rem;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  min-height: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: #fff;
   outline: solid 1px transparent;
   background-color: #0d1214
@@ -113,11 +117,11 @@
 }
 
 .messages:not(.hidden) ~ .messages {
-  margin-top: 1.125rem;
+  margin-top: 1rem;
 }
 
 .messages__item + .messages__item {
-  margin-top: 0.5625rem;
+  margin-top: 0.5rem;
 }
 
 .messages__container {
@@ -125,11 +129,11 @@
 }
 
 [dir="ltr"] .messages__header {
-  margin-right: 1.125rem;
+  margin-right: 1rem;
 }
 
 [dir="rtl"] .messages__header {
-  margin-left: 1.125rem;
+  margin-left: 1rem;
 }
 
 .messages__header {
@@ -151,11 +155,11 @@
 }
 
 [dir="ltr"] .messages__button {
-  margin-left: 1.125rem;
+  margin-left: 1rem;
 }
 
 [dir="rtl"] .messages__button {
-  margin-right: 1.125rem;
+  margin-right: 1rem;
 }
 
 .messages__button {
@@ -193,8 +197,7 @@
   appearance: none
 }
 
-.messages__close:before,
-  .messages__close:after {
+.messages__close:before, .messages__close:after {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -213,8 +216,7 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-.messages__close:hover::before,
-    .messages__close:hover::after {
+.messages__close:hover::before, .messages__close:hover::after {
       border-color: #fff;
     }
 
@@ -228,15 +230,15 @@
 }
 
 .messages--error .messages__icon svg {
-  fill: #e33f1e;
+  fill: #AB351C;
 }
 
 .messages--warning .messages__icon svg {
-  fill: #fdca40;
+  fill: #F4BB37;
 }
 
 .messages--status .messages__icon svg {
-  fill: #3fa21c;
+  fill: #446629;
 }
 
 .messages--info .messages__icon svg {
@@ -252,13 +254,13 @@
 }
 
 [dir="ltr"] .js-form-managed-file .messages {
-  border-left: solid 6px #e33f1e;
+  border-left: solid 6px #AB351C;
 }
 
 [dir="rtl"] .js-form-managed-file .messages {
-  border-right: solid 6px #e33f1e;
+  border-right: solid 6px #AB351C;
 }
 
 .js-form-managed-file .messages {
-  margin-bottom: 1.125rem;
+  margin-bottom: 1rem;
 }

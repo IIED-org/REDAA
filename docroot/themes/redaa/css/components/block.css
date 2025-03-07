@@ -10,6 +10,10 @@
  * Block styling.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .block__title {
   margin-top: 0;
   margin-bottom: 1rem;

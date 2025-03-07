@@ -10,20 +10,24 @@
  * Node preview container styling.
  */
 
-[dir="ltr"] .node-preview-container {
-  padding-left: 0.5625rem;
-}
-
-[dir="rtl"] .node-preview-container {
-  padding-right: 0.5625rem;
+.pb1 {
+  padding-bottom: 1rem;
 }
 
 [dir="ltr"] .node-preview-container {
-  padding-right: 0.5625rem;
+  padding-left: 0.5rem;
 }
 
 [dir="rtl"] .node-preview-container {
-  padding-left: 0.5625rem;
+  padding-right: 0.5rem;
+}
+
+[dir="ltr"] .node-preview-container {
+  padding-right: 0.5rem;
+}
+
+[dir="rtl"] .node-preview-container {
+  padding-left: 0.5rem;
 }
 
 .node-preview-container {
@@ -64,6 +68,6 @@ body.toolbar-vertical.toolbar-tray-open .node-preview-container {
 }
 
 .node-preview-backlink {
-  margin-top: 0.5625rem;
-  margin-bottom: 0.5625rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }

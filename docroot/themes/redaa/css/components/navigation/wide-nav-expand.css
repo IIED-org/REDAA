@@ -10,6 +10,10 @@
  * Button which expands the navigation at wide viewport widths.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .wide-nav-expand {
   display: none
 }
@@ -23,7 +27,7 @@
     align-items: center;
     justify-content: center;
     width: 5rem;
-    height: 6.75rem;
+    height: 6rem;
     cursor: pointer;
     pointer-events: auto;
     color: #fff;
@@ -53,7 +57,7 @@ body.is-always-mobile-nav .wide-nav-expand {
 
 .wide-nav-expand__icon {
   position: relative;
-  width: 2.25rem;
+  width: 2rem;
   height: 1.3125rem;
   transition: opacity 0.2s;
   pointer-events: none;
@@ -69,11 +73,11 @@ body.is-always-mobile-nav .wide-nav-expand {
   }
 
 [dir="ltr"] .wide-nav-expand__icon > span:nth-child(1) {
-      left: 0
+      left: 0;
 }
 
 [dir="rtl"] .wide-nav-expand__icon > span:nth-child(1) {
-      right: 0
+      right: 0;
 }
 
 .wide-nav-expand__icon > span:nth-child(1) {
@@ -86,11 +90,11 @@ body.is-always-mobile-nav .wide-nav-expand {
     }
 
 [dir="ltr"] .wide-nav-expand__icon > span:nth-child(2) {
-      left: 0
+      left: 0;
 }
 
 [dir="rtl"] .wide-nav-expand__icon > span:nth-child(2) {
-      right: 0
+      right: 0;
 }
 
 .wide-nav-expand__icon > span:nth-child(2) {
@@ -103,11 +107,11 @@ body.is-always-mobile-nav .wide-nav-expand {
     }
 
 [dir="ltr"] .wide-nav-expand__icon > span:nth-child(3) {
-      left: 0
+      left: 0;
 }
 
 [dir="rtl"] .wide-nav-expand__icon > span:nth-child(3) {
-      right: 0
+      right: 0;
 }
 
 .wide-nav-expand__icon > span:nth-child(3) {

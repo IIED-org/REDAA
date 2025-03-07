@@ -10,8 +10,11 @@
  * Grid system definition for the content narrow layout.
  */
 
-.layout--content-narrow,
-.layout--pass--content-narrow > * {
+.pb1 {
+  padding-bottom: 1rem;
+}
+
+.layout--content-narrow, .layout--pass--content-narrow > * {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / 7;
@@ -20,8 +23,7 @@
 
 @media (min-width: 43.75rem) {
 
-.layout--content-narrow,
-.layout--pass--content-narrow > * {
+.layout--content-narrow, .layout--pass--content-narrow > * {
     -ms-grid-column: 2;
     -ms-grid-column-span: 12;
     grid-column: 2 / 14
@@ -30,8 +32,7 @@
 
 @media (min-width: 62.5rem) {
 
-.layout--content-narrow,
-.layout--pass--content-narrow > * {
+.layout--content-narrow, .layout--pass--content-narrow > * {
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-column: 3 / 11
@@ -49,14 +50,7 @@
 
 @media (min-width: 43.75rem) {
 
-.layout--content-narrow .layout--content-narrow,
-  .layout--content-narrow .layout--pass--content-narrow > *,
-  .layout--pass--content-narrow > * .layout--content-narrow,
-  .layout--pass--content-narrow > * .layout--pass--content-narrow > *,
-  .layout--content-medium .layout--content-narrow,
-  .layout--content-medium .layout--pass--content-narrow > *,
-  .layout--pass--content-medium > * .layout--content-narrow,
-  .layout--pass--content-medium > * .layout--pass--content-narrow > * {
+.layout--content-narrow .layout--content-narrow, .layout--content-narrow .layout--pass--content-narrow > *, .layout--pass--content-narrow > * .layout--content-narrow, .layout--pass--content-narrow > * .layout--pass--content-narrow > *, .layout--content-medium .layout--content-narrow, .layout--content-medium .layout--pass--content-narrow > *, .layout--pass--content-medium > * .layout--content-narrow, .layout--pass--content-medium > * .layout--pass--content-narrow > * {
       -ms-grid-column: 1;
       -ms-grid-column-span: 12;
       grid-column: 1 / 13
@@ -65,14 +59,7 @@
 
 @media (min-width: 62.5rem) {
 
-.layout--content-narrow .layout--content-narrow,
-  .layout--content-narrow .layout--pass--content-narrow > *,
-  .layout--pass--content-narrow > * .layout--content-narrow,
-  .layout--pass--content-narrow > * .layout--pass--content-narrow > *,
-  .layout--content-medium .layout--content-narrow,
-  .layout--content-medium .layout--pass--content-narrow > *,
-  .layout--pass--content-medium > * .layout--content-narrow,
-  .layout--pass--content-medium > * .layout--pass--content-narrow > * {
+.layout--content-narrow .layout--content-narrow, .layout--content-narrow .layout--pass--content-narrow > *, .layout--pass--content-narrow > * .layout--content-narrow, .layout--pass--content-narrow > * .layout--pass--content-narrow > *, .layout--content-medium .layout--content-narrow, .layout--content-medium .layout--pass--content-narrow > *, .layout--pass--content-medium > * .layout--content-narrow, .layout--pass--content-medium > * .layout--pass--content-narrow > * {
       -ms-grid-column: 1;
       -ms-grid-column-span: 8;
       grid-column: 1 / 9
@@ -86,193 +73,193 @@
 
 @media (min-width: 43.75rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          left: -7.14286vw
+[dir="ltr"] .layout--content-narrow.text-content blockquote:before, [dir="ltr"]  .layout--content-narrow .text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          left: -7.14286vw;
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:before,[dir="rtl"]  .layout--content-narrow .text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          right: -7.14286vw
+[dir="rtl"] .layout--content-narrow.text-content blockquote:before, [dir="rtl"]  .layout--content-narrow .text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          right: -7.14286vw;
   }
         }
 
 @media (min-width: 62.5rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          left: calc(-7.14286vw - -1.07143px)
+[dir="ltr"] .layout--content-narrow.text-content blockquote:before, [dir="ltr"]  .layout--content-narrow .text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          left: calc(-7.14286vw - -1.07143px);
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:before,[dir="rtl"]  .layout--content-narrow .text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          right: calc(-7.14286vw - -1.07143px)
+[dir="rtl"] .layout--content-narrow.text-content blockquote:before, [dir="rtl"]  .layout--content-narrow .text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          right: calc(-7.14286vw - -1.07143px);
   }
         }
 
 @media (min-width: 75rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          left: calc(-7.14286vw - -0.62946rem)
+[dir="ltr"] .layout--content-narrow.text-content blockquote:before, [dir="ltr"]  .layout--content-narrow .text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          left: calc(-7.14286vw - -0.56696rem);
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:before,[dir="rtl"]  .layout--content-narrow .text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          right: calc(-7.14286vw - -0.62946rem)
+[dir="rtl"] .layout--content-narrow.text-content blockquote:before, [dir="rtl"]  .layout--content-narrow .text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          right: calc(-7.14286vw - -0.56696rem);
   }
         }
 
 @media (min-width: 90rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          left: -5.86607rem
+[dir="ltr"] .layout--content-narrow.text-content blockquote:before, [dir="ltr"]  .layout--content-narrow .text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          left: -5.88393rem;
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:before,[dir="rtl"]  .layout--content-narrow .text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          right: -5.86607rem
+[dir="rtl"] .layout--content-narrow.text-content blockquote:before, [dir="rtl"]  .layout--content-narrow .text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
+          right: -5.88393rem;
   }
         }
 
 @media (min-width: 43.75rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          left: -7.14286vw
+[dir="ltr"] .layout--content-narrow.text-content blockquote:after, [dir="ltr"]  .layout--content-narrow .text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          left: -7.14286vw;
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:after,[dir="rtl"]  .layout--content-narrow .text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          right: -7.14286vw
+[dir="rtl"] .layout--content-narrow.text-content blockquote:after, [dir="rtl"]  .layout--content-narrow .text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          right: -7.14286vw;
   }
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          margin-left: 2px
+[dir="ltr"] .layout--content-narrow.text-content blockquote:after, [dir="ltr"]  .layout--content-narrow .text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          margin-left: 2px;
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:after,[dir="rtl"]  .layout--content-narrow .text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          margin-right: 2px
+[dir="rtl"] .layout--content-narrow.text-content blockquote:after, [dir="rtl"]  .layout--content-narrow .text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          margin-right: 2px;
   }
 
 .layout--content-narrow.text-content blockquote:after, .layout--content-narrow .text-content blockquote:after, .layout--pass--content-narrow > *.text-content blockquote:after, .layout--pass--content-narrow > * .text-content blockquote:after {
-          width: 1.125rem;
+          width: 1rem;
           height: calc(100% - 2.8125rem)
       }
         }
 
 @media (min-width: 62.5rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          left: calc(-7.14286vw - -1.07143px)
+[dir="ltr"] .layout--content-narrow.text-content blockquote:after, [dir="ltr"]  .layout--content-narrow .text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          left: calc(-7.14286vw - -1.07143px);
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:after,[dir="rtl"]  .layout--content-narrow .text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          right: calc(-7.14286vw - -1.07143px)
+[dir="rtl"] .layout--content-narrow.text-content blockquote:after, [dir="rtl"]  .layout--content-narrow .text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          right: calc(-7.14286vw - -1.07143px);
   }
         }
 
 @media (min-width: 75rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          left: calc(-7.14286vw - -0.62946rem)
+[dir="ltr"] .layout--content-narrow.text-content blockquote:after, [dir="ltr"]  .layout--content-narrow .text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          left: calc(-7.14286vw - -0.56696rem);
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:after,[dir="rtl"]  .layout--content-narrow .text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          right: calc(-7.14286vw - -0.62946rem)
+[dir="rtl"] .layout--content-narrow.text-content blockquote:after, [dir="rtl"]  .layout--content-narrow .text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          right: calc(-7.14286vw - -0.56696rem);
   }
         }
 
 @media (min-width: 90rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          left: -5.86607rem
+[dir="ltr"] .layout--content-narrow.text-content blockquote:after, [dir="ltr"]  .layout--content-narrow .text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          left: -5.88393rem;
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote:after,[dir="rtl"]  .layout--content-narrow .text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          right: -5.86607rem
+[dir="rtl"] .layout--content-narrow.text-content blockquote:after, [dir="rtl"]  .layout--content-narrow .text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
+          right: -5.88393rem;
   }
         }
 
 @media (min-width: 43.75rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content blockquote,[dir="ltr"]  .layout--content-narrow .text-content blockquote,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote {
-        padding-left: 0
+[dir="ltr"] .layout--content-narrow.text-content blockquote, [dir="ltr"]  .layout--content-narrow .text-content blockquote, [dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote, [dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote {
+        padding-left: 0;
   }
 
-[dir="rtl"] .layout--content-narrow.text-content blockquote,[dir="rtl"]  .layout--content-narrow .text-content blockquote,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote {
-        padding-right: 0
+[dir="rtl"] .layout--content-narrow.text-content blockquote, [dir="rtl"]  .layout--content-narrow .text-content blockquote, [dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote, [dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote {
+        padding-right: 0;
   }
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: calc(71.42857vw - 2.25rem);
-        margin-top: 3.375rem;
-        margin-bottom: 3.375rem
+        width: calc(71.42857vw - 2rem);
+        margin-top: 3rem;
+        margin-bottom: 3rem
     }
       }
 
 @media (min-width: 62.5rem) {
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: calc(71.42857vw - 2.91964rem)
+        width: calc(71.42857vw - 2.66964rem)
     }
       }
 
 @media (min-width: 75rem) {
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: calc(71.42857vw - 8.54464rem)
+        width: calc(71.42857vw - 7.66964rem)
     }
       }
 
 @media (min-width: 90rem) {
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: 56.41071rem
+        width: 56.83929rem
     }
       }
 
 @media (min-width: 43.75rem) {
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        margin-top: 3.375rem;
-        margin-bottom: 3.375rem
+        margin-top: 3rem;
+        margin-bottom: 3rem
     }
       }
 
 @media (min-width: 62.5rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content pre,[dir="ltr"]  .layout--content-narrow .text-content pre,[dir="ltr"]  .layout--pass--content-narrow > *.text-content pre,[dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-left: calc(-7.14286vw - -1.07143px)
+[dir="ltr"] .layout--content-narrow.text-content pre, [dir="ltr"]  .layout--content-narrow .text-content pre, [dir="ltr"]  .layout--pass--content-narrow > *.text-content pre, [dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
+        margin-left: calc(-7.14286vw - -1.07143px);
   }
 
-[dir="rtl"] .layout--content-narrow.text-content pre,[dir="rtl"]  .layout--content-narrow .text-content pre,[dir="rtl"]  .layout--pass--content-narrow > *.text-content pre,[dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-right: calc(-7.14286vw - -1.07143px)
+[dir="rtl"] .layout--content-narrow.text-content pre, [dir="rtl"]  .layout--content-narrow .text-content pre, [dir="rtl"]  .layout--pass--content-narrow > *.text-content pre, [dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
+        margin-right: calc(-7.14286vw - -1.07143px);
   }
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        width: calc(85.71429vw - 3.05357rem)
+        width: calc(85.71429vw - 2.80357rem)
     }
       }
 
 @media (min-width: 75rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content pre,[dir="ltr"]  .layout--content-narrow .text-content pre,[dir="ltr"]  .layout--pass--content-narrow > *.text-content pre,[dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-left: calc(-7.14286vw - -0.62946rem)
+[dir="ltr"] .layout--content-narrow.text-content pre, [dir="ltr"]  .layout--content-narrow .text-content pre, [dir="ltr"]  .layout--pass--content-narrow > *.text-content pre, [dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
+        margin-left: calc(-7.14286vw - -0.56696rem);
   }
 
-[dir="rtl"] .layout--content-narrow.text-content pre,[dir="rtl"]  .layout--content-narrow .text-content pre,[dir="rtl"]  .layout--pass--content-narrow > *.text-content pre,[dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-right: calc(-7.14286vw - -0.62946rem)
+[dir="rtl"] .layout--content-narrow.text-content pre, [dir="rtl"]  .layout--content-narrow .text-content pre, [dir="rtl"]  .layout--pass--content-narrow > *.text-content pre, [dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
+        margin-right: calc(-7.14286vw - -0.56696rem);
   }
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        width: calc(85.71429vw - 9.80357rem)
+        width: calc(85.71429vw - 8.80357rem)
     }
       }
 
 @media (min-width: 90rem) {
 
-[dir="ltr"] .layout--content-narrow.text-content pre,[dir="ltr"]  .layout--content-narrow .text-content pre,[dir="ltr"]  .layout--pass--content-narrow > *.text-content pre,[dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-left: -5.86607rem
+[dir="ltr"] .layout--content-narrow.text-content pre, [dir="ltr"]  .layout--content-narrow .text-content pre, [dir="ltr"]  .layout--pass--content-narrow > *.text-content pre, [dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
+        margin-left: -5.88393rem;
   }
 
-[dir="rtl"] .layout--content-narrow.text-content pre,[dir="rtl"]  .layout--content-narrow .text-content pre,[dir="rtl"]  .layout--pass--content-narrow > *.text-content pre,[dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-right: -5.86607rem
+[dir="rtl"] .layout--content-narrow.text-content pre, [dir="rtl"]  .layout--content-narrow .text-content pre, [dir="rtl"]  .layout--pass--content-narrow > *.text-content pre, [dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
+        margin-right: -5.88393rem;
   }
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        width: 68.14286rem
+        width: 68.60714rem
     }
       }
 
@@ -281,13 +268,6 @@
  * into sidebar region when present.
  */
 
-.sidebar-grid .layout--content-narrow.text-content blockquote,
-      .sidebar-grid .layout--content-narrow.text-content pre,
-      .sidebar-grid .layout--content-narrow .text-content blockquote,
-      .sidebar-grid .layout--content-narrow .text-content pre,
-      .sidebar-grid .layout--pass--content-narrow > *.text-content blockquote,
-      .sidebar-grid .layout--pass--content-narrow > *.text-content pre,
-      .sidebar-grid .layout--pass--content-narrow > * .text-content blockquote,
-      .sidebar-grid .layout--pass--content-narrow > * .text-content pre {
+.sidebar-grid .layout--content-narrow.text-content blockquote, .sidebar-grid .layout--content-narrow.text-content pre, .sidebar-grid .layout--content-narrow .text-content blockquote, .sidebar-grid .layout--content-narrow .text-content pre, .sidebar-grid .layout--pass--content-narrow > *.text-content blockquote, .sidebar-grid .layout--pass--content-narrow > *.text-content pre, .sidebar-grid .layout--pass--content-narrow > * .text-content blockquote, .sidebar-grid .layout--pass--content-narrow > * .text-content pre {
         width: auto;
       }

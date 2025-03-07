@@ -10,6 +10,10 @@
  * Region default layout.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .region--hero > *:last-child {
     margin-bottom: 0;
   }

@@ -10,10 +10,14 @@
  * Secondary menu region layout styling.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .region--secondary-menu {
   display: flex;
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem
+  margin-top: 2rem;
+  margin-bottom: 2rem
 }
 
 .region--secondary-menu > * {

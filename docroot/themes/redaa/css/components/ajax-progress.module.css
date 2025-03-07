@@ -10,6 +10,10 @@
  * Visual styles for ajax-progress throbber.
  */
 
+.pb1 {
+  padding-bottom: 1rem;
+}
+
 .ajax-progress {
   display: inline-block;
 }
@@ -19,19 +23,19 @@
  */
 
 [dir="ltr"] .ajax-progress-throbber {
-  margin-left: 0.5625rem;
+  margin-left: 0.5rem;
 }
 
 [dir="rtl"] .ajax-progress-throbber {
-  margin-right: 0.5625rem;
+  margin-right: 0.5rem;
 }
 
 [dir="ltr"] .ajax-progress-throbber {
-  margin-right: 0.5625rem;
+  margin-right: 0.5rem;
 }
 
 [dir="rtl"] .ajax-progress-throbber {
-  margin-left: 0.5625rem;
+  margin-left: 0.5rem;
 }
 
 .ajax-progress-throbber {
@@ -50,15 +54,15 @@
   width: 1.125rem;
   height: 1.125rem;
   border-width: 2px;
-  border-color: #2494db transparent #2494db #2494db;
+  border-color: #32A4D5 transparent #32A4D5 #32A4D5;
 }
 
 [dir="ltr"] .ajax-progress-throbber .message {
-  padding-left: 0.5625rem;
+  padding-left: 0.5rem;
 }
 
 [dir="rtl"] .ajax-progress-throbber .message {
-  padding-right: 0.5625rem;
+  padding-right: 0.5rem;
 }
 
 .ajax-progress-throbber .message {
@@ -118,11 +122,10 @@
  * Common styles for all kinds of throbbers.
  */
 
-.ajax-progress-throbber .throbber,
-.ajax-progress-fullscreen:before {
+.ajax-progress-throbber .throbber, .ajax-progress-fullscreen:before {
   animation: redaa-throbber 0.75s linear infinite;
   border-style: solid dotted solid solid;
-  border-color: #2494db transparent #2494db #2494db;
+  border-color: #32A4D5 transparent #32A4D5 #32A4D5;
   border-radius: 50%;
 }
 

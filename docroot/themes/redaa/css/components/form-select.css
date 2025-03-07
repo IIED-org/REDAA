@@ -158,3 +158,30 @@ select {
 [dir="rtl"] select {
   background-position: left 16px center;
 }
+
+.bef--secondary .form-item {
+  display: inline-flex
+}
+
+[dir="ltr"] .bef--secondary .form-item label {
+    margin-right: 1rem;
+}
+
+[dir="rtl"] .bef--secondary .form-item label {
+    margin-left: 1rem;
+}
+
+.bef--secondary .form-item label {
+    align-content: center;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+[dir="ltr"] .bef--secondary .form-item select {
+    margin-right: 1rem;
+}
+
+[dir="rtl"] .bef--secondary .form-item select {
+    margin-left: 1rem;
+}
