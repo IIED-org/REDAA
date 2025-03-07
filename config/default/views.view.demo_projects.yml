@@ -1851,9 +1851,9 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<p>Read project summary →</p>'
-            make_link: true
-            path: '/projects#node_{{ nid }}'
+            text: '<p><a href="/projects/#node_{{ nid }}">Read project summary →</a></p>'
+            make_link: false
+            path: '#node_{{ nid }}'
             absolute: false
             external: false
             replace_spaces: false
