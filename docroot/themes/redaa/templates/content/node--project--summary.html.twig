@@ -10,6 +10,7 @@
   ]
 %}
 
+<a id="node_{{ node.id }}"></a>
 <article{{ attributes.addClass(classes) }}>
   <div>
     <h3 class="card-title">
@@ -19,29 +20,20 @@
         {{ label }}
     {% endif %}
   </h3>
-
+  <div class="summary--text-image">
     <div class="summary-description">
-
-      <div>
       {% if content.field_standfirst and content.field_standfirst.value %} 
         {{ content.field_standfirst }}
       {% else %}
         {{ content.body }}
       {% endif %}
-      </div>
-
-       <div class="summary-card-image">
-          {% if content.field_image['#items'].0.entity is not empty %}
-            {{ content.field_image }}
-          {% elseif node.field_media is not empty %}
-            {{ node.field_media.entity|view('thumbnail') }}
-          {% else %}
-          {{ content.field_main_image }}
-          {% endif %}
-      </div>
-
     </div>
-
+      {% if node.field_main_image is not empty %}
+      <div class="summary-card-image">
+          {{ content.field_main_image }}
+      </div>
+      {% endif %}
+    </div>
     <div class="info-list">
       <div class="il-item">
         <dt class="il-label">Country:</dt>
