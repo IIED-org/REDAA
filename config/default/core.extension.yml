@@ -15,6 +15,7 @@ module:
   clamav: 0
   comment: 0
   config: 0
+  config_split: 0
   contact: 0
   contextual: 0
   ctools: 0
@@ -31,7 +32,6 @@ module:
   field: 0
   field_group: 0
   field_layout: 0
-  field_ui: 0
   file: 0
   filter: 0
   geocoder: 0
@@ -40,7 +40,6 @@ module:
   geocoder_geofield: 0
   geofield: 0
   google_tag: 0
-  help: 0
   history: 0
   image: 0
   inline_entity_form: 0
@@ -60,7 +59,6 @@ module:
   media_pdf_thumbnail: 0
   memcache: 0
   menu_link_content: 0
-  menu_ui: 0
   mysql: 0
   node: 0
   options: 0
@@ -103,7 +101,6 @@ module:
   varnish_purger: 0
   views_bulk_operations: 0
   views_field_view: 0
-  views_ui: 0
   pathauto: 1
   password_policy: 10
   views: 10

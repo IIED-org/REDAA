@@ -175,3 +175,11 @@ $databases['default']['default'] = [
   'prefix' => '',
   'collation' => 'utf8mb4_general_ci',
 ];
+
+/**
+ * Use "local" config split
+ */
+$config['config_split.config_split.local']['status'] = TRUE;
+$config['config_split.config_split.dev']['status'] = FALSE;
+$config['config_split.config_split.stage']['status'] = FALSE;
+$config['config_split.config_split.prod']['status'] = FALSE;

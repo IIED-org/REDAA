@@ -1,14 +1,10 @@
 uuid: 9bd4504d-7c6a-4638-9abe-37834d26d493
 langcode: en
 status: true
-dependencies:
-  module:
-    - menu_ui
+dependencies: {  }
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
+    available_menus: {  }
 name: Project
 type: project
 description: 'Demo project / case study (select sub-type)'

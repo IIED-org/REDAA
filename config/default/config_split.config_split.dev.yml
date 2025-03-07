@@ -1,0 +1,22 @@
+uuid: 875ac7cf-c423-4eac-aadc-f2d480e555b6
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: 'As per local minus any devel modules'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/splits/dev
+module:
+  field_ui: 0
+  help: 0
+  menu_ui: 0
+  views_ui: 0
+  help_topics: 0
+  stage_file_proxy: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

@@ -1,0 +1,16 @@
+uuid: efb04588-4915-446f-8569-891aa4a7f6cb
+langcode: en
+status: true
+dependencies: {  }
+id: stage
+label: Stage
+description: 'Config for staging site (identical to prod but without password expiry)'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/splits/stage
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

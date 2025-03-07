@@ -21,7 +21,6 @@ dependencies:
     - eu_cookie_compliance
     - file
     - filter
-    - help
     - layout_builder
     - media
     - media_pdf_thumbnail
@@ -44,7 +43,6 @@ permissions:
   - 'access contextual links'
   - 'access draggableviews'
   - 'access files overview'
-  - 'access help pages'
   - 'access media overview'
   - 'access toolbar'
   - 'access tour'

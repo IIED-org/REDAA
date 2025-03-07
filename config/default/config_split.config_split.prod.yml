@@ -1,0 +1,17 @@
+uuid: b5f057b7-8850-4fb4-97f2-295cb12c62c9
+langcode: en
+status: true
+dependencies: {  }
+id: prod
+label: Prod
+description: 'Configuration for production site'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/splits/prod
+module: {  }
+theme: {  }
+complete_list:
+  - password_policy.password_policy.password_expiry
+partial_list: {  }

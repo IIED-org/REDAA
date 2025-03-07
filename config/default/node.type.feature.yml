@@ -1,14 +1,10 @@
 uuid: 1c33c68d-6daf-49d2-815c-a1ec2eab0ad3
 langcode: en
 status: true
-dependencies:
-  module:
-    - menu_ui
+dependencies: {  }
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
+    available_menus: {  }
 name: Feature
 type: feature
 description: 'Featured item(s) for home page'
