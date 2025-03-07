@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.project.field_focal_countries_text
     - field.field.node.project.field_focal_country
     - field.field.node.project.field_full_title
+    - field.field.node.project.field_grant_call
     - field.field.node.project.field_grant_reference
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
@@ -26,11 +27,9 @@ dependencies:
     - field.field.node.project.field_thematic_priorities
     - field.field.node.project.field_theme
     - field.field.node.project.field_value
-    - image.style.card_cover
     - node.type.project
   module:
     - layout_builder
-    - media
     - options
     - text
     - user
@@ -52,13 +51,11 @@ content:
     weight: 2
     region: content
   field_main_image:
-    type: media_thumbnail
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: card_cover
-      image_loading:
-        attribute: lazy
+      view_mode: embedded
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
@@ -85,6 +82,7 @@ hidden:
   field_focal_countries_text: true
   field_focal_country: true
   field_full_title: true
+  field_grant_call: true
   field_grant_reference: true
   field_lead_organisation: true
   field_location_text: true

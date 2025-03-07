@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.project.field_focal_countries_text
     - field.field.node.project.field_focal_country
     - field.field.node.project.field_full_title
+    - field.field.node.project.field_grant_call
     - field.field.node.project.field_grant_reference
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
@@ -103,6 +104,7 @@ hidden:
   field_focal_countries_text: true
   field_focal_country: true
   field_full_title: true
+  field_grant_call: true
   field_grant_reference: true
   field_lead_organisation: true
   field_location_text: true

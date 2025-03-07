@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.project.field_focal_countries_text
     - field.field.node.project.field_focal_country
     - field.field.node.project.field_full_title
+    - field.field.node.project.field_grant_call
     - field.field.node.project.field_grant_reference
     - field.field.node.project.field_lead_organisation
     - field.field.node.project.field_location_text
@@ -64,19 +65,19 @@ content:
     third_party_settings: {  }
   field_countries:
     type: address_country_default
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_dates:
     type: daterange_default
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ecosystem_landscape:
     type: options_select
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -88,9 +89,15 @@ content:
       rows: 2
       placeholder: ''
     third_party_settings: {  }
+  field_grant_call:
+    type: options_select
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_grant_reference:
     type: string_textfield
-    weight: 14
+    weight: 15
     region: content
     settings:
       size: 60
@@ -98,7 +105,7 @@ content:
     third_party_settings: {  }
   field_lead_organisation:
     type: text_textfield
-    weight: 16
+    weight: 17
     region: content
     settings:
       size: 120
@@ -106,7 +113,7 @@ content:
     third_party_settings: {  }
   field_location_text:
     type: string_textarea
-    weight: 21
+    weight: 22
     region: content
     settings:
       rows: 3
@@ -121,7 +128,7 @@ content:
     third_party_settings: {  }
   field_org:
     type: inline_entity_form_complex
-    weight: 15
+    weight: 16
     region: content
     settings:
       form_mode: default
@@ -145,7 +152,7 @@ content:
     third_party_settings: {  }
   field_related:
     type: entity_reference_autocomplete
-    weight: 25
+    weight: 26
     region: content
     settings:
       match_operator: CONTAINS
@@ -177,19 +184,19 @@ content:
     third_party_settings: {  }
   field_tags:
     type: options_buttons
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_theme:
     type: options_select
-    weight: 23
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   field_value:
     type: number
-    weight: 17
+    weight: 18
     region: content
     settings:
       placeholder: ''
@@ -240,7 +247,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 24
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }

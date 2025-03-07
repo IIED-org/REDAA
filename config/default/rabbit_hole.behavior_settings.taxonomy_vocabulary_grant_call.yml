@@ -1,0 +1,14 @@
+uuid: ce03184c-2d72-4cbc-8ddb-effcfa4291b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.grant_call
+id: taxonomy_vocabulary_grant_call
+entity_type_id: taxonomy_vocabulary
+entity_id: grant_call
+action: page_not_found
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
