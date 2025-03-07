@@ -2,10 +2,6 @@
 
 namespace Drupal\Tests\better_exposed_filters\FunctionalJavascript;
 
-use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
-use Drupal\Tests\better_exposed_filters\Traits\BetterExposedFiltersTrait;
-use Drupal\Tests\node\Traits\ContentTypeCreationTrait;
-use Drupal\Tests\node\Traits\NodeCreationTrait;
 use Drupal\views\Views;
 
 /**
@@ -13,63 +9,7 @@ use Drupal\views\Views;
  *
  * @group better_exposed_filters
  */
-class BetterExposedFiltersTest extends WebDriverTestBase {
-
-  use BetterExposedFiltersTrait;
-  use ContentTypeCreationTrait;
-  use NodeCreationTrait;
-
-  /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'stark';
-
-  /**
-   * {@inheritdoc}
-   */
-  protected static $modules = [
-    'block',
-    'node',
-    'views',
-    'taxonomy',
-    'better_exposed_filters',
-    'bef_test',
-  ];
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function setUp(): void {
-    parent::setUp();
-
-    // Enable AJAX on the test view.
-    \Drupal::configFactory()->getEditable('views.view.bef_test')
-      ->set('display.default.display_options.use_ajax', TRUE)
-      ->save();
-
-    // Create a few test nodes.
-    $this->createNode([
-      'title' => 'Page One',
-      'field_bef_boolean' => '',
-      'field_bef_email' => '1bef-test@drupal.org',
-      'field_bef_integer' => '1',
-      'field_bef_letters' => 'Aardvark',
-      // Seattle.
-      'field_bef_location' => '10',
-      'type' => 'bef_test',
-    ]);
-    $this->createNode([
-      'title' => 'Page Two',
-      'field_bef_boolean' => '',
-      'field_bef_email' => '2bef-test2@drupal.org',
-      'field_bef_integer' => '2',
-      'field_bef_letters' => 'Bumble & the Bee',
-      // Vancouver.
-      'field_bef_location' => '15',
-      'type' => 'bef_test',
-    ]);
-
-  }
+class BetterExposedFiltersTest extends BetterExposedFiltersTestBase {
 
   /**
    * Tests if filtering via auto-submit works.
@@ -101,6 +41,10 @@ class BetterExposedFiltersTest extends WebDriverTestBase {
 
     // Enter value in email field.
     $field_bef_email = $page->find('css', '.form-item-field-bef-email-value input');
+    /* Assert exposed operator field does not have attribute to exclude it from
+    auto-submit. */
+    $field_bef_exposed_operator_email = $page->find('css', '.form-item-field-bef-email-value-1 input');
+    $this->assertFalse($field_bef_exposed_operator_email->hasAttribute('data-bef-auto-submit-exclude'));
     $field_bef_email->setValue('1');
     // Verify that auto submit didn't run, due to less than 4 characters.
     $html = $page->getHtml();
@@ -157,6 +101,10 @@ class BetterExposedFiltersTest extends WebDriverTestBase {
     $field_bef_email = $page->find('css', '.form-item-field-bef-email-value input');
     $field_bef_email->setValue('qwerty@test.com');
 
+    // Enter value in exposed operator email field.
+    $field_bef_exposed_operator_email = $page->find('css', '.form-item-field-bef-email-value-1 input');
+    $field_bef_exposed_operator_email->setValue('qwerty@test.com');
+
     // Verify nothing has changed.
     $html = $page->getHtml();
     $this->assertStringContainsString('Page One', $html);
@@ -174,11 +122,13 @@ class BetterExposedFiltersTest extends WebDriverTestBase {
 
   /**
    * Tests if filtering via auto-submit works if exposed form is a block.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function testAutoSubmitWithExposedFormBlock() {
     $view = Views::getView('bef_test');
     $display = &$view->storage->getDisplay('default');
-    $block = $this->drupalPlaceBlock('views_exposed_filter_block:bef_test-page_2');
+    $this->drupalPlaceBlock('views_exposed_filter_block:bef_test-page_2');
 
     // Enable auto-submit, but disable for text fields.
     $this->setBetterExposedOptions($view, [
@@ -214,6 +164,10 @@ class BetterExposedFiltersTest extends WebDriverTestBase {
     $field_bef_email = $page->find('css', '.form-item-field-bef-email-value input');
     $field_bef_email->setValue('qwerty@test.com');
 
+    // Enter value in exposed operator email field.
+    $field_bef_exposed_operator_email = $page->find('css', '.form-item-field-bef-email-value-1 input');
+    $field_bef_exposed_operator_email->setValue('qwerty@test.com');
+
     // Verify nothing has changed.
     $html = $page->getHtml();
     $this->assertStringContainsString('Page One', $html);
@@ -231,15 +185,17 @@ class BetterExposedFiltersTest extends WebDriverTestBase {
 
   /**
    * Tests placing exposed filters inside a collapsible field-set.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function testSecondaryOptions(): void {
     $view = Views::getView('bef_test');
 
-    // Enable auto-submit, but disable for text fields.
     $this->setBetterExposedOptions($view, [
       'general' => [
         'allow_secondary' => TRUE,
         'secondary_label' => 'Secondary Options TEST',
+        'autosubmit' => FALSE,
       ],
       'sort' => [
         'plugin_id' => 'default',
@@ -295,6 +251,8 @@ class BetterExposedFiltersTest extends WebDriverTestBase {
 
   /**
    * Tests when filter is marked to be collapsed.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function testFilterCollapsible() {
     $view = Views::getView('bef_test');
@@ -329,6 +287,35 @@ class BetterExposedFiltersTest extends WebDriverTestBase {
     $details_summary = $page->find('css', '#edit-field-bef-email-value-collapsible summary');
     $this->assertTrue($details_summary->hasAttribute('aria-expanded'));
     $this->assertEquals('false', $details_summary->getAttribute('aria-expanded'));
+  }
+
+  /**
+   * Test label hidden setting.
+   *
+   * @throws \Behat\Mink\Exception\ElementNotFoundException
+   * @throws \Behat\Mink\Exception\ExpectationException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public function testLabelHidden(): void {
+    $view = Views::getView('bef_test');
+    $session = $this->assertSession();
+
+    $this->drupalGet('/bef-test-slider-between');
+    $session->elementAttributeNotContains('css', '#edit-field-bef-price-value-wrapper--2 legend span', 'class', 'visually-hidden');
+
+    $this->setBetterExposedOptions($view, [
+      'filter' => [
+        'field_bef_price_value' => [
+          'plugin_id' => 'bef_sliders',
+          'advanced' => [
+            'hide_label' => TRUE,
+          ],
+        ],
+      ],
+    ], 'page_4');
+
+    $this->drupalGet('/bef-test-slider-between');
+    $session->elementAttributeContains('css', '#edit-field-bef-price-value-wrapper--2 legend span', 'class', 'visually-hidden');
   }
 
   /**

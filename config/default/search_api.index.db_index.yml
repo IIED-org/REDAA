@@ -3,22 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_author_s_
     - field.storage.node.body
+    - field.storage.node.field_author_s_
     - field.storage.node.field_countries
+    - field.storage.node.field_document_type
     - field.storage.node.field_ecosystem_landscape
     - field.storage.node.field_full_title
     - field.storage.node.field_location_text
     - field.storage.node.field_org
-    - field.storage.node.field_tags
-    - field.storage.node.field_document_type
     - field.storage.node.field_short_title
     - field.storage.node.field_standfirst
     - field.storage.node.field_subtype
+    - field.storage.node.field_tags
     - search_api.server.database
   module:
     - node
-    - search_api
 id: db_index
 name: 'DB index'
 description: ''

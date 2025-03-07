@@ -28,13 +28,8 @@ Submit bug reports and feature suggestions, or track changes in the
 
 ## Requirements
 
-- [Views](https://www.drupal.org/project/views)
-- [Filter](https://www.drupal.org/project/filter)
-- [User](https://www.drupal.org/project/user)
-- [System](https://www.drupal.org/project/system)
-- [jQuery UI](https://www.drupal.org/project/jquery_ui)
-- [jQuery UI Slider](https://www.drupal.org/project/jquery_ui_slider)
-
+- Core modules
+  - views
 
 ## Installation
 
@@ -44,30 +39,11 @@ information, see
 
 ### Use a local version of the Slider library
 
-If you want to use a local library for the Slider functionality instead of loading the library from a CDN, you need to place the library in the `nouislider` directory of one of your Drupal installation's `libraries` folders.
+If you want to use a local library for the Slider functionality instead of 
+loading the library from a CDN, you need to place the library in the `nouislider`
+directory of one of your Drupal installation's `libraries` folders.
 
-#### Project's composer.json and Drupal Core's Scaffolding plugin
-
-To set this up using Composer and [Drupal Core's Scaffolding plugin](https://www.drupal.org/docs/develop/using-composer/using-drupals-composer-scaffold), use the following commands:
-
-1. `composer config --json --merge extra.drupal-scaffold.file-mapping '{"[web-root]/libraries/nouislider/nouislider.min.js": "vendor/leongersen/nouislider/dist/nouislider.min.js"}'`
-2. `composer require -W 'leongersen/nouislider:15.5.1'`
-
-#### Using composer.libraries.json
-
-If you are using the Composer Merge Plugin you can add the composer.libraries.json to your project's composer.json:
-
-```
-  "merge-plugin": {
-    "include": [
-      "web/modules/contrib/better_exposed_filters/composer.libraries.json"
-    ]
-  }
-```
-
-Then use the following command:
-
-`composer update -W 'leongersen/nouislider'`
+As of 7.0.3 we now have a drupal library project to pull from.
 
 #### Install manually
 

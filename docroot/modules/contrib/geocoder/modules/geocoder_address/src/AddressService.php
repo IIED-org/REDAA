@@ -10,6 +10,7 @@ use CommerceGuys\Addressing\Formatter\PostalLabelFormatter;
 use CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface;
 use Drupal\address\Element\Address as ElementAddress;
 use Drupal\Core\DependencyInjection\ServiceProviderBase;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 
 /**
  * Generate an AddressService.
@@ -23,21 +24,28 @@ class AddressService extends ServiceProviderBase {
    *
    * @var \CommerceGuys\Addressing\AddressFormat\AddressFormatRepositoryInterface
    */
-  protected $addressFormatRepository;
+  protected AddressFormatRepositoryInterface $addressFormatRepository;
 
   /**
    * The country repository.
    *
    * @var \CommerceGuys\Addressing\Country\CountryRepositoryInterface
    */
-  protected $countryRepository;
+  protected CountryRepositoryInterface $countryRepository;
 
   /**
    * The subdivision repository.
    *
    * @var \CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface
    */
-  protected $subdivisionRepository;
+  protected SubdivisionRepositoryInterface $subdivisionRepository;
+
+  /**
+   * The module handler to invoke the alter hook.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected ModuleHandlerInterface $moduleHandler;
 
   /**
    * AddressService constructor.
@@ -48,11 +56,14 @@ class AddressService extends ServiceProviderBase {
    *   The subdivision repository.
    * @param \CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface $subdivision_repository
    *   The postal label formatter.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler.
    */
-  public function __construct(AddressFormatRepositoryInterface $address_format_repository, CountryRepositoryInterface $country_repository, SubdivisionRepositoryInterface $subdivision_repository) {
+  public function __construct(AddressFormatRepositoryInterface $address_format_repository, CountryRepositoryInterface $country_repository, SubdivisionRepositoryInterface $subdivision_repository, ModuleHandlerInterface $module_handler) {
     $this->addressFormatRepository = $address_format_repository;
     $this->countryRepository = $country_repository;
     $this->subdivisionRepository = $subdivision_repository;
+    $this->moduleHandler = $module_handler;
   }
 
   /**
@@ -120,6 +131,8 @@ class AddressService extends ServiceProviderBase {
     // Make sure the address_array has all values populated.
     $values = ElementAddress::applyDefaults($values);
 
+    $this->moduleHandler->alter('geocoder_address_values', $values);
+
     // Without a country code this won't work.
     if (empty($values['country_code'])) {
       return '';
@@ -146,8 +159,8 @@ class AddressService extends ServiceProviderBase {
 
     // Clean up the returned multiline address to turn it into a single line of
     // text.
-    $address_string = str_replace("\n", ' ', $address_string);
-    $address_string = str_replace("<br>", ' ', $address_string);
+    $address_string = str_replace("\n", ', ', $address_string);
+    $address_string = str_replace("<br>", ', ', $address_string);
     $address_string = strip_tags($address_string);
 
     // In case of a country-only address, use the full country name.

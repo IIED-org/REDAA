@@ -384,10 +384,10 @@ class LeafletDefaultFormatter extends FormatterBase implements ContainerFactoryP
 
         // Transforms Icon Options that support Replacement Patterns/Tokens.
         if (!empty($settings["icon"]["iconSize"]["x"])) {
-          $feature['icon']["iconSize"]["x"] = $this->token->replace($settings["icon"]["iconSize"]["x"], $tokens);
+          $feature['icon']["iconSize"]["x"] = intval($this->token->replace($settings["icon"]["iconSize"]["x"], $tokens));
         }
         if (!empty($settings["icon"]["iconSize"]["y"])) {
-          $feature['icon']["iconSize"]["y"] = $this->token->replace($settings["icon"]["iconSize"]["y"], $tokens);
+          $feature['icon']["iconSize"]["y"] = intval($this->token->replace($settings["icon"]["iconSize"]["y"], $tokens));
         }
         if (!empty($settings["icon"]["iconAnchor"]["x"])) {
           $feature['icon']["iconAnchor"]["x"] = $this->token->replace($settings["icon"]["iconAnchor"]["x"], $tokens);
@@ -402,10 +402,10 @@ class LeafletDefaultFormatter extends FormatterBase implements ContainerFactoryP
           $feature['icon']["popupAnchor"]["y"] = $this->token->replace($settings["icon"]["popupAnchor"]["y"], $tokens);
         }
         if (!empty($settings["icon"]["shadowSize"]["x"])) {
-          $feature['icon']["shadowSize"]["x"] = $this->token->replace($settings["icon"]["shadowSize"]["x"], $tokens);
+          $feature['icon']["shadowSize"]["x"] = intval($this->token->replace($settings["icon"]["shadowSize"]["x"], $tokens));
         }
         if (!empty($settings["icon"]["shadowSize"]["y"])) {
-          $feature['icon']["shadowSize"]["y"] = $this->token->replace($settings["icon"]["shadowSize"]["y"], $tokens);
+          $feature['icon']["shadowSize"]["y"] = intval($this->token->replace($settings["icon"]["shadowSize"]["y"], $tokens));
         }
 
         switch ($icon_type) {
@@ -494,7 +494,7 @@ class LeafletDefaultFormatter extends FormatterBase implements ContainerFactoryP
   /**
    * Sets possibly existing previous settings for the Zoom Form Element.
    */
-  private function setExistingZoomSettings() {
+  protected function setExistingZoomSettings() {
     $settings = $this->getSettings();
     if (isset($settings['zoom'])) {
       $settings['map_position']['zoom'] = (int) $settings['zoom'];
@@ -519,7 +519,7 @@ class LeafletDefaultFormatter extends FormatterBase implements ContainerFactoryP
    * @return array
    *   The result render array.
    */
-  private function tokenResolvedContent(EntityInterface $entity, string $element_content, array $tokens, array $results) {
+  protected function tokenResolvedContent(EntityInterface $entity, string $element_content, array $tokens, array $results) {
     // Construct the renderable array for popup title / text. As we later
     // convert that to plain text, losing attachments and cacheability, save
     // them to $results.

@@ -60,7 +60,12 @@ class RootPackageLoader extends ArrayLoader
 
         $this->manager = $manager;
         $this->config = $config;
-        $this->versionGuesser = $versionGuesser ?: new VersionGuesser($config, new ProcessExecutor($io), $this->versionParser);
+        if (null === $versionGuesser) {
+            $processExecutor = new ProcessExecutor($io);
+            $processExecutor->enableAsync();
+            $versionGuesser = new VersionGuesser($config, $processExecutor, $this->versionParser);
+        }
+        $this->versionGuesser = $versionGuesser;
         $this->io = $io;
     }
 
@@ -88,7 +93,7 @@ class RootPackageLoader extends ArrayLoader
 
             // override with env var if available
             if (Platform::getEnv('COMPOSER_ROOT_VERSION')) {
-                $config['version'] = Platform::getEnv('COMPOSER_ROOT_VERSION');
+                $config['version'] = $this->versionGuesser->getRootVersionFromEnv();
             } else {
                 $versionData = $this->versionGuesser->guessVersion($config, $cwd ?? Platform::getCwd(true));
                 if ($versionData) {

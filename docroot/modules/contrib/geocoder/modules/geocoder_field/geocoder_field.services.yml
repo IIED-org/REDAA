@@ -9,3 +9,9 @@ services:
     class: Drupal\geocoder_field\PreprocessorPluginManager
     parent: default_plugin_manager
     arguments: ["@country_manager"]
+
+  geocoder_field.workspace_publishing_subscriber:
+    class: Drupal\geocoder_field\EventSubscriber\WorkspacePublishingSubscriber
+    arguments: ['@request_stack']
+    tags:
+      - { name: event_subscriber }

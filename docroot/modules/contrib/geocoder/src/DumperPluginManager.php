@@ -73,10 +73,13 @@ class DumperPluginManager extends GeocoderPluginManagerBase {
       'locality' => '',
     ];
 
-    // Define an administrative_area line1 from adminLevels name, if existing.
+    // Define an administrative_area line1 from adminLevels code or name,
+    // if existing.
+    // @see https://www.drupal.org/project/geocoder/issues/3510705.
     $administrative_area = '';
     if (!empty($geojson_array['properties']['adminLevels'])) {
-      $administrative_area = array_shift($geojson_array['properties']['adminLevels'])['code'];
+      $administrative_area_array = array_shift($geojson_array['properties']['adminLevels']);
+      $administrative_area = !empty($administrative_area_array['code']) ? $administrative_area_array['code'] : ($administrative_area_array['name'] ?? NULL);
     }
 
     // Define the address line1, adding a street number to it, if existing.

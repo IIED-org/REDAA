@@ -131,7 +131,10 @@ function geocoder_field_field_config_edit_form_validate(array $form, FormStateIn
   }
 
   // Give a chance to the geocoder field plugin to perform its own validation.
-  $geocoder_data = (new FormState())->setValues($form_state->getValue(['third_party_settings', 'geocoder_field']));
+  $geocoder_data = (new FormState())->setValues($form_state->getValue([
+    'third_party_settings',
+    'geocoder_field',
+  ]));
   $trail = ['third_party_settings', 'geocoder_field', 'field_plugin'];
 
   /** @var \Drupal\geocoder_field\GeocoderFieldPluginInterface $field_plugin */
@@ -160,9 +163,14 @@ function geocoder_field_entity_presave(EntityInterface $entity) {
     return;
   }
 
+  // Skip any action if requested.
   $geocoder_config = \Drupal::configFactory()->get('geocoder.settings');
-  // Check geocoder_presave_disabled setting and do nothing if enabled.
-  if ($geocoder_config->get('geocoder_presave_disabled')) {
+  $config_disabled = $geocoder_config->get('geocoder_presave_disabled');
+  // Check if geocoder presave is disabled at runtime by a request attribute.
+  // i.e. via WorkspacePublishingSubscriber
+  // (@see https://www.drupal.org/i/3301512)
+  $runtime_disabled = \Drupal::request()->attributes->get('geocoder_presave_disabled', FALSE);
+  if ($config_disabled || $runtime_disabled) {
     return;
   }
 
@@ -227,7 +235,7 @@ function geocoder_field_entity_presave(EntityInterface $entity) {
     $failure_status_message = NULL;
     $providers = GeocoderProvider::loadMultiple($geocoder['providers']);
 
-    // Skip Geocode/Reverse Geocode op is so requested for not empty value.
+    // Skip Geocode/Reverse Geocode op if so requested for not empty value.
     if (isset($geocoder['skip_not_empty_value']) && $geocoder['skip_not_empty_value'] && !$default_values->isEmpty()) {
       return;
     }

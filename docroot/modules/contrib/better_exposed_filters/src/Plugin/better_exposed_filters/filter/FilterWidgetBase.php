@@ -223,7 +223,15 @@ abstract class FilterWidgetBase extends BetterExposedFiltersWidgetBase implement
 
     // Visually hidden label.
     if (!empty($this->configuration['advanced']['hide_label'])) {
-      $form[$field_id]['#title_display'] = 'invisible';
+      // Check if the field was wrapped with a fieldset.
+      // @see \Drupal\views\Plugin\views\filter\FilterPluginBase::buildExposedForm
+      // @see \Drupal\views\Plugin\views\filter\FilterPluginBase::buildValueWrapper
+      if (empty($form["{$field_id}_wrapper"][$field_id])) {
+        $form[$field_id]['#title_display'] = 'invisible';
+      }
+      else {
+        $form["{$field_id}_wrapper"]['#title_display'] = 'invisible';
+      }
     }
 
     // Handle filter value rewrites.
@@ -251,21 +259,23 @@ abstract class FilterWidgetBase extends BetterExposedFiltersWidgetBase implement
 
     // If selected, collect our collapsible filter form element and put it in
     // a details' element.
-    if ($is_collapsible) {
-      $details = [];
-      $details[$field_id . '_collapsible'] = [
-        '#type' => 'details',
-        '#title' => $exposed_label,
-        '#description' => $exposed_description,
-        '#attributes' => [
-          'class' => ['form-item'],
-        ],
-        '#collapsible_disable_automatic_open' => $collapsible_disable_automatic_open,
-      ];
+    if (!empty($form[$field_id])) {
+      if ($is_collapsible) {
+        $details = [];
+        $details[$field_id . '_collapsible'] = [
+          '#type' => 'details',
+          '#title' => $exposed_label,
+          '#description' => $exposed_description,
+          '#attributes' => [
+            'class' => ['form-item'],
+          ],
+          '#collapsible_disable_automatic_open' => $collapsible_disable_automatic_open,
+        ];
 
-      // Retain same weight as the original fields for details.
-      $pos = array_search($field_id, array_keys($form));
-      $form = array_merge(array_slice($form, 0, $pos), $details, array_slice($form, $pos));
+        // Retain same weight as the original fields for details.
+        $pos = array_search($field_id, array_keys($form));
+        $form = array_merge(array_slice($form, 0, $pos), $details, array_slice($form, $pos));
+      }
     }
 
     // Add possible field wrapper to validate for "between" operator.

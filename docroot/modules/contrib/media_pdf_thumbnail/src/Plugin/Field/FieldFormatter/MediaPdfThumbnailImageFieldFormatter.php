@@ -234,7 +234,7 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
     else {
       $fieldInfos = [
         'image_id' => $this->mediaPdfThumbnailImageManager->getGenericThumbnail(),
-        'pdf_uri' => $fileEntity->getFileUri(),
+        'pdf_uri' => !empty($fileEntity) ? $fileEntity->getFileUri() : NULL,
       ];
     }
 
@@ -262,7 +262,7 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
         break;
 
       case 'file':
-        if (!empty($fieldInfos['pdf_uri'])) {
+        if (!empty($fieldInfos['pdf_uri']) && !empty($fieldInfos['image_uri'])) {
           $stream = $this->streamWrapperManager->getViaUri($fieldInfos['image_uri'])
             ->getExternalUrl();
           $element[0]['#url'] = Url::fromUri($stream, $options);
@@ -275,6 +275,8 @@ class MediaPdfThumbnailImageFieldFormatter extends ImageFormatter {
       'fieldInfo' => $fieldInfos,
       'mediaEntity' => $entity,
       'pdfEntity' => !empty($fieldInfos['image_uri']) ? $this->mediaPdfThumbnailImageManager->getPdfEntityByPdfFileUri($fieldInfos['image_uri']) : NULL,
+      'settings' => $settings,
+      'third_party_settings' => $this->getThirdPartySettings(),
     ];
 
     $this->moduleHandler->alter('media_pdf_thumbnail_image_render', $element, $infos);

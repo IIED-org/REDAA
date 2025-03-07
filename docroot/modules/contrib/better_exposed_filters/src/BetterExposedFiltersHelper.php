@@ -48,15 +48,13 @@ class BetterExposedFiltersHelper {
     $lines = explode("\n", trim($rewrite_settings));
     foreach ($lines as $line) {
       [$search, $replace] = array_map('trim', explode('|', $line));
-      if (!empty($search)) {
-        $rewrites[$search] = $replace;
+      $rewrites[$search] = $replace;
 
-        // Find the key of the option we need to reorder.
-        if ($reorder) {
-          $key = array_search($search, $flat_options);
-          if ($key !== FALSE) {
-            $order[] = $key;
-          }
+      // Find the key of the option we need to reorder.
+      if ($reorder) {
+        $key = array_search($search, $flat_options);
+        if ($key !== FALSE) {
+          $order[] = $key;
         }
       }
     }

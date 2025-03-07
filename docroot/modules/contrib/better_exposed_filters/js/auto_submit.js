@@ -61,7 +61,7 @@
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const $lastTriggeredSelector = $(settings.bef_autosubmit_target).attr('data-drupal-selector');
-              if ($el.attr('data-drupal-selector') === $lastTriggeredSelector) {
+              if ($el.attr('data-drupal-selector') && $el.attr('data-drupal-selector') === $lastTriggeredSelector) {
                 $el.focus();
               }
             }

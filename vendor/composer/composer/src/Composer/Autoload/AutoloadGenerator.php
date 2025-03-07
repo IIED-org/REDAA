@@ -34,6 +34,7 @@ use Composer\Script\ScriptEvents;
 use Composer\Util\PackageSorter;
 use Composer\Json\JsonFile;
 use Composer\Package\Locker;
+use Symfony\Component\Console\Formatter\OutputFormatter;
 
 /**
  * @author Igor Wiedler <igor@wiedler.ch>
@@ -173,7 +174,7 @@ class AutoloadGenerator
      * @throws \Seld\JsonLint\ParsingException
      * @throws \RuntimeException
      */
-    public function dump(Config $config, InstalledRepositoryInterface $localRepo, RootPackageInterface $rootPackage, InstallationManager $installationManager, string $targetDir, bool $scanPsrPackages = false, ?string $suffix = null, ?Locker $locker = null)
+    public function dump(Config $config, InstalledRepositoryInterface $localRepo, RootPackageInterface $rootPackage, InstallationManager $installationManager, string $targetDir, bool $scanPsrPackages = false, ?string $suffix = null, ?Locker $locker = null, bool $strictAmbiguous = false)
     {
         if ($this->classMapAuthoritative) {
             // Force scanPsrPackages when classmap is authoritative
@@ -362,7 +363,12 @@ EOF;
         }
 
         $classMap = $classMapGenerator->getClassMap();
-        foreach ($classMap->getAmbiguousClasses() as $className => $ambiguousPaths) {
+        if ($strictAmbiguous) {
+            $ambiguousClasses = $classMap->getAmbiguousClasses(false);
+        } else {
+            $ambiguousClasses = $classMap->getAmbiguousClasses();
+        }
+        foreach ($ambiguousClasses as $className => $ambiguousPaths) {
             if (count($ambiguousPaths) > 1) {
                 $this->io->writeError(
                     '<warning>Warning: Ambiguous class resolution, "'.$className.'"'.
@@ -374,6 +380,9 @@ EOF;
                     ' was found in both "'.$classMap->getClassPath($className).'" and "'. implode('", "', $ambiguousPaths) .'", the first will be used.</warning>'
                 );
             }
+        }
+        if (\count($ambiguousClasses) > 0) {
+            $this->io->writeError('<info>To resolve ambiguity in classes not under your control you can ignore them by path using <href='.OutputFormatter::escape('https://getcomposer.org/doc/04-schema.md#exclude-files-from-classmaps').'>exclude-files-from-classmap</>');
         }
 
         // output PSR violations which are not coming from the vendor dir
@@ -569,12 +578,17 @@ EOF;
         }
         $sortedPackageMap = $this->sortPackageMap($packageMap);
         $sortedPackageMap[] = $rootPackageMap;
-        array_unshift($packageMap, $rootPackageMap);
+        $reverseSortedMap = array_reverse($sortedPackageMap);
 
-        $psr0 = $this->parseAutoloadsType($packageMap, 'psr-0', $rootPackage);
-        $psr4 = $this->parseAutoloadsType($packageMap, 'psr-4', $rootPackage);
-        $classmap = $this->parseAutoloadsType(array_reverse($sortedPackageMap), 'classmap', $rootPackage);
+        // reverse-sorted means root first, then dependents, then their dependents, etc.
+        // which makes sense to allow root to override classmap or psr-0/4 entries with higher precedence rules
+        $psr0 = $this->parseAutoloadsType($reverseSortedMap, 'psr-0', $rootPackage);
+        $psr4 = $this->parseAutoloadsType($reverseSortedMap, 'psr-4', $rootPackage);
+        $classmap = $this->parseAutoloadsType($reverseSortedMap, 'classmap', $rootPackage);
+
+        // sorted (i.e. dependents first) for files to ensure that dependencies are loaded/available once a file is included
         $files = $this->parseAutoloadsType($sortedPackageMap, 'files', $rootPackage);
+        // using sorted here but it does not really matter as all are excluded equally
         $exclude = $this->parseAutoloadsType($sortedPackageMap, 'exclude-from-classmap', $rootPackage);
 
         krsort($psr0);
@@ -656,11 +670,11 @@ EOF;
 
             foreach ($package->getIncludePaths() as $includePath) {
                 $includePath = trim($includePath, '/');
-                $includePaths[] = empty($installPath) ? $includePath : $installPath.'/'.$includePath;
+                $includePaths[] = $installPath === '' ? $includePath : $installPath.'/'.$includePath;
             }
         }
 
-        if (!$includePaths) {
+        if (\count($includePaths) === 0) {
             return null;
         }
 

@@ -59,6 +59,19 @@ class BetterExposedFiltersHelperUnitTest extends UnitTestCase {
       ['foo' => '1', 'baz' => '3'],
     ];
 
+    // Check boolean values.
+    $data[] = [
+      ['foo' => '0', 'bar' => '1'],
+      "0|Zero",
+      ['foo' => 'Zero', 'bar' => '1'],
+    ];
+
+    $data[] = [
+      ['foo' => '0', 'bar' => '1'],
+      "1|One",
+      ['foo' => '0', 'bar' => 'One'],
+    ];
+
     // Ensure order is preserved.
     $data[] = [
       ['foo' => '1', 'bar' => '2', 'baz' => '3'],

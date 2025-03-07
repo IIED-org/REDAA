@@ -18,13 +18,13 @@ class GeocoderProviderAddForm extends GeocoderProviderFormBase {
    *   An associative array containing the structure of the form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
-   * @param string $geocoder_provider_id
-   *   The Geocoder provider ID.
+   * @param string|null $geocoder_provider_id
+   *   The Geocoder provider ID or NULL if not provided.
    *
    * @return array
    *   The form structure.
    */
-  public function buildForm(array $form, FormStateInterface $form_state, string $geocoder_provider_id = NULL): array {
+  public function buildForm(array $form, FormStateInterface $form_state, ?string $geocoder_provider_id = NULL): array {
     if (isset($geocoder_provider_id)) {
       $this->entity->setPlugin($geocoder_provider_id);
     }

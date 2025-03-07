@@ -9,6 +9,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\geocoder\DumperPluginManager;
+use Drupal\geocoder\DumperInterface;
 use Drupal\geocoder\FormatterPluginManager;
 use Drupal\geocoder\Geocoder;
 use Geocoder\Model\Address;
@@ -66,8 +67,11 @@ class GeocoderApiEnpoints extends ControllerBase {
 
   /**
    * Get the Address Formatter.
+   *
+   * @param string|null $address_format
+   *   The Address Format string identifier, is set.
    */
-  protected function getAddressFormatter($address_format = NULL) {
+  protected function getAddressFormatter(?string $address_format = NULL): string {
     return $address_format ?: 'default_formatted_address';
   }
 
@@ -133,7 +137,7 @@ class GeocoderApiEnpoints extends ControllerBase {
    * @param string|null $address_format
    *   The specific @GeocoderFormatter id to be used.
    */
-  protected function getAddressCollectionResponse(AddressCollection $geo_collection, $dumper = NULL, $address_format = NULL): void {
+  protected function getAddressCollectionResponse(AddressCollection $geo_collection, ?DumperInterface $dumper = NULL, ?string $address_format = NULL): void {
     $result = [];
     /** @var \Geocoder\Model\Address $geo_address **/
     foreach ($geo_collection->all() as $k => $geo_address) {

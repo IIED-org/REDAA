@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\SubformState;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Render\ElementInfoManagerInterface;
+use Drupal\Core\Theme\ThemeManagerInterface;
 use Drupal\Core\Url;
 use Drupal\better_exposed_filters\Plugin\BetterExposedFiltersWidgetManager;
 use Drupal\views\Plugin\views\exposed_form\InputRequired;
@@ -45,6 +46,8 @@ class BetterExposedFilters extends InputRequired {
    *   The better exposed filter widget manager for sort widgets.
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
    *   Manage drupal modules.
+   * @param \Drupal\Core\Theme\ThemeManagerInterface $themeManager
+   *   Manage drupal themes.
    * @param \Drupal\Core\Render\ElementInfoManagerInterface $elementInfo
    *   The element info manager.
    * @param \Symfony\Component\HttpFoundation\Request $request
@@ -58,6 +61,7 @@ class BetterExposedFilters extends InputRequired {
     protected BetterExposedFiltersWidgetManager $pagerWidgetManager,
     protected BetterExposedFiltersWidgetManager $sortWidgetManager,
     protected ModuleHandlerInterface $moduleHandler,
+    protected ThemeManagerInterface $themeManager,
     protected ElementInfoManagerInterface $elementInfo,
     protected Request $request,
   ) {
@@ -77,6 +81,7 @@ class BetterExposedFilters extends InputRequired {
       $container->get('plugin.manager.better_exposed_filters_pager_widget'),
       $container->get('plugin.manager.better_exposed_filters_sort_widget'),
       $container->get('module_handler'),
+      $container->get('theme.manager'),
       $container->get('element_info'),
       $container->get('request_stack')->getCurrentRequest()
     );
@@ -742,6 +747,7 @@ class BetterExposedFilters extends InputRequired {
     // processing.
     $bef_options = &$this->options['bef'];
     $this->moduleHandler->alter('better_exposed_filters_options', $bef_options, $this->view, $this->displayHandler);
+    $this->themeManager->alter('better_exposed_filters_options', $bef_options, $this->view, $this->displayHandler);
 
     // Apply auto-submit values.
     if (!empty($bef_options['general']['autosubmit'])) {
@@ -755,17 +761,10 @@ class BetterExposedFilters extends InputRequired {
       ]);
       $form['actions']['submit']['#attributes']['data-bef-auto-submit-click'] = '';
       $form['#attached']['library'][] = 'better_exposed_filters/auto_submit';
-
-      if (!empty($bef_options['general']['autosubmit_exclude_textfield'])) {
-        $supported_types = ['entity_autocomplete', 'textfield'];
-        foreach ($form as &$element) {
-          $element_type = $element['#type'] ?? NULL;
-          if (in_array($element_type, $supported_types)) {
-            $element['#attributes']['data-bef-auto-submit-exclude'] = '';
-          }
-        }
-        unset($element);
-      }
+      /* There are text fields provided by other modules which have different
+      "type" attributes, so attach the autosubmit exclude config setting
+      so we can handle it with JS. */
+      $form['#attached']['drupalSettings']['better_exposed_filters']['autosubmit_exclude_textfield'] = $bef_options['general']['autosubmit_exclude_textfield'];
 
       if (!empty($bef_options['general']['autosubmit_hide'])) {
         $form['actions']['submit']['#attributes']['class'][] = 'js-hide';
@@ -925,7 +924,7 @@ class BetterExposedFilters extends InputRequired {
             // Reset exposed sorts filter elements if they exist.
             if ($type === 'sort') {
               foreach (['sort_bef_combine', 'sort_by', 'sort_order'] as $sort_el) {
-                if (isset($this->view->exposed_data[$sort_el])) {
+                if (isset($this->view->exposed_data[$sort_el]) && isset($form[$sort_el])) {
                   $this->request->query->remove($sort_el);
                   $form_state->setValue($sort_el, $form[$sort_el]['#default_value']);
                 }

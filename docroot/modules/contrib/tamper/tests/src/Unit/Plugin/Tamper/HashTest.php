@@ -67,12 +67,26 @@ class HashTest extends TamperPluginTestBase {
   }
 
   /**
-   * Test the plugin behaviour without a tamperable item.
+   * Test the plugin behavior without a tamperable item.
    */
   public function testEmptyTamperableItem() {
     $this->expectException(TamperException::class);
     $this->expectExceptionMessage('Tamperable item can not be null.');
     $this->plugin->tamper('foo');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function testWithNullValue() {
+    $this->assertEquals('2b0eeb49f0ad7ef475c49c652cc22a3a', $this->plugin->tamper(NULL, $this->getMockItem()));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function testWithEmptyString() {
+    $this->assertEquals('2b0eeb49f0ad7ef475c49c652cc22a3a', $this->plugin->tamper('', $this->getMockItem()));
   }
 
 }

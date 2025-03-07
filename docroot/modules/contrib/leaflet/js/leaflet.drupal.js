@@ -414,7 +414,8 @@
    *   The Feature coming from Drupal settings.
    */
   Drupal.Leaflet.prototype.feature_bind_popup = function(lFeature, feature) {
-    if (feature.popup) {
+    // Attach the Popup only if supported and a value is set for it.
+    if (typeof lFeature.bindPopup !== "undefined" && feature.popup && feature.popup.value) {
       const popup_options = feature.popup.options ? JSON.parse(feature.popup.options) : {};
       lFeature.bindPopup(feature.popup.value, popup_options);
     }
@@ -538,7 +539,7 @@
       // @see https://www.drupal.org/project/leaflet/issues/3377403
       // @see https://www.drupal.org/project/leaflet/issues/3186029
       case 'json':
-        lFeature = this.create_json(feature.json, feature.events);
+        lFeature = this.create_json(feature.json, feature.options, feature.events);
         break;
 
       case 'multipoint':
@@ -653,30 +654,45 @@
       iconUrl: options.iconUrl,
     };
 
-    // Override applicable marker defaults.
+    // Apply Icon properties
+    // @see https://leafletjs.com/reference.html#icon
+    
+    // Icon Size.
     if (options.iconSize) {
       icon_options.iconSize = new L.Point(parseInt(options.iconSize.x), parseInt(options.iconSize.y));
     }
+    // Icon Anchor.
     if (options.iconAnchor && options.iconAnchor.x && options.iconAnchor.y) {
       icon_options.iconAnchor = new L.Point(parseInt(options.iconAnchor.x), parseInt(options.iconAnchor.y));
     }
+    // Popup Anchor.
     if (options.popupAnchor && options.popupAnchor.x && options.popupAnchor.y) {
       icon_options.popupAnchor = new L.Point(parseInt(options.popupAnchor.x), parseInt(options.popupAnchor.y));
     }
+
+    // Popup ShadowUrl.
     if (options.shadowUrl) {
       icon_options.shadowUrl = options.shadowUrl;
     }
-    if (options.iconRetinaUrl) {
-      icon_options.iconRetinaUrl = options.iconRetinaUrl;
-    }
+
+    // Popup ShadowSize.
     if (options.shadowSize && options.shadowSize.x && options.shadowSize.y) {
       icon_options.shadowSize = new L.Point(parseInt(options.shadowSize.x), parseInt(options.shadowSize.y));
     }
+
+    // Popup ShadowAnchor.
     if (options.shadowAnchor && options.shadowAnchor.x && options.shadowAnchor.y) {
       icon_options.shadowAnchor = new L.Point(parseInt(options.shadowAnchor.x), parseInt(options.shadowAnchor.y));
     }
+
     if (options.className) {
       icon_options.className = options.className;
+    }
+
+    // Popup IconRetinaUrl.
+    // @see https://www.drupal.org/project/leaflet/issues/3268023
+    if (options.iconRetinaUrl) {
+      icon_options.iconRetinaUrl = options.iconRetinaUrl;
     }
 
     return new L.Icon(icon_options);
@@ -694,14 +710,19 @@
     let html_class = options['html_class'] || '';
     let icon = new L.DivIcon({html: options.html, className: html_class});
 
-    // override applicable marker defaults
+    // Apply Icon properties
+    // @see https://leafletjs.com/reference.html#icon
+
+    // Icon Size.
     if (options.iconSize) {
       icon.options.iconSize = new L.Point(parseInt(options.iconSize.x, 10), parseInt(options.iconSize.y, 10));
     }
+    // Icon Anchor.
     if (options.iconAnchor && options.iconAnchor.x && options.iconAnchor.y) {
       icon.options.iconAnchor = new L.Point(parseInt(options.iconAnchor.x), parseInt(options.iconAnchor.y));
     }
-    if (options.popupAnchor && !isNaN(options.popupAnchor.x) && !isNaN(options.popupAnchor.y)) {
+    // Popup Anchor.
+    if (options.popupAnchor && options.popupAnchor.x && options.popupAnchor.y) {
       icon.options.popupAnchor = new L.Point(parseInt(options.popupAnchor.x), parseInt(options.popupAnchor.y));
     }
 
@@ -729,7 +750,8 @@
       marker_title = marker.tooltip.value.replace(/<[^>]*>/g, '').trim();
     }
     let options = {
-      title: marker_title,
+      // Define the title (as mouse hover tooltip) only in case the Leaflet Tooltip is not defined.
+      title: marker.title ? marker_title : "",
       className: marker.className || '',
       alt: marker_title,
       group_label: marker.group_label ?? '',
@@ -872,11 +894,16 @@
    *
    * @param json
    *   The json input.
+   * @param options
+   *   The options array,
+   *   that would reflect the GeoJSON Leaflet Js library options
+   *   https://leafletjs.com/reference.html#geojson
    * @param events
+   *   The events array
    *
    * @returns {*}
    */
-  Drupal.Leaflet.prototype.create_json = function(json, events) {
+  Drupal.Leaflet.prototype.create_json = function(json, options = [], events = []) {
     let lJSON = new L.GeoJSON();
     const self = this;
 
@@ -898,12 +925,18 @@
       // Eventually add Popup to the Layer.
       self.feature_bind_popup(layer, feature.properties);
 
-      for (e in events) {
+      for (const e in events) {
         let layerParam = {};
         layerParam[e] = eval(events[e]);
         layer.on(layerParam);
       }
     };
+
+    for (const option in options) {
+      if (Object.prototype.hasOwnProperty.call(options, option)) {
+        lJSON.options[option] = eval(options[option]);
+      }
+    }
 
     lJSON.addData(json);
     return lJSON;

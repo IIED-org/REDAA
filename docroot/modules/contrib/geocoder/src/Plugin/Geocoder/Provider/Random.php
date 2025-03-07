@@ -61,9 +61,10 @@ class Random extends ProviderBase {
   /**
    * Get Random Country info.
    *
-   * @todo [cc]: Tidy-up, document, etc.
-   */
-  private function getRandomCountryInfo($type = NULL) {
+   * @param string|null $type
+   *   The type string, if set.
+   * */
+  private function getRandomCountryInfo(?string $type = NULL) {
     $manager = new CountryManager($this->getModuleHandler());
     $countries = $manager->getList();
     uksort($countries, function () {

@@ -5,7 +5,7 @@
  * Provides some client-side functionality for the Better Exposed Filters module.
  */
 
-(function ($, Drupal) {
+(function ($, Drupal, once) {
   Drupal.behaviors.betterExposedFilters = {
     attach: function (context) {
       // Add highlight class to checked checkboxes for better theming.
@@ -32,4 +32,18 @@
       : $elem.closest('.form-item', context).removeClass('highlight');
   }
 
-})(jQuery, Drupal);
+  /**
+   * Adds the data-bef-auto-submit-exclude to elements with type="text".
+   */
+  Drupal.behaviors.autosubmitExcludeTextfield = {
+    attach: function (context, settings) {
+      if (!settings.better_exposed_filters?.autosubmit_exclude_textfield) {
+        return;
+      }
+      $(once('autosubmit-exclude-textfield', '.bef-exposed-form', context)).each(function () {
+        $(this).find('*[type="text"]').attr('data-bef-auto-submit-exclude', '');
+      });
+    }
+  };
+
+})(jQuery, Drupal, once);

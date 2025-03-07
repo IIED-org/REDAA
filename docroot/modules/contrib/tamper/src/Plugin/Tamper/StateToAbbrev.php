@@ -2,8 +2,8 @@
 
 namespace Drupal\tamper\Plugin\Tamper;
 
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation for converting state to abbreviation.
@@ -92,7 +92,11 @@ class StateToAbbrev extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
+    // Don't process empty or null values.
+    if (is_null($data) || $data === '') {
+      return $data;
+    }
 
     $states = self::getStateList();
 
@@ -104,7 +108,7 @@ class StateToAbbrev extends TamperBase {
     // Trim whitespace, set to lowercase.
     $state = mb_strtolower(trim($data));
 
-    return isset($states[$state]) ? $states[$state] : '';
+    return $states[$state] ?? '';
   }
 
 }
