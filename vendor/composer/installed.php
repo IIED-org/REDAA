@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'drupal/recommended-project',
-        'pretty_version' => 'dev-131-project-summaries',
-        'version' => 'dev-131-project-summaries',
-        'reference' => '4b5a2568ceddb4673b93e6327ffb6139d8002728',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'c475a2e02e0a29795177974fa04c9464baccce9f',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -835,6 +835,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/password_policy_extras' => array(
+            'pretty_version' => '4.0.0',
+            'version' => '4.0.0.0',
+            'reference' => '4.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../docroot/modules/contrib/password_policy_extras',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/pathauto' => array(
             'pretty_version' => '1.13.0',
             'version' => '1.13.0.0',
@@ -881,9 +890,9 @@
             'dev_requirement' => false,
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => 'dev-131-project-summaries',
-            'version' => 'dev-131-project-summaries',
-            'reference' => '4b5a2568ceddb4673b93e6327ffb6139d8002728',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'c475a2e02e0a29795177974fa04c9464baccce9f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
