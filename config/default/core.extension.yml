@@ -105,6 +105,7 @@ module:
   pathauto: 1
   password_policy: 10
   views: 10
+  password_policy_extras: 20
   standard: 1000
   eu_cookie_compliance: 1001
 theme:
