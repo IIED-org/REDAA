@@ -1848,7 +1848,7 @@ display:
           admin_label: ''
           plugin_id: custom
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: true
             text: '<p><a href="/projects/#node_{{ nid }}">Read project summary →</a></p>'
