@@ -7,8 +7,8 @@ dependencies:
 id: taxonomy_vocabulary_organisation
 entity_type_id: taxonomy_vocabulary
 entity_id: organisation
-action: access_denied
+action: page_redirect
 allow_override: 1
-redirect: ''
+redirect: '[term:field_link:uri]'
 redirect_code: 301
 redirect_fallback_action: access_denied

@@ -9,7 +9,6 @@ dependencies:
     - taxonomy.vocabulary.organisation
   module:
     - layout_builder
-    - text
 third_party_settings:
   layout_builder:
     enabled: false
@@ -18,14 +17,9 @@ id: taxonomy_term.organisation.description
 targetEntityType: taxonomy_term
 bundle: organisation
 mode: description
-content:
-  description:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
+  description: true
   field_country: true
   field_link: true
+  search_api_excerpt: true

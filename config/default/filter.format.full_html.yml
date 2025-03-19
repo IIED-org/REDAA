@@ -46,7 +46,7 @@ filters:
     status: false
     weight: -44
     settings:
-      allowed_html: '<ul class="image-list"> <blockquote class="green blue red"> <div class="box box-yellow box-blue aspect-ratio"> <span class="highlight-text">'
+      allowed_html: '<div class="aspect-ratio box box-blue box-gold box-green box-red"> <blockquote class="blue gold green red"> <span class="highlight-text">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:
@@ -94,3 +94,4 @@ filters:
         rounded: rounded
       allowed_media_types:
         image: image
+        remote_video: remote_video

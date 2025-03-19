@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_main_image
     - field.field.node.article.field_short_title
+    - field.field.node.article.field_standfirst
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
     - image.style.wide
@@ -178,6 +179,21 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 10
             additional: {  }
+          219d5f41-1a09-4389-9e1f-79b6aab9c3c3:
+            uuid: 219d5f41-1a09-4389-9e1f-79b6aab9c3c3
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_standfirst'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
@@ -234,6 +250,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_standfirst:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_tags:
     type: entity_reference_label

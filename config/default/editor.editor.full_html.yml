@@ -28,6 +28,7 @@ settings:
       - drupalMedia
       - '|'
       - style
+      - showBlocks
       - sourceEditing
   plugins:
     ckeditor5_alignment:
@@ -49,33 +50,37 @@ settings:
         startIndex: true
       multiBlock: true
     ckeditor5_sourceEditing:
-      allowed_tags: {  }
+      allowed_tags:
+        - '<div>'
     ckeditor5_style:
       styles:
         -
-          label: 'Image list'
-          element: '<ul class="image-list">'
+          label: 'Aspect ratio'
+          element: '<div class="aspect-ratio">'
         -
-          label: Green
-          element: '<blockquote class="green">'
-        -
-          label: Blue
+          label: 'Blue quote'
           element: '<blockquote class="blue">'
         -
-          label: Red
+          label: 'Gold quote'
+          element: '<blockquote class="gold">'
+        -
+          label: 'Green quote'
+          element: '<blockquote class="green">'
+        -
+          label: 'Red quote'
           element: '<blockquote class="red">'
-        -
-          label: Box
-          element: '<div class="box">'
-        -
-          label: 'Box yellow'
-          element: '<div class="box box-yellow">'
         -
           label: 'Box blue'
           element: '<div class="box box-blue">'
         -
-          label: 'Aspect ratio'
-          element: '<div class="aspect-ratio">'
+          label: 'Box gold'
+          element: '<div class="box box-gold">'
+        -
+          label: 'Box green'
+          element: '<div class="box box-green">'
+        -
+          label: 'Box red'
+          element: '<div class="box box-red">'
         -
           label: Highlight
           element: '<span class="highlight-text">'
