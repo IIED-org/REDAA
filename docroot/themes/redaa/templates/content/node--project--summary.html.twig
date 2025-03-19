@@ -15,9 +15,9 @@
   <div>
     <h3 class="card-title">
       {% if node.field_short_title is not empty %}
-        {{ content.field_short_title.0|render|striptags }}
+        {{ content.field_short_title.0|render }}
       {% else %}
-        {{ label }}
+        <a href="{{ url }}">{{ label }}</a>
     {% endif %}
   </h3>
   <div class="summary--text-image">
