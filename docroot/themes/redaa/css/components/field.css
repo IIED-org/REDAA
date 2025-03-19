@@ -15,7 +15,7 @@
 }
 
 .field:not(:last-child) {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .node--view-mode-teaser .field {
@@ -142,4 +142,8 @@
     background-color: rgba(255, 255, 0, 0.4); /* Yellow with 40% opacity */
     padding: 2px 0.3125rem;
     border-radius: 0.1875rem;
+  }
+
+.field--label-inline.field:not(:last-child) {
+    margin-bottom: 0.5rem;
   }

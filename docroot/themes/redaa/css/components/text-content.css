@@ -124,8 +124,7 @@
     margin-bottom: 2rem;
     font-family: "Lora", "georgia", serif;
     font-size: 1rem;
-    line-height: 1.5rem;
-    text-align: justify
+    line-height: 1.5rem
   }
 
 [dir="ltr"] .text-content blockquote:before, [dir="ltr"]  .cke_editable blockquote:before {

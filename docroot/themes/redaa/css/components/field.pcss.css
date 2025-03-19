@@ -6,7 +6,7 @@
 @import "../base/variables.pcss.css";
 
 .field:not(:last-child) {
-  margin-block-end: var(--sp2);
+  margin-block-end: var(--sp2-5);
 }
 
 .node--view-mode-teaser .field {
@@ -116,4 +116,8 @@
     background-color: rgba(255, 255, 0, 0.4); /* Yellow with 40% opacity */
     padding: 2px 5px;
     border-radius: 3px;
+  }
+
+  .field--label-inline.field:not(:last-child) {
+    margin-block-end: var(--sp0-5);
   }

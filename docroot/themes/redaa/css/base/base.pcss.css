@@ -87,13 +87,13 @@ h6 {
 
 h1 {
   letter-spacing: -0.01em;
-  font-size: 30px;
+  font-size: 26px;
   line-height: var(--sp2);
   color: var(--color--red);
 
   @media (--md) {
-    font-size: 60px;
-    line-height: var(--sp4);
+    font-size: 36px;
+    line-height: var(--sp3);
   }
 }
 
@@ -103,8 +103,8 @@ h2 {
   line-height: var(--sp2);
 
   @media (--md) {
-    font-size: 36px;
-    line-height: var(--sp3);
+    font-size: 30px;
+    line-height: var(--sp2);
   }
 }
 

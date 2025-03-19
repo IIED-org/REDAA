@@ -124,7 +124,7 @@
   margin-top: 0;
 }
 
-.box-yellow {
+.box-gold {
   border-color: #F4BB37;
 }
 
@@ -132,3 +132,10 @@
   border-color: #005890;
 }
 
+.box-green {
+  border-color: #446629;
+}
+
+.box-red {
+  border-color: #AB351C;
+}
