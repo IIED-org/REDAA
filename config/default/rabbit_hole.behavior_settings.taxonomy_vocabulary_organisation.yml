@@ -11,4 +11,4 @@ action: page_redirect
 allow_override: 1
 redirect: '[term:field_link:uri]'
 redirect_code: 301
-redirect_fallback_action: access_denied
+redirect_fallback_action: display_page

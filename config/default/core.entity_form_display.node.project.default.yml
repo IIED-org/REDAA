@@ -32,7 +32,6 @@ dependencies:
     - datetime
     - datetime_range
     - field_layout
-    - inline_entity_form
     - layout_discovery
     - media_library
     - path
@@ -65,19 +64,19 @@ content:
     third_party_settings: {  }
   field_countries:
     type: address_country_default
-    weight: 21
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_dates:
     type: daterange_default
-    weight: 19
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ecosystem_landscape:
     type: options_select
-    weight: 23
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -103,17 +102,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_lead_organisation:
-    type: text_textfield
-    weight: 17
-    region: content
-    settings:
-      size: 120
-      placeholder: ''
-    third_party_settings: {  }
   field_location_text:
     type: string_textarea
-    weight: 22
+    weight: 21
     region: content
     settings:
       rows: 3
@@ -127,22 +118,14 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_org:
-    type: inline_entity_form_complex
+    type: entity_reference_autocomplete
     weight: 16
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
       match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: false
-      collapsed: false
-      revision: false
-      removed_reference: optional
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_publication_date:
     type: datetime_default
@@ -152,7 +135,7 @@ content:
     third_party_settings: {  }
   field_related:
     type: entity_reference_autocomplete
-    weight: 26
+    weight: 25
     region: content
     settings:
       match_operator: CONTAINS
@@ -184,19 +167,19 @@ content:
     third_party_settings: {  }
   field_tags:
     type: options_buttons
-    weight: 20
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   field_theme:
     type: options_select
-    weight: 24
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   field_value:
     type: number
-    weight: 18
+    weight: 17
     region: content
     settings:
       placeholder: ''
@@ -247,7 +230,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 25
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -255,4 +238,5 @@ hidden:
   feeds_item: true
   field_focal_countries_text: true
   field_focal_country: true
+  field_lead_organisation: true
   field_thematic_priorities: true
