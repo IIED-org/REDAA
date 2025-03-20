@@ -121,3 +121,71 @@
   .field--label-inline.field:not(:last-child) {
     margin-block-end: var(--sp0-5);
   }
+
+
+  .field--name-field-updates {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;  
+  
+  & .field__label {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  /* Timeline (the vertical ruler) */
+  & .field__items::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: var(--color--gold);
+    top: 1rem;
+    bottom: 0;
+    left: 5px;
+    margin-left: 0;
+    border-radius: 2px;
+    border: solid 2px var(--color--gold);
+  }
+  
+  /* Container around content */
+  & .field__items {
+    padding: 20px 30px;
+    position: relative;
+    background-color: inherit;
+    width: 95%;
+  }
+  
+  /* The circles on the timeline */
+  & .field__item::after {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: -60px;
+    background: url(/themes/redaa/images/leaf_green.svg) center no-repeat white;
+    top: 1.7rem;
+    border-radius: 50%;
+    z-index: 1;
+    border: solid 4px white;
+  }
+  
+  & .field__item {
+    left: 0;
+    margin: 0 0 2rem 1rem;
+    padding: 0 1rem 2rem;
+    position: relative;
+    border-radius: 0.625rem;
+    border: solid 2px var(--color--blue-20);
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    
+    /* Full-width containers */
+    & .field__item {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+  }
+}
