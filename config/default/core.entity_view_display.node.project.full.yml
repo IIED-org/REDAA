@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.project.field_tags
     - field.field.node.project.field_thematic_priorities
     - field.field.node.project.field_theme
+    - field.field.node.project.field_updates
     - field.field.node.project.field_value
     - node.type.project
   module:
@@ -45,11 +46,11 @@ content:
     weight: 5
     region: content
   field_dates:
-    type: daterange_default
+    type: daterange_custom
     label: inline
     settings:
       timezone_override: ''
-      format_type: redaa_medium
+      date_format: 'F Y'
       from_to: both
       separator: '-'
     third_party_settings: {  }
@@ -68,7 +69,7 @@ content:
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_main_image:
     type: entity_reference_entity_view
@@ -83,7 +84,7 @@ content:
     type: entity_reference_label
     label: inline
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -93,7 +94,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_standfirst:
     type: text_default
@@ -102,10 +103,17 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_updates:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
 hidden:
   feeds_item: true

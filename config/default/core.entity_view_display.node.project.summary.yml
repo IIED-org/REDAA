@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.project.field_tags
     - field.field.node.project.field_thematic_priorities
     - field.field.node.project.field_theme
+    - field.field.node.project.field_updates
     - field.field.node.project.field_value
     - node.type.project
   module:
@@ -59,13 +60,13 @@ content:
     weight: 6
     region: content
   field_dates:
-    type: daterange_default
+    type: daterange_custom
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      date_format: 'F Y'
       from_to: both
-      separator: '-'
+      separator: ' – '
     third_party_settings: {  }
     weight: 10
     region: content
@@ -120,7 +121,7 @@ content:
     type: string
     label: hidden
     settings:
-      link_to_entity: false
+      link_to_entity: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -164,4 +165,5 @@ hidden:
   field_subtype: true
   field_thematic_priorities: true
   field_theme: true
+  field_updates: true
   search_api_excerpt: true

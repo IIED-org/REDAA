@@ -11,7 +11,7 @@ field_name: field_org
 entity_type: node
 bundle: project
 label: 'Lead organisation'
-description: ''
+description: "Start typing to find an <a href=\"/admin/structure/taxonomy/manage/organisation/overview\" target=\"_blank\">existing organisation</a> ↗︎ or <a href=\"/admin/structure/taxonomy/manage/organisation/add\" target=\"_blank\">add a new one</a> ↗︎<br />\r\n"
 required: false
 translatable: false
 default_value: {  }
@@ -24,6 +24,6 @@ settings:
     sort:
       field: name
       direction: asc
-    auto_create: false
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

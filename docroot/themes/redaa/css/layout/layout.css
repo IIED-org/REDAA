@@ -16,7 +16,7 @@
 
 .container {
   width: 100%;
-  max-width: 84.375rem;
+  max-width: 80rem;
   padding-left: 1rem;
   padding-right: 1rem
 }
@@ -30,7 +30,7 @@
   }
 
 .page-wrapper {
-  max-width: 98.125rem;
+  max-width: 90rem;
   background: #fff;
   margin: auto;
 }
@@ -68,7 +68,7 @@
   }
 
 .main-content {
-    width: calc(100% - 5rem)
+    width: calc(100% - 3.75rem)
 }
   }
 

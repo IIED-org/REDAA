@@ -15,7 +15,7 @@
 }
 
 .field:not(:last-child) {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .node--view-mode-teaser .field {
@@ -142,4 +142,94 @@
     background-color: rgba(255, 255, 0, 0.4); /* Yellow with 40% opacity */
     padding: 2px 0.3125rem;
     border-radius: 0.1875rem;
+  }
+
+.field--label-inline.field:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+.field--name-field-updates {
+    position: relative;
+    max-width: 80rem;
+    margin: 0 auto
+}
+
+.field--name-field-updates .field__label {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+.field--name-field-updates {
+  
+  /* Timeline (the vertical ruler) */
+}
+
+.field--name-field-updates .field__items::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: #F4BB37;
+    top: 1rem;
+    bottom: 0;
+    left: 0.3125rem;
+    margin-left: 0;
+    border-radius: 2px;
+    border: solid 2px #F4BB37;
+  }
+
+.field--name-field-updates {
+  
+  /* Container around content */
+}
+
+.field--name-field-updates .field__items {
+    padding: 1.25rem 1.875rem;
+    position: relative;
+    background-color: inherit;
+    width: 95%;
+  }
+
+.field--name-field-updates {
+  
+  /* The circles on the timeline */
+}
+
+.field--name-field-updates .field__item::after {
+    content: '';
+    position: absolute;
+    width: 2.25rem;
+    height: 2.25rem;
+    left: -3.75rem;
+    background: url(/themes/redaa/images/leaf_green.svg) center no-repeat white;
+    top: 1.7rem;
+    border-radius: 50%;
+    z-index: 1;
+    border: solid 4px white;
+  }
+
+.field--name-field-updates .field__item {
+    left: 0;
+    margin: 0 0 2rem 1rem;
+    padding: 0 1rem 2rem;
+    position: relative;
+    border-radius: 0.625rem;
+    border: solid 2px #005890;
+  }
+
+.field--name-field-updates {
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+}
+
+@media screen and (max-width: 37.5rem) {
+
+.field--name-field-updates {
+    
+    /* Full-width containers */
+}
+    .field--name-field-updates .field__item {
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    }
   }

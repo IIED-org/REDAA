@@ -38,10 +38,10 @@
   --line-height-s: 18px;
 
   /* Layout */
-  --max-width: 1350px;
-  --max-bg-color: 1570px;
+  --max-width: 1280px;
+  --max-bg-color: 1440px;
   --sp: 16px;
-  --content-left: 80px;
+  --content-left: 60px;
   --container-padding: var(--sp);
   --container-padding-nav: var(--sp2);
   --site-header-height-wide: var(--sp10);

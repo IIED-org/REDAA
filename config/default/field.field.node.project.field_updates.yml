@@ -1,0 +1,22 @@
+uuid: dbcebf32-4090-4ced-a32a-d06b1cac257d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_updates
+    - node.type.project
+  module:
+    - text
+id: node.project.field_updates
+field_name: field_updates
+entity_type: node
+bundle: project
+label: 'Project updates'
+description: 'Add field with date and text per update'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

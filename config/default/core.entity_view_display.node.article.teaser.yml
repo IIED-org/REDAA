@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_main_image
     - field.field.node.article.field_short_title
+    - field.field.node.article.field_standfirst
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
     - image.style.max_180
@@ -66,6 +67,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_standfirst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
     region: content
   links:
     settings: {  }

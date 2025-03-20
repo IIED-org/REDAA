@@ -102,7 +102,7 @@
   }
 
 .site-branding {
-    min-width: calc(14.28571vw + 0.86607rem);
+    min-width: calc(14.28571vw + 1.04464rem);
     min-height: 10rem;
     padding-top: 0;
     padding-bottom: 0
@@ -112,7 +112,7 @@
 @media (min-width: 90rem) {
 
 .site-branding {
-    min-width: 13.76786rem
+    min-width: 13.14286rem
 }
   }
 

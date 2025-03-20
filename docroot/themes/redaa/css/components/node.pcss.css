@@ -95,6 +95,7 @@
   border: 1px solid var(--color--gray-70);
   border-radius: var(--border-radius-l);
   padding: var(--sp1);
+  width: 90%
 }
 
 .box h2:first-of-type,
@@ -102,7 +103,7 @@
   margin-block-start: 0;
 }
 
-.box-yellow {
+.box-gold {
   border-color: var(--color--gold);
 }
 
@@ -110,3 +111,10 @@
   border-color: var(--color--blue-20);
 }
 
+.box-green {
+  border-color: var(--color--green);
+}
+
+.box-red {
+  border-color: var(--color--red);
+}

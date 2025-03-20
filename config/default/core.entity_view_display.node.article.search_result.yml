@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_main_image
     - field.field.node.article.field_short_title
+    - field.field.node.article.field_standfirst
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
     - image.style.thumbnail_sq
@@ -107,4 +108,5 @@ content:
 hidden:
   field_main_image: true
   field_short_title: true
+  field_standfirst: true
   links: true

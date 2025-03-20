@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.project.field_tags
     - field.field.node.project.field_thematic_priorities
     - field.field.node.project.field_theme
+    - field.field.node.project.field_updates
     - field.field.node.project.field_value
     - node.type.project
   module:
@@ -114,4 +115,5 @@ hidden:
   field_related: true
   field_standfirst: true
   field_thematic_priorities: true
+  field_updates: true
   field_value: true
