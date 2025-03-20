@@ -132,15 +132,15 @@
 @media (min-width: 75rem) {
 
 [dir="ltr"] .layout--content-narrow .entity-moderation-form, [dir="ltr"]  .layout--pass--content-narrow > * .entity-moderation-form, [dir="ltr"]  .layout--content-medium .entity-moderation-form, [dir="ltr"]  .layout--pass--content-medium > * .entity-moderation-form {
-      margin-left: calc(-7.14286vw - -0.56696rem);
+      margin-left: calc(-7.14286vw - -0.47768rem);
   }
 
 [dir="rtl"] .layout--content-narrow .entity-moderation-form, [dir="rtl"]  .layout--pass--content-narrow > * .entity-moderation-form, [dir="rtl"]  .layout--content-medium .entity-moderation-form, [dir="rtl"]  .layout--pass--content-medium > * .entity-moderation-form {
-      margin-right: calc(-7.14286vw - -0.56696rem);
+      margin-right: calc(-7.14286vw - -0.47768rem);
   }
 
 .layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
-      width: calc(85.71429vw - 8.80357rem)
+      width: calc(85.71429vw - 7.73214rem)
   }
     }
 
@@ -155,6 +155,6 @@
   }
 
 .layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
-      width: 60.83929rem
+      width: 57.71429rem
   }
     }

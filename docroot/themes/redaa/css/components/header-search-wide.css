@@ -61,11 +61,11 @@
 }
 
 [dir="ltr"] .block-search-wide__wrapper {
-  border-left: solid 80px #313637;
+  border-left: solid 60px #313637;
 }
 
 [dir="rtl"] .block-search-wide__wrapper {
-  border-right: solid 80px #313637;
+  border-right: solid 60px #313637;
 }
 
 .block-search-wide__wrapper {
@@ -76,7 +76,7 @@
   visibility: hidden;
   overflow: hidden;
   width: 100vw;
-  max-width: 98.125rem;
+  max-width: 90rem;
   height: 8rem;
   max-height: 0;
   margin-top: 0;
@@ -308,7 +308,7 @@
 }
 
 .block-search-wide__container {
-  max-width: 84.375rem;
+  max-width: 80rem;
 }
 
 .block-search-wide__grid {

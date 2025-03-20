@@ -60,7 +60,7 @@
       position: fixed;
       z-index: 102; /* Appear above body content that is position: relative */
       top: -8rem;
-      max-width: 98.125rem;
+      max-width: 90rem;
     }
   body:not(.is-always-mobile-nav) {
 
@@ -80,7 +80,7 @@
 .site-header__inner {
   z-index: 1; /* Appear in front of Drupal's tabs. */
   flex-grow: 1;
-  width: calc(100vw - 5rem);
+  width: calc(100vw - 3.75rem);
   background: #fff;
 }
 

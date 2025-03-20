@@ -118,6 +118,7 @@
   border: 1px solid #d7e1e8;
   border-radius: 1.5rem;
   padding: 1rem;
+  width: 90%
 }
 
 .box h2:first-of-type, .box h3:first-of-type {

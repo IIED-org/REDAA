@@ -262,7 +262,7 @@ body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed.toolbar-tray-open .he
 
 body.is-always-mobile-nav .header-nav {
       overflow: auto;
-      max-width: calc(50vw - 3.96875rem);
+      max-width: calc(50vw - 3.34375rem);
       transition: transform 0.2s, visibility 0.2s;
       border-top-width: 176px
   }
@@ -271,15 +271,15 @@ body.is-always-mobile-nav .header-nav {
 @media (min-width: 90rem) {
 
 [dir="ltr"] body.is-always-mobile-nav .header-nav {
-      padding-right: calc(100vw - 88.375rem);
+      padding-right: calc(100vw - 82.75rem);
   }
 
 [dir="rtl"] body.is-always-mobile-nav .header-nav {
-      padding-left: calc(100vw - 88.375rem);
+      padding-left: calc(100vw - 82.75rem);
   }
 
 body.is-always-mobile-nav .header-nav {
-      max-width: calc(100vw - 48.1875rem)
+      max-width: calc(100vw - 44.75rem)
   }
     }
 

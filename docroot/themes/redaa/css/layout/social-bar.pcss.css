@@ -16,7 +16,7 @@
 
 .social-bar__inner {
   position: relative;
-  padding-block: var(--sp0-5);
+  padding-block: var(--sp0);
   padding-inline-start: var(--sp);
   padding-inline-end: var(--sp);
 

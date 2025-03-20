@@ -95,6 +95,7 @@
   border: 1px solid var(--color--gray-70);
   border-radius: var(--border-radius-l);
   padding: var(--sp1);
+  width: 90%
 }
 
 .box h2:first-of-type,
