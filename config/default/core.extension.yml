@@ -43,6 +43,7 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
+  klaro: 0
   layout_builder: 0
   layout_builder_boolean: 0
   layout_builder_expose_all_field_blocks: 0
@@ -107,7 +108,6 @@ module:
   views: 10
   password_policy_extras: 20
   standard: 1000
-  eu_cookie_compliance: 1001
 theme:
   olivero: 0
   claro: 0
