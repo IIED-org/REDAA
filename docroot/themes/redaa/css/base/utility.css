@@ -77,3 +77,7 @@
 .gold {
   color: #F4BB37;
 }
+
+.mt-0 {
+  margin-top: 0 !important;
+}
