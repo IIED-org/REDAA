@@ -1,4 +1,4 @@
-uuid: 45e00b2a-4f6f-472c-9915-96213c7c36fc
+uuid: eed16287-4e1c-4ea6-93ab-32f17a3981a8
 langcode: en
 status: false
 dependencies: {  }
@@ -8,6 +8,9 @@ id: instagram
 label: Instagram
 description: 'Instagram is a social media platform by Meta Platforms, Inc (USA).'
 default: false
+purposes:
+  - external_content
+cookies: {  }
 required: false
 opt_out: false
 only_once: false
@@ -15,13 +18,10 @@ contextual_consent_only: null
 contextual_consent_text: null
 info_url: 'https://about.instagram.com/'
 privacy_policy_url: 'https://privacycenter.instagram.com/policy'
-purposes:
-  - external_content
-cookies: {  }
-callback_code: ''
 javascripts:
   - www.instagram.com/embed.js
+callback_code: ''
 wrapper_identifier:
   - .instagram-media
 attachments: {  }
-weight: 0
+weight: -3

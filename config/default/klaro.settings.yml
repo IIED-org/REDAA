@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: HhNyhQ6tRke0JqjC9BExmWr-cTRPJWrIlD9LXhe-8Dk
 langcode: en
 dialog_mode: notice
 auto_decorate_final_html: false

@@ -1,4 +1,4 @@
-uuid: 44fb80c8-e194-45ee-8962-30094617989e
+uuid: 10bb651c-35f4-4ec1-ba7e-1c1329a7451d
 langcode: en
 status: false
 dependencies: {  }
@@ -8,6 +8,9 @@ id: mastodon_module
 label: Mastodon
 description: "Mastodon module for Drupal connects to given Mastodon server and stores posts in user's browser. Personal data such as IP addresses are processed."
 default: false
+purposes:
+  - external_content
+cookies: {  }
 required: false
 opt_out: false
 only_once: false
@@ -15,13 +18,10 @@ contextual_consent_only: false
 contextual_consent_text: ''
 info_url: 'https://mastodon.social/'
 privacy_policy_url: 'https://mastodon.social/privacy-policy'
-purposes:
-  - external_content
-cookies: {  }
-callback_code: ''
 javascripts:
   - mastodon.fed_embed.js
+callback_code: ''
 wrapper_identifier:
   - fed-embed
 attachments: {  }
-weight: 0
+weight: -1
