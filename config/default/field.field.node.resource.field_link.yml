@@ -12,7 +12,7 @@ field_name: field_link
 entity_type: node
 bundle: resource
 label: 'Link to external resource'
-description: "Link to a resource on external site, e.g. iied.org publications library. Link text defaults to 'Download from source'"
+description: 'Link to a resource on external site, e.g. iied.org publications library. Link text defaults to ''Download from source''. If set, the URL will be used as the canonical location via &lt;link rel="canonical" /&gt;'
 required: false
 translatable: false
 default_value: {  }
