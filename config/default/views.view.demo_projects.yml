@@ -1851,8 +1851,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: '{{ field_grant_call_1 }}'
+            alter_text: true
+            text: '{{ field_grant_call_1 }}: {{ field_short_title }}'
             make_link: false
             path: ''
             absolute: false
@@ -1875,7 +1875,7 @@ display:
             more_link_path: ''
             strip_tags: true
             trim: false
-            preserve_tags: strong
+            preserve_tags: '<em> <br>'
             html: false
           element_type: ''
           element_class: ''
@@ -2124,9 +2124,10 @@ display:
           data_source:
             field_focal_country: field_focal_country
           entity_source: __base_table
+          entity_source_submit: 'Update Entity Source'
           name_field: field_short_title
           leaflet_tooltip:
-            value: ''
+            value: title
             options: '{"permanent":false,"direction":"center"}'
           leaflet_popup:
             value: '#rendered_view_fields'
@@ -2166,7 +2167,7 @@ display:
             shadowUrl: ''
             className: ''
             iconSize:
-              x: ''
+              x: '20'
               'y': ''
             iconAnchor:
               x: ''
@@ -2237,7 +2238,20 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<table style=\"border:1px solid #005890;border-radius: 0.75rem;text-align:left;padding:10px;\">\r\n<th colspan=2 style=\"height:3rem;\">Map key</th>\r\n    <tbody>\r\n        <tr>\r\n            <td style=\"width:40px;\">\r\n                <img style=\"width:20px;\" src=\"/themes/redaa/images/pin-378.svg\" alt=\"Blue map marker\">\r\n            </td>\r\n            <td>\r\n                Grant call 1: Inspiring locally led restoration\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td>\r\n                <img style=\"width:20px;\" src=\"/themes/redaa/images/pin-379.svg\" alt=\"Red map marker\">\r\n            </td>\r\n            <td>\r\n                Grant call 2: Scaling up locally led restoration\r\n            </td>\r\n        </tr>\r\n<tr><td><div class=\"marker-cluster marker-cluster-small\" tabindex=\"0\" style=\"width:20px;margin-left:-10px;background: none;\" role=\"button\"><div><span>9</span></div></div>\r\n</td><td>Project cluster (click to zoom in)</td></tr>\r\n    </tbody>\r\n</table>"
+            format: full_html
+          tokenize: false
       display_extenders: {  }
       block_description: 'Grantee map'
     cache_metadata:
@@ -4736,8 +4750,8 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: true
                   hide_label: false
-              field_grant_call_target_id:
-                plugin_id: bef_hidden
+              field_tags_target_id:
+                plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
@@ -4746,8 +4760,8 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: true
-                  hide_label: true
-              field_tags_target_id:
+                  hide_label: false
+              field_grant_call_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
@@ -4930,54 +4944,6 @@ display:
           hierarchy: false
           limit: true
           error_message: true
-        field_grant_call_target_id:
-          id: field_grant_call_target_id
-          table: node__field_grant_call
-          field: field_grant_call_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_grant_call_target_id_op
-            label: 'Grant call'
-            description: ''
-            use_operator: false
-            operator: field_grant_call_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: call
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: grant_call
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: false
         field_tags_target_id:
           id: field_tags_target_id
           table: node__field_tags
@@ -5026,6 +4992,54 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+        field_grant_call_target_id:
+          id: field_grant_call_target_id
+          table: node__field_grant_call
+          field: field_grant_call_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_grant_call_target_id_op
+            label: 'Grant call'
+            description: ''
+            use_operator: false
+            operator: field_grant_call_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: call
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: grant_call
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: false
       filter_groups:
         operator: AND
         groups:
@@ -5060,11 +5074,22 @@ display:
         group_by: false
         style: false
         row: false
+        relationships: false
         fields: false
         sorts: false
         filters: false
         filter_groups: false
         header: false
+      relationships:
+        field_grant_call:
+          id: field_grant_call
+          table: node__field_grant_call
+          field: field_grant_call
+          relationship: none
+          group_type: group
+          admin_label: 'field_grant_call: Taxonomy term'
+          plugin_id: standard
+          required: false
       css_class: ''
       use_ajax: true
       group_by: false
