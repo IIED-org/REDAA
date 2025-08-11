@@ -2238,7 +2238,20 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<table style=\"border:1px solid #005890;border-radius: 0.75rem;text-align:left;padding:10px;\">\r\n<th colspan=2 style=\"height:3rem;\">Map key</th>\r\n    <tbody>\r\n        <tr>\r\n            <td style=\"width:40px;\">\r\n                <img style=\"width:20px;\" src=\"/themes/redaa/images/pin-378.svg\" alt=\"Blue map marker\">\r\n            </td>\r\n            <td>\r\n                Grant call 1: Inspiring locally led restoration\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td>\r\n                <img style=\"width:20px;\" src=\"/themes/redaa/images/pin-379.svg\" alt=\"Red map marker\">\r\n            </td>\r\n            <td>\r\n                Grant call 2: Scaling up locally led restoration\r\n            </td>\r\n        </tr>\r\n<tr><td><div class=\"marker-cluster marker-cluster-small\" tabindex=\"0\" style=\"width:20px;margin-left:-10px;background: none;\" role=\"button\"><div><span>9</span></div></div>\r\n</td><td>Project cluster (click to zoom in)</td></tr>\r\n    </tbody>\r\n</table>"
+            format: full_html
+          tokenize: false
       display_extenders: {  }
       block_description: 'Grantee map'
     cache_metadata:
