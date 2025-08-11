@@ -383,7 +383,12 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        field_grant_call:
+          id: field_grant_call
+          table: node__field_grant_call
+          field: field_grant_call
+          plugin_id: standard
       header:
         area:
           id: area
@@ -1851,8 +1856,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: '{{ field_grant_call_1 }}'
+            alter_text: true
+            text: '{{ field_grant_call_1 }}: {{ field_short_title }}'
             make_link: false
             path: ''
             absolute: false
@@ -1875,7 +1880,7 @@ display:
             more_link_path: ''
             strip_tags: true
             trim: false
-            preserve_tags: strong
+            preserve_tags: '<em> <br>'
             html: false
           element_type: ''
           element_class: ''
@@ -2126,7 +2131,7 @@ display:
           entity_source: __base_table
           name_field: field_short_title
           leaflet_tooltip:
-            value: ''
+            value: title
             options: '{"permanent":false,"direction":"center"}'
           leaflet_popup:
             value: '#rendered_view_fields'
@@ -4736,8 +4741,8 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: true
                   hide_label: false
-              field_grant_call_target_id:
-                plugin_id: bef_hidden
+              field_tags_target_id:
+                plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
@@ -4746,8 +4751,8 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: true
-                  hide_label: true
-              field_tags_target_id:
+                  hide_label: false
+              field_grant_call_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
@@ -4930,54 +4935,6 @@ display:
           hierarchy: false
           limit: true
           error_message: true
-        field_grant_call_target_id:
-          id: field_grant_call_target_id
-          table: node__field_grant_call
-          field: field_grant_call_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_grant_call_target_id_op
-            label: 'Grant call'
-            description: ''
-            use_operator: false
-            operator: field_grant_call_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: call
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: grant_call
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: false
         field_tags_target_id:
           id: field_tags_target_id
           table: node__field_tags
@@ -5026,6 +4983,54 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+        field_grant_call_target_id:
+          id: field_grant_call_target_id
+          table: node__field_grant_call
+          field: field_grant_call_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_grant_call_target_id_op
+            label: 'Grant call'
+            description: ''
+            use_operator: false
+            operator: field_grant_call_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: call
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: grant_call
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: false
       filter_groups:
         operator: AND
         groups:
@@ -5060,11 +5065,22 @@ display:
         group_by: false
         style: false
         row: false
+        relationships: false
         fields: false
         sorts: false
         filters: false
         filter_groups: false
         header: false
+      relationships:
+        field_grant_call:
+          id: field_grant_call
+          table: node__field_grant_call
+          field: field_grant_call
+          relationship: none
+          group_type: group
+          admin_label: 'field_grant_call: Taxonomy term'
+          plugin_id: standard
+          required: false
       css_class: ''
       use_ajax: true
       group_by: false
