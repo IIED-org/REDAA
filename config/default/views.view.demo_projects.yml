@@ -2129,6 +2129,7 @@ display:
           data_source:
             field_focal_country: field_focal_country
           entity_source: __base_table
+          entity_source_submit: 'Update Entity Source'
           name_field: field_short_title
           leaflet_tooltip:
             value: title
@@ -2171,7 +2172,7 @@ display:
             shadowUrl: ''
             className: ''
             iconSize:
-              x: ''
+              x: '20'
               'y': ''
             iconAnchor:
               x: ''
