@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 140 265.5">
   <defs>
-      <style>.gc1{ fill:#005890; width: 40px; height: 76px;}</style></defs>
+      <style>.gc1{ fill:#005890;}</style></defs>
   <path class="gc1" d="M139.4,71C139-21.6.9-23,.5,69.7c.2,29.5,63.4,175.5,70.2,195.8,8.3-20.2,67.5-157.3,68.9-194.4h-.2ZM44.4,68.6c0-32.8,49.9-32.8,50,0,0,32.8-49.9,32.8-50,0Z"/>
 </svg>
