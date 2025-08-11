@@ -383,12 +383,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        field_grant_call:
-          id: field_grant_call
-          table: node__field_grant_call
-          field: field_grant_call
-          plugin_id: standard
+      relationships: {  }
       header:
         area:
           id: area
