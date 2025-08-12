@@ -171,4 +171,7 @@
   div {
     background-color: var(--color--green-20);
   }
+  span {
+    color: var(--color--white);
+  }
 }

@@ -194,8 +194,11 @@
 }
 
  .marker-cluster-small {
-  background-color: rgb(156,182,42,0.4);
+  background-color: rgb(156,182,42,0.5);
   div {
-    background-color: rgb(156,182,42,0.8);
+    background-color: rgb(156,182,42,1);
+  }
+  span {
+    color: #fff;
   }
 }
