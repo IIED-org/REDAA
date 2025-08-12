@@ -12,7 +12,7 @@ dependencies:
 id: redaa_homepageprojects
 theme: redaa
 region: content_wide
-weight: -9
+weight: -10
 provider: null
 plugin: 'block_content:ea4d6697-ff49-4229-ab0f-ee8923036ea3'
 settings:

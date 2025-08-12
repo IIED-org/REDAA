@@ -1,24 +1,24 @@
-uuid: 0d455b6b-fd47-41e0-9bab-8ba468a729fe
+uuid: f5d8e886-92c6-4973-80a6-2c843ea92acd
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.type
+    - facets.facet.grant_call
   module:
     - facets
   theme:
     - redaa
-id: redaa_resourcetype
+id: redaa_grantcall
 theme: redaa
 region: content_wide
-weight: -12
+weight: -11
 provider: null
-plugin: 'facet_block:type'
+plugin: 'facet_block:grant_call'
 settings:
-  id: 'facet_block:type'
-  label: 'Filter by resource type'
+  id: 'facet_block:grant_call'
+  label: 'Filter by grant call'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: redaa_resourcetype
+  block_id: redaa_grantcall
 visibility: {  }

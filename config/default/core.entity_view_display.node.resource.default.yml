@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.resource.field_countries
     - field.field.node.resource.field_document_type
     - field.field.node.resource.field_ecosystem_landscape
+    - field.field.node.resource.field_grant_call
     - field.field.node.resource.field_image
     - field.field.node.resource.field_link
     - field.field.node.resource.field_main_image
@@ -211,6 +212,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 9
             additional: {  }
+          3d7ae9aa-ec9f-4cd0-8a11-1d58b9c083a9:
+            uuid: 3d7ae9aa-ec9f-4cd0-8a11-1d58b9c083a9
+            region: content
+            configuration:
+              id: 'field_block:node:resource:field_grant_call'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -390,6 +407,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_grant_call:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 21
     region: content
   field_image:
     type: image

@@ -1,4 +1,4 @@
-uuid: 2406c29b-37aa-4125-995d-cf4f6a9ee094
+uuid: f413cf5d-b88f-4ee9-a132-e4395f7e7692
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.search
   module:
     - search_api
-id: resource_type
-name: 'Resource type'
-weight: -1
+id: grant_call
+name: 'Grant call'
+weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: resource_type
+url_alias: grant_call
 facet_source_id: 'search_api:views_page__search__page_1'
-field_identifier: field_document_type
+field_identifier: field_grant_call
 query_operator: and
 hard_limit: 0
 exclude: false
@@ -29,10 +29,12 @@ enable_parent_when_child_gets_disabled: true
 widget:
   type: dropdown
   config:
-    show_numbers: false
+    show_numbers: true
     default_option_label: '– Any –'
 empty_behavior:
-  behavior: none
+  behavior: text
+  text_format: full_html
+  text: '<p>N/A</p>'
 only_visible_when_facet_source_is_visible: true
 show_only_one_result: true
 show_title: false
@@ -58,7 +60,7 @@ processor_configs:
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
-      build: 4
+      build: 100
     settings: {  }
   translate_entity:
     processor_id: translate_entity
@@ -69,5 +71,5 @@ processor_configs:
     processor_id: url_processor_handler
     weights:
       pre_query: 50
-      build: -5
+      build: 15
     settings: {  }
