@@ -1840,69 +1840,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_grant_call_1:
-          id: field_grant_call_1
-          table: node__field_grant_call
-          field: field_grant_call
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: '{{ field_grant_call_1 }}: {{ field_short_title }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: true
-            trim: false
-            preserve_tags: '<em> <br>'
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: default
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -2124,7 +2061,6 @@ display:
           data_source:
             field_focal_country: field_focal_country
           entity_source: __base_table
-          entity_source_submit: 'Update Entity Source'
           name_field: field_short_title
           leaflet_tooltip:
             value: title
@@ -2168,7 +2104,7 @@ display:
             className: ''
             iconSize:
               x: '20'
-              'y': ''
+              'y': '39'
             iconAnchor:
               x: ''
               'y': ''

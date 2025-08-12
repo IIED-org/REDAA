@@ -1,0 +1,29 @@
+uuid: e1496501-4575-4755-969a-5ad6881e6df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grant_call
+    - node.type.resource
+    - taxonomy.vocabulary.grant_call
+id: node.resource.field_grant_call
+field_name: field_grant_call
+entity_type: node
+bundle: resource
+label: 'Grant call'
+description: 'Select the relevant grant call'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      grant_call: grant_call
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

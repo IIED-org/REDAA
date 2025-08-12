@@ -10,22 +10,23 @@ dependencies:
 id: summary
 name: Summary
 facet_source_id: 'search_api:views_page__search__page_1'
-processor_configs:
-  hide_when_not_rendered:
-    processor_id: hide_when_not_rendered
-    weights:
-      build: '45'
-    settings: {  }
+processor_configs: {  }
 facets:
   region_country:
     checked: true
     label: 'Region / Country'
     separator: ', '
     show_count: false
-    weight: 0
+    weight: -10
   type:
     checked: true
     label: 'Resource type'
     separator: ', '
     show_count: false
-    weight: 0
+    weight: -9
+  grant_call:
+    checked: true
+    label: 'Grant call'
+    separator: ', '
+    show_count: false
+    weight: -8
