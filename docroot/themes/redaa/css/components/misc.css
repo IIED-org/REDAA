@@ -192,3 +192,10 @@
  .media--view-mode-rounded img {
   border-radius: 62.4375rem;
 }
+
+ .marker-cluster-small {
+  background-color: rgb(68,102,41,0.4);
+  div {
+    background-color: rgb(68,102,41,0.8);
+  }
+}
