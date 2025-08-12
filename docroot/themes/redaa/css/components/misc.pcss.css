@@ -165,3 +165,10 @@
 .media--view-mode-rounded img {
   border-radius: 999px;
 }
+
+.marker-cluster-small {
+  background-color: var(--color--green-50);
+  div {
+    background-color: var(--color--green-20);
+  }
+}
