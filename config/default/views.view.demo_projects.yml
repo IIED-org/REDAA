@@ -1840,19 +1840,87 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_grant_call_1:
-          id: field_grant_call_1
-          table: node__field_grant_call
-          field: field_grant_call
-          relationship: none
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_grant_call
           group_type: group
           admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: strong
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        description__value:
+          id: description__value
+          table: taxonomy_term_field_data
+          field: description__value
+          relationship: field_grant_call
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: description
           plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_grant_call_1 }}'
+            text: '<strong>{{ name }}:</strong> {{ description__value }}'
             make_link: false
             path: ''
             absolute: false
@@ -1875,7 +1943,7 @@ display:
             more_link_path: ''
             strip_tags: true
             trim: false
-            preserve_tags: '<strong> <br>'
+            preserve_tags: '<strong>'
             html: false
           element_type: ''
           element_class: ''
@@ -1884,16 +1952,15 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: text
-          group_column: target_id
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1902,7 +1969,7 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: true
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -2232,11 +2299,22 @@ display:
         pager: false
         style: false
         row: false
+        relationships: false
         fields: false
         filters: false
         filter_groups: false
         header: false
         footer: false
+      relationships:
+        field_grant_call:
+          id: field_grant_call
+          table: node__field_grant_call
+          field: field_grant_call
+          relationship: none
+          group_type: group
+          admin_label: 'field_grant_call: Taxonomy term'
+          plugin_id: standard
+          required: false
       display_description: ''
       header: {  }
       footer:
