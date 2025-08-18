@@ -1,0 +1,28 @@
+uuid: 94c29649-e3f4-4173-84af-bdc36f2003c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.text
+    - taxonomy.vocabulary.grant_call
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.grant_call.text
+targetEntityType: taxonomy_term
+bundle: grant_call
+mode: text
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

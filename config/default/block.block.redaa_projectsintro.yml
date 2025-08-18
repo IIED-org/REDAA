@@ -1,0 +1,30 @@
+uuid: 3a2a774d-779e-4808-8093-2112d0b33922
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:46aa0fa0-ef15-4c70-82e6-9cbc441c59d0'
+  module:
+    - block_content
+    - system
+  theme:
+    - redaa
+id: redaa_projectsintro
+theme: redaa
+region: content_above
+weight: 0
+provider: null
+plugin: 'block_content:46aa0fa0-ef15-4c70-82e6-9cbc441c59d0'
+settings:
+  id: 'block_content:46aa0fa0-ef15-4c70-82e6-9cbc441c59d0'
+  label: 'Projects intro'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /projects

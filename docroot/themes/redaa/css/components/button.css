@@ -282,12 +282,29 @@ a:focus {
       outline-offset: 2px;
     }
 
-.eu-cookie-compliance-default-button {
-  background-image: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
+/* Back to top button */
+
+[dir="ltr"] a#top_button {
+	margin-right: 2rem;
 }
 
-.eu-cookie-compliance-buttons {
-  margin-top: 1rem;
+[dir="rtl"] a#top_button {
+	margin-left: 2rem;
 }
+
+a#top_button {
+	margin-top: calc(100vh + 43.75rem);
+  background-color: transparent;
+  color: rgb(156,182,42,1);
+	position: sticky;
+	bottom: 0;
+  left: 90vw; /* right: doesn't seem to work with position: sticky */ /* shunt it in a bit from the right */
+	font-size: 3rem;
+  font-weight: 100;
+  padding: .5rem;
+  text-decoration: none
+ }
+
+a#top_button:hover, a#top_button:focus {
+    color: rgb(156,182,42,0.5);
+  }

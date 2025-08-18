@@ -1,0 +1,29 @@
+uuid: 743b4372-533f-4215-8236-dd39b8ff581f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.demo_projects
+  module:
+    - system
+    - views
+  theme:
+    - redaa
+id: redaa_views_block__demo_projects_block_3_2
+theme: redaa
+region: content_wide
+weight: 0
+provider: null
+plugin: 'views_block:demo_projects-block_3'
+settings:
+  id: 'views_block:demo_projects-block_3'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /projects

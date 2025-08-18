@@ -32,6 +32,6 @@
 }
   }
 
-.path-resources .region--content-above > * {
+.path-resources .region--content-above > *, #block-redaa-projectsintro, .view-demo-projects { 
   margin-bottom: 0;
 }

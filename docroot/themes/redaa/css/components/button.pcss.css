@@ -219,11 +219,21 @@
       outline: solid 2px currentColor;
       outline-offset: 2px;
     }
-.eu-cookie-compliance-default-button {
-  background-image: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-}   
-.eu-cookie-compliance-buttons {
-  margin-top: var(--sp1);
-}
+
+  /* Back to top button */
+a#top_button {
+	margin-block-start: calc(100vh + 700px);
+  background-color: transparent;
+  color: var(--color--green-20);
+	position: sticky;
+	bottom: 0;
+  left: 90vw; /* right: doesn't seem to work with position: sticky */
+	margin-inline-end: 2rem; /* shunt it in a bit from the right */
+	font-size: 3rem;
+  font-weight: 100;
+  padding: .5rem;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: var(--color--green-50);
+  }
+ }

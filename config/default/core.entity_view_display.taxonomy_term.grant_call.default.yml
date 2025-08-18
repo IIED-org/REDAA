@@ -1,0 +1,22 @@
+uuid: 0dc90a60-4b21-4ced-9e6b-1d94dfef296c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.grant_call
+  module:
+    - text
+id: taxonomy_term.grant_call.default
+targetEntityType: taxonomy_term
+bundle: grant_call
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

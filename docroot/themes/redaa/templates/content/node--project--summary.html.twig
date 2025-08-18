@@ -61,9 +61,12 @@
         <dt class="il-label">Project dates:</dt>
         <dd class="il-value">{{ content.field_dates }}</dd>
       </div>
-    </div>
 
-
+      <div class="il-item">
+        <dt class="il-label">{{ node.field_grant_call.entity.label }}:</dt>
+        <dd class="il-value">{{ node.field_grant_call.entity.description.value|striptags }}</dd>
+      </div>
+</div>
     <a href="{{ url }}" class="summary--more">Read more about this project 
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
