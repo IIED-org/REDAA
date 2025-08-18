@@ -3,7 +3,7 @@
  * Styles for views.
  */
 
-@import "../base/variables.pcss.css";
+@import '../base/variables.pcss.css';
 
 .view {
   & > * {
@@ -20,8 +20,8 @@
 }
 
 .views-view-grid__item {
-    display: flex;
-    margin-bottom: 2%;
+  display: flex;
+  margin-bottom: 2%;
 }
 
 .views-view-grid__item-inner {
@@ -55,6 +55,46 @@
   }
 }
 
-.views-view-responsive-grid, .block-views-blockcontent-recent-block-4 {
+.views-view-responsive-grid,
+.block-views-blockcontent-recent-block-4 {
   margin-block-end: var(--sp4);
+}
+
+#block-redaa-views-block-demo-projects-block-3-2 {
+  .view > * {
+  margin-bottom: var(--sp1);
+  }
+  margin-bottom: 0;
+}
+.view-demo-projects {
+  .map-footer {
+    width: 100%;
+  }
+  .map-key {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    & > div {
+      display: inline-flex;
+      flex-direction: row;
+      padding: 0 1rem;
+      line-height: 2rem;
+      align-items: center;
+    }
+    strong {
+      align-self: center;
+    }
+    img {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    div.marker-cluster {
+      width: 20px;
+      background: none;
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+  }
 }
