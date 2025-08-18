@@ -175,3 +175,13 @@
     color: var(--color--white);
   }
 }
+
+hr.gold {
+  background-color: var(--color--gold-highlight);
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  height: 5px;
+  margin: 2rem 0 0;
+  border-radius: 5px;
+}
