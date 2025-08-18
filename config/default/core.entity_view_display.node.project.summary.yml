@@ -93,6 +93,14 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_grant_call:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
   field_location_text:
     type: basic_string
     label: hidden
@@ -157,7 +165,6 @@ content:
 hidden:
   feeds_item: true
   field_focal_country: true
-  field_grant_call: true
   field_grant_reference: true
   field_lead_organisation: true
   field_publication_date: true

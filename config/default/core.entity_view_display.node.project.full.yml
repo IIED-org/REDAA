@@ -43,7 +43,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_dates:
     type: daterange_custom
@@ -69,7 +69,16 @@ content:
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 8
+    region: content
+  field_grant_call:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: text
+      link: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_main_image:
     type: entity_reference_entity_view
@@ -78,7 +87,7 @@ content:
       view_mode: full
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_org:
     type: entity_reference_label
@@ -94,7 +103,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_standfirst:
     type: text_default
@@ -108,19 +117,18 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
 hidden:
   feeds_item: true
   field_countries: true
   field_focal_countries_text: true
   field_focal_country: true
-  field_grant_call: true
   field_grant_reference: true
   field_lead_organisation: true
   field_location_text: true

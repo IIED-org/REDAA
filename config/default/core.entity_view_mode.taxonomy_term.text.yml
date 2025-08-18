@@ -1,0 +1,11 @@
+uuid: 08ef1a4c-c96d-46d8-b27b-86da69a47121
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.text
+label: Text
+description: 'Title & description'
+targetEntityType: taxonomy_term
+cache: true
