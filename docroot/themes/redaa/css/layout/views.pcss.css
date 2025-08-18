@@ -62,7 +62,7 @@
 
 #block-redaa-views-block-demo-projects-block-3-2 {
   .view > * {
-  margin-bottom: var(--sp1);
+    margin-bottom: var(--sp1);
   }
   margin-bottom: 0;
 }
@@ -71,10 +71,15 @@
     width: 100%;
   }
   .map-key {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
+    align-items: start;
+    @media (--md) {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+    }
     & > div {
       display: inline-flex;
       flex-direction: row;
@@ -83,12 +88,15 @@
       align-items: center;
     }
     strong {
-      align-self: center;
+      align-self: start;
+      @media (--md) {
+        align-self: center;
+      }
     }
     img {
       width: 20px;
       vertical-align: middle;
-      margin-right: 5px;
+      margin: 0 .5rem;
     }
     div.marker-cluster {
       width: 20px;
