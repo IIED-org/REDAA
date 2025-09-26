@@ -61,6 +61,13 @@ class CkeditorAccordionSettingsForm extends ConfigFormBase {
       '#description' => $this->t('With this, your accordion row titles are hashed and used as links to the row. For example, if your accordion title is "Frequently Asked Questions", you can link to it using href="#FrequentlyAskedQuestions".'),
     ];
 
+    $form['allow_html_in_titles'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Allow HTML in row titles'),
+      '#default_value' => $config->get('allow_html_in_titles') ?? 0,
+      '#description' => $this->t('This is useful if you want to use icons or other HTML elements in your accordion titles.'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -75,6 +82,7 @@ class CkeditorAccordionSettingsForm extends ConfigFormBase {
     $config->set('keep_rows_open', $values['keep_rows_open']);
     $config->set('animate_accordion_toggle', $values['animate_accordion_toggle']);
     $config->set('open_tabs_with_hash', $values['open_tabs_with_hash']);
+    $config->set('allow_html_in_titles', $values['allow_html_in_titles']);
     $config->save();
 
     parent::submitForm($form, $form_state);

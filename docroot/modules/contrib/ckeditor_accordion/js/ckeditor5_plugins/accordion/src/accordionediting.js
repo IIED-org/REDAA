@@ -106,14 +106,8 @@ export default class AccordionEditing extends Plugin {
       allowContentOf: '$root',
     });
 
-    schema.addChildCheck((context, childDefinition) => {
-      // Disallow accordion inside accordionContent.
-      if (
-        context.endsWith('accordionContent') &&
-        childDefinition.name === 'accordion'
-      ) {
-        return false;
-      }
+    schema.extend('accordion', {
+      allowIn: 'accordionContent'
     });
   }
 

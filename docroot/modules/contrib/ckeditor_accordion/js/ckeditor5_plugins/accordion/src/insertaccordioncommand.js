@@ -29,9 +29,12 @@ export default class InsertAccordionCommand extends Command {
       'accordion',
     );
 
+    // Additional check: if we're inside accordionContent, explicitly allow it
+    const isInAccordionContent = selection.getFirstPosition().findAncestor('accordionContent');
+
     // If the cursor is not in a location where a accordion can be added, return
     // null so the addition doesn't happen.
-    this.isEnabled = allowedIn !== null;
+    this.isEnabled = allowedIn !== null || isInAccordionContent !== null;
   }
 }
 

@@ -5,7 +5,7 @@ package: CKEditor
 core_version_requirement: ^9.4 || ^10 || ^11
 configure: ckeditor_accordion.settings
 
-# Information added by Drupal.org packaging script on 2024-08-21
-version: '2.2.0'
+# Information added by Drupal.org packaging script on 2025-06-25
+version: '2.3.0'
 project: 'ckeditor_accordion'
-datestamp: 1724231024
+datestamp: 1750873348

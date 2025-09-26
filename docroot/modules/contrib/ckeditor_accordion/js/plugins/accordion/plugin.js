@@ -26,14 +26,17 @@
         }
       });
 
-      // Prevent nesting DLs by disabling button.
+      // Allow nesting accordions in content but prevent in titles.
       editor.on('selectionChange', function (evt) {
         if (editor.readOnly) {
           return;
         }
         var command = editor.getCommand('addAccordionCmd');
-        var element = evt.data.path.lastElement && evt.data.path.lastElement.getAscendant('dl', true);
-        if (element) {
+
+        // Check if we're inside a dt (title) element - if so, disable
+        var dtElement = evt.data.path.lastElement && evt.data.path.lastElement.getAscendant('dt', true);
+
+        if (dtElement) {
           command.setState(CKEDITOR.TRISTATE_DISABLED);
         }
         else {

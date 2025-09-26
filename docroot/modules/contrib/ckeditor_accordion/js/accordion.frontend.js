@@ -3,7 +3,7 @@
  * CKEditor Accordion functionality.
  */
 
-(function (Drupal, drupalSettings) {
+(function (Drupal, drupalSettings, once) {
   'use strict';
 
   let animating = false;
@@ -135,6 +135,7 @@
       const $ckeditorAccordions = once('ckeditorAccordions', '.ckeditor-accordion', context);
       const doAnimate = drupalSettings.ckeditorAccordion.accordionStyle.animateAccordionOpenAndClose ?? true;
       const openTabsWithHash = drupalSettings.ckeditorAccordion.accordionStyle.openTabsWithHash ?? false;
+      const allowHtmlInTitles = drupalSettings.ckeditorAccordion.accordionStyle.allowHtmlInTitles ?? false;
       for (let i = 0; i < $ckeditorAccordions.length; i++) {
         let $accordion = $ckeditorAccordions[i];
 
@@ -152,14 +153,15 @@
         });
         for (let x = 0; x < childDts.length; x++) {
           let $tab = childDts[x];
-          let tabText = $tab.innerText.trim();
+          let tabText = $tab.textContent.trim();
+          let tabHtml = (allowHtmlInTitles) ? $tab.innerHTML.trim() : tabText;
           let toggleClass = $tab.classList.contains('active') ? ' active' : '';
           let hrefAndIds = 'href="#"';
           if (openTabsWithHash) {
             let tabHash = encodeURIComponent(tabText.replace(/[^A-Za-z0-9]/g, ""));
             hrefAndIds = 'href="#' + tabHash + '" id="' + tabHash + '" onclick="return false;"';
           }
-          $tab.innerHTML = '<a class="ckeditor-accordion-toggler" ' + hrefAndIds + '><span class="ckeditor-accordion-toggle' + toggleClass + '"></span>' + tabText + '</a>';
+          $tab.innerHTML = '<a class="ckeditor-accordion-toggler" ' + hrefAndIds + '><span class="ckeditor-accordion-toggle' + toggleClass + '"></span>' + tabHtml + '</a>';
         }
 
         // Wrap the accordion in a div element so that quick edit function shows the source correctly.
@@ -275,4 +277,4 @@
       }
     }
   };
-})(Drupal, drupalSettings);
+})(Drupal, drupalSettings, once);
