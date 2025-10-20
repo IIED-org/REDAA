@@ -20,5 +20,6 @@ function ckeditor_accordion_page_attachments_alter(array &$page) {
     'keepRowsOpen' => $config->get('keep_rows_open'),
     'animateAccordionOpenAndClose' => $config->get('animate_accordion_toggle') ?? 1,
     'openTabsWithHash' => $config->get('open_tabs_with_hash') ?? 1,
+    'allowHtmlInTitles' => $config->get('allow_html_in_titles') ?? 0,
   ];
 }
