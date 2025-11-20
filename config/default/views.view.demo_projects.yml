@@ -2197,8 +2197,8 @@ display:
             options: '{"permanent":false,"direction":"center"}'
           leaflet_popup:
             value: '#rendered_view_fields'
-            options: '{"maxWidth":"350","minWidth":"50","autoPan":true}'
             view_mode: full
+            options: '{"maxWidth":"350","minWidth":"50","autoPan":true}'
           leaflet_map: esri-world_street_map
           height: '500'
           height_unit: px
@@ -2252,13 +2252,15 @@ display:
             circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
           leaflet_markercluster:
             control: true
-            include_path: false
-            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
             excluded: '0'
+            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+            include_path: false
           fullscreen:
             control: false
             options: '{"position":"topleft","pseudoFullscreen":false}'
           path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+          feature_properties:
+            values: ''
           geocoder:
             control: false
             settings:
@@ -2284,8 +2286,6 @@ display:
               options: ''
           map_lazy_load:
             lazy_load: false
-          feature_properties:
-            values: ''
       row:
         type: fields
         options:
@@ -5621,7 +5621,8 @@ display:
           buttons: false
           action_title: Action
           clear_on_exposed: true
-          force_selection_info: false
+          show_multipage_selection_box: default
+          show_select_all: default
           selected_actions:
             -
               action_id: views_bulk_edit
