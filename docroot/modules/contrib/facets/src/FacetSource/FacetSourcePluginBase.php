@@ -126,13 +126,6 @@ abstract class FacetSourcePluginBase extends PluginBase implements FacetSourcePl
   /**
    * {@inheritdoc}
    */
-  public function buildFacet() {
-    return [];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function getCount() {
     global $pager_total_items;
     // Exposing a global here. This is pretty ugly but the only way to get the
@@ -141,7 +134,7 @@ abstract class FacetSourcePluginBase extends PluginBase implements FacetSourcePl
     // Rounding as some backend plugins could not give accurate information on
     // the results found.
     // @todo Figure out when it can not be the first one in the list.
-    return round($pager_total_items[0]);
+    return (int) round($pager_total_items[0]);
   }
 
   /**

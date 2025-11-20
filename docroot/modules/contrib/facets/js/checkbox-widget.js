@@ -66,12 +66,26 @@
     var description = $link.html();
     var href = $link.attr('href');
     var id = $link.data('drupal-facet-item-id');
+    var type = $link.data('drupal-facet-widget-element-class');
 
-    var checkbox = $('<input type="checkbox" class="facets-checkbox">')
+    var checkbox = $('<input type="checkbox" class="form-checkbox form-check-input">')
       .attr('id', id)
+      .attr('name', $(this).closest('.js-facets-widget').data('drupal-facet-filter-key') + '[]')
+      .addClass(type)
+      .val($link.data('drupal-facet-filter-value'))
       .data($link.data())
       .data('facetsredir', href);
-    var label = $('<label for="' + id + '">' + description + '</label>');
+
+    var single_selection_group = $(this).data('drupal-facet-single-selection-group');
+    if (single_selection_group) {
+      checkbox.addClass(single_selection_group);
+    }
+
+    if (type === 'facets-link') {
+      checkbox.hide();
+    }
+
+    var label = $('<label for="' + id + '" class="form-check-label">' + description + '</label>');
 
     checkbox.on('change.facets', function (e) {
       e.preventDefault();
@@ -79,11 +93,12 @@
       var $widget = $(this).closest('.js-facets-widget');
 
       Drupal.facets.disableFacet($widget);
-      $widget.trigger('facets_filter', [ href ]);
+      $widget.trigger('facets_filter', [href]);
     });
 
     if (active) {
-      checkbox.attr('checked', true);
+      checkbox.prop('checked', true);
+      label.addClass('is-active');
       label.find('.js-facet-deactivate').remove();
     }
 
@@ -111,8 +126,8 @@
    */
   Drupal.facets.disableFacet = function ($facet) {
     $facet.addClass('facets-disabled');
-    $('input.facets-checkbox', $facet).click(Drupal.facets.preventDefault);
-    $('input.facets-checkbox', $facet).attr('disabled', true);
+    $('input.facets-checkbox, input.facets-link', $facet).click(Drupal.facets.preventDefault);
+    $('input.facets-checkbox, input.facets-link', $facet).attr('disabled', true);
   };
 
   /**

@@ -71,38 +71,40 @@ class TermWeightWidgetOrderProcessor extends SortProcessorPluginBase implements 
    */
   public function sortResults(Result $a, Result $b) {
     // Get the term weight once.
-    if (!isset($a->termWeight) || !isset($b->termWeight)) {
+    if ($a->getTermWeight() === NULL || $b->getTermWeight() === NULL) {
       $ids = [];
-      if (!isset($a->termWeight)) {
+      if ($a->getTermWeight() === NULL) {
         $a_raw = $a->getRawValue();
         $ids[] = $a_raw;
       }
-      if (!isset($b->termWeight)) {
+      if ($b->getTermWeight() === NULL) {
         $b_raw = $b->getRawValue();
         $ids[] = $b_raw;
       }
       $entities = $this->entityTypeManager
         ->getStorage('taxonomy_term')
         ->loadMultiple($ids);
-      if (!isset($a->termWeight)) {
+
+      if ($a->getTermWeight() === NULL) {
         if (empty($entities[$a_raw])) {
           return 0;
         }
-        $a->termWeight = $entities[$a_raw]->getWeight();
+        $a->setTermWeight($entities[$a_raw]->getWeight());
       }
-      if (!isset($b->termWeight)) {
+
+      if ($b->getTermWeight() === NULL) {
         if (empty($entities[$b_raw])) {
           return 0;
         }
-        $b->termWeight = $entities[$b_raw]->getWeight();
+        $b->setTermWeight($entities[$b_raw]->getWeight());
       }
     }
 
     // Return the sort value.
-    if ($a->termWeight === $b->termWeight) {
+    if ($a->getTermWeight() === $b->getTermWeight()) {
       return 0;
     }
-    return ($a->termWeight < $b->termWeight) ? -1 : 1;
+    return ($a->getTermWeight() < $b->getTermWeight()) ? -1 : 1;
   }
 
   /**

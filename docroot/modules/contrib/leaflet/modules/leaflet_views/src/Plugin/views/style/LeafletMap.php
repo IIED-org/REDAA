@@ -1386,10 +1386,10 @@ class LeafletMap extends StylePluginBase implements ContainerFactoryPluginInterf
     // Associate dynamic path properties (token based) to each feature,
     // if not point.
     if ($feature['type'] !== 'point') {
-      $feature['path'] = htmlspecialchars_decode(str_replace(
-        ["\n", "\r"],
-        "",
-        $this->viewsTokenReplace($this->options['path'], $tokens)
+      $feature['path'] = htmlspecialchars_decode(str_replace([
+        "\n",
+        "\r",
+      ], "", $this->viewsTokenReplace($this->options['path'], $tokens)
       ));
     }
 
@@ -1496,7 +1496,11 @@ class LeafletMap extends StylePluginBase implements ContainerFactoryPluginInterf
    */
   protected function processFeatureIcons(array &$feature, array $tokens): void {
     // Set the custom Marker icon (DivIcon, Icon Url or Circle Marker).
-    if ($feature['type'] === 'point' && isset($this->options['icon'])) {
+    if (in_array($feature['type'], [
+      'point',
+      'multipoint',
+      'geometrycollection',
+    ]) && isset($this->options['icon'])) {
       // Set Feature Icon properties.
       $feature['icon'] = $this->options['icon'];
 

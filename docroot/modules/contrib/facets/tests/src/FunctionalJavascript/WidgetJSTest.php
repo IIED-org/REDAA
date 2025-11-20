@@ -60,10 +60,8 @@ class WidgetJSTest extends JsBase {
     $block = $page->findById('block-owl-block');
     $block->isVisible();
 
-    /** @var \Drupal\FunctionalJavascriptTests\JSWebAssert $assert_session */
-    $assert_session = $this->assertSession();
     // Make sure the show more / show less links are shown.
-    $assert_session->linkExists('Show more');
+    $this->assertSession()->linkExists('Show more');
 
     // Change the link label of show more into "Moar Llamas".
     $facet = Facet::load('owl');
@@ -79,8 +77,8 @@ class WidgetJSTest extends JsBase {
 
     // Check that the new configuration is used now.
     $this->drupalGet('search-api-test-fulltext');
-    $assert_session->linkNotExists('Show more');
-    $assert_session->linkExists('Moar Llamas');
+    $this->assertSession()->linkNotExists('Show more');
+    $this->assertSession()->linkExists('Moar Llamas');
   }
 
   /**
@@ -337,21 +335,18 @@ class WidgetJSTest extends JsBase {
         '',
         TRUE,
       ],
-      // The second option should have the expected option text, have the URI
-      // that points to the updated search result as the value, and is not
-      // selected.
       [
         'item (3)',
-        base_path() . 'search-api-test-fulltext?f%5B0%5D=llama%3Aitem',
+        'llama:item',
         FALSE,
       ],
-      // The third option is similar.
       [
         'article (2)',
-        base_path() . 'search-api-test-fulltext?f%5B0%5D=llama%3Aarticle',
+        'llama:article',
         FALSE,
       ],
     ];
+
     $this->assertSelectOptions($expected, $options);
 
     // Selecting one of the options should cause a redirect to a page with
@@ -375,18 +370,14 @@ class WidgetJSTest extends JsBase {
         base_path() . 'search-api-test-fulltext',
         FALSE,
       ],
-      // The second option should now be selected, and since clicking it again
-      // would negate it, it should also link to the search page without any
-      // chosen facets.
       [
         'item (3)',
-        base_path() . 'search-api-test-fulltext',
+        'llama:item',
         TRUE,
       ],
-      // The third option remains unchanged.
       [
         'article (2)',
-        base_path() . 'search-api-test-fulltext?f%5B0%5D=llama%3Aarticle',
+        'llama:article',
         FALSE,
       ],
     ];

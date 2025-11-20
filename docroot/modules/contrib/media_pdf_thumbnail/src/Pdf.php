@@ -17,6 +17,22 @@ use Spatie\PdfToImage\Pdf as SpatiePdfAlias;
 class Pdf extends SpatiePdfAlias {
 
   /**
+   * The pdf file.
+   *
+   * @var string
+   *  The pdf file.
+   */
+  protected string $pdfFile = '';
+
+  /**
+   * The filename.
+   *
+   * @var string
+   *   The filename.
+   */
+  protected string $filename = '';
+
+  /**
    * Pdf constructor.
    *
    * @param string $pdfFile
@@ -35,6 +51,7 @@ class Pdf extends SpatiePdfAlias {
     $this->imagick = new \Imagick();
     try {
       $pageIndex = $page >= 1 ? $page - 1 : 0;
+      $this->filename = $pdfFile;
       $this->imagick->readImage($this->getFileName($pdfFile, $pageIndex));
     }
     catch (\ImagickException $e) {

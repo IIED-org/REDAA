@@ -3,7 +3,11 @@
     "type": "drupal-module",
     "description": "Media PDF Thumbnail",
     "keywords": [
-        "Drupal"
+        "drupal",
+        "protect",
+        "media",
+        "pdf",
+        "thumbnail"
     ],
     "license": "GPL-2.0+",
     "homepage": "https://www.drupal.org/project/media_pdf_thumbnail",
@@ -14,7 +18,7 @@
     },
     "require": {
         "ext-imagick": "*",
-        "spatie/pdf-to-image": "^2.1.0",
-        "php" : ">=8.1"
+        "spatie/pdf-to-image": "^3.0",
+        "php" : ">=8.2"
     }
 }

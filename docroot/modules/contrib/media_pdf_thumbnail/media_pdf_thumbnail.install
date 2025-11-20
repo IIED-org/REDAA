@@ -30,12 +30,12 @@ function media_pdf_thumbnail_requirements($phase) {
     }
 
     $version = Pdf::getVersion();
-    if (!isset($version) || version_compare($version, '2.1.0', '<')) {
+    if (!isset($version) || version_compare($version, '3.0.0', '<')) {
       $requirements['pdf_to_image_version'] = [
         'title' => t('spatie/pdf-to-image'),
         'value' => $version,
         'severity' => REQUIREMENT_ERROR,
-        'description' => t('Your PDF to Image version is too old. Media PDF Thumbnail requires at least spatie/pdf-to-image 2.1.0.'),
+        'description' => t('Your PDF to Image version is too old. Media PDF Thumbnail requires at least spatie/pdf-to-image 3.0.0'),
       ];
     }
   }
