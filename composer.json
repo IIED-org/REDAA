@@ -56,7 +56,6 @@
         "drupal/tfa": "^1.9",
         "drupal/token_or": "^2.3",
         "drupal/twig_tweak": "^3.4",
-        "drupal/upgrade_status": "^4.3",
         "drupal/varnish_purge": "^2.2",
         "drupal/views_bulk_edit": "^3.0",
         "drupal/views_bulk_operations": "^4.3",
