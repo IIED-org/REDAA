@@ -39,6 +39,8 @@ class FacetBlock extends BlockBase implements ContainerFactoryPluginInterface {
   protected $facetStorage;
 
   /**
+   * The facet being displayed.
+   *
    * @var \Drupal\facets\FacetInterface
    */
   protected $facet;
@@ -91,15 +93,7 @@ class FacetBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $build = $this->facetManager->build($facet);
 
     if (!empty($build)) {
-      CacheableMetadata::createFromObject($this)->applyTo($build);
-
-      // Add extra elements from facet source, for example, ajax scripts.
-      // @see Drupal\facets\Plugin\facets\facet_source\SearchApiDisplay
-      /** @var \Drupal\facets\FacetSource\FacetSourcePluginInterface $facet_source */
-      $facet_source = $facet->getFacetSource();
-      $build += $facet_source->buildFacet();
-
-      // Add contextual links only when we have results.
+      // Add contextual links only when the facet gets rendered.
       $build['#contextual_links']['facets_facet'] = [
         'route_parameters' => ['facets_facet' => $facet->id()],
       ];
@@ -110,19 +104,10 @@ class FacetBlock extends BlockBase implements ContainerFactoryPluginInterface {
       else {
         $build['#attributes']['class'][] = 'facet-inactive';
       }
-
-      // Add classes needed for ajax.
-      if (!empty($build['#use_ajax'])) {
-        $build['#attributes']['class'][] = 'block-facets-ajax';
-        // The configuration block id isn't always set in the configuration.
-        if (isset($this->configuration['block_id'])) {
-          $build['#attributes']['class'][] = 'js-facet-block-id-' . $this->configuration['block_id'];
-        }
-        else {
-          $build['#attributes']['class'][] = 'js-facet-block-id-' . $this->pluginId;
-        }
-      }
     }
+
+    // Even empty facet results should be cached.
+    CacheableMetadata::createFromObject($this)->applyTo($build);
 
     return $build;
   }

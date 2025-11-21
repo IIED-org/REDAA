@@ -2,6 +2,60 @@
 
 All notable changes to `pdf-to-image` will be documented in this file
 
+## 3.0.0 - 2024-06-10
+
+This release updates the package to a new major version, `v3.0.0`.
+
+### Major changes:
+
+- Dropped support for PHP versions < 8.2.
+- Many breaking API changes (see below).
+- Added support for saving multiple pages to images using `selectPages()`.
+- Native Backed Enum implementations to enforce allowed values in several places.
+- Dropped support for reading remote PDF files for security reasons.
+- Added property, argument and return types.
+- Removed Imagick instance creation in constructor, replaced calls to `readImage()` with `pingImage()` *(test suite runs ~33% faster)*.
+
+### Breaking API Changes
+
+There are breaking API changes from v2 to v3. These changes streamline the developer experience, enhance understanding of the functionality of the methods, and reduce cognitive overload by simplifying method names.  See the updated `README.md` for a full list of the new API methods and method names.
+
+### Additional Changes
+
+- `php-cs-fixer` configuration and workflow was dropped in favor of Laravel Pint.
+- Readme updated to include all available methods, fix a few grammatical errors, etc.
+- Fixed several minor, previously unknown bugs.
+- Test coverage increased from ~65% to ~93%.
+- Pest upgraded to v2, migrated PHPUnit configuration to v10.
+- Unit tests were reorganized/restructured to be more manageable, and Pest configuration files were added.
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.1.0 by @dependabot in https://github.com/spatie/pdf-to-image/pull/228
+* Major version: v3 by @patinthehat in https://github.com/spatie/pdf-to-image/pull/230
+
+**Full Changelog**: https://github.com/spatie/pdf-to-image/compare/2.3.0...3.0.0
+
+## 2.3.0 - 2024-03-07
+
+### What's Changed
+
+* Silently ignore pingImage failure and load number of pages lazily by @bobvandevijver in https://github.com/spatie/pdf-to-image/pull/187
+* Add Dependabot Automation by @patinthehat in https://github.com/spatie/pdf-to-image/pull/203
+* Fix failing tests by @patinthehat in https://github.com/spatie/pdf-to-image/pull/205
+* Add PHP 8.2 Support by @patinthehat in https://github.com/spatie/pdf-to-image/pull/202
+* Fix php-cs-fixer workflow by @patinthehat in https://github.com/spatie/pdf-to-image/pull/206
+* Minor dependabot auto-merge workflow improvements by @patinthehat in https://github.com/spatie/pdf-to-image/pull/220
+* Adding webp to the validOutputFormats by @ntaylor-86 in https://github.com/spatie/pdf-to-image/pull/221
+* Add PHP 8.3 to the test run workflow by @patinthehat in https://github.com/spatie/pdf-to-image/pull/223
+
+### New Contributors
+
+* @bobvandevijver made their first contribution in https://github.com/spatie/pdf-to-image/pull/187
+* @patinthehat made their first contribution in https://github.com/spatie/pdf-to-image/pull/203
+* @dependabot made their first contribution in https://github.com/spatie/pdf-to-image/pull/204
+
+**Full Changelog**: https://github.com/spatie/pdf-to-image/compare/2.2.0...2.3.0
 
 ## 2.2.0 - 2022-03-08
 

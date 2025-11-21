@@ -9,12 +9,6 @@ use Drupal\Tests\field\Traits\EntityReferenceFieldCreationTrait;
 use Drupal\Tests\facets\Functional\FacetsTestBase;
 use Drupal\Tests\taxonomy\Traits\TaxonomyTestTrait;
 
-// Workaround to support tests against both Drupal 10.1 and Drupal 11.0.
-// @todo Remove once we depend on Drupal 10.2.
-if (!trait_exists(EntityReferenceFieldCreationTrait::class)) {
-  class_alias('\Drupal\Tests\field\Traits\EntityReferenceTestTrait', EntityReferenceFieldCreationTrait::class);
-}
-
 /**
  * Tests the hierarchical facets implementation.
  *
@@ -122,7 +116,7 @@ class HierarchicalFacetIntegrationTest extends FacetsTestBase {
   public function testHierarchicalFacet() {
     // Verify that the link to the index processors settings page is available.
     $this->drupalGet($this->facetEditPage);
-    $this->clickLink('Search api index processor configuration');
+    $this->clickLink('Search API index processor configuration');
     $this->assertSession()->statusCodeEquals(200);
 
     // Enable hierarchical facets and translation of entity ids to its names for

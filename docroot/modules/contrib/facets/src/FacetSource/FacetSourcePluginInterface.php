@@ -51,8 +51,8 @@ interface FacetSourcePluginInterface extends PluginFormInterface, DependentPlugi
   /**
    * Returns the number of results that were found for this search.
    *
-   * @return string
-   *   The path of the facet.
+   * @return int|null
+   *   The number of results.
    */
   public function getCount();
 
@@ -105,16 +105,6 @@ interface FacetSourcePluginInterface extends PluginFormInterface, DependentPlugi
    *   A typed data definition.
    */
   public function getDataDefinition($field_name);
-
-  /**
-   * Builds and returns an extra renderable array for this facet block plugin.
-   *
-   * @return array
-   *   A renderable array representing the content of the block.
-   *
-   * @see \Drupal\facets\Plugin\facets\facet_source\SearchApiDisplay
-   */
-  public function buildFacet();
 
   /**
    * Register newly added facet within its source.

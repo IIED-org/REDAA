@@ -113,18 +113,16 @@ abstract class FacetResourceTestBase extends EntityResourceTestBase {
    */
   protected function getNormalizedPostEntity() {
     // @todo Update after https://www.drupal.org/node/2300677.
+    return [];
   }
 
   /**
-   * The expected cache contexts for the GET/HEAD response of the test entity.
-   *
-   * @see ::testGet
-   *
-   * @return string[]
+   * {@inheritdoc}
    */
   protected function getExpectedCacheContexts() {
     return array_merge(parent::getExpectedCacheContexts(), [
       'url.query_args',
+      'facets_filter:f',
     ]);
   }
 

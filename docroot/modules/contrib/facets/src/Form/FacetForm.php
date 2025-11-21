@@ -198,7 +198,7 @@ class FacetForm extends EntityForm {
         'trigger_as' => ['name' => 'widget_configure'],
         'callback' => '::buildAjaxWidgetConfigForm',
         'wrapper' => 'facets-widget-config-form',
-        'method' => 'replace',
+        'method' => 'replaceWith',
         'effect' => 'fade',
       ],
     ];
@@ -410,6 +410,7 @@ class FacetForm extends EntityForm {
       '#default_value' => $empty_behavior_config['behavior'] ?: 'none',
       '#options' => [
         'none' => $this->t('Do not display facet'),
+        'empty' => $this->t('Render empty facet'),
         'text' => $this->t('Display text'),
       ],
       '#description' => $this->t('Take this action if a facet has no items.'),
@@ -469,7 +470,7 @@ class FacetForm extends EntityForm {
       $processor_url = Url::fromRoute('entity.search_api_index.processors', [
         'search_api_index' => $facet->getFacetSource()->getIndex()->id(),
       ]);
-      $description = $this->t('Renders the items using hierarchy. Depending on the selected plugin below, make sure to enable the hierarchy processor on the <a href=":processor-url">Search api index processor configuration</a> for this to work as expected. If disabled all items might be flattened.', [
+      $description = $this->t('Renders the items using hierarchy. Depending on the selected plugin below, make sure to enable the "Index hierarchy" processor on the <a href=":processor-url">Search API index processor configuration</a> for this to work as expected. If disabled all items might be flattened.', [
         ':processor-url' => $processor_url->toString(),
       ]);
     }

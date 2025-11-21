@@ -1,5 +1,4 @@
 searchbox:
-  version: VERSION
   js:
     js/searchbox.js: { attributes: { defer: true } }
   css:
@@ -8,4 +7,5 @@ searchbox:
   dependencies:
     - core/drupal
     - core/drupalSettings
-    - core/jquery.once
+    - core/jquery
+    - core/once

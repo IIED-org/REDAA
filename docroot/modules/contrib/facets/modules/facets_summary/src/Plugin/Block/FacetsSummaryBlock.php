@@ -6,7 +6,6 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Url;
 use Drupal\facets_summary\Entity\FacetsSummary;
 use Drupal\facets_summary\FacetsSummaryBlockInterface;
 use Drupal\facets_summary\FacetsSummaryManager\DefaultFacetsSummaryManager;
@@ -110,18 +109,6 @@ class FacetsSummaryBlock extends BlockBase implements FacetsSummaryBlockInterfac
       ];
     }
 
-    /** @var \Drupal\views\ViewExecutable $view */
-    if ($view = $facets_summary->getFacetSource()->getViewsDisplay()) {
-      $build['#attached']['drupalSettings']['facets_views_ajax'] = [
-        'facets_summary_ajax' => [
-          'facets_summary_id' => $facets_summary->id(),
-          'view_id' => $view->id(),
-          'current_display_id' => $view->current_display,
-          'ajax_path' => Url::fromRoute('views.ajax')->toString(),
-        ],
-      ];
-    }
-
     return $build;
 
   }
@@ -165,7 +152,7 @@ class FacetsSummaryBlock extends BlockBase implements FacetsSummaryBlockInterfac
   }
 
   /**
-   * @throws \Drupal\facets\Exception\InvalidProcessorException
+   * Calculates the cache dependencies for this block instance.
    */
   protected function calculateCacheDependencies(): void {
     if (!$this->cacheableMetadata) {

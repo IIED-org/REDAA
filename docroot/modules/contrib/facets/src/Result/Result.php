@@ -2,6 +2,7 @@
 
 namespace Drupal\facets\Result;
 
+use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Url;
 use Drupal\facets\FacetInterface;
 
@@ -9,6 +10,13 @@ use Drupal\facets\FacetInterface;
  * The default implementation of the result interfaces.
  */
 class Result implements ResultInterface {
+
+  /**
+   * The facet transliterate display value.
+   *
+   * @var string
+   */
+  public $transliterateDisplayValue;
 
   /**
    * The facet related to the result.
@@ -74,18 +82,17 @@ class Result implements ResultInterface {
   protected $children = [];
 
   /**
-   * The facet transliterate display value.
-   *
-   * @var string
-   */
-  public $transliterateDisplayValue;
-
-  /**
-   * The term weight.
-   *
+   * Private property for term weight.
    * @var int
    */
-  public $termWeight;
+  protected $termWeight;
+
+  /**
+   * Storage for implementation-specific data.
+   *
+   * @var array
+   */
+  protected $storage = [];
 
   /**
    * Constructs a new result value object.
@@ -214,6 +221,20 @@ class Result implements ResultInterface {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function setTermWeight(int $weight) {
+    $this->termWeight = $weight;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getTermWeight() {
+    return $this->termWeight;
+  }
+
+  /**
    * Returns true if the value has active children(selected).
    *
    * @return bool
@@ -233,6 +254,36 @@ class Result implements ResultInterface {
    */
   public function getFacet() {
     return $this->facet;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getStorage() {
+    return $this->storage;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setStorage(array $storage) {
+    $this->storage = $storage;
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function get($property) {
+    return NestedArray::getValue($this->storage, (array) $property);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function set($property, $value) {
+    NestedArray::setValue($this->storage, (array) $property, $value, TRUE);
+    return $this;
   }
 
 }

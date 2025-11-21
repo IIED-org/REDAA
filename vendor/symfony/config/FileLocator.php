@@ -20,7 +20,7 @@ use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
  */
 class FileLocator implements FileLocatorInterface
 {
-    protected $paths;
+    protected array $paths;
 
     /**
      * @param string|string[] $paths A path or an array of paths where to look for resources
@@ -35,7 +35,7 @@ class FileLocator implements FileLocatorInterface
      *
      * @psalm-return ($first is true ? string : string[])
      */
-    public function locate(string $name, ?string $currentPath = null, bool $first = true)
+    public function locate(string $name, ?string $currentPath = null, bool $first = true): string|array
     {
         if ('' === $name) {
             throw new \InvalidArgumentException('An empty file name is not valid to be located.');
@@ -86,8 +86,7 @@ class FileLocator implements FileLocatorInterface
                 && ':' === $file[1]
                 && ('\\' === $file[2] || '/' === $file[2])
             )
-            || parse_url($file, \PHP_URL_SCHEME)
-            || str_starts_with($file, 'phar:///') // "parse_url()" doesn't handle absolute phar path, despite being valid
+            || null !== parse_url($file, \PHP_URL_SCHEME)
         ) {
             return true;
         }
