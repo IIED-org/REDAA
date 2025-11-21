@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
+class ComposerStaticInitadb462ab095db819fcce54e1f1cb6191
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -1490,6 +1490,7 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',
         'TheSeer\\Tokenizer\\Token' => __DIR__ . '/..' . '/theseer/tokenizer/src/Token.php',
         'TheSeer\\Tokenizer\\TokenCollection' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollection.php',
+        'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
@@ -1500,10 +1501,10 @@ class ComposerStaticInit466cbafdbb3dd6795025592c1b005373
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit466cbafdbb3dd6795025592c1b005373::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitadb462ab095db819fcce54e1f1cb6191::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitadb462ab095db819fcce54e1f1cb6191::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitadb462ab095db819fcce54e1f1cb6191::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitadb462ab095db819fcce54e1f1cb6191::$classMap;
 
         }, null, ClassLoader::class);
     }
