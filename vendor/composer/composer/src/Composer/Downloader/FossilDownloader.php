@@ -16,6 +16,7 @@ use Composer\Util\Platform;
 use React\Promise\PromiseInterface;
 use Composer\Package\PackageInterface;
 use Composer\Pcre\Preg;
+use Composer\Util\ProcessExecutor;
 use RuntimeException;
 
 /**
@@ -61,7 +62,7 @@ class FossilDownloader extends VcsDownloader
         $this->io->writeError(" Updating to ".$target->getSourceReference());
 
         if (!$this->hasMetadataRepository($path)) {
-            throw new RuntimeException('The .fslckout file is missing from '.$path.', see https://getcomposer.org/commit-deps for more information');
+            throw new \RuntimeException('The .fslckout file is missing from '.$path.', see https://getcomposer.org/commit-deps for more information');
         }
 
         $realPath = Platform::realpath($path);
@@ -109,12 +110,12 @@ class FossilDownloader extends VcsDownloader
 
     /**
      * @param non-empty-list<string> $command
-     * @throws RuntimeException
+     * @throws \RuntimeException
      */
     private function execute(array $command, ?string $cwd = null, ?string &$output = null): void
     {
         if (0 !== $this->process->execute($command, $output, $cwd)) {
-            throw new RuntimeException('Failed to execute ' . implode(' ', $command) . "\n\n" . $this->process->getErrorOutput());
+            throw new \RuntimeException('Failed to execute ' . implode(' ', $command) . "\n\n" . $this->process->getErrorOutput());
         }
     }
 

@@ -12,6 +12,7 @@
 
 namespace Composer\Util;
 
+use React\Promise\CancellablePromiseInterface;
 use Symfony\Component\Console\Helper\ProgressBar;
 use React\Promise\PromiseInterface;
 
@@ -52,6 +53,7 @@ class Loop
 
     /**
      * @param array<PromiseInterface<mixed>> $promises
+     * @param ProgressBar|null              $progress
      */
     public function wait(array $promises, ?ProgressBar $progress = null): void
     {

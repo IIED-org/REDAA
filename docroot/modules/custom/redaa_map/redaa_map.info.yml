@@ -1,7 +1,7 @@
 name: REDAA map functions
 type: module
 description: Custom sidebar implementation
-core_version_requirement: ^10
+core_version_requirement: ^10 || ^11
 package: Custom
 libraries:
   - redaa_map

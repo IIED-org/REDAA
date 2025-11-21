@@ -119,7 +119,6 @@ class Platform
                 if ((bool) Platform::getEnv('HOME')) {
                     return Platform::getEnv('HOME') . $matches['path'];
                 }
-
                 return Platform::getEnv('USERPROFILE') . $matches['path'];
             }
 
@@ -168,7 +167,7 @@ class Platform
             if (
                 !(bool) ini_get('open_basedir')
                 && is_readable('/proc/version')
-                && false !== stripos((string) Silencer::call('file_get_contents', '/proc/version'), 'microsoft')
+                && false !== stripos((string)Silencer::call('file_get_contents', '/proc/version'), 'microsoft')
                 && !self::isDocker() // Docker and Podman running inside WSL should not be seen as WSL
             ) {
                 return self::$isWindowsSubsystemForLinux = true;
@@ -280,7 +279,6 @@ class Platform
         if ($stat === false) {
             return false;
         }
-
         // Check if formatted mode is S_IFCHR
         return 0020000 === ($stat['mode'] & 0170000);
     }

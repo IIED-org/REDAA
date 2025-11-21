@@ -16,6 +16,7 @@ use Composer\Package\PackageInterface;
 use Composer\Pcre\Preg;
 use Composer\Util\Svn as SvnUtil;
 use Composer\Repository\VcsRepository;
+use Composer\Util\ProcessExecutor;
 use React\Promise\PromiseInterface;
 
 /**

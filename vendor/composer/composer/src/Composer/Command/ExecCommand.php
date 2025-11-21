@@ -22,7 +22,10 @@ use Composer\Console\Input\InputArgument;
  */
 class ExecCommand extends BaseCommand
 {
-    protected function configure(): void
+    /**
+     * @return void
+     */
+    protected function configure()
     {
         $this
             ->setName('exec')

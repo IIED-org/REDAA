@@ -228,6 +228,9 @@ class Request
         return $fixedPackagesMap;
     }
 
+    /**
+     * @return ?LockArrayRepository
+     */
     public function getLockedRepository(): ?LockArrayRepository
     {
         return $this->lockedRepository;

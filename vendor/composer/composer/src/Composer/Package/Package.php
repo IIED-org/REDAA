@@ -277,6 +277,9 @@ class Package extends BasePackage
         return $this->getUrls($this->sourceUrl, $this->sourceMirrors, $this->sourceReference, $this->sourceType, 'source');
     }
 
+    /**
+     * @param string $type
+     */
     public function setDistType(?string $type): void
     {
         $this->distType = $type === '' ? null : $type;
@@ -290,6 +293,9 @@ class Package extends BasePackage
         return $this->distType;
     }
 
+    /**
+     * @param string|null $url
+     */
     public function setDistUrl(?string $url): void
     {
         $this->distUrl = $url === '' ? null : $url;
@@ -303,6 +309,9 @@ class Package extends BasePackage
         return $this->distUrl;
     }
 
+    /**
+     * @param string $reference
+     */
     public function setDistReference(?string $reference): void
     {
         $this->distReference = $reference;
@@ -316,6 +325,9 @@ class Package extends BasePackage
         return $this->distReference;
     }
 
+    /**
+     * @param string $sha1checksum
+     */
     public function setDistSha1Checksum(?string $sha1checksum): void
     {
         $this->distSha1Checksum = $sha1checksum;
@@ -587,6 +599,7 @@ class Package extends BasePackage
     /**
      * Sets the settings for php extension packages
      *
+     * @param array|null $phpExt
      *
      * @phpstan-param PhpExtConfig|null $phpExt
      */

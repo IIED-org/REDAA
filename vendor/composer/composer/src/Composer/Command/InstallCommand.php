@@ -32,7 +32,10 @@ class InstallCommand extends BaseCommand
 {
     use CompletionTrait;
 
-    protected function configure(): void
+    /**
+     * @return void
+     */
+    protected function configure()
     {
         $this
             ->setName('install')
@@ -132,8 +135,9 @@ EOT
             ->setClassMapAuthoritative($authoritative)
             ->setApcuAutoloader($apcu, $apcuPrefix)
             ->setPlatformRequirementFilter($this->getPlatformRequirementFilter($input))
-            ->setAuditConfig($this->createAuditConfig($composer->getConfig(), $input))
+            ->setAudit($input->getOption('audit'))
             ->setErrorOnAudit($input->getOption('audit'))
+            ->setAuditFormat($this->getAuditFormat($input))
         ;
 
         if ($input->getOption('no-plugins')) {

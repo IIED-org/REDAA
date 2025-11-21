@@ -46,7 +46,7 @@ class ProcessExecutor
         ['show'],
         ['log'],
         ['branch'],
-        ['remote', 'set-url'],
+        ['remote', 'set-url']
     ];
 
     /** @var int */
@@ -78,7 +78,6 @@ class ProcessExecutor
     public function __construct(?IOInterface $io = null)
     {
         $this->io = $io;
-        $this->resetMaxJobs();
     }
 
     /**
@@ -139,7 +138,7 @@ class ProcessExecutor
             $process = new Process($command, $cwd, $env, null, static::getTimeout());
         }
 
-        if (!Platform::isWindows() && $tty) {
+        if (! Platform::isWindows() && $tty) {
             try {
                 $process->setTty(true);
             } catch (RuntimeException $e) {
@@ -351,11 +350,7 @@ class ProcessExecutor
 
     public function resetMaxJobs(): void
     {
-        if (is_numeric($maxJobs = Platform::getEnv('COMPOSER_MAX_PARALLEL_PROCESSES'))) {
-            $this->maxJobs = max(1, min(50, (int) $maxJobs));
-        } else {
-            $this->maxJobs = 10;
-        }
+        $this->maxJobs = 10;
     }
 
     /**
@@ -483,8 +478,8 @@ class ProcessExecutor
 
         $commandString = is_string($command) ? $command : implode(' ', array_map(self::class.'::escape', $command));
         $safeCommand = Preg::replaceCallback('{://(?P<user>[^:/\s]+):(?P<password>[^@\s/]+)@}i', static function ($m): string {
-            // if the username looks like a long (12char+) hex string, or a modern github token (e.g. ghp_xxx, github_pat_xxx) we obfuscate that
-            if (Preg::isMatch(GitHub::GITHUB_TOKEN_REGEX, $m['user'])) {
+            // if the username looks like a long (12char+) hex string, or a modern github token (e.g. ghp_xxx) we obfuscate that
+            if (Preg::isMatch('{^([a-f0-9]{12,}|gh[a-z]_[a-zA-Z0-9_]+)$}', $m['user'])) {
                 return '://***:***@';
             }
             if (Preg::isMatch('{^[a-f0-9]{12,}$}', $m['user'])) {
