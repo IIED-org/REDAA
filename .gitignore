@@ -124,4 +124,9 @@ oauth_keys/
 # SQL dumps
 *.sql
 *.sql.gz
+
+# Node
 node_modules
+
+# Environment-specific .htaccess
+/docroot/.htaccess
