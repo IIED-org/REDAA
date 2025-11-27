@@ -15,7 +15,7 @@ type: theme
 base theme: false
 description: 'A clean, accessible, and flexible Drupal front-end theme.'
 alt text: 'Screenshot of REDAA, Drupal front-end theme.'
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 version: VERSION
 libraries:
   - redaa/global-styling

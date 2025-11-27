@@ -21,7 +21,7 @@ final class GeneratedConfig
         0 => 'phpstan/rules.neon',
       ),
     ),
-    'version' => '2.9.2',
+    'version' => '2.8.6',
     'phpstanVersionConstraint' => NULL,
   ),
   'composer/pcre' => 
@@ -65,6 +65,21 @@ final class GeneratedConfig
       ),
     ),
     'version' => '1.2.1',
+    'phpstanVersionConstraint' => '>=1.12.0.0-dev, <2.0.0.0-dev',
+  ),
+  'phpstan/phpstan-phpunit' => 
+  array (
+    'install_path' => '/var/www/html/vendor/phpstan/phpstan-phpunit',
+    'relative_install_path' => '../../phpstan-phpunit',
+    'extra' => 
+    array (
+      'includes' => 
+      array (
+        0 => 'extension.neon',
+        1 => 'rules.neon',
+      ),
+    ),
+    'version' => '1.4.2',
     'phpstanVersionConstraint' => '>=1.12.0.0-dev, <2.0.0.0-dev',
   ),
 );

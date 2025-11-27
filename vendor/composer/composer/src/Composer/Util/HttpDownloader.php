@@ -108,7 +108,7 @@ class HttpDownloader
             throw new \InvalidArgumentException('$url must not be an empty string');
         }
         [$job, $promise] = $this->addJob(['url' => $url, 'options' => $options, 'copyTo' => null], true);
-        $promise->then(null, static function (\Throwable $e) {
+        $promise->then(null, function (\Throwable $e) {
             // suppress error as it is rethrown to the caller by getResponse() a few lines below
         });
         $this->wait($job['id']);
@@ -126,7 +126,7 @@ class HttpDownloader
      *                                     although not all options are supported when using the default curl downloader
      * @throws TransportException
      * @return PromiseInterface
-     * @phpstan-return PromiseInterface<Response>
+     * @phpstan-return PromiseInterface<Http\Response>
      */
     public function add(string $url, array $options = [])
     {
@@ -168,7 +168,7 @@ class HttpDownloader
      *                                     although not all options are supported when using the default curl downloader
      * @throws TransportException
      * @return PromiseInterface
-     * @phpstan-return PromiseInterface<Response>
+     * @phpstan-return PromiseInterface<Http\Response>
      */
     public function addCopy(string $url, string $to, array $options = [])
     {
@@ -204,7 +204,7 @@ class HttpDownloader
     /**
      * @phpstan-param Request $request
      * @return array{Job, PromiseInterface}
-     * @phpstan-return array{Job, PromiseInterface<Response>}
+     * @phpstan-return array{Job, PromiseInterface<Http\Response>}
      */
     private function addJob(array $request, bool $sync = false): array
     {
@@ -248,13 +248,13 @@ class HttpDownloader
                     $rfs->copy($job['origin'], $url, $job['request']['copyTo'], false /* TODO progress */, $options);
 
                     $headers = $rfs->getLastHeaders();
-                    $response = new Response($job['request'], $rfs->findStatusCode($headers), $headers, $job['request']['copyTo'].'~');
+                    $response = new Http\Response($job['request'], $rfs->findStatusCode($headers), $headers, $job['request']['copyTo'].'~');
 
                     $resolve($response);
                 } else {
                     $body = $rfs->getContents($job['origin'], $url, false /* TODO progress */, $options);
                     $headers = $rfs->getLastHeaders();
-                    $response = new Response($job['request'], $rfs->findStatusCode($headers), $headers, $body);
+                    $response = new Http\Response($job['request'], $rfs->findStatusCode($headers), $headers, $body);
 
                     $resolve($response);
                 }

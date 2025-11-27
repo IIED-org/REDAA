@@ -57,6 +57,7 @@ class DownloadManager
      * Makes downloader prefer source installation over the dist.
      *
      * @param  bool            $preferSource prefer downloading from source
+     * @return DownloadManager
      */
     public function setPreferSource(bool $preferSource): self
     {
@@ -69,6 +70,7 @@ class DownloadManager
      * Makes downloader prefer dist installation over the source.
      *
      * @param  bool            $preferDist prefer downloading from dist
+     * @return DownloadManager
      */
     public function setPreferDist(bool $preferDist): self
     {
@@ -81,6 +83,8 @@ class DownloadManager
      * Sets fine tuned preference settings for package level source/dist selection.
      *
      * @param array<string, string> $preferences array of preferences by package patterns
+     *
+     * @return DownloadManager
      */
     public function setPreferences(array $preferences): self
     {
@@ -94,6 +98,7 @@ class DownloadManager
      *
      * @param  string              $type       installation type
      * @param  DownloaderInterface $downloader downloader instance
+     * @return DownloadManager
      */
     public function setDownloader(string $type, DownloaderInterface $downloader): self
     {

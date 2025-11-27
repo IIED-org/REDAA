@@ -75,7 +75,6 @@ abstract class VcsDriver implements VcsDriverInterface
 
     /**
      * Returns whether or not the given $identifier should be cached or not.
-     * @phpstan-assert-if-true !null $this->cache
      */
     protected function shouldCache(string $identifier): bool
     {
@@ -95,7 +94,7 @@ abstract class VcsDriver implements VcsDriverInterface
             $composer = $this->getBaseComposerInformation($identifier);
 
             if ($this->shouldCache($identifier)) {
-                $this->cache->write($identifier, JsonFile::encode($composer, \JSON_UNESCAPED_UNICODE | \JSON_UNESCAPED_SLASHES));
+                $this->cache->write($identifier, JsonFile::encode($composer, 0));
             }
 
             $this->infoCache[$identifier] = $composer;

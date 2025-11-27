@@ -14,6 +14,7 @@ namespace Composer\Util\Http;
 
 use Composer\Json\JsonFile;
 use Composer\Pcre\Preg;
+use Composer\Util\HttpDownloader;
 
 /**
  * @phpstan-type Request array{url: non-empty-string, options?: mixed[], copyTo?: string|null}
@@ -71,11 +72,17 @@ class Response
         return $this->headers;
     }
 
+    /**
+     * @return ?string
+     */
     public function getHeader(string $name): ?string
     {
         return self::findHeaderValue($this->headers, $name);
     }
 
+    /**
+     * @return ?string
+     */
     public function getBody(): ?string
     {
         return $this->body;

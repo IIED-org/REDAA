@@ -34,7 +34,7 @@ class RuleSet implements \IteratorAggregate, \Countable
      */
     public $ruleById = [];
 
-    public const TYPES = [
+    const TYPES = [
         self::TYPE_PACKAGE => 'PACKAGE',
         self::TYPE_REQUEST => 'REQUEST',
         self::TYPE_LEARNED => 'LEARNED',

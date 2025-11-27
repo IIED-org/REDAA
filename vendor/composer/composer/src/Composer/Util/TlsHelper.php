@@ -84,7 +84,7 @@ final class TlsHelper
 
                     return null;
                 }, $subjectAltNames),
-                static function (?string $san) {
+                function (?string $san) {
                     return $san !== null;
                 }
             );

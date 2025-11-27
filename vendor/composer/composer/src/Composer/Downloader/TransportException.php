@@ -52,6 +52,9 @@ class TransportException extends \RuntimeException
         $this->response = $response;
     }
 
+    /**
+     * @return ?string
+     */
     public function getResponse(): ?string
     {
         return $this->response;
@@ -65,6 +68,9 @@ class TransportException extends \RuntimeException
         $this->statusCode = $statusCode;
     }
 
+    /**
+     * @return ?int
+     */
     public function getStatusCode(): ?int
     {
         return $this->statusCode;

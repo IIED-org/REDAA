@@ -1,7 +1,0 @@
-adding:
-  dependencies:
-    module:
-      - help
-  permissions:
-    - 'access help pages'
-removing: {  }

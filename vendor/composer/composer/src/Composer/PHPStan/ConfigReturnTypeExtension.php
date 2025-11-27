@@ -17,6 +17,7 @@ use Composer\Json\JsonFile;
 use PhpParser\Node\Expr\MethodCall;
 use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\MethodReflection;
+use PHPStan\Reflection\ParametersAcceptorSelector;
 use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
 use PHPStan\Type\Constant\ConstantArrayType;
@@ -34,7 +35,7 @@ use PHPStan\Type\UnionType;
 
 final class ConfigReturnTypeExtension implements DynamicMethodReturnTypeExtension
 {
-    /** @var array<string, Type> */
+    /** @var array<string, \PHPStan\Type\Type> */
     private $properties = [];
 
     public function __construct()
@@ -77,7 +78,7 @@ final class ConfigReturnTypeExtension implements DynamicMethodReturnTypeExtensio
         }
         if ($strings !== []) {
             $types = [];
-            foreach ($strings as $string) {
+            foreach($strings as $string) {
                 if (!isset($this->properties[$string->getValue()])) {
                     return null;
                 }

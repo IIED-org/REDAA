@@ -38,8 +38,6 @@ use Composer\Semver\Intervals;
  */
 class PoolBuilder
 {
-    private const LOAD_BATCH_SIZE = 50;
-
     /**
      * @var int[]
      * @phpstan-var array<key-of<BasePackage::STABILITIES>, BasePackage::STABILITY_*>
@@ -153,9 +151,6 @@ class PoolBuilder
     /** @var int */
     private $indexCounter = 0;
 
-    /** @var ?SecurityAdvisoryPoolFilter */
-    private $securityAdvisoryPoolFilter;
-
     /**
      * @param int[] $acceptableStabilities array of stability => BasePackage::STABILITY_* value
      * @phpstan-param array<key-of<BasePackage::STABILITIES>, BasePackage::STABILITY_*> $acceptableStabilities
@@ -167,7 +162,7 @@ class PoolBuilder
      * @phpstan-param array<string, string> $rootReferences
      * @param array<string, ConstraintInterface> $temporaryConstraints Runtime temporary constraints that will be used to filter packages
      */
-    public function __construct(array $acceptableStabilities, array $stabilityFlags, array $rootAliases, array $rootReferences, IOInterface $io, ?EventDispatcher $eventDispatcher = null, ?PoolOptimizer $poolOptimizer = null, array $temporaryConstraints = [], ?SecurityAdvisoryPoolFilter $securityAdvisoryPoolFilter = null)
+    public function __construct(array $acceptableStabilities, array $stabilityFlags, array $rootAliases, array $rootReferences, IOInterface $io, ?EventDispatcher $eventDispatcher = null, ?PoolOptimizer $poolOptimizer = null, array $temporaryConstraints = [])
     {
         $this->acceptableStabilities = $acceptableStabilities;
         $this->stabilityFlags = $stabilityFlags;
@@ -177,7 +172,6 @@ class PoolBuilder
         $this->poolOptimizer = $poolOptimizer;
         $this->io = $io;
         $this->temporaryConstraints = $temporaryConstraints;
-        $this->securityAdvisoryPoolFilter = $securityAdvisoryPoolFilter;
     }
 
     /**
@@ -288,32 +282,26 @@ class PoolBuilder
         if (\count($this->temporaryConstraints) > 0) {
             foreach ($this->packages as $i => $package) {
                 // we check all alias related packages at once, so no need to check individual aliases
-                if ($package instanceof AliasPackage) {
+                if (!isset($this->temporaryConstraints[$package->getName()]) || $package instanceof AliasPackage) {
                     continue;
                 }
 
-                foreach ($package->getNames() as $packageName) {
-                    if (!isset($this->temporaryConstraints[$packageName])) {
-                        continue;
-                    }
+                $constraint = $this->temporaryConstraints[$package->getName()];
+                $packageAndAliases = [$i => $package];
+                if (isset($this->aliasMap[spl_object_hash($package)])) {
+                    $packageAndAliases += $this->aliasMap[spl_object_hash($package)];
+                }
 
-                    $constraint = $this->temporaryConstraints[$packageName];
-                    $packageAndAliases = [$i => $package];
-                    if (isset($this->aliasMap[spl_object_hash($package)])) {
-                        $packageAndAliases += $this->aliasMap[spl_object_hash($package)];
+                $found = false;
+                foreach ($packageAndAliases as $packageOrAlias) {
+                    if (CompilingMatcher::match($constraint, Constraint::OP_EQ, $packageOrAlias->getVersion())) {
+                        $found = true;
                     }
+                }
 
-                    $found = false;
-                    foreach ($packageAndAliases as $packageOrAlias) {
-                        if (CompilingMatcher::match($constraint, Constraint::OP_EQ, $packageOrAlias->getVersion())) {
-                            $found = true;
-                        }
-                    }
-
-                    if (!$found) {
-                        foreach ($packageAndAliases as $index => $packageOrAlias) {
-                            unset($this->packages[$index]);
-                        }
+                if (!$found) {
+                    foreach ($packageAndAliases as $index => $packageOrAlias) {
+                        unset($this->packages[$index]);
                     }
                 }
             }
@@ -350,9 +338,6 @@ class PoolBuilder
 
         $this->io->debug('Built pool.');
 
-        // filter vulnerable packages before optimizing the pool otherwise we may end up with inconsistent state where the optimizer took away versions
-        // that were not vulnerable and now suddenly the vulnerable ones are removed and we are missing some versions to make it solvable
-        $pool = $this->runSecurityAdvisoryFilter($pool, $repositories, $request);
         $pool = $this->runOptimizer($request, $pool);
 
         Intervals::clear();
@@ -428,39 +413,33 @@ class PoolBuilder
             $this->loadedPackages[$name] = $constraint;
         }
 
-        // Load packages in chunks of 50 to prevent memory usage build-up due to caches of all sorts
-        $packageBatches = array_chunk($this->packagesToLoad, self::LOAD_BATCH_SIZE, true);
+        $packageBatch = $this->packagesToLoad;
         $this->packagesToLoad = [];
 
         foreach ($repositories as $repoIndex => $repository) {
+            if (0 === \count($packageBatch)) {
+                break;
+            }
+
             // these repos have their packages fixed or locked if they need to be loaded so we
             // never need to load anything else from them
             if ($repository instanceof PlatformRepository || $repository === $request->getLockedRepository()) {
                 continue;
             }
+            $result = $repository->loadPackages($packageBatch, $this->acceptableStabilities, $this->stabilityFlags, $this->loadedPerRepo[$repoIndex] ?? []);
 
-            if (0 === \count($packageBatches)) {
-                break;
+            foreach ($result['namesFound'] as $name) {
+                // avoid loading the same package again from other repositories once it has been found
+                unset($packageBatch[$name]);
             }
+            foreach ($result['packages'] as $package) {
+                $this->loadedPerRepo[$repoIndex][$package->getName()][$package->getVersion()] = $package;
 
-            foreach ($packageBatches as $batchIndex => $packageBatch) {
-                $result = $repository->loadPackages($packageBatch, $this->acceptableStabilities, $this->stabilityFlags, $this->loadedPerRepo[$repoIndex] ?? []);
-
-                foreach ($result['namesFound'] as $name) {
-                    // avoid loading the same package again from other repositories once it has been found
-                    unset($packageBatches[$batchIndex][$name]);
+                if (in_array($package->getType(), $this->ignoredTypes, true) || ($this->allowedTypes !== null && !in_array($package->getType(), $this->allowedTypes, true))) {
+                    continue;
                 }
-                foreach ($result['packages'] as $package) {
-                    $this->loadedPerRepo[$repoIndex][$package->getName()][$package->getVersion()] = $package;
-
-                    if (in_array($package->getType(), $this->ignoredTypes, true) || ($this->allowedTypes !== null && !in_array($package->getType(), $this->allowedTypes, true))) {
-                        continue;
-                    }
-                    $this->loadPackage($request, $repositories, $package, !isset($this->pathRepoUnlocked[$package->getName()]));
-                }
+                $this->loadPackage($request, $repositories, $package, !isset($this->pathRepoUnlocked[$package->getName()]));
             }
-
-            $packageBatches = array_chunk(array_merge(...$packageBatches), self::LOAD_BATCH_SIZE, true);
         }
     }
 
@@ -806,39 +785,6 @@ class PoolBuilder
         $this->io->write(sprintf('Pool optimizer completed in %.3f seconds', microtime(true) - $before), true, IOInterface::VERY_VERBOSE);
         $this->io->write(sprintf(
             '<info>Found %s package versions referenced in your dependency graph. %s (%d%%) were optimized away.</info>',
-            number_format($total),
-            number_format($filtered),
-            round(100 / $total * $filtered)
-        ), true, IOInterface::VERY_VERBOSE);
-
-        return $pool;
-    }
-
-    /**
-     * @param RepositoryInterface[] $repositories
-     */
-    private function runSecurityAdvisoryFilter(Pool $pool, array $repositories, Request $request): Pool
-    {
-        if (null === $this->securityAdvisoryPoolFilter) {
-            return $pool;
-        }
-
-        $this->io->debug('Running security advisory pool filter.');
-
-        $before = microtime(true);
-        $total = \count($pool->getPackages());
-
-        $pool = $this->securityAdvisoryPoolFilter->filter($pool, $repositories, $request);
-
-        $filtered = $total - \count($pool->getPackages());
-
-        if (0 === $filtered) {
-            return $pool;
-        }
-
-        $this->io->write(sprintf('Security advisory pool filter completed in %.3f seconds', microtime(true) - $before), true, IOInterface::VERY_VERBOSE);
-        $this->io->write(sprintf(
-            '<info>Found %s package versions referenced in your dependency graph. %s (%d%%) were filtered away.</info>',
             number_format($total),
             number_format($filtered),
             round(100 / $total * $filtered)

@@ -15,14 +15,12 @@ use Drupal\Core\Lock\LockBackendInterface;
 use Drupal\editor\EditorInterface;
 use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
-use Drupal\file\Upload\FileUploadHandler;
-use Drupal\file\Validation\FileValidatorInterface;
+use Drupal\file\Upload\FileUploadHandlerInterface;
 use Drupal\Tests\UnitTestCase;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 /**
  * Tests CKEditor5ImageController.
@@ -32,6 +30,9 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
  */
 final class CKEditor5ImageControllerTest extends UnitTestCase {
 
+  /**
+   * Tests that upload fails correctly when the file is too large.
+   */
   public function testInvalidFile(): void {
     $file_system = $this->prophesize(FileSystemInterface::class);
     $file_system->move(Argument::any())->shouldNotBeCalled();
@@ -54,13 +55,11 @@ final class CKEditor5ImageControllerTest extends UnitTestCase {
     $entity_type_repository->getEntityTypeFromClass(File::class)->willReturn('file');
     $container->get('entity_type.repository')->willReturn($entity_type_repository->reveal());
     \Drupal::setContainer($container->reveal());
-    $file_validator = $this->prophesize(FileValidatorInterface::class);
-    $file_validator->validate(Argument::cetera())->willReturn($this->prophesize(ConstraintViolationListInterface::class)->reveal());
     $controller = new CKEditor5ImageController(
       $file_system->reveal(),
-      $this->prophesize(FileUploadHandler::class)->reveal(),
+      $this->prophesize(FileUploadHandlerInterface::class)->reveal(),
       $lock->reveal(),
-      $this->prophesize(CKEditor5PluginManagerInterface::class)->reveal()
+      $this->prophesize(CKEditor5PluginManagerInterface::class)->reveal(),
     );
     // We can't use vfsstream here because of how Symfony request works.
     $file_uri = tempnam(sys_get_temp_dir(), 'tmp');

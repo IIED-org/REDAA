@@ -95,6 +95,9 @@ class ArtifactRepository extends ArrayRepository implements ConfigurableReposito
         }
     }
 
+    /**
+     * @return ?BasePackage
+     */
     private function getComposerInformation(\SplFileInfo $file): ?BasePackage
     {
         $json = null;

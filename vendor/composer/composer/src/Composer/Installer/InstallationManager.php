@@ -291,7 +291,6 @@ class InstallationManager
 
         if ($downloadOnly) {
             $this->runCleanup($cleanupPromises);
-
             return;
         }
 
@@ -645,6 +644,7 @@ class InstallationManager
     }
 
     /**
+     * @return void
      * @phpstan-param array<callable(): ?PromiseInterface<void|null>> $cleanupPromises
      */
     private function runCleanup(array $cleanupPromises): void

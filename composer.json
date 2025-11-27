@@ -8,7 +8,7 @@
         "chat": "https://www.drupal.org/node/314178"
     },
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.3",
         "acquia/acquia-cms-starterkit": "^1",
         "acquia/drupal-environment-detector": "^1",
         "acquia/http-hmac-php": "6.0.0",
@@ -22,9 +22,9 @@
         "drupal/ckeditor_accordion": "^2.1",
         "drupal/clamav": "^2.1",
         "drupal/config_split": "^2.0",
-        "drupal/core-composer-scaffold": "^10",
-        "drupal/core-project-message": "^10",
-        "drupal/core-recommended": "^10",
+        "drupal/core-composer-scaffold": "^11",
+        "drupal/core-project-message": "^11",
+        "drupal/core-recommended": "^11",
         "drupal/ctools": "^4",
         "drupal/draggableviews": "^2.1",
         "drupal/facets": "^3.0",
@@ -56,12 +56,11 @@
         "drupal/tfa": "^1.9",
         "drupal/token_or": "^2.3",
         "drupal/twig_tweak": "^3.4",
-        "drupal/upgrade_status": "^4.0",
         "drupal/varnish_purge": "^2.2",
         "drupal/views_bulk_edit": "^3.0",
         "drupal/views_bulk_operations": "^4.3",
         "drupal/views_field_view": "^1.0",
-        "drush/drush": "^12",
+        "drush/drush": "^13.6",
         "geocoder-php/chain-provider": "^4.5",
         "geocoder-php/geo-plugin-provider": "^4.3",
         "geocoder-php/google-maps-provider": "^4.7",
@@ -70,6 +69,7 @@
     },
     "require-dev": {
         "acquia/coding-standards": "^1.0.0",
+        "drupal/core-dev": "^11",
         "mglaman/phpstan-drupal": "^1.1",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^1.6",
@@ -83,14 +83,15 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
             "ergebnis/composer-normalize": true,
             "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
             "phpstan/extension-installer": true,
-            "drupal/core-project-message": true,
-            "php-http/discovery": true
+            "tbachert/spi": true
         },
         "platform": {
-            "php": "8.1"
+            "php": "8.3"
         },
         "process-timeout": 600,
         "sort-packages": true
