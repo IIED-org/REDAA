@@ -1,0 +1,13 @@
+uuid: e8440e3e-5112-492c-a585-a53a231cc482
+langcode: en
+status: true
+dependencies: {  }
+id: monthly
+label: 'Monthly db'
+enabled: true
+keep: 13
+period: 2419200
+cron: null
+source_id: default_db
+destination_id: aws_monthly
+settings_profile_id: aws_db

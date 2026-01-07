@@ -1,0 +1,13 @@
+uuid: 289cab80-aa31-4295-a6a3-0260f1269f17
+langcode: en
+status: true
+dependencies: {  }
+id: monthly_files
+label: 'Monthly files'
+enabled: true
+keep: 13
+period: 2419200
+cron: null
+source_id: public_files
+destination_id: aws_monthly
+settings_profile_id: aws_files

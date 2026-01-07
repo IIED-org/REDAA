@@ -1,0 +1,13 @@
+uuid: dba74254-8636-4dfb-8ccd-dd0702889c98
+langcode: en
+status: true
+dependencies: {  }
+id: biannual_files
+label: 'Biannual files'
+enabled: true
+keep: null
+period: 15724800
+cron: null
+source_id: public_files
+destination_id: aws_biannual
+settings_profile_id: aws_files

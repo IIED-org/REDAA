@@ -1,0 +1,16 @@
+uuid: 462f47c3-5799-4180-adb3-5c2153c6f72e
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate_aws_s3
+id: aws_biannual
+label: 'AWS biannual'
+type: awss3
+config:
+  s3_endpoint: 'https://s3.eu-west-2.amazonaws.com'
+  s3_access_key_name: aws_access_key
+  s3_secret_key_name: aws_secret_key
+  s3_bucket: iied-backup
+  s3_folder_prefix: REDAA/biannual
+  s3_region: eu-west-2

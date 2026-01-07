@@ -772,10 +772,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
-}
-elseif (getenv('LANDO_INFO') !== FALSE && file_exists($app_root . '/' . $site_path . '/settings.lando.php')) {
+if (getenv('LANDO_INFO') !== FALSE && file_exists($app_root . '/' . $site_path . '/settings.lando.php')) {
   include $app_root . '/' . $site_path . '/settings.lando.php';
 }
 
@@ -783,4 +780,9 @@ elseif (getenv('LANDO_INFO') !== FALSE && file_exists($app_root . '/' . $site_pa
 $ddev_settings = __DIR__ . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
+}
+
+// Include the settings.local.php file last, if it exists.
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
 }

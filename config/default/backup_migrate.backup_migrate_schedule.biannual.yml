@@ -1,0 +1,13 @@
+uuid: 0d09055e-6b1a-4771-89fc-a9707088c339
+langcode: en
+status: true
+dependencies: {  }
+id: biannual
+label: 'Biannual db'
+enabled: true
+keep: null
+period: 15724800
+cron: null
+source_id: default_db
+destination_id: aws_biannual
+settings_profile_id: aws_db

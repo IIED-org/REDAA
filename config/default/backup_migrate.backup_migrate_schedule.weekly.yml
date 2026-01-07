@@ -1,0 +1,13 @@
+uuid: 8281282c-0950-4aa2-af8c-153440f5d772
+langcode: en
+status: true
+dependencies: {  }
+id: weekly
+label: 'Weekly db'
+enabled: true
+keep: 26
+period: 604800
+cron: null
+source_id: default_db
+destination_id: aws_weekly
+settings_profile_id: aws_db

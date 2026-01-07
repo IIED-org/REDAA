@@ -1,0 +1,16 @@
+uuid: 31439ae7-52cc-4453-91bf-a91d609154b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate_aws_s3
+id: aws_monthly
+label: 'AWS monthly'
+type: awss3
+config:
+  s3_endpoint: 'https://s3.eu-west-2.amazonaws.com'
+  s3_access_key_name: aws_access_key
+  s3_secret_key_name: aws_secret_key
+  s3_bucket: iied-backup
+  s3_folder_prefix: REDAA/monthly
+  s3_region: eu-west-2

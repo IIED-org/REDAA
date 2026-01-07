@@ -1,0 +1,15 @@
+uuid: c992ba66-8d10-4519-bfe9-a2756238ced4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: B6mQr6j7ZcqZB14S8ytJEXCYzOQ1mcOW9-oWYbtkbJc
+id: daily_schedule
+label: 'Daily db'
+enabled: true
+keep: 14
+period: 86400
+cron: null
+source_id: default_db
+destination_id: aws_daily
+settings_profile_id: aws_db

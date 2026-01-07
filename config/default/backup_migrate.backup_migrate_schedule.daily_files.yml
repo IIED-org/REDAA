@@ -1,0 +1,13 @@
+uuid: 3ffa3e46-8f3b-47e9-ac5f-9e1fc268ad27
+langcode: en
+status: true
+dependencies: {  }
+id: daily_files
+label: 'Daily files'
+enabled: true
+keep: 14
+period: 86400
+cron: null
+source_id: public_files
+destination_id: aws_daily
+settings_profile_id: aws_files

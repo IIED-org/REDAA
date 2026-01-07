@@ -1,0 +1,16 @@
+uuid: 5153940c-b6b6-44a3-afc5-06b2a11e2eb5
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate_aws_s3
+id: aws_daily
+label: 'AWS daily'
+type: awss3
+config:
+  s3_endpoint: 'https://s3.eu-west-2.amazonaws.com'
+  s3_access_key_name: aws_access_key
+  s3_secret_key_name: aws_secret_key
+  s3_bucket: iied-backup
+  s3_folder_prefix: REDAA/daily
+  s3_region: eu-west-2

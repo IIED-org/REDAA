@@ -1,0 +1,16 @@
+uuid: af8809a8-029e-4d4e-abad-6274d3fbfd4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate_aws_s3
+id: aws_weekly
+label: 'AWS weekly'
+type: awss3
+config:
+  s3_endpoint: 'https://s3.eu-west-2.amazonaws.com'
+  s3_access_key_name: aws_access_key
+  s3_secret_key_name: aws_secret_key
+  s3_bucket: iied-backup
+  s3_folder_prefix: REDAA/weekly
+  s3_region: eu-west-2

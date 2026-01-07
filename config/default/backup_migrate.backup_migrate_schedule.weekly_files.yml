@@ -1,0 +1,13 @@
+uuid: 1e704d7d-de60-486f-b2a1-9c03202e5f3e
+langcode: en
+status: true
+dependencies: {  }
+id: weekly_files
+label: 'Weekly files'
+enabled: true
+keep: 26
+period: 604800
+cron: null
+source_id: public_files
+destination_id: aws_weekly
+settings_profile_id: aws_files
