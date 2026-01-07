@@ -13,5 +13,13 @@ folder: ../config/splits/prod
 module: {  }
 theme: {  }
 complete_list:
+  - backup_migrate.backup_migrate_schedule.biannual
+  - backup_migrate.backup_migrate_schedule.biannual_files
+  - backup_migrate.backup_migrate_schedule.daily_files
+  - backup_migrate.backup_migrate_schedule.daily_schedule
+  - backup_migrate.backup_migrate_schedule.monthly
+  - backup_migrate.backup_migrate_schedule.monthly_files
+  - backup_migrate.backup_migrate_schedule.weekly
+  - backup_migrate.backup_migrate_schedule.weekly_files
   - password_policy.password_policy.password_expiry
 partial_list: {  }
