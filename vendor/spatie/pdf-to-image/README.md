@@ -1,9 +1,19 @@
-# Convert a PDF to an image
+<div align="left">
+    <a href="https://spatie.be/open-source?utm_source=github&utm_medium=banner&utm_campaign=pdf-to-image">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://spatie.be/packages/header/pdf-to-image/html/dark.webp">
+        <img alt="Logo for pdf-to-image" src="https://spatie.be/packages/header/pdf-to-image/html/light.webp">
+      </picture>
+    </a>
+
+<h1>Convert a PDF to an image</h1>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/pdf-to-image.svg?style=flat-square)](https://packagist.org/packages/spatie/pdf-to-image)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/pdf-to-image.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/pdf-to-image)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/pdf-to-image.svg?style=flat-square)](https://packagist.org/packages/spatie/pdf-to-image)
+    
+</div>
 
 This package provides an easy-to-work-with class to convert a PDF to one or more image.
 
@@ -123,6 +133,9 @@ $width = $size->width;
 $height = $size->height;
 ```
 
+> [!NOTE]
+> $directoryToWhereImagesShouldBeStored must be an existing directory
+
 Save all pages to images:
 
 ```php
@@ -149,6 +162,15 @@ $pdf->backgroundColor('#fff') // code for 'white' color
 
 $pdf->backgroundColor('rgb(255,255,255)') // rgb for 'white' color
     ->save($pathToWhereImageShouldBeStored);
+```
+
+## Ultra-wide PDFs
+
+When working with ultra-wide PDFs, you may encounter issues loading PDF files. To resolve this, update your `policy.xml` Imagick file, using values appropriate for your use case:
+
+```xml
+  <policy domain="resource" name="width" value="4GiB"/>
+  <policy domain="resource" name="height" value="4GiB"/>
 ```
 
 ## Issues regarding Ghostscript
