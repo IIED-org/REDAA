@@ -25,6 +25,7 @@ module:
   draggableviews: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   facets: 0
   facets_summary: 0
   feeds: 0
@@ -47,6 +48,7 @@ module:
   layout_builder: 0
   layout_builder_boolean: 0
   layout_discovery: 0
+  layout_paragraphs: 0
   leaflet: 0
   leaflet_markercluster: 0
   leaflet_more_maps: 0
@@ -106,6 +108,7 @@ module:
   pathauto: 1
   password_policy: 10
   views: 10
+  paragraphs: 11
   password_policy_extras: 20
   standard: 1000
 theme:

@@ -1,0 +1,148 @@
+uuid: 267f2a99-2eaa-4097-bb46-0515bc26ff2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.impact_items_2_cols.field_description
+    - field.field.paragraph.impact_items_2_cols.field_impact_title
+    - field.field.paragraph.impact_items_2_cols.field_resource
+    - field.field.paragraph.impact_items_2_cols.field_resource_2
+    - field.field.paragraph.impact_items_2_cols.layout_builder__layout
+    - paragraphs.paragraphs_type.impact_items_2_cols
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          b01c9eaf-2874-479e-8377-720ea0daa96f:
+            uuid: b01c9eaf-2874-479e-8377-720ea0daa96f
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impact_items_2_cols:field_description'
+              label: Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          3c06649e-315a-4abf-a60f-a3e303ebde7d:
+            uuid: 3c06649e-315a-4abf-a60f-a3e303ebde7d
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impact_items_2_cols:field_impact_title'
+              label: 'Impact title'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          aa69c30d-bb04-474d-a4eb-7f9da9286a73:
+            uuid: aa69c30d-bb04-474d-a4eb-7f9da9286a73
+            region: second
+            configuration:
+              id: 'field_block:paragraph:impact_items_2_cols:field_resource_2'
+              label: 'Resource 2'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          e2bbfc9c-3dd4-4cfc-94b2-08851aae8e15:
+            uuid: e2bbfc9c-3dd4-4cfc-94b2-08851aae8e15
+            region: first
+            configuration:
+              id: 'field_block:paragraph:impact_items_2_cols:field_resource'
+              label: Resource
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.impact_items_2_cols.default
+targetEntityType: paragraph
+bundle: impact_items_2_cols
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_impact_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_resource:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_resource_2:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  layout_builder__layout: true
+  search_api_excerpt: true

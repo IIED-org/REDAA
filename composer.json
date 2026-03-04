@@ -37,6 +37,7 @@
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/klaro": "^3.0",
         "drupal/layout_builder_boolean": "^1.0@alpha",
+        "drupal/layout_paragraphs": "^2.1",
         "drupal/leaflet": "^10.2",
         "drupal/leaflet_more_maps": "^2.1",
         "drupal/media_entity_file_replace": "^1.1",

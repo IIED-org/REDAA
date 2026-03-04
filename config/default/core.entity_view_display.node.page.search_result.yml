@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_result
     - field.field.node.page.body
     - field.field.node.page.field_main_image
+    - field.field.node.page.field_paragraphs
     - field.field.node.page.field_standfirst
     - field.field.node.page.layout_builder__layout
     - node.type.page
@@ -57,5 +58,6 @@ content:
     weight: 1
     region: content
 hidden:
+  field_paragraphs: true
   field_standfirst: true
   layout_builder__layout: true

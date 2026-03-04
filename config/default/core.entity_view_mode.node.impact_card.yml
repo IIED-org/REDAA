@@ -1,0 +1,11 @@
+uuid: a3f68efd-24fb-41c1-b914-8424e335ec84
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.impact_card
+label: 'Impact card'
+description: 'Card without metadata'
+targetEntityType: node
+cache: true

@@ -1,0 +1,19 @@
+uuid: 96ee9217-b45c-4703-997e-d4543a6fe252
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_impact_title
+    - paragraphs.paragraphs_type.impact_items_2_cols
+id: paragraph.impact_items_2_cols.field_impact_title
+field_name: field_impact_title
+entity_type: paragraph
+bundle: impact_items_2_cols
+label: 'Impact title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

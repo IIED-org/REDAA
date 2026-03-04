@@ -192,4 +192,16 @@
 .summary-card-image {
     margin-left: 1.125rem
 }
-  } 
+  }
+
+.impact-card {
+  display: flex;
+  flex-wrap: wrap;
+  .card-contents-wrapper {
+    display: flex;
+  }
+  .summary {
+    display: flex;
+    flex-basis: 100%;
+}
+}

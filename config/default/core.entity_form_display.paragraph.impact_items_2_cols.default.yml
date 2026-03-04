@@ -1,0 +1,66 @@
+uuid: 092c21bf-d260-4a2f-9df9-7c99f9cc8576
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.impact_items_2_cols.field_description
+    - field.field.paragraph.impact_items_2_cols.field_impact_title
+    - field.field.paragraph.impact_items_2_cols.field_resource
+    - field.field.paragraph.impact_items_2_cols.field_resource_2
+    - field.field.paragraph.impact_items_2_cols.layout_builder__layout
+    - paragraphs.paragraphs_type.impact_items_2_cols
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.impact_items_2_cols.default
+targetEntityType: paragraph
+bundle: impact_items_2_cols
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_impact_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_resource:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_resource_2:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  layout_builder__layout: true
+  layout_paragraphs_fields: true
+  status: true

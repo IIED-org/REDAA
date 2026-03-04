@@ -1,0 +1,21 @@
+uuid: 6d60369b-a782-4bfc-a7a8-5c2337ae3a69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.layout_builder__layout
+    - paragraphs.paragraphs_type.impact_items_2_cols
+  module:
+    - layout_builder
+id: paragraph.impact_items_2_cols.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: paragraph
+bundle: impact_items_2_cols
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section
