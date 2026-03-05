@@ -1,0 +1,94 @@
+uuid: 1a5c4226-b38e-4cab-a660-0fa74a625854
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.impact_items_2_cols.field_description
+    - field.field.paragraph.impact_items_2_cols.field_resource
+    - field.field.paragraph.impact_items_2_cols.field_resource_2
+    - field.field.paragraph.impact_items_2_cols.layout_builder__layout
+    - paragraphs.paragraphs_type.impact_items_2_cols
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          4fac25eb-f2ae-44c8-81e9-2afb59524605:
+            uuid: 4fac25eb-f2ae-44c8-81e9-2afb59524605
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impact_items_2_cols:field_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          740cc2ac-8631-45d0-ba60-11b8700ea372:
+            uuid: 740cc2ac-8631-45d0-ba60-11b8700ea372
+            region: first
+            configuration:
+              id: 'field_block:paragraph:impact_items_2_cols:field_resource'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          8f65e1a0-825f-485a-872e-0008b73e1800:
+            uuid: 8f65e1a0-825f-485a-872e-0008b73e1800
+            region: second
+            configuration:
+              id: 'field_block:paragraph:impact_items_2_cols:field_resource_2'
+              label: 'Resource 2'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.impact_items_2_cols.default
+targetEntityType: paragraph
+bundle: impact_items_2_cols
+mode: default
+content: {  }
+hidden:
+  field_description: true
+  field_resource: true
+  field_resource_2: true
+  layout_builder__layout: true
+  search_api_excerpt: true

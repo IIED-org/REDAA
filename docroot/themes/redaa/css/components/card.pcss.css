@@ -55,9 +55,12 @@
   }
 }
 
+.card-image {
+  margin-right: 1.125rem;
+}
+
 @media (--md) {
   .card-image {
-    margin-right: 1.125rem;
     min-width: 180px;
   }
 }
@@ -153,3 +156,39 @@
     margin-left: 1.125rem;
   }
 } 
+
+.impact-card {
+  .contents {
+    display: flex;
+    @media (--md) {
+      display: block;
+    }
+  } 
+  margin-block: var(--sp);
+  display: flex;
+  grid-template-columns: auto 1fr; /* Adjust as needed */
+  .card-contents-wrapper, h3.card-title, .contents {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.layout--onecol .impact-card {
+  .card-contents-wrapper {
+    @media (--md) {
+      flex-direction: row;
+    } 
+  }
+}
+
+.layout--twocol-section .impact-card {
+  h3.card-title {
+    font-size: 18px;
+    line-height: var(--sp1-5);
+  }
+  @media (--md) {
+    .card-contents-wrapper {
+      flex-direction: column;
+    }
+  }
+}

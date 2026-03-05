@@ -1,0 +1,29 @@
+uuid: 87da9cf9-4dd2-4108-888f-7967ef268abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource
+    - node.type.resource
+    - paragraphs.paragraphs_type.impact_items_2_cols
+id: paragraph.impact_items_2_cols.field_resource
+field_name: field_resource
+entity_type: paragraph
+bundle: impact_items_2_cols
+label: 'Resource 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      resource: resource
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
