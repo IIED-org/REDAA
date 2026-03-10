@@ -158,18 +158,16 @@
 } 
 
 .impact-card {
-  .contents {
-    display: flex;
-    @media (--md) {
-      display: block;
-    }
-  } 
   margin-block: var(--sp);
   display: flex;
-  grid-template-columns: auto 1fr; /* Adjust as needed */
-  .card-contents-wrapper, h3.card-title, .contents {
+   .card-contents-wrapper, h3, .contents {
     display: flex;
     flex-direction: column;
+  }
+  @media (--md) {
+    .card-image {
+      min-width: 320px;
+    }
   }
 }
 
@@ -188,6 +186,15 @@
   }
   @media (--md) {
     .card-contents-wrapper {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    .break {
+      flex-basis:100%;
+      height: 0;
+    }
+    .summary {
+      display: flex;
       flex-direction: column;
     }
   }

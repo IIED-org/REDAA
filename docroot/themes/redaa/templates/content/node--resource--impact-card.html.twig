@@ -93,20 +93,21 @@
 				{% endif %}
 			</div>
 			<div class="contents">
-				<h3 class="card-title">
-					{% if node.field_short_title is not empty %}
-						{{ content.field_short_title.0|render|striptags }}
-					{% else %}
-						{{ label }}
-					{% endif %}
-				</h3>
-				<div class="summary">
-					{% if content.field_standfirst is not empty %}
+			<h3 class="card-title">
+				{% if node.field_short_title is not empty %}
+					{{ content.field_short_title.0|render|striptags }}
+				{% else %}
+					{{ label }}
+				{% endif %}
+			</h3>
+			<div class="break"></div>
+			<div class="summary">
+					{% if node.field_standfirst is not empty %}
 						{{ content.field_standfirst.0|render|striptags }}
 					{% else %}
 						{{ content.body }}
 					{% endif %}
-				</div>
+			</div>
 			</div>
 		</div>
 

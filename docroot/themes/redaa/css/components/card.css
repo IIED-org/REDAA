@@ -198,24 +198,23 @@
   }
 
 .impact-card {
-  .contents {
-    display: flex
-  }
-    @media (min-width: 43.75rem) {
-  .contents {
-      display: block
-  }
-    } 
-  margin-top: 1rem; 
+  margin-top: 1rem;
   margin-bottom: 1rem;
   display: flex;
-  -ms-grid-columns: auto 1fr;
-  grid-template-columns: auto 1fr; /* Adjust as needed */
-  .card-contents-wrapper, h3.card-title, .contents {
+   .card-contents-wrapper, h3, .contents {
     display: flex;
     flex-direction: column;
   }
 }
+
+@media (min-width: 43.75rem) {
+
+.impact-card {
+    .card-image {
+      min-width: 20rem;
+    }
+}
+  }
 
 .layout--onecol .impact-card {
     @media (min-width: 43.75rem) {
@@ -236,6 +235,15 @@
 
 .layout--twocol-section .impact-card {
     .card-contents-wrapper {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    .break {
+      flex-basis:100%;
+      height: 0;
+    }
+    .summary {
+      display: flex;
       flex-direction: column;
     }
 }
