@@ -107,7 +107,6 @@ module:
   pathauto: 1
   password_policy: 10
   views: 10
-  paragraphs: 11
   password_policy_extras: 20
   standard: 1000
 theme:

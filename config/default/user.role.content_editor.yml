@@ -26,7 +26,6 @@ dependencies:
     - media
     - media_pdf_thumbnail
     - node
-    - paragraphs
     - path
     - redirect
     - system
@@ -122,5 +121,4 @@ permissions:
   - 'view resource revisions'
   - 'view term revisions in organisation'
   - 'view the administration theme'
-  - 'view unpublished paragraphs'
   - 'view unpublished pdf image entity entities'
