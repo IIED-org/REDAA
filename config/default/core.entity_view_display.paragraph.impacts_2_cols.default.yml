@@ -1,0 +1,90 @@
+uuid: c3dd77f8-ab39-4120-aa59-e590da90b4f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.impacts_2_cols.field_description
+    - field.field.paragraph.impacts_2_cols.field_resource
+    - field.field.paragraph.impacts_2_cols.field_resource_2
+    - paragraphs.paragraphs_type.impacts_2_cols
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          cb018996-f2a2-4f4d-ba7a-6b0a1abd2805:
+            uuid: cb018996-f2a2-4f4d-ba7a-6b0a1abd2805
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impacts_2_cols:field_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          c9afe755-6dcc-4bcc-a426-9abf87766f9f:
+            uuid: c9afe755-6dcc-4bcc-a426-9abf87766f9f
+            region: first
+            configuration:
+              id: 'field_block:paragraph:impacts_2_cols:field_resource'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          02ff5174-25d1-4e29-a663-924f1ccd381a:
+            uuid: 02ff5174-25d1-4e29-a663-924f1ccd381a
+            region: second
+            configuration:
+              id: 'field_block:paragraph:impacts_2_cols:field_resource_2'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.impacts_2_cols.default
+targetEntityType: paragraph
+bundle: impacts_2_cols
+mode: default
+content: {  }
+hidden:
+  field_description: true
+  field_resource: true
+  field_resource_2: true
+  search_api_excerpt: true

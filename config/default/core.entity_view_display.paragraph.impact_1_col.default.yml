@@ -1,0 +1,63 @@
+uuid: d8b80a94-8405-4f2e-b069-f541ef6922d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.impact_1_col.field_description
+    - field.field.paragraph.impact_1_col.field_resource
+    - paragraphs.paragraphs_type.impact_1_col
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          95e3264d-c842-49de-b68f-aedb8e967f2c:
+            uuid: 95e3264d-c842-49de-b68f-aedb8e967f2c
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impact_1_col:field_resource'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          6d319b91-2420-4b9d-b034-4de300c081c9:
+            uuid: 6d319b91-2420-4b9d-b034-4de300c081c9
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impact_1_col:field_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.impact_1_col.default
+targetEntityType: paragraph
+bundle: impact_1_col
+mode: default
+content: {  }
+hidden:
+  field_description: true
+  field_resource: true
+  search_api_excerpt: true
