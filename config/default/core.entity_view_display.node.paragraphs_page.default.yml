@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.paragraphs_page.body
     - field.field.node.paragraphs_page.field_main_image
+    - field.field.node.paragraphs_page.field_paragraphs
     - field.field.node.paragraphs_page.field_standfirst
     - field.field.node.paragraphs_page.layout_builder__layout
     - node.type.paragraphs_page
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.paragraphs_page.default
@@ -31,6 +33,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_standfirst:
     type: text_default

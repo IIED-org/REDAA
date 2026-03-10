@@ -1,0 +1,65 @@
+uuid: f4e9648a-7069-4a39-b3e4-c69f9f841775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.impact_1_col.field_description
+    - field.field.paragraph.impact_1_col.field_resource
+    - paragraphs.paragraphs_type.impact_1_col
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          a1605acd-20ac-48c7-a1dd-33921f35ec6c:
+            uuid: a1605acd-20ac-48c7-a1dd-33921f35ec6c
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impact_1_col:field_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          6fb8c856-493e-43a2-a4b7-a817587b10e3:
+            uuid: 6fb8c856-493e-43a2-a4b7-a817587b10e3
+            region: content
+            configuration:
+              id: 'field_block:paragraph:impact_1_col:field_resource'
+              label: Resource
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: impact_card
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.impact_1_col.default
+targetEntityType: paragraph
+bundle: impact_1_col
+mode: default
+content: {  }
+hidden:
+  field_description: true
+  field_resource: true
+  search_api_excerpt: true

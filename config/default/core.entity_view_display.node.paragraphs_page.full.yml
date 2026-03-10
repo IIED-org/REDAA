@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.paragraphs_page.body
     - field.field.node.paragraphs_page.field_main_image
+    - field.field.node.paragraphs_page.field_paragraphs
     - field.field.node.paragraphs_page.field_standfirst
     - field.field.node.paragraphs_page.layout_builder__layout
     - node.type.paragraphs_page
@@ -63,7 +64,7 @@ third_party_settings:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-            weight: 4
+            weight: 5
             additional: {  }
           df7862d0-f714-4af7-8c59-33d1c747c563:
             uuid: df7862d0-f714-4af7-8c59-33d1c747c563
@@ -80,6 +81,25 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+          656645ef-6089-406a-b8ca-e2de67c8303e:
+            uuid: 656645ef-6089-406a-b8ca-e2de67c8303e
+            region: content
+            configuration:
+              id: 'field_block:node:paragraphs_page:field_paragraphs'
+              label: Paragraphs
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 id: node.paragraphs_page.full
 targetEntityType: node
@@ -89,6 +109,7 @@ content: {  }
 hidden:
   body: true
   field_main_image: true
+  field_paragraphs: true
   field_standfirst: true
   layout_builder__layout: true
   links: true
