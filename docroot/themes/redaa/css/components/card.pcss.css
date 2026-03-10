@@ -164,17 +164,15 @@
     display: flex;
     flex-direction: column;
   }
-  @media (--md) {
-    .card-image {
-      min-width: 320px;
-    }
-  }
-}
+ }
 
 .layout--onecol .impact-card {
   .card-contents-wrapper {
     @media (--md) {
       flex-direction: row;
+      .card-image {
+        min-width: 320px;
+      }
     } 
   }
 }

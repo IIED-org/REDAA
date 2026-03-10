@@ -205,21 +205,15 @@
     display: flex;
     flex-direction: column;
   }
-}
-
-@media (min-width: 43.75rem) {
-
-.impact-card {
-    .card-image {
-      min-width: 20rem;
-    }
-}
-  }
+ }
 
 .layout--onecol .impact-card {
     @media (min-width: 43.75rem) {
   .card-contents-wrapper {
-      flex-direction: row 
+      flex-direction: row;
+      .card-image {
+        min-width: 20rem;
+      } 
   }
     }
 }
