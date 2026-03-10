@@ -1,0 +1,14 @@
+uuid: 0b03bc27-f7aa-4497-8481-1f551b368c37
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.paragraphs_page
+id: node_type_paragraphs_page
+entity_type_id: node_type
+entity_id: paragraphs_page
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

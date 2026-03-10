@@ -1,16 +1,16 @@
-uuid: 6f52d717-e2a4-4d16-a0c2-2c1fa2ffa7a1
+uuid: b0be46eb-06a3-4665-93f7-b6f35c6e3859
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_paragraphs
-    - node.type.page
+    - node.type.paragraphs_page
   module:
     - entity_reference_revisions
-id: node.page.field_paragraphs
+id: node.paragraphs_page.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
-bundle: page
+bundle: paragraphs_page
 label: Paragraphs
 description: ''
 required: false
@@ -24,6 +24,9 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       impact_item:
-        weight: 2
+        weight: 3
+        enabled: false
+      impact_items_2_cols:
+        weight: 4
         enabled: false
 field_type: entity_reference_revisions
