@@ -85,7 +85,7 @@
 				{% if content.field_image['#items'].0.entity is not empty %}
 					{{ content.field_image }}
 
-				{% elseif content.field_media is not empty %}
+				{% elseif node.field_media is not empty %}
 					{{ node.field_media.entity|view('thumbnail') }}
 
 				{% else %}
@@ -107,7 +107,6 @@
 					{% else %}
 						{{ content.body }}
 					{% endif %}
-			</div>
 			</div>
 		</div>
 
