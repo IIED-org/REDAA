@@ -3567,6 +3567,9 @@
                         "[web-root]/sites/default/default.services.yml": "assets/scaffold/files/default.services.yml",
                         "[web-root]/sites/default/default.settings.php": "assets/scaffold/files/default.settings.php"
                     }
+                },
+                "patches_applied": {
+                    "Layout builder 3294474": "https://www.drupal.org/files/issues/2024-07-04/3294474_fix_usage_of_not_existing_blocks.patch"
                 }
             },
             "installation-source": "dist",
