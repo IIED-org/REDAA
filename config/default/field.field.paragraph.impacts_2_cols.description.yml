@@ -1,0 +1,22 @@
+uuid: c9bce501-6149-4fbb-9346-e8b4283a8f4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.description
+    - paragraphs.paragraphs_type.impacts_2_cols
+  module:
+    - text
+id: paragraph.impacts_2_cols.description
+field_name: description
+entity_type: paragraph
+bundle: impacts_2_cols
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

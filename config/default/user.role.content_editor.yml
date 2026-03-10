@@ -19,7 +19,6 @@ dependencies:
     - comment
     - contextual
     - draggableviews
-    - entity_reference_revisions
     - file
     - filter
     - layout_builder
@@ -68,7 +67,6 @@ permissions:
   - 'create terms in organisation'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'delete orphan revisions'
   - 'delete own article content'
   - 'delete own feature content'
   - 'delete own files'

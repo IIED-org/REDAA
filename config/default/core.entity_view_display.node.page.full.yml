@@ -83,15 +83,10 @@ third_party_settings:
             region: content
             configuration:
               id: 'extra_field_block:node:page:links'
-              label: Links
               label_display: '0'
-              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-              formatter:
-                settings: {  }
-                third_party_settings: {  }
-            weight: 4
+            weight: 3
             additional: {  }
         third_party_settings: {  }
 _core:
@@ -131,4 +126,3 @@ content:
     region: content
 hidden:
   layout_builder__layout: true
-  search_api_excerpt: true

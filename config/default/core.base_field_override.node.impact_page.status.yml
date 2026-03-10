@@ -1,20 +1,20 @@
-uuid: 7b74d66a-5309-4328-a246-01a2d4d115a5
+uuid: deded0a5-8654-40d8-9b15-49fde0a50093
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-id: node.article.promote
-field_name: promote
+    - node.type.impact_page
+id: node.impact_page.status
+field_name: status
 entity_type: node
-bundle: article
-label: 'Promoted to front page'
+bundle: impact_page
+label: Published
 description: ''
 required: false
 translatable: true
 default_value:
   -
-    value: 1
+    value: 0
 default_value_callback: ''
 settings:
   on_label: 'On'

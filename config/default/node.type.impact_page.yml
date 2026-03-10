@@ -1,0 +1,14 @@
+uuid: b27382f7-1ebc-4e77-8f98-19bd75f73978
+langcode: en
+status: true
+dependencies: {  }
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+name: 'Impact page'
+type: impact_page
+description: 'Page with optional paragraphs'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false
