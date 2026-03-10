@@ -208,7 +208,7 @@
  }
 
 .layout--onecol .impact-card {
-    @media (min-width: 43.75rem) {
+    @media (min-width: 62.5rem) {
   .card-contents-wrapper {
       flex-direction: row;
       .card-image {
