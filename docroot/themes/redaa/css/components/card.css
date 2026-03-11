@@ -200,7 +200,8 @@
 .impact-card {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
    .card-contents-wrapper, h3, .contents {
     display: flex;
     flex-direction: column;
@@ -218,17 +219,18 @@
     }
 }
 
-.layout--twocol-section .impact-card {
+.layout--twocol-section {
+  .impact-card {
   h3.card-title {
     font-size: 1.125rem;
     line-height: 1.5rem;
   }
 }
-
-@media (min-width: 43.75rem) {
-
-.layout--twocol-section .impact-card {
+  @media (min-width: 43.75rem) {
+  .impact-card {
     .card-contents-wrapper {
+      min-height: 28em;
+      align-content: flex-start;
       flex-wrap: wrap;
       flex-direction: row;
     }
@@ -242,3 +244,4 @@
     }
 }
   }
+}

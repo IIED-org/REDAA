@@ -159,7 +159,7 @@
 
 .impact-card {
   margin-block: var(--sp);
-  display: flex;
+  display: grid;
    .card-contents-wrapper, h3, .contents {
     display: flex;
     flex-direction: column;
@@ -177,13 +177,16 @@
   }
 }
 
-.layout--twocol-section .impact-card {
+.layout--twocol-section {
+  .impact-card {
   h3.card-title {
     font-size: 18px;
     line-height: var(--sp1-5);
   }
   @media (--md) {
     .card-contents-wrapper {
+      min-height: 28em;
+      align-content: flex-start;
       flex-wrap: wrap;
       flex-direction: row;
     }
@@ -196,4 +199,5 @@
       flex-direction: column;
     }
   }
+}
 }

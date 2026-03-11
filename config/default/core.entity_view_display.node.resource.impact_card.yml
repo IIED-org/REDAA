@@ -22,7 +22,7 @@ dependencies:
     - field.field.node.resource.field_tags
     - field.field.node.resource.field_theme
     - field.field.node.resource.field_video
-    - image.style.cover_embedded
+    - image.style.card_cover
     - node.type.resource
   module:
     - address
@@ -45,7 +45,7 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 300
+      trim_length: 250
     third_party_settings: {  }
     weight: 101
     region: content
@@ -93,7 +93,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: cover_embedded
+      image_style: card_cover
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -119,7 +119,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: embedded
+      view_mode: featured
       link: false
     third_party_settings: {  }
     weight: 102
@@ -128,7 +128,7 @@ content:
     type: entity_reference_entity_view
     label: above
     settings:
-      view_mode: embedded
+      view_mode: featured
       link: false
     third_party_settings: {  }
     weight: 106

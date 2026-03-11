@@ -1,0 +1,15 @@
+uuid: 41cb7236-b910-4b3a-a3d3-5eb7a186551c
+langcode: en
+status: true
+dependencies: {  }
+name: doc_card_cover
+label: 'Doc card cover'
+effects:
+  1a070909-acba-417a-8f56-409e7707da50:
+    uuid: 1a070909-acba-417a-8f56-409e7707da50
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 400
+      anchor: center-top

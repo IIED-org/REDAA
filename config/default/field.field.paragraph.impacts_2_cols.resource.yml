@@ -4,13 +4,14 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.resource
+    - node.type.article
     - node.type.resource
     - paragraphs.paragraphs_type.impacts_2_cols
 id: paragraph.impacts_2_cols.resource
 field_name: resource
 entity_type: paragraph
 bundle: impacts_2_cols
-label: Resource
+label: 'Resource 1'
 description: ''
 required: false
 translatable: false
@@ -20,10 +21,11 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      article: article
       resource: resource
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: article
 field_type: entity_reference
