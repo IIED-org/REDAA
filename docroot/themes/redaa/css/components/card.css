@@ -245,7 +245,8 @@
     }
     .summary {
       display: flex;
-      flex-direction: column
+      flex-direction: column;
+      line-height: 1.5rem
     }
       .summary:after {
         content: "";
