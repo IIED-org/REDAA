@@ -183,10 +183,13 @@
     font-size: 18px;
     line-height: var(--sp1-5);
   }
+  .card-image {
+    margin: 0 .5rem;
+  }
   @media (--md) {
     .card-contents-wrapper {
       position: relative;
-      height: 26rem;
+      height: 27rem;
       overflow: hidden;
       align-content: flex-start;
       flex-wrap: wrap;
@@ -202,7 +205,7 @@
       &:after {
         content: "";
         position: absolute;
-        top: 25rem;
+        top: 26rem;
         left: 0;
         height: 2rem;
         width: 100%;

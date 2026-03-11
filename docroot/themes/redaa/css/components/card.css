@@ -225,12 +225,15 @@
     font-size: 1.125rem;
     line-height: 1.5rem;
   }
+  .card-image {
+    margin: 0 .5rem;
+  }
 }
   @media (min-width: 43.75rem) {
   .impact-card {
     .card-contents-wrapper {
       position: relative;
-      height: 26rem;
+      height: 27rem;
       overflow: hidden;
       align-content: flex-start;
       flex-wrap: wrap;
@@ -247,7 +250,7 @@
       .summary:after {
         content: "";
         position: absolute;
-        top: 25rem;
+        top: 26rem;
         left: 0;
         height: 2rem;
         width: 100%;
