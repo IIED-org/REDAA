@@ -229,7 +229,8 @@
   @media (min-width: 43.75rem) {
   .impact-card {
     .card-contents-wrapper {
-      min-height: 28em;
+      height: 26rem;
+      overflow: hidden;
       align-content: flex-start;
       flex-wrap: wrap;
       flex-direction: row;
