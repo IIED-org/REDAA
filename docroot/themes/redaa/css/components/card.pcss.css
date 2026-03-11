@@ -166,7 +166,13 @@
   }
  }
 
-.layout--onecol .impact-card {
+ .layout__region--content .layout--onecol .impact-card {
+  .card-image {
+    margin: 0 1.125rem 0 .25rem;
+  }
+  h3.card-title {
+    margin-top: 0;
+  }
   .card-contents-wrapper {
     @media (--lg) {
       flex-direction: row;
@@ -184,7 +190,7 @@
     line-height: var(--sp1-5);
   }
   .card-image {
-    margin: 0 .5rem;
+    margin: 0 .25rem;
   }
   @media (--md) {
     .card-contents-wrapper {
