@@ -210,7 +210,7 @@
 
 .layout__region--content .layout--onecol .impact-card {
   .card-image {
-    margin: 0 1.125rem 0 .25rem;
+    margin: 0 auto;
   }
   h3.card-title {
     margin-top: 0;
@@ -220,6 +220,7 @@
       flex-direction: row;
       .card-image {
         min-width: 20rem;
+        margin: 0 1.125rem 0 .25rem;
       } 
   }
     }
@@ -232,7 +233,7 @@
     line-height: 1.5rem;
   }
   .card-image {
-    margin: 0 .25rem;
+    margin: 0 auto;
   }
 }
   @media (min-width: 43.75rem) {
