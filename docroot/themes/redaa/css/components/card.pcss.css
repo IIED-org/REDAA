@@ -178,7 +178,7 @@
       flex-direction: row;
       .card-image {
         min-width: 320px;
-        margin: 0 1.125rem 0 .25rem;
+        margin: 0 1.125rem 0 0;
       }
     } 
   }
