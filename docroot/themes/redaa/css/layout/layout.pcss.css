@@ -72,3 +72,8 @@
     padding: 1em 1.5em;
   }
 }
+
+.paragraph .layout--onecol {
+  margin-top: var(--sp2);
+  margin-bottom: 0;
+}

@@ -1,0 +1,86 @@
+uuid: 9a68af2b-ae8b-471a-bdf0-5765d621f38f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.impact_card
+    - field.field.node.article.body
+    - field.field.node.article.field_countries
+    - field.field.node.article.field_document_type
+    - field.field.node.article.field_ecosystem_landscape
+    - field.field.node.article.field_image
+    - field.field.node.article.field_main_image
+    - field.field.node.article.field_short_title
+    - field.field.node.article.field_standfirst
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_theme
+    - image.style.card_cover
+    - node.type.article
+  module:
+    - field_layout
+    - layout_builder
+    - svg_image
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
+id: node.article.impact_card
+targetEntityType: node
+bundle: article
+mode: impact_card
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 250
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: card_cover
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_standfirst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_countries: true
+  field_document_type: true
+  field_ecosystem_landscape: true
+  field_main_image: true
+  field_tags: true
+  field_theme: true
+  links: true
+  search_api_excerpt: true

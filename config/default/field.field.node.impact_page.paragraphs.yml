@@ -1,0 +1,29 @@
+uuid: 80b516d5-7051-4b58-8663-5cdaaaf06fc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.paragraphs
+    - node.type.impact_page
+  module:
+    - entity_reference_revisions
+id: node.impact_page.paragraphs
+field_name: paragraphs
+entity_type: node
+bundle: impact_page
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      impact_1_col:
+        weight: 2
+        enabled: false
+field_type: entity_reference_revisions

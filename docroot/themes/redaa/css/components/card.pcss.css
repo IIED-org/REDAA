@@ -55,9 +55,12 @@
   }
 }
 
+.card-image {
+  margin-right: 1.125rem;
+}
+
 @media (--md) {
   .card-image {
-    margin-right: 1.125rem;
     min-width: 180px;
   }
 }
@@ -153,3 +156,69 @@
     margin-left: 1.125rem;
   }
 } 
+
+.impact-card {
+  margin-block: var(--sp);
+  display: grid;
+   .card-contents-wrapper, h3, .contents {
+    display: flex;
+    flex-direction: column;
+  }
+ }
+
+ .layout__region--content .layout--onecol .impact-card {
+  .card-image {
+    margin: 0 1.125rem 0 .25rem;
+  }
+  h3.card-title {
+    margin-top: 0;
+  }
+  .card-contents-wrapper {
+    @media (--lg) {
+      flex-direction: row;
+      .card-image {
+        min-width: 320px;
+      }
+    } 
+  }
+}
+
+.layout--twocol-section {
+  .impact-card {
+  h3.card-title {
+    font-size: 18px;
+    line-height: var(--sp1-5);
+  }
+  .card-image {
+    margin: 0 .25rem;
+  }
+  @media (--md) {
+    .card-contents-wrapper {
+      position: relative;
+      height: 27rem;
+      overflow: hidden;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    .break {
+      flex-basis:100%;
+      height: 0;
+    }
+    .summary {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5rem;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 26rem;
+        left: 0;
+        height: 2rem;
+        width: 100%;
+        background: linear-gradient(180deg, transparent, white);
+      }
+    }
+}
+}
+}

@@ -101,3 +101,8 @@
 .zebra.box .views-row {
     padding: 1em 1.5em;
   }
+
+.paragraph .layout--onecol {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}

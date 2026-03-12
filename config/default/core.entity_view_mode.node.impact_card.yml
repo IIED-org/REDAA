@@ -1,0 +1,11 @@
+uuid: 6e0e130d-ccf0-4676-9f23-cc5beba2991d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.impact_card
+label: 'Impact card'
+description: null
+targetEntityType: node
+cache: true

@@ -1,0 +1,112 @@
+uuid: 5f3763da-ca0e-46f7-867b-88a05481f015
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.impact_page.body
+    - field.field.node.impact_page.field_main_image
+    - field.field.node.impact_page.field_standfirst
+    - field.field.node.impact_page.paragraphs
+    - node.type.impact_page
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          af9b3471-05a1-4a58-89eb-9387900d0057:
+            uuid: af9b3471-05a1-4a58-89eb-9387900d0057
+            region: content
+            configuration:
+              id: 'field_block:node:impact_page:field_standfirst'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          0cfaf081-f65f-4764-9374-87d07e807f58:
+            uuid: 0cfaf081-f65f-4764-9374-87d07e807f58
+            region: content
+            configuration:
+              id: 'field_block:node:impact_page:field_main_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: full
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          d218676e-607a-4251-9443-127597b0072c:
+            uuid: d218676e-607a-4251-9443-127597b0072c
+            region: content
+            configuration:
+              id: 'field_block:node:impact_page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          66e6a6b3-c4d5-41b9-8509-ceb45b29a9c5:
+            uuid: 66e6a6b3-c4d5-41b9-8509-ceb45b29a9c5
+            region: content
+            configuration:
+              id: 'field_block:node:impact_page:paragraphs'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          47662a67-ef96-4d67-880f-de185b37737f:
+            uuid: 47662a67-ef96-4d67-880f-de185b37737f
+            region: content
+            configuration:
+              id: 'extra_field_block:node:impact_page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+id: node.impact_page.full
+targetEntityType: node
+bundle: impact_page
+mode: full
+content: {  }
+hidden:
+  body: true
+  field_main_image: true
+  field_standfirst: true
+  links: true
+  paragraphs: true
+  search_api_excerpt: true

@@ -81,7 +81,6 @@
     if (isDesktopNav()) {
       if (pinnedState === true) {
         siteHeaderFixable.classList.add('is-expanded');
-
       } else {
         siteHeaderFixable.classList.remove('is-expanded');
       }
@@ -136,7 +135,8 @@
         // so we check the intersectionRatio.
         if (entry.intersectionRatio < 1) {
           fixableElements.forEach((el) => el.classList.add('is-fixed'));
-          document.getElementById('logo-img').src = '/themes/redaa/logo-fixed.svg';
+          document.getElementById('logo-img').src =
+            '/themes/redaa/logo-fixed.svg';
         } else {
           fixableElements.forEach((el) => el.classList.remove('is-fixed'));
           document.getElementById('logo-img').src = '/themes/redaa/logo.svg';

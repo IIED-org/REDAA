@@ -25,6 +25,7 @@ module:
   draggableviews: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   facets: 0
   facets_summary: 0
   feeds: 0
@@ -106,10 +107,12 @@ module:
   pathauto: 1
   password_policy: 10
   views: 10
+  paragraphs: 11
   password_policy_extras: 20
   standard: 1000
 theme:
   olivero: 0
   claro: 0
   redaa: 0
+  gin: 0
 profile: standard
