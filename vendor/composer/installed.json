@@ -6827,6 +6827,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Too few args error 3464613": "https://www.drupal.org/files/issues/2025-06-18/argumentCountError-3464613-7.patch"
                 }
             },
             "installation-source": "dist",
