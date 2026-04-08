@@ -171,6 +171,9 @@
             },
             "drupal/core": {
                 "Layout builder 3294474":"https://www.drupal.org/files/issues/2024-07-04/3294474_fix_usage_of_not_existing_blocks.patch"
+            },
+            "drupal/autologout": {
+              "3580058 array warning": "https://www.drupal.org/files/issues/2026-03-23/3580058-autologout-undefined-array-key-cookie_samepath.patch"
             }
         }
     },

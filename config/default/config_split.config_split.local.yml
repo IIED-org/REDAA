@@ -20,4 +20,3 @@ theme: {  }
 complete_list: {  }
 partial_list:
   - clamav.settings
-  - tfa.settings

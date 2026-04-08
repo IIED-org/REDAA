@@ -3204,6 +3204,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "3580058 array warning": "https://www.drupal.org/files/issues/2026-03-23/3580058-autologout-undefined-array-key-cookie_samepath.patch"
                 }
             },
             "installation-source": "dist",
