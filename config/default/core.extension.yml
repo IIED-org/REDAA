@@ -4,6 +4,7 @@ module:
   address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  autologout: 0
   automated_cron: 0
   better_exposed_filters: 0
   big_pipe: 0
@@ -25,6 +26,7 @@ module:
   draggableviews: 0
   dynamic_page_cache: 0
   editor: 0
+  encrypt: 0
   entity_reference_revisions: 0
   facets: 0
   facets_summary: 0
@@ -44,6 +46,7 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
+  key: 0
   klaro: 0
   layout_builder: 0
   layout_builder_boolean: 0
@@ -79,6 +82,7 @@ module:
   purge_tokens: 0
   purge_ui: 0
   rabbit_hole: 0
+  real_aes: 0
   redaa_map: 0
   redirect: 0
   rh_node: 0
@@ -93,6 +97,7 @@ module:
   tamper: 0
   taxonomy: 0
   text: 0
+  tfa: 0
   token: 0
   token_or: 0
   toolbar: 0

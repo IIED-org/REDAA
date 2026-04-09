@@ -14,6 +14,7 @@ dependencies:
     - media_pdf_thumbnail
     - shortcut
     - system
+    - tfa
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
@@ -27,6 +28,7 @@ permissions:
   - 'access site-wide contact form'
   - 'delete own files'
   - 'post comments'
+  - 'setup own tfa'
   - 'skip comment approval'
   - 'use klaro'
   - 'use text format basic_html'
