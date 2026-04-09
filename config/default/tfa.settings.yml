@@ -7,8 +7,7 @@ required_roles:
   content_editor: content_editor
   administrator: administrator
 send_plugins: {  }
-login_plugins:
-  tfa_trusted_browser: tfa_trusted_browser
+login_plugins: {  }
 login_plugin_settings:
   tfa_trusted_browser:
     cookie_allow_subdomains: true
@@ -16,7 +15,6 @@ login_plugin_settings:
     cookie_name: tfa-trusted-browser
 allowed_validation_plugins:
   tfa_totp: tfa_totp
-  tfa_recovery_code: tfa_recovery_code
 default_validation_plugin: tfa_totp
 validation_plugin_settings:
   tfa_totp:
