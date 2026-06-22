@@ -42,6 +42,9 @@ proxy:
   mailhog:
     - mail.redaa.lndo.site
 tooling:
+  composer:
+    service: appserver
+    cmd: /usr/local/bin/composer
   npm:
     service: node
   yarn:
