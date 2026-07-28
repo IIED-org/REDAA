@@ -34,12 +34,14 @@ class InlineBlockUsage implements InlineBlockUsageInterface {
     if (empty($block_content_id)) {
       return;
     }
-    $this->database->merge('inline_block_usage')
-      ->keys([
+    $this->database->upsert('inline_block_usage')
+      ->key('block_content_id')
+      ->fields([
         'block_content_id' => $block_content_id,
         'layout_entity_id' => $entity->id(),
         'layout_entity_type' => $entity->getEntityTypeId(),
-      ])->execute();
+      ])
+      ->execute();
   }
 
   /**

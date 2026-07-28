@@ -46,6 +46,7 @@
         "drupal/media_pdf_thumbnail": "^7.0",
         "drupal/memcache": "^2.7",
         "drupal/metatag": "^2.1",
+        "drupal/paragraphs": "^1.21",
         "drupal/password_policy": "^4.0",
         "drupal/password_policy_extras": "^4.0",
         "drupal/pathauto": "^1.11",
@@ -91,6 +92,7 @@
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
+            "symfony/runtime": true,
             "tbachert/spi": true
         },
         "platform": {
@@ -170,7 +172,7 @@
                 "3381342":"https://www.drupal.org/files/issues/2023-08-16/3381342-2.patch"
             },
             "drupal/core": {
-                "Layout builder 3294474":"https://www.drupal.org/files/issues/2024-07-04/3294474_fix_usage_of_not_existing_blocks.patch"
+                "Originally from Layout builder 3294474 - no longer applied against 11.4.4 so created new patch file locally":"patches/3294474-fix-usage-of-not-existing-blocks-upsert.patch"
             },
             "drupal/autologout": {
               "3580058 array warning": "https://www.drupal.org/files/issues/2026-03-23/3580058-autologout-undefined-array-key-cookie_samepath.patch"

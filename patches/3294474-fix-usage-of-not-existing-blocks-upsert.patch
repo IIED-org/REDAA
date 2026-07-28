@@ -1,0 +1,14 @@
+diff --git a/core/modules/layout_builder/src/InlineBlockUsage.php b/core/modules/layout_builder/src/InlineBlockUsage.php
+index 05423fe05d..a1b2c3d4e5 100644
+--- a/core/modules/layout_builder/src/InlineBlockUsage.php
++++ b/core/modules/layout_builder/src/InlineBlockUsage.php
+@@ -31,6 +31,9 @@ public function __construct(Connection $database) {
+    * {@inheritdoc}
+    */
+   public function addUsage($block_content_id, EntityInterface $entity) {
++    if (empty($block_content_id)) {
++      return;
++    }
+     $this->database->upsert('inline_block_usage')
+       ->key('block_content_id')
+       ->fields([
