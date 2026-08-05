@@ -19,6 +19,10 @@
 /docroot/profiles/contrib
 /docroot/themes/contrib
 
+# Scaffold files
+/docroot/.htaccess
+/docroot/robots.txt
+
 # Files and directories for common development environments, loosely inherited from BLT Project
 # @see https://github.com/acquia/blt-project/blob/11.x/.gitignore
 
