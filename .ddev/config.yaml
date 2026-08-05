@@ -13,6 +13,14 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 corepack_enable: false
+hooks:
+  post-start:
+    - exec: "cd docroot/themes/redaa && npm install ignore-warnings"
+    - exec: "cd docroot/themes/redaa && yarn install"
+    - exec: "cd docroot/themes/redaa && yarn build"
+    - composer: install
+    - exec: drush updb -y
+    - exec: drush cr
 
 # Key features of DDEV's config.yaml:
 
