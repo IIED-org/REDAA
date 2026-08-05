@@ -4,7 +4,8 @@
 # We allow settings.php to be committed since Acquia's filesystem is read-only
 # @see https://www.drupal.org/project/drupal/issues/3257119
 # /docroot/core
-# /vendor/
+
+/vendor/
 
 /docroot/sites/*/settings.*.php
 /docroot/sites/*/services*.yml
@@ -13,10 +14,14 @@
 /docroot/sites/simpletest
 
 # Directories specific to this template
-# /docroot/libraries
-# /docroot/modules/contrib
-# /docroot/profiles/contrib
-# /docroot/themes/contrib
+/docroot/libraries
+/docroot/modules/contrib
+/docroot/profiles/contrib
+/docroot/themes/contrib
+
+# Scaffold files
+/docroot/.htaccess
+/docroot/robots.txt
 
 # Files and directories for common development environments, loosely inherited from BLT Project
 # @see https://github.com/acquia/blt-project/blob/11.x/.gitignore
@@ -124,4 +129,6 @@ oauth_keys/
 # SQL dumps
 *.sql
 *.sql.gz
+
+# nodejs
 node_modules

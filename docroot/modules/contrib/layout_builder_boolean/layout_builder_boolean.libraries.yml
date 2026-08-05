@@ -1,5 +1,0 @@
-# Custom module library for general purposes.
-layout_builder_boolean:
-  css:
-    component:
-      css/layout-builder-boolean.css: {}
