@@ -96,5 +96,8 @@
     "last 1 Samsung version",
     "last 1 OperaMini version",
     "Firefox ESR"
-  ]
+  ],
+  "dependencies": {
+    "ignore-warnings": "^0.2.1"
+  }
 }
