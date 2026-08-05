@@ -175,9 +175,6 @@
             "drupal/core": {
                 "Originally from Layout builder 3294474 - no longer applied against 11.4.4 so created new patch file locally":"patches/3294474-fix-usage-of-not-existing-blocks-upsert.patch"
             },
-            "drupal/autologout": {
-              "3580058 array warning": "https://www.drupal.org/files/issues/2026-03-23/3580058-autologout-undefined-array-key-cookie_samepath.patch"
-            },
             "drupal/session_limit": {
                 "Too few args error 3464613": "https://www.drupal.org/files/issues/2025-06-18/argumentCountError-3464613-7.patch"
             }
