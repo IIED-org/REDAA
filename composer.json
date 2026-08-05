@@ -55,7 +55,7 @@
         "drupal/redirect": "^1.9",
         "drupal/search_api": "^1.35",
         "drupal/seckit": "^2.0",
-        "drupal/session_limit": "^2.0",
+        "drupal/session_limit": "^3.0",
         "drupal/stage_file_proxy": "^3.1",
         "drupal/svg_image": "^3.0",
         "drupal/tfa": "^1.9",
@@ -174,9 +174,6 @@
             },
             "drupal/core": {
                 "Originally from Layout builder 3294474 - no longer applied against 11.4.4 so created new patch file locally":"patches/3294474-fix-usage-of-not-existing-blocks-upsert.patch"
-            },
-            "drupal/session_limit": {
-                "Too few args error 3464613": "https://www.drupal.org/files/issues/2025-06-18/argumentCountError-3464613-7.patch"
             }
         }
     },
