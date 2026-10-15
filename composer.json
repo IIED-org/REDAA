@@ -39,7 +39,7 @@
         "drupal/klaro": "^3.0",
         "drupal/layout_builder_boolean": "^1.0@alpha",
         "drupal/layout_paragraphs": "^2.1",
-        "drupal/leaflet": "^10.2",
+        "drupal/leaflet": "^10.4",
         "drupal/leaflet_more_maps": "^2.1",
         "drupal/media_entity_file_replace": "^1.1",
         "drupal/media_file_delete": "^1.3",
